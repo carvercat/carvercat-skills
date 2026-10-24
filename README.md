@@ -85,4 +85,6 @@ Questions, bugs and ideas: [hello@carvercat.com](mailto:hello@carvercat.com) ·
 
 ## Licence
 
-Not chosen yet. See [LICENSE-TODO.md](LICENSE-TODO.md).
+Free to use for personal and professional or paid work, including client projects.
+Redistributing or copying the skills elsewhere is not allowed. See [LICENSE](LICENSE).
+Rethink Sans ships under the SIL Open Font License ([OFL.txt](ai/scripts/motion/json_author/OFL.txt)).
