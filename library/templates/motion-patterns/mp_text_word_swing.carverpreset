@@ -1,0 +1,214 @@
+{
+ "presetVersion": 2,
+ "id": "cc.mp.text_word_swing",
+ "name": "Words swing in",
+ "category": "animation",
+ "tags": [
+  "stagger",
+  "in",
+  "word",
+  "rotate",
+  "motion patterns"
+ ],
+ "note": "Each word tips up from 12 deg and settles. Playful titles. Curve baked as keys (linear joins) - see the skill's patterns/ docs.",
+ "anchor": "in",
+ "frames": 24,
+ "tracks": [
+  {
+   "property": "angle",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 12.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0417,
+     "value": 10.99429,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0833,
+     "value": 8.64136,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": 3.05549,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2083,
+     "value": 0.82519,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": -0.73626,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2917,
+     "value": -1.62548,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3333,
+     "value": -1.94465,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.375,
+     "value": -1.84791,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5417,
+     "value": -0.20278,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.625,
+     "value": 0.24235,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.0,
+      -0.02
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0417,
+     "value": [
+      0.0,
+      -0.01522
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0833,
+     "value": [
+      0.0,
+      -0.01139
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": [
+      0.0,
+      -0.00846
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": [
+      0.0,
+      -0.00628
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2083,
+     "value": [
+      0.0,
+      -0.00467
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2917,
+     "value": [
+      0.0,
+      -0.0026
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4167,
+     "value": [
+      0.0,
+      -0.00107
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5417,
+     "value": [
+      0.0,
+      -0.0004
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0857,
+     "value": 0.66705,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1286,
+     "value": 0.82698,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1714,
+     "value": 0.91641,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2143,
+     "value": 0.9671,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ],
+ "only": "text",
+ "stagger": {
+  "by": "word",
+  "order": "forward",
+  "gap": 4
+ }
+}

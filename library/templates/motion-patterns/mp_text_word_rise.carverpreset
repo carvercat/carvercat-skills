@@ -1,0 +1,159 @@
+{
+ "presetVersion": 2,
+ "id": "cc.mp.text_word_rise",
+ "name": "Words rise - expo",
+ "category": "animation",
+ "tags": [
+  "stagger",
+  "in",
+  "word",
+  "expo",
+  "motion patterns"
+ ],
+ "note": "Word by word, rising with an expo-out landing. The workhorse headline entrance. Curve baked as keys (linear joins) - see the skill's patterns/ docs.",
+ "anchor": "in",
+ "frames": 16,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.0,
+      -0.03
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0625,
+     "value": [
+      0.0,
+      -0.01978
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": [
+      0.0,
+      -0.01268
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1875,
+     "value": [
+      0.0,
+      -0.00812
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": [
+      0.0,
+      -0.00523
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3125,
+     "value": [
+      0.0,
+      -0.00337
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.375,
+     "value": [
+      0.0,
+      -0.00217
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": [
+      0.0,
+      -0.00085
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6875,
+     "value": [
+      0.0,
+      -0.00015
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0625,
+     "value": 0.25555,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": 0.60722,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1875,
+     "value": 0.77818,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 0.87783,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3125,
+     "value": 0.93902,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.375,
+     "value": 0.97548,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ],
+ "only": "text",
+ "stagger": {
+  "by": "word",
+  "order": "forward",
+  "gap": 3
+ }
+}

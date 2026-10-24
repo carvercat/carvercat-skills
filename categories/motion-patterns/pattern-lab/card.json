@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "motion-patterns/pattern-lab",
+  "title": "Motion pattern lab (source of the Motion Patterns pack)",
+  "category": "motion-patterns",
+  "tags": [
+    "patterns",
+    "presets",
+    "templates",
+    "transitions",
+    "lower-third",
+    "logo",
+    "chart",
+    "kinetic-type",
+    "stagger",
+    "spring",
+    "1920x1080"
+  ],
+  "summary": "The comps every Motion Patterns preset and template was built and verified in: preset test benches, text staggers, two-tone wipe, colour iris, lower third, logo stamp reveal, bar chart, and a recipes comp (push, zoom-through, card stack, highlight sweep).",
+  "use_when": "You want to see a pattern working before using it, copy one comp's objects into a job, or rebuild a template with comp_to_template.py after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 200,
+    "seconds": 6.7
+  },
+  "contains": {
+    "timelines": 10,
+    "comps": [
+      "Comp 1 (object preset bench)",
+      "Text Lab (staggered text presets)",
+      "TR Two-Tone Wipe",
+      "LT Lower Third",
+      "TR Iris",
+      "LOGO Stamp Reveal",
+      "Template Test (template placement check)",
+      "Lower third - accent bar (placed template)",
+      "INFO Bar Chart",
+      "RECIPES (push 0-48, zoom-through 48-94, card stack 100-150, highlight sweep 150-200)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "bar heights",
+    "timing via clip starts"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.0.72 (rev 1071), 2026-10-20",
+  "dependencies": {
+    "fonts": [
+      "Open Sans Regular/Bold (bundled default)"
+    ],
+    "media": "none"
+  },
+  "license": "carvercat-skills; original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Clip ids restart at clip_1 in every comp. Rename ids before nesting several of these comps in one master (references/app/performance.md).",
+    "The pack itself is library/templates/motion-patterns; docs in ai/patterns/."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-20"
+}

@@ -1,0 +1,117 @@
+{
+ "presetVersion": 2,
+ "id": "cc.mp.exit_zoom_through",
+ "name": "Exit zoom through",
+ "category": "animation",
+ "tags": [
+  "out",
+  "zoom",
+  "transition",
+  "motion patterns"
+ ],
+ "note": "Pushes toward camera and fades. Combine with the next scene's Zoom settle for a zoom-through transition. Curve baked as keys (linear joins) - see the skill's patterns/ docs.",
+ "anchor": "out",
+ "frames": 12,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": 1.02167,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3333,
+     "value": 1.0899,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.2156,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6667,
+     "value": 1.42131,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.75,
+     "value": 1.56782,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.8333,
+     "value": 1.75799,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.9167,
+     "value": 2.01539,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 2.4,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.45,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5286,
+     "value": 0.98866,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6071,
+     "value": 0.95344,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6857,
+     "value": 0.89028,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7643,
+     "value": 0.79144,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.8429,
+     "value": 0.64246,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.9214,
+     "value": 0.41205,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

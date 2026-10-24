@@ -1,0 +1,70 @@
+{
+ "presetVersion": 2,
+ "id": "cc.mp.text_char_shimmer",
+ "name": "Letters shimmer in",
+ "category": "animation",
+ "tags": [
+  "stagger",
+  "in",
+  "character",
+  "random",
+  "fade",
+  "motion patterns"
+ ],
+ "note": "Letters fade on in random order. Luxury, quiet reveals. Curve baked as keys (linear joins) - see the skill's patterns/ docs.",
+ "anchor": "in",
+ "frames": 10,
+ "tracks": [
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1,
+     "value": 0.15625,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 0.5,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3,
+     "value": 0.68807,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": 0.80228,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 0.87783,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7,
+     "value": 0.96332,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ],
+ "only": "text",
+ "stagger": {
+  "by": "character",
+  "order": "random",
+  "gap": 1
+ }
+}
