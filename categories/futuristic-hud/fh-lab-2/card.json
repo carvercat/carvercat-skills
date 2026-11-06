@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "futuristic-hud/fh-lab-2",
+  "title": "Futuristic HUD lab 2 (source of the round-2 templates)",
+  "category": "futuristic-hud",
+  "tags": [
+    "hud",
+    "sci-fi",
+    "interface",
+    "templates",
+    "lower-third",
+    "loader",
+    "hexagon",
+    "meter",
+    "target",
+    "alert",
+    "map",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Futuristic HUD templates were built and verified in: ID lower third, segment loader, hex grid, signal bars, target lock, alert banner, map ping and scan wipe.",
+  "use_when": "You want to see a round-2 HUD template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "FH ID lower third (150 f)",
+      "FH Loader (130 f)",
+      "FH Hex grid (120 f, background)",
+      "FH Signal bars (120 f)",
+      "FH Target lock (90 f)",
+      "FH Alert banner (120 f)",
+      "FH Map ping (120 f)",
+      "FH Scan wipe (30 f, transition)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "loader pace and labels (regenerate)",
+    "signal levels (seeded random, regenerate)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp except FH Scan wipe has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (fid_, fld_, fhx_, fsg_, ftl_, fal_, fmp_, fsw_).",
+    "Rebuild: ai/scripts/motion/futuristic_hud_lab2.py writes the comps; apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings; qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

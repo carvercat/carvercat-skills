@@ -23,7 +23,7 @@ Rendering and validating the files themselves is in [export-and-delivery.md](exp
 
 ## 2. Prepare the Resolve project
 
-Tested on an early pre-release build (2026-09-28).
+Tested on build c423 (2026-09-28).
 
 1. Inspect the open Resolve project and all timeline names. Identify the source timeline exactly; refuse an ambiguous match. If the intended copy name already exists, inspect it instead of making another.
 2. Preserve the open Carvercat document. An empty object list does not prove a clean history (a "blank" comp reported `undo=true`, `said='deleted Rectangle'`).
@@ -58,25 +58,25 @@ A saved blank companion proves setup only. Fusion send, rendering, timing, fonts
 
 ## 5. Route B: native Fusion transfer
 
-Tested on an early 0.1.4 pre-release build with Resolve Studio 21.1.0.14: nine editable Fusion carrier clips individually replaced existing PNG items.
+Tested on 0.1.4 Build46 / with Resolve Studio 21.1.0.14: nine editable Fusion carrier clips individually replaced existing PNG items.
 
 - Deliver API: `deliver.open`, `deliver.panel`, `deliver.set`, `deliver.plan`, `deliver.run`, `deliver.status`, `deliver.cancel`; `deliver.browse {settings:{action:"read"}}` reads the location picker. For Resolve `deliver.set` accepts `picture`, `audio`, `audioTrack` (1 = A1), `audioMode=individual|mixdown`, `trimAudioToRange`; picture and audio default ON. Source media is materialised beside the saved `.carverproj`, so save first.
-- Before EACH send, assert: current `scenePointer`; `transfer.scopes[comp].frames` equals the current comp duration (scope can lag `comp.switch`, [KI-081](../known-issues.md#ki-081)); exact source identity and revision; destination project/timeline UUIDs, track and start; picture on, audio off when only graphics are wanted; a ready editable-fusion plan. `deliver.plan` ready=true alone is not proof. Opening Deliver refreshed a stale scope.
+- Run `carve.preflight {host}` first (`resolve`; nothing is sent). Before EACH send, assert: current `scenePointer`; `transfer.scopes[comp].frames` equals the current comp duration (scope can lag `comp.switch`, [KI-081](../known-issues.md#ki-081)); exact source identity and revision; destination project/timeline UUIDs, track and start; picture on, audio off when only graphics are wanted; a ready editable-fusion plan. `deliver.plan` ready=true alone is not proof. Opening Deliver refreshed a stale scope.
 - Send once. A refused send (e.g. a stale 207-frame range straddling the next clip) changed nothing in Resolve, but inspect before any further attempt. Prepared manifest entries for refused sends are not placements.
 - After each send: snapshot every other track, item ID, property, source offset, fade and every other timeline; verify the carrier graph contains `TextPlus`, animation modifiers and `MediaOut`; confirm "no unsupported objects" in the payload.
 - Arabic stagger needs the destination-graph correction in [rtl-and-arabic.md §7](rtl-and-arabic.md#7-fusion-transfer-the-rtl-stagger-workaround). Irregular speech schedules live in Follower tables and must be reapplied after a resend.
 - Destination font metrics differ from native: drive final gaps (e.g. a currency symbol gap) from the actual composite. Hidden clips still return native bounds. Compound keyed paths and low-alpha tiles have rendered wrongly ([KI-085](../known-issues.md#ki-085), [KI-086](../known-issues.md#ki-086)).
 - Replacing a carrier gives a new item identity; it does not certify a same-item Update or a user-facing workflow (not implemented for people yet, [FR-026](../known-issues.md#fr-026)).
-- Render & Send on a pre-release build completed the PNG job but never created the timeline clip ([KI-075](../known-issues.md#ki-075)). The verified fallback is Files export + Route A.
+- Render & Send on build completed the PNG job but never created the timeline clip ([KI-075](../known-issues.md#ki-075)). The verified fallback is Files export + Route A.
 
 ### Scene-by-scene send and "render in place" (verified 0.0.72 + Resolve Studio 21.1, 2026-10-20)
 
-- A film split into sub-comps transfers cleanly one comp at a time: `comp.switch` → `resolve.target {frame:<timeline frame>, track:1}` → `deliver.set {settings:{picture:true, audio:false}}` (once) → `deliver.plan` (ready, range = comp) → `deliver.run`. 22 comps landed back-to-back with no gaps, including comps that nest kit comps (one became a 5,300-tool Fusion clip).
+- A film split into sub-comps transfers cleanly one comp at a time: run `carve.preflight {host}` first, then `comp.switch` → `resolve.target {frame:<timeline frame>, track:1}` → `deliver.set {settings:{picture:true, audio:false}}` (once) → `deliver.plan` (ready, range = comp) → `deliver.run`. 22 comps landed back-to-back with no gaps, including comps that nest kit comps (one became a 5,300-tool Fusion clip).
 - Heavy sends often reply `answered:false` although the clip arrives. Treat it as unknown: read the track in Resolve (`GetItemListInTrack`) before sending the next one; never resend blindly.
 - Audio is cleaner placed with the Resolve API than sent: import the WAVs into bins, then `AppendToTimeline` with `startFrame:0, endFrame:<frames>, recordFrame:<start>, mediaType:2` (endFrame = duration gave exact lengths). Pack SFX into non-overlapping lanes; each sound stays its own clip.
 - Resolve's scripting API has **no Render in Place**. Equivalent: render each Fusion clip with its own **single-clip** render job (`SetCurrentRenderMode(1)`, `MarkIn/MarkOut` = the clip, `CustomName`), import the files, place them on V2 at the same frames, `SetTrackEnable('video', 1, False)`. Do **not** use individual-clips mode: every transferred clip shares one carrier media name, so each render overwrote the same file.
 - `StopRendering()` can need a second call; `DeleteAllRenderJobs()` fails silently while a job is still rendering.
-- To replace one scene: delete its carrier on the caption track, `resolve.refresh`, `resolve.target {frame, track}`, check `carvercat_state transfer` names the right timeline, send, then read the carrier's FPS and set `"24"` if needed ([KI-126](../known-issues.md#ki-126)). Deleting several carriers at once can silently fail ([KI-130](../known-issues.md#ki-130)).
+- To replace one scene: delete its carrier on the caption track, `resolve.refresh`, `resolve.target {frame, track}`, check `carvercat_state transfer` names the right timeline, run `carve.preflight {host}` first, send, then read the carrier's FPS and set `"24"` if needed ([KI-126](../known-issues.md#ki-126)). Deleting several carriers at once can silently fail ([KI-130](../known-issues.md#ki-130)).
 
 ### Other aspect ratios from one edit (verified 2026-10-23)
 

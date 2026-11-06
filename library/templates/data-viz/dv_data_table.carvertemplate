@@ -1,0 +1,7710 @@
+{
+ "templateVersion": 2,
+ "id": "cc.dv.data_table",
+ "name": "Data table",
+ "category": "scene",
+ "apply": "scene",
+ "tags": [
+  "table",
+  "rows",
+  "numbers",
+  "comparison",
+  "data viz",
+  "motion patterns"
+ ],
+ "note": "Header fades in, four rows rise 6 f apart (last settles f34), a highlight bar sweeps behind the last row f56-70 (settles f65). 120 f. Docs: ai/patterns/dv-data-table.md",
+ "frame": {
+  "width": 1920,
+  "height": 1080,
+  "fps": 30.0
+ },
+ "scene": {
+  "ppf": 4,
+  "sceneFps": 30.0,
+  "duration": 120.0,
+  "timelineWidth": 1920,
+  "timelineHeight": 1080,
+  "width": 1920,
+  "height": 1080,
+  "tracks": [
+   {
+    "id": "track_v2",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_2",
+      "type": "shape",
+      "objectType": "shape",
+      "text": "Path",
+      "left": 0.0,
+      "duration": 120.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Open Sans",
+       "style": "Regular",
+       "size": 0.08,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_2.position": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.69444
+        ]
+       },
+       "tr.e_tr_placement_ddt_2.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_2.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_2.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_2.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_2.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_2.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_2.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 8.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_2.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_2.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_shape_stroke_ddt_2.width": {
+        "keyframes": [],
+        "static": 0.001042
+       },
+       "src.e_src_shape_stroke_ddt_2.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_shape_stroke_ddt_2.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_ddt_2.color": {
+        "keyframes": [],
+        "static": [
+         0.20156,
+         0.23455,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_ddt_2.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_shape_fill_ddt_2.color": {
+        "keyframes": [],
+        "static": [
+         0.734703004360199,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_ddt_2.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_ddt_2.cap": {
+        "keyframes": [],
+        "static": "round"
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_shape_geometry_rectangle_ddt_2",
+          "cap": "shape.geometry.rectangle",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_fill_ddt_2",
+          "cap": "shape.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_stroke_ddt_2",
+          "cap": "shape.stroke",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_2",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_2",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "shape": {
+       "kind": "path",
+       "params": {
+        "closed": false,
+        "points": [
+         {
+          "x": 0.20833333333333331,
+          "y": 0.5,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         },
+         {
+          "x": 0.7916666666666667,
+          "y": 0.5,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         }
+        ]
+       }
+      },
+      "label": "Header rule"
+     }
+    ]
+   },
+   {
+    "id": "track_v3",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_3",
+      "type": "text",
+      "objectType": "text",
+      "text": "Team",
+      "left": 0.0,
+      "duration": 120.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "SemiBold",
+       "size": 0.02443,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_3.position": {
+        "keyframes": [],
+        "static": [
+         0.21875,
+         0.73148
+        ]
+       },
+       "tr.e_tr_placement_ddt_3.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_3.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_3.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_3.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_3.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_3.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_3.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 8.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_3.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_3.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_3.content": {
+        "keyframes": [],
+        "static": "Team"
+       },
+       "src.e_src_text_font_ddt_3.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_3.style": {
+        "keyframes": [],
+        "static": "SemiBold"
+       },
+       "src.e_src_text_font_ddt_3.size": {
+        "keyframes": [],
+        "static": 0.02443
+       },
+       "src.e_src_text_font_ddt_3.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_3.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_3.color": {
+        "keyframes": [],
+        "static": [
+         0.20156,
+         0.23455,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_3.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_3.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_3.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_3.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_3.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_3.align": {
+        "keyframes": [],
+        "static": "left"
+       },
+       "src.e_src_text_layout_ddt_3.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_3.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_3.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_3.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_3.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_3.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_3.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_3.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_3.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_3.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_3.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_3.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_3.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_3.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_3.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_3.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_3.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_3.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_3.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_3",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_3",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_3",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_3",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_3",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_3",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_3",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_3",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_3",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_3",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Head 1"
+     }
+    ]
+   },
+   {
+    "id": "track_v4",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_4",
+      "type": "text",
+      "objectType": "text",
+      "text": "Q1",
+      "left": 0.0,
+      "duration": 120.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "SemiBold",
+       "size": 0.02443,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_4.position": {
+        "keyframes": [],
+        "static": [
+         0.54167,
+         0.73148
+        ]
+       },
+       "tr.e_tr_placement_ddt_4.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_4.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_4.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_4.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_4.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_4.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_4.opacity": {
+        "keyframes": [
+         {
+          "frame": 2.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 10.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_4.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_4.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_4.content": {
+        "keyframes": [],
+        "static": "Q1"
+       },
+       "src.e_src_text_font_ddt_4.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_4.style": {
+        "keyframes": [],
+        "static": "SemiBold"
+       },
+       "src.e_src_text_font_ddt_4.size": {
+        "keyframes": [],
+        "static": 0.02443
+       },
+       "src.e_src_text_font_ddt_4.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_4.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_4.color": {
+        "keyframes": [],
+        "static": [
+         0.20156,
+         0.23455,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_4.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_4.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_4.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_4.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_4.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_4.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_4.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_4.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_4.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_4.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_4.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_4.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_4.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_4.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_4.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_4.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_4.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_4.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_4.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_4.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_4.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_4.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_4.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_4.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_4.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_4",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_4",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_4",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_4",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_4",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_4",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_4",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_4",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_4",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_4",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Head 2"
+     }
+    ]
+   },
+   {
+    "id": "track_v5",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_5",
+      "type": "text",
+      "objectType": "text",
+      "text": "Q2",
+      "left": 0.0,
+      "duration": 120.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "SemiBold",
+       "size": 0.02443,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_5.position": {
+        "keyframes": [],
+        "static": [
+         0.65625,
+         0.73148
+        ]
+       },
+       "tr.e_tr_placement_ddt_5.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_5.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_5.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_5.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_5.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_5.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_5.opacity": {
+        "keyframes": [
+         {
+          "frame": 4.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_5.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_5.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_5.content": {
+        "keyframes": [],
+        "static": "Q2"
+       },
+       "src.e_src_text_font_ddt_5.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_5.style": {
+        "keyframes": [],
+        "static": "SemiBold"
+       },
+       "src.e_src_text_font_ddt_5.size": {
+        "keyframes": [],
+        "static": 0.02443
+       },
+       "src.e_src_text_font_ddt_5.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_5.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_5.color": {
+        "keyframes": [],
+        "static": [
+         0.20156,
+         0.23455,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_5.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_5.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_5.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_5.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_5.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_5.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_5.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_5.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_5.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_5.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_5.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_5.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_5.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_5.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_5.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_5.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_5.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_5.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_5.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_5.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_5.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_5.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_5.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_5.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_5.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_5",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_5",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_5",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_5",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_5",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_5",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_5",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_5",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_5",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_5",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Head 3"
+     }
+    ]
+   },
+   {
+    "id": "track_v6",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_6",
+      "type": "text",
+      "objectType": "text",
+      "text": "Change",
+      "left": 0.0,
+      "duration": 120.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "SemiBold",
+       "size": 0.02443,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_6.position": {
+        "keyframes": [],
+        "static": [
+         0.78125,
+         0.73148
+        ]
+       },
+       "tr.e_tr_placement_ddt_6.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_6.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_6.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_6.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_6.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_6.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_6.opacity": {
+        "keyframes": [
+         {
+          "frame": 6.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 14.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_6.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_6.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_6.content": {
+        "keyframes": [],
+        "static": "Change"
+       },
+       "src.e_src_text_font_ddt_6.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_6.style": {
+        "keyframes": [],
+        "static": "SemiBold"
+       },
+       "src.e_src_text_font_ddt_6.size": {
+        "keyframes": [],
+        "static": 0.02443
+       },
+       "src.e_src_text_font_ddt_6.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_6.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_6.color": {
+        "keyframes": [],
+        "static": [
+         0.20156,
+         0.23455,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_6.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_6.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_6.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_6.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_6.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_6.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_6.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_6.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_6.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_6.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_6.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_6.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_6.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_6.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_6.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_6.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_6.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_6.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_6.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_6.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_6.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_6.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_6.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_6.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_6.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_6",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_6",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_6",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_6",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_6",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_6",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_6",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_6",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_6",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_6",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Head 4"
+     }
+    ]
+   },
+   {
+    "id": "track_v7",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_7",
+      "type": "shape",
+      "objectType": "shape",
+      "text": "Rectangle",
+      "left": 224.0,
+      "duration": 64.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Open Sans",
+       "style": "Regular",
+       "size": 0.08,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_7.position": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.37963
+        ]
+       },
+       "tr.e_tr_placement_ddt_7.scale": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.0,
+           1.0
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 14.0,
+          "value": [
+           1.0,
+           1.0
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_7.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_7.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_7.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_7.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_7.anchor": {
+        "keyframes": [],
+        "static": [
+         -1,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_7.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_7.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_7.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_shape_geometry_rectangle_ddt_7.width": {
+        "keyframes": [],
+        "static": 0.59375
+       },
+       "src.e_src_shape_geometry_rectangle_ddt_7.height": {
+        "keyframes": [],
+        "static": 0.039583
+       },
+       "src.e_src_shape_geometry_rectangle_ddt_7.cornerRadius": {
+        "keyframes": [],
+        "static": 0.3158
+       },
+       "src.e_src_shape_geometry_rectangle_ddt_7.angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_shape_fill_ddt_7.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_shape_fill_ddt_7.color": {
+        "keyframes": [],
+        "static": [
+         0.01096,
+         0.02416,
+         0.04971,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_ddt_7.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_ddt_7.color": {
+        "keyframes": [],
+        "static": [
+         0.038160715252161026,
+         0.17944560945034027,
+         0.4212897717952728,
+         1.0
+        ]
+       },
+       "src.e_src_shape_stroke_ddt_7.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_ddt_7.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_shape_stroke_ddt_7.width": {
+        "keyframes": [],
+        "static": 0.02
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_shape_geometry_rectangle_ddt_7",
+          "cap": "shape.geometry.rectangle",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_fill_ddt_7",
+          "cap": "shape.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_stroke_ddt_7",
+          "cap": "shape.stroke",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_7",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_7",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Row highlight"
+     }
+    ]
+   },
+   {
+    "id": "track_v8",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_8",
+      "type": "text",
+      "objectType": "text",
+      "text": "Design",
+      "left": 32.0,
+      "duration": 112.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_8.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.21875,
+           0.6444448148148149
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.21875,
+           0.62963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.21875,
+         0.62963
+        ]
+       },
+       "tr.e_tr_placement_ddt_8.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_8.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_8.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_8.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_8.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_8.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_8.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_8.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_8.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_8.content": {
+        "keyframes": [],
+        "static": "Design"
+       },
+       "src.e_src_text_font_ddt_8.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_8.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_8.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_8.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_8.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_8.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_8.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_8.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_8.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_8.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_8.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_8.align": {
+        "keyframes": [],
+        "static": "left"
+       },
+       "src.e_src_text_layout_ddt_8.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_8.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_8.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_8.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_8.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_8.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_8.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_8.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_8.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_8.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_8.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_8.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_8.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_8.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_8.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_8.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_8.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_8.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_8.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_8",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_8",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_8",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_8",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_8",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_8",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_8",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_8",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_8",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_8",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 1.1"
+     }
+    ]
+   },
+   {
+    "id": "track_v9",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_9",
+      "type": "text",
+      "objectType": "text",
+      "text": "41",
+      "left": 32.0,
+      "duration": 112.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_9.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.54167,
+           0.6444448148148149
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.54167,
+           0.62963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.54167,
+         0.62963
+        ]
+       },
+       "tr.e_tr_placement_ddt_9.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_9.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_9.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_9.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_9.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_9.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_9.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_9.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_9.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_9.content": {
+        "keyframes": [],
+        "static": "41"
+       },
+       "src.e_src_text_font_ddt_9.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_9.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_9.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_9.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_9.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_9.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_9.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_9.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_9.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_9.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_9.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_9.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_9.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_9.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_9.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_9.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_9.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_9.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_9.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_9.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_9.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_9.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_9.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_9.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_9.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_9.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_9.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_9.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_9.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_9.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_9.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_9",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_9",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_9",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_9",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_9",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_9",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_9",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_9",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_9",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_9",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 1.2"
+     }
+    ]
+   },
+   {
+    "id": "track_v10",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_10",
+      "type": "text",
+      "objectType": "text",
+      "text": "52",
+      "left": 32.0,
+      "duration": 112.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_10.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.65625,
+           0.6444448148148149
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.65625,
+           0.62963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.65625,
+         0.62963
+        ]
+       },
+       "tr.e_tr_placement_ddt_10.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_10.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_10.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_10.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_10.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_10.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_10.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_10.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_10.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_10.content": {
+        "keyframes": [],
+        "static": "52"
+       },
+       "src.e_src_text_font_ddt_10.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_10.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_10.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_10.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_10.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_10.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_10.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_10.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_10.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_10.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_10.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_10.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_10.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_10.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_10.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_10.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_10.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_10.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_10.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_10.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_10.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_10.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_10.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_10.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_10.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_10.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_10.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_10.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_10.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_10.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_10.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_10",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_10",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_10",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_10",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_10",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_10",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_10",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_10",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_10",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_10",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 1.3"
+     }
+    ]
+   },
+   {
+    "id": "track_v11",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_11",
+      "type": "text",
+      "objectType": "text",
+      "text": "+27%",
+      "left": 32.0,
+      "duration": 112.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_11.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.78125,
+           0.6444448148148149
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.78125,
+           0.62963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.78125,
+         0.62963
+        ]
+       },
+       "tr.e_tr_placement_ddt_11.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_11.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_11.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_11.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_11.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_11.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_11.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_11.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_11.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_11.content": {
+        "keyframes": [],
+        "static": "+27%"
+       },
+       "src.e_src_text_font_ddt_11.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_11.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_11.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_11.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_11.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_11.color": {
+        "keyframes": [],
+        "static": [
+         0.03434,
+         0.65141,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_11.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_11.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_11.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_11.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_11.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_11.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_11.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_11.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_11.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_11.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_11.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_11.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_11.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_11.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_11.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_11.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_11.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_11.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_11.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_11.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_11.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_11.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_11.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_11.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_11.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_11",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_11",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_11",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_11",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_11",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_11",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_11",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_11",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_11",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_11",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 1.4"
+     }
+    ]
+   },
+   {
+    "id": "track_v12",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_12",
+      "type": "text",
+      "objectType": "text",
+      "text": "Engineering",
+      "left": 56.0,
+      "duration": 106.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_12.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.21875,
+           0.5611148148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.21875,
+           0.5463
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.21875,
+         0.5463
+        ]
+       },
+       "tr.e_tr_placement_ddt_12.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_12.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_12.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_12.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_12.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_12.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_12.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_12.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_12.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_12.content": {
+        "keyframes": [],
+        "static": "Engineering"
+       },
+       "src.e_src_text_font_ddt_12.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_12.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_12.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_12.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_12.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_12.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_12.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_12.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_12.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_12.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_12.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_12.align": {
+        "keyframes": [],
+        "static": "left"
+       },
+       "src.e_src_text_layout_ddt_12.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_12.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_12.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_12.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_12.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_12.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_12.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_12.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_12.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_12.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_12.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_12.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_12.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_12.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_12.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_12.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_12.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_12.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_12.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_12",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_12",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_12",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_12",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_12",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_12",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_12",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_12",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_12",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_12",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 2.1"
+     }
+    ]
+   },
+   {
+    "id": "track_v13",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_13",
+      "type": "text",
+      "objectType": "text",
+      "text": "88",
+      "left": 56.0,
+      "duration": 106.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_13.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.54167,
+           0.5611148148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.54167,
+           0.5463
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.54167,
+         0.5463
+        ]
+       },
+       "tr.e_tr_placement_ddt_13.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_13.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_13.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_13.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_13.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_13.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_13.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_13.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_13.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_13.content": {
+        "keyframes": [],
+        "static": "88"
+       },
+       "src.e_src_text_font_ddt_13.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_13.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_13.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_13.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_13.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_13.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_13.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_13.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_13.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_13.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_13.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_13.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_13.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_13.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_13.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_13.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_13.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_13.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_13.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_13.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_13.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_13.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_13.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_13.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_13.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_13.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_13.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_13.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_13.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_13.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_13.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_13",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_13",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_13",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_13",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_13",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_13",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_13",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_13",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_13",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_13",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 2.2"
+     }
+    ]
+   },
+   {
+    "id": "track_v14",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_14",
+      "type": "text",
+      "objectType": "text",
+      "text": "97",
+      "left": 56.0,
+      "duration": 106.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_14.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.65625,
+           0.5611148148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.65625,
+           0.5463
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.65625,
+         0.5463
+        ]
+       },
+       "tr.e_tr_placement_ddt_14.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_14.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_14.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_14.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_14.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_14.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_14.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_14.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_14.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_14.content": {
+        "keyframes": [],
+        "static": "97"
+       },
+       "src.e_src_text_font_ddt_14.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_14.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_14.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_14.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_14.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_14.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_14.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_14.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_14.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_14.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_14.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_14.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_14.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_14.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_14.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_14.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_14.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_14.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_14.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_14.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_14.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_14.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_14.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_14.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_14.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_14.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_14.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_14.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_14.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_14.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_14.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_14",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_14",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_14",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_14",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_14",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_14",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_14",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_14",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_14",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_14",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 2.3"
+     }
+    ]
+   },
+   {
+    "id": "track_v15",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_15",
+      "type": "text",
+      "objectType": "text",
+      "text": "+10%",
+      "left": 56.0,
+      "duration": 106.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_15.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.78125,
+           0.5611148148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.78125,
+           0.5463
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.78125,
+         0.5463
+        ]
+       },
+       "tr.e_tr_placement_ddt_15.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_15.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_15.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_15.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_15.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_15.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_15.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_15.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_15.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_15.content": {
+        "keyframes": [],
+        "static": "+10%"
+       },
+       "src.e_src_text_font_ddt_15.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_15.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_15.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_15.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_15.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_15.color": {
+        "keyframes": [],
+        "static": [
+         0.03434,
+         0.65141,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_15.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_15.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_15.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_15.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_15.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_15.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_15.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_15.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_15.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_15.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_15.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_15.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_15.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_15.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_15.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_15.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_15.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_15.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_15.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_15.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_15.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_15.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_15.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_15.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_15.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_15",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_15",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_15",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_15",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_15",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_15",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_15",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_15",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_15",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_15",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 2.4"
+     }
+    ]
+   },
+   {
+    "id": "track_v16",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_16",
+      "type": "text",
+      "objectType": "text",
+      "text": "Marketing",
+      "left": 80.0,
+      "duration": 100.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_16.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.21875,
+           0.4777748148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.21875,
+           0.46296
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.21875,
+         0.46296
+        ]
+       },
+       "tr.e_tr_placement_ddt_16.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_16.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_16.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_16.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_16.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_16.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_16.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_16.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_16.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_16.content": {
+        "keyframes": [],
+        "static": "Marketing"
+       },
+       "src.e_src_text_font_ddt_16.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_16.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_16.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_16.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_16.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_16.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_16.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_16.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_16.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_16.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_16.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_16.align": {
+        "keyframes": [],
+        "static": "left"
+       },
+       "src.e_src_text_layout_ddt_16.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_16.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_16.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_16.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_16.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_16.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_16.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_16.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_16.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_16.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_16.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_16.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_16.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_16.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_16.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_16.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_16.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_16.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_16.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_16",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_16",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_16",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_16",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_16",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_16",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_16",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_16",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_16",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_16",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 3.1"
+     }
+    ]
+   },
+   {
+    "id": "track_v17",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_17",
+      "type": "text",
+      "objectType": "text",
+      "text": "35",
+      "left": 80.0,
+      "duration": 100.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_17.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.54167,
+           0.4777748148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.54167,
+           0.46296
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.54167,
+         0.46296
+        ]
+       },
+       "tr.e_tr_placement_ddt_17.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_17.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_17.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_17.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_17.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_17.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_17.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_17.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_17.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_17.content": {
+        "keyframes": [],
+        "static": "35"
+       },
+       "src.e_src_text_font_ddt_17.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_17.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_17.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_17.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_17.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_17.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_17.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_17.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_17.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_17.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_17.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_17.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_17.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_17.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_17.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_17.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_17.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_17.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_17.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_17.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_17.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_17.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_17.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_17.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_17.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_17.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_17.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_17.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_17.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_17.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_17.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_17",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_17",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_17",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_17",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_17",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_17",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_17",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_17",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_17",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_17",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 3.2"
+     }
+    ]
+   },
+   {
+    "id": "track_v18",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_18",
+      "type": "text",
+      "objectType": "text",
+      "text": "31",
+      "left": 80.0,
+      "duration": 100.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_18.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.65625,
+           0.4777748148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.65625,
+           0.46296
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.65625,
+         0.46296
+        ]
+       },
+       "tr.e_tr_placement_ddt_18.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_18.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_18.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_18.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_18.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_18.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_18.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_18.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_18.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_18.content": {
+        "keyframes": [],
+        "static": "31"
+       },
+       "src.e_src_text_font_ddt_18.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_18.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_18.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_18.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_18.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_18.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_18.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_18.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_18.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_18.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_18.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_18.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_18.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_18.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_18.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_18.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_18.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_18.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_18.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_18.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_18.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_18.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_18.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_18.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_18.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_18.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_18.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_18.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_18.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_18.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_18.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_18",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_18",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_18",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_18",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_18",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_18",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_18",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_18",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_18",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_18",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 3.3"
+     }
+    ]
+   },
+   {
+    "id": "track_v19",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_19",
+      "type": "text",
+      "objectType": "text",
+      "text": "-11%",
+      "left": 80.0,
+      "duration": 100.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_19.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.78125,
+           0.4777748148148148
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.78125,
+           0.46296
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.78125,
+         0.46296
+        ]
+       },
+       "tr.e_tr_placement_ddt_19.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_19.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_19.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_19.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_19.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_19.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_19.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_19.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_19.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_19.content": {
+        "keyframes": [],
+        "static": "-11%"
+       },
+       "src.e_src_text_font_ddt_19.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_19.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_19.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_19.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_19.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_19.color": {
+        "keyframes": [],
+        "static": [
+         0.90466,
+         0.16827,
+         0.46778,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_19.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_19.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_19.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_19.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_19.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_19.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_19.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_19.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_19.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_19.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_19.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_19.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_19.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_19.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_19.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_19.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_19.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_19.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_19.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_19.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_19.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_19.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_19.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_19.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_19.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_19",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_19",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_19",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_19",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_19",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_19",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_19",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_19",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_19",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_19",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 3.4"
+     }
+    ]
+   },
+   {
+    "id": "track_v20",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_20",
+      "type": "text",
+      "objectType": "text",
+      "text": "Support",
+      "left": 104.0,
+      "duration": 94.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_20.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.21875,
+           0.39444481481481486
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.21875,
+           0.37963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.21875,
+         0.37963
+        ]
+       },
+       "tr.e_tr_placement_ddt_20.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_20.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_20.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_20.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_20.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_20.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_20.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_20.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_20.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_20.content": {
+        "keyframes": [],
+        "static": "Support"
+       },
+       "src.e_src_text_font_ddt_20.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_20.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_20.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_20.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_20.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_20.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_20.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_20.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_20.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_20.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_20.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_20.align": {
+        "keyframes": [],
+        "static": "left"
+       },
+       "src.e_src_text_layout_ddt_20.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_20.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_20.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_20.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_20.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_20.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_20.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_20.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_20.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_20.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_20.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_20.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_20.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_20.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_20.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_20.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_20.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_20.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_20.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_20",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_20",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_20",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_20",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_20",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_20",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_20",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_20",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_20",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_20",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 4.1"
+     }
+    ]
+   },
+   {
+    "id": "track_v21",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_21",
+      "type": "text",
+      "objectType": "text",
+      "text": "60",
+      "left": 104.0,
+      "duration": 94.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_21.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.54167,
+           0.39444481481481486
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.54167,
+           0.37963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.54167,
+         0.37963
+        ]
+       },
+       "tr.e_tr_placement_ddt_21.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_21.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_21.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_21.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_21.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_21.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_21.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_21.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_21.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_21.content": {
+        "keyframes": [],
+        "static": "60"
+       },
+       "src.e_src_text_font_ddt_21.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_21.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_21.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_21.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_21.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_21.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_21.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_21.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_21.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_21.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_21.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_21.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_21.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_21.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_21.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_21.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_21.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_21.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_21.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_21.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_21.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_21.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_21.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_21.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_21.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_21.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_21.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_21.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_21.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_21.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_21.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_21",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_21",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_21",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_21",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_21",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_21",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_21",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_21",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_21",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_21",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 4.2"
+     }
+    ]
+   },
+   {
+    "id": "track_v22",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_22",
+      "type": "text",
+      "objectType": "text",
+      "text": "72",
+      "left": 104.0,
+      "duration": 94.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Medium",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_22.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.65625,
+           0.39444481481481486
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.65625,
+           0.37963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.65625,
+         0.37963
+        ]
+       },
+       "tr.e_tr_placement_ddt_22.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_22.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_22.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_22.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_22.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_22.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_22.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_22.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_22.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_22.content": {
+        "keyframes": [],
+        "static": "72"
+       },
+       "src.e_src_text_font_ddt_22.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_22.style": {
+        "keyframes": [],
+        "static": "Medium"
+       },
+       "src.e_src_text_font_ddt_22.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_22.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_22.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_22.color": {
+        "keyframes": [],
+        "static": [
+         0.80695,
+         0.8388,
+         0.90466,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_22.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_22.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_22.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_22.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_22.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_22.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_22.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_22.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_22.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_22.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_22.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_22.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_22.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_22.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_22.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_22.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_22.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_22.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_22.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_22.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_22.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_22.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_22.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_22.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_22.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_22",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_22",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_22",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_22",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_22",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_22",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_22",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_22",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_22",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_22",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 4.3"
+     }
+    ]
+   },
+   {
+    "id": "track_v23",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "ddt_23",
+      "type": "text",
+      "objectType": "text",
+      "text": "+20%",
+      "left": 104.0,
+      "duration": 94.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Rethink Sans",
+       "style": "Bold",
+       "size": 0.02966,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true,
+       "fontResolved": "Rethink Sans"
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_23.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.78125,
+           0.39444481481481486
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": [
+           0.78125,
+           0.37963
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.16,
+           1.0,
+           0.3,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.78125,
+         0.37963
+        ]
+       },
+       "tr.e_tr_placement_ddt_23.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_ddt_23.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_23.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_23.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_ddt_23.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_ddt_23.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_ddt_23.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_ddt_23.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_ddt_23.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_text_content_ddt_23.content": {
+        "keyframes": [],
+        "static": "+20%"
+       },
+       "src.e_src_text_font_ddt_23.family": {
+        "keyframes": [],
+        "static": "Rethink Sans"
+       },
+       "src.e_src_text_font_ddt_23.style": {
+        "keyframes": [],
+        "static": "Bold"
+       },
+       "src.e_src_text_font_ddt_23.size": {
+        "keyframes": [],
+        "static": 0.02966
+       },
+       "src.e_src_text_font_ddt_23.tracking": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_fill_ddt_23.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_text_fill_ddt_23.color": {
+        "keyframes": [],
+        "static": [
+         0.03434,
+         0.65141,
+         0.31855,
+         1.0
+        ]
+       },
+       "src.e_src_text_fill_ddt_23.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_layout_ddt_23.mode": {
+        "keyframes": [],
+        "static": "titles"
+       },
+       "src.e_src_text_layout_ddt_23.width": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_23.height": {
+        "keyframes": [],
+        "static": 0.5
+       },
+       "src.e_src_text_layout_ddt_23.clip": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_layout_ddt_23.align": {
+        "keyframes": [],
+        "static": "right"
+       },
+       "src.e_src_text_layout_ddt_23.vAlign": {
+        "keyframes": [],
+        "static": "center"
+       },
+       "src.e_src_text_layout_ddt_23.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_23.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_text_outline_ddt_23.thickness": {
+        "keyframes": [],
+        "static": 0.02
+       },
+       "src.e_src_text_outline_ddt_23.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_outline_ddt_23.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_text_decoration_ddt_23.underline": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_decoration_ddt_23.strikeout": {
+        "keyframes": [],
+        "static": false
+       },
+       "src.e_src_text_typography_ddt_23.readingDirection": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_23.ligatures": {
+        "keyframes": [],
+        "static": "all"
+       },
+       "src.e_src_text_typography_ddt_23.kerning": {
+        "keyframes": [],
+        "static": "auto"
+       },
+       "src.e_src_text_typography_ddt_23.fontFeatures": {
+        "keyframes": [],
+        "static": ""
+       },
+       "src.e_src_text_typography_ddt_23.stylisticSet": {
+        "keyframes": [],
+        "static": 0
+       },
+       "src.e_src_text_relative_ddt_23.level": {
+        "keyframes": [],
+        "static": "word"
+       },
+       "src.e_src_text_relative_ddt_23.position": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_23.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_text_relative_ddt_23.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_23.anchor": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.0
+        ]
+       },
+       "src.e_src_text_relative_ddt_23.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_text_content_ddt_23",
+          "cap": "text.content",
+          "on": true
+         },
+         {
+          "id": "e_src_text_font_ddt_23",
+          "cap": "text.font",
+          "on": true
+         },
+         {
+          "id": "e_src_text_fill_ddt_23",
+          "cap": "text.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_text_outline_ddt_23",
+          "cap": "text.outline",
+          "on": true
+         },
+         {
+          "id": "e_src_text_layout_ddt_23",
+          "cap": "text.layout",
+          "on": true
+         },
+         {
+          "id": "e_src_text_decoration_ddt_23",
+          "cap": "text.decoration",
+          "on": true
+         },
+         {
+          "id": "e_src_text_typography_ddt_23",
+          "cap": "text.typography",
+          "on": true
+         },
+         {
+          "id": "e_src_text_relative_ddt_23",
+          "cap": "text.relative",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_ddt_23",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_ddt_23",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Cell 4.4"
+     }
+    ]
+   }
+  ],
+  "audioTracks": [
+   {
+    "id": "atrack_1",
+    "enabled": true,
+    "clips": []
+   }
+  ],
+  "clipCounter": 23
+ },
+ "authoredAspect": [
+  16,
+  9
+ ],
+ "authoredFps": 30.0,
+ "resolutionPolicy": "on_apply",
+ "fit": "contain",
+ "anchor": [
+  0.5,
+  0.5
+ ],
+ "authoredResolution": [
+  1920,
+  1080
+ ],
+ "requiredFonts": [
+  "Rethink Sans"
+ ]
+}

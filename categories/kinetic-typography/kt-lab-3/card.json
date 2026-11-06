@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "id": "kinetic-typography/kt-lab-3",
+  "title": "Kinetic Typography lab 3 (source of the round-3 templates)",
+  "category": "kinetic-typography",
+  "tags": [
+    "kinetic-type",
+    "typography",
+    "templates",
+    "lyric",
+    "karaoke",
+    "manifesto",
+    "echo",
+    "outline-text",
+    "credits",
+    "title-sequence",
+    "strike",
+    "zoom",
+    "poster",
+    "justified",
+    "1920x1080"
+  ],
+  "summary": "The 7 comps the round-3 Kinetic Typography templates were built and verified in: karaoke line, manifesto scroll, echo stack, opening credits, strike and replace, zoom through a letter and poster lockup.",
+  "use_when": "You want to see a round-3 kinetic-type template working before using it, copy a comp's objects into a lyric video, title sequence, manifesto or event promo, or re-extract a template with comp_to_template.py after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 240,
+    "seconds": 8.0
+  },
+  "contains": {
+    "timelines": 7,
+    "comps": [
+      "KT Karaoke line (150 f)",
+      "KT Manifesto scroll (240 f)",
+      "KT Echo stack (120 f)",
+      "KT Opening credits (210 f)",
+      "KT Strike and replace (120 f)",
+      "KT Zoom through (120 f)",
+      "KT Poster lockup (120 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "sung frames per word (SUNG)",
+    "manifesto lines and step",
+    "credit names",
+    "poster lines (sizes come from measured ink widths)",
+    "zoom word and amount"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold/Medium"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (kko_, kms_, kes_, kcr_, ksr_, kzt_, kjl_).",
+    "Rebuild: ai/scripts/motion/kinetic_type_lab3.py, two passes (a KT3 Measure comp of throwaway texts read with carvercat_authoring geometry, then the lab comps); every move is baked as keys, no presets to apply; open the file and edit.save. Needs Pillow for cc.textw.",
+    "Lint: every comp 0 errors / 0 warnings (notes only: held key values and the expo starts of the manifesto push)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

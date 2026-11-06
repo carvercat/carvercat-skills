@@ -9,21 +9,21 @@ Two full-frame bars sweep left to right: an accent bar leads and a brand-colour 
 ```
 Scene A          |=======================|                      0-23
 Scene B                                   |====================| 24-47
-Wipe 1 (accent)        12 >>>>>>>>>> 22 .... 28 >>>>>>>>>>>>> 41   Ease in to cover, hold, Ease out away
+Wipe 1 (accent)        12 >>>>>>>>>> 22 .... 28 >>>>>>>>>>>>> 41   accelerating in (cubic-bezier(0.333, 0, 0.667, 0.333)) to cover, hold, decelerating away (cubic-bezier(0.333, 0.667, 0.667, 1))
 Wipe 2 (brand, top)       15 >>>>>>> 24 . 25 >>>>>>>>> 36          2-3 f behind on the way in, FIRST out
                                     ^ cut at 24 under full cover
 ```
 
 ## Build it by hand (MCP)
 
-1. Make two rectangles, width 1.02 and height 0.58 (geometry is in frame-WIDTH units, so 0.5625 is full height at 16:9). Colour them, and put the brand bar on the track above.
-2. Key `center` x: −0.52 (off-frame left) → 0.5 (cover, easing `Ease in`) → hold → 1.52 (off right, easing `Ease out`). `key.set` takes the easing of the segment ARRIVING at that key.
+1. Make two rectangles, width 1958.4 px and height 1113.6 px (1.02 and 0.58 of the frame width; the frame is 1920 × 1080). Colour them, and put the brand bar on the track above.
+2. Key `x` (the top-left of the bar): −1977.6 px (off-frame left) → −19.2 (cover) → hold → 1939.2 (off right). Put `ease: "cubic-bezier(0.333, 0, 0.667, 0.333)"` on the first key (accelerating arrival at the cover key) and `ease: "cubic-bezier(0.333, 0.667, 0.667, 1)"` on the hold key that leaves it (decelerating arrival at the off-right key). A key's `ease` shapes the segment that leaves it. Give `y` −16.8 px (centred vertically).
 3. Wipe 2 enters 2–3 f after Wipe 1 and **leaves before it**, so the accent colour trails on the way out.
 4. Put the scene cut (the end of A, the start of B) on a frame where both bars cover the whole frame.
 
 ## Knobs
 
-- Direction: swap the x signs (right to left), or animate `center` y with height 0.58 for a vertical wipe.
+- Direction: swap the x signs (right to left), or animate `y` with height 1113.6 px for a vertical wipe.
 - Speed: 10 f in and 11–13 f out at 30 fps. Shorter than 8 f reads as a flash.
 - Three tones: add a third bar 2 f behind; the exit order is still top first.
 

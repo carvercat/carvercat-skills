@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "minimal-luxury/ml-lab-2",
+  "title": "Minimal Luxury lab 2 (source of the round-2 templates)",
+  "category": "minimal-luxury",
+  "tags": [
+    "luxury",
+    "minimal",
+    "templates",
+    "lower-third",
+    "monogram",
+    "price",
+    "collection",
+    "gleam",
+    "mask",
+    "gradient",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Minimal Luxury templates were built and verified in: lower third, monogram end card, price card, collection title, light sweep (gleam through a text mask), attribute row, framed word and slow dip.",
+  "use_when": "You want to see a round-2 luxury template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 180,
+    "seconds": 6.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "ML Lower third (180 f)",
+      "ML Monogram end card (150 f)",
+      "ML Price card (150 f)",
+      "ML Collection title (150 f)",
+      "ML Light sweep (120 f, text mask + gradient)",
+      "ML Attribute row (150 f)",
+      "ML Framed word (150 f)",
+      "ML Slow dip (60 f, transition)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "gleam timing (gradient endpoint keys)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Regular"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp except ML Slow dip has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (mlt_, mme_, mpc_, mct_, mls_, mar_, mfr_, mdp_).",
+    "Light sweep mask: the Wordmark text is the mask (isMask) and the Gold fill rectangle its target; mask.make takes the FIRST id as the mask.",
+    "Rebuild: ai/scripts/motion/minimal_luxury_lab2.py writes the comps; apply its PRESETS with preset.apply, run mask.make + parent.clear for MASKS, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

@@ -10,12 +10,12 @@ Three rounded cards pop in left to right, 4 f apart. The hero card (accent colou
 | 2 | 104 | Pop - gentle | 0° |
 | 3 (hero) | 108 | Pop - spring (16%) | −4° |
 
-Geometry: rectangle width 0.2 W, height 0.26 W, `cornerRadius` 0.012. The centres are 0.14 W apart, so each card overlaps the next by about 30%.
+Geometry (stored values): rectangle width 0.2 W, height 0.26 W, `cornerRadius` 0.012. The centres are 0.14 W apart, so each card overlaps the next by about 30%.
 
 ## Steps
 
 1. Create each card **with the batch step's `frame`** (`{"command":"object.new","args":{...},"frame":104}`), NOT `object.new` followed by `clip.move`. See the pitfall below.
-2. Set the colour, geometry, `center` and `angle`, then run `preset.apply` on each card, one call each.
+2. Set the colour, geometry, `x`, `y` and `rotate`, then run `preset.apply` on each card, one call each.
 
 ## Cards with labels
 Style the card AND its text fully, then `edit.group {ids:[card, label]}` and apply the preset to the GROUP so they move as one (verified: Pop, Exit zoom through and position keys all work on groups). After grouping, children are outside the batch's editing scope — change them with `object.enter {id: group}` → edit → `object.exit` (not batchable).

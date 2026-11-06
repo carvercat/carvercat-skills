@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "data-viz/dv-lab-2",
+  "title": "Data Viz lab 2 (source of the round-2 templates)",
+  "category": "data-viz",
+  "tags": [
+    "data-viz",
+    "charts",
+    "templates",
+    "column",
+    "stacked-bar",
+    "rings",
+    "comparison",
+    "timeline",
+    "waffle",
+    "area",
+    "table",
+    "mask",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Data Viz templates were built and verified in: column chart, stacked bar, progress rings, comparison bars, timeline, waffle chart, area chart (masked reveal) and data table.",
+  "use_when": "You want to see a round-2 chart template working before using it, change its data and rebuild, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 90,
+    "seconds": 3.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "DV Column chart (90 f)",
+      "DV Stacked bar (90 f)",
+      "DV Progress rings (90 f)",
+      "DV Before after (90 f)",
+      "DV Timeline (120 f)",
+      "DV Waffle chart (90 f, 102 objects)",
+      "DV Area chart (90 f, mask)",
+      "DV Data table (120 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "values (regenerate with data_viz_lab2.py)",
+    "labels and captions"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/SemiBold/Bold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (dcc_, dsb_, dpr_, dba_, dtl_, dwf_, dac_, ddt_).",
+    "Area chart mask: the Window is the mask (isMask) and the Area its target; mask.make takes the FIRST id as the mask.",
+    "Rebuild: ai/scripts/motion/data_viz_lab2.py writes the comps; apply its PRESETS with preset.apply, run mask.make + parent.clear for MASKS, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings / 0 notes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

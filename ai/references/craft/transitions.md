@@ -1,5 +1,7 @@
 # Transitions in Carvercat
 
+Ready-made, verified transitions (cover templates you cut under, and reveal recipes): [../../patterns/transitions.md](../../patterns/transitions.md). Shape-size and stroke-width limits that matter for full-frame covers: [../known-issues.md#ki-137](../known-issues.md#ki-137).
+
 How to move from one scene to the next so the film feels like one continuous piece.
 Agent-neutral. Frames at 30 fps. Tested recipes for each transition live in
 [../patterns/](../../patterns/README.md) (`tr-*`).
@@ -10,8 +12,8 @@ Agent-neutral. Frames at 30 fps. Tested recipes for each transition live in
    it "looks cool", use a cut.
 2. **2-3 transition types per film**, with the hard cut as the default for fast beats.
    A 5-7 beat reel wants at most 1-2 showy transitions.
-3. **Overlap, don't queue.** Outgoing elements leave (Ease in, 8-12 f) while incoming
-   ones arrive (Ease out), overlapping by 30-50 % (~4-6 f).
+3. **Overlap, don't queue.** Outgoing elements leave (ease-in, 8-12 f) while incoming
+   ones arrive (ease-out), overlapping by 30-50 % (~4-6 f).
 4. **Hit the beat.** Put the cut frame (or the transition's peak) on a music downbeat:
    frames per beat = 1800 / BPM.
 5. **Keep screen direction.** Exit left -> the next scene arrives moving left.

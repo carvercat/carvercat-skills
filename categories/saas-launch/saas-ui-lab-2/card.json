@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "saas-launch/saas-ui-lab-2",
+  "title": "SaaS UI lab 2 (source of the round-2 SaaS UI templates)",
+  "category": "saas-launch",
+  "tags": [
+    "saas",
+    "ui",
+    "product",
+    "templates",
+    "lower-third",
+    "title",
+    "end-card",
+    "cta",
+    "modal",
+    "chart",
+    "chat",
+    "dropdown",
+    "1920x1080"
+  ],
+  "summary": "The 7 comps the round-2 SaaS UI templates were built and verified in: lower third, feature title, CTA end card, modal over an app, chart card, chat thread and dropdown menu.",
+  "use_when": "You want to see a round-2 SaaS UI template working before using it, copy a comp's objects into a product video, or re-extract a template with comp_to_template.py after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 7,
+    "comps": [
+      "SU Lower third (150 f)",
+      "SU Feature title (90 f)",
+      "SU CTA end card (120 f)",
+      "SU Modal (90 f, full app frame)",
+      "SU Chart card (90 f)",
+      "SU Chat thread (120 f)",
+      "SU Dropdown (90 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "bar heights",
+    "message text and timing"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/Bold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp except SU Modal has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\". SU Modal is extracted whole (it is a full app frame).",
+    "Clip ids are unique per comp (slt_, sft_, sec_, smd_, scc_, sct_, sdd_).",
+    "Rebuild: ai/scripts/motion/saas_ui_lab2.py writes the comps; apply its PRESETS with preset.apply (they come from the SaaS UI, Motion Patterns and data-viz packs), then edit.save.",
+    "Lint: every comp 0 errors / 0 warnings (notes only)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

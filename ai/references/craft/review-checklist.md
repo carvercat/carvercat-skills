@@ -4,8 +4,7 @@ Run it with `carvercat_look` on entrance, hold and exit frames of every scene, t
 once straight through. Agent-neutral.
 
 ## Native checks first
-- [ ] `carvercat_authoring {mode:"validate"}`: `bounds_inside` the safe box for every text
-      and logo, `no_overlap` for text vs UI, `font_exact` for every font - all pass.
+- [ ] `measure.overlaps {within: "safe"}` for every text and logo, `measure.overlaps` for text vs UI, and `carvercat_inspect mode:lint|expect` for every font - all pass.
 
 ## Story and staging
 - [ ] Hook/product visible in the first 30-90 f; frame 0 reads as a finished image.
@@ -15,7 +14,7 @@ once straight through. Agent-neutral.
 
 ## Timing and easing
 - [ ] Durations come from the project scale; identical elements share timing.
-- [ ] Entrances Ease out (or customEase), exits Ease in and 20-30 % shorter, on-screen moves S-curve; Linear only for loops; Hold for steps.
+- [ ] Entrances ease-out (or a cubic-bezier), exits ease-in and 20-30 % shorter, on-screen moves ease-in-out; `linear` only for loops; `hold` for steps.
 - [ ] Staggers: 1-2 f/letter, 2-4 f/word, 3-6 f/line; total spread <= ~20 f; nothing overruns the comp end.
 - [ ] Overshoot only on hero/brand moments, 5-15 %, settled within 12 f.
 

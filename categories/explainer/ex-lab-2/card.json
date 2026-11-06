@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "explainer/ex-lab-2",
+  "title": "Explainer lab 2 (source of the round-2 templates)",
+  "category": "explainer",
+  "tags": [
+    "explainer",
+    "education",
+    "templates",
+    "lower-third",
+    "compare",
+    "flow",
+    "definition",
+    "checklist",
+    "venn",
+    "quiz",
+    "cycle",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Explainer templates were built and verified in: speaker lower third, compare columns, flow diagram, key term card, checklist, Venn diagram, quiz question and cycle loop.",
+  "use_when": "You want to see a round-2 explainer template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "EX Lower third (150 f)",
+      "EX Compare columns (150 f)",
+      "EX Flow diagram (150 f)",
+      "EX Key term (150 f)",
+      "EX Checklist (150 f)",
+      "EX Venn (120 f)",
+      "EX Quiz (180 f)",
+      "EX Cycle (150 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "reveal timing (quiz)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle (dropped on extraction); the full-frame layouts also have a 'Light background' that stays in the template.",
+    "Clip ids are unique per comp (elt_, ecc_, efd_, ekt_, ecl_, evn_, eqz_, ecy_).",
+    "Rebuild: ai/scripts/motion/explainer_lab2.py writes the comps; apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

@@ -1,0 +1,95 @@
+{
+ "presetVersion": 2,
+ "id": "cc.kt.word_slam",
+ "name": "Words slam",
+ "category": "animation",
+ "tags": [
+  "stagger",
+  "in",
+  "word",
+  "slam",
+  "impact",
+  "kinetic typography"
+ ],
+ "note": "Each word drops onto the screen from 180% and settles with a small rebound, 5 f apart. Short punchy lines (2-5 words); hit an impact sound on each landing. Curve baked as keys (linear joins) - see the skill's ai/patterns/kinetic-typography.md.",
+ "anchor": "in",
+ "frames": 14,
+ "only": "text",
+ "stagger": {
+  "by": "word",
+  "order": "forward",
+  "gap": 5
+ },
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.8,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0714,
+     "value": 1.70949,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2143,
+     "value": 1.33335,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2857,
+     "value": 1.17679,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3571,
+     "value": 1.068,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4286,
+     "value": 1.0034,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 0.97245,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5714,
+     "value": 0.96346,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.18,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

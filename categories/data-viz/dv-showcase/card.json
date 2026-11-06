@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "data-viz/dv-showcase",
+  "title": "Data viz showcase (11.5 s chart reel)",
+  "category": "data-viz",
+  "tags": [
+    "data-viz",
+    "chart",
+    "reel",
+    "line-chart",
+    "donut",
+    "bars",
+    "gauge",
+    "1920x1080"
+  ],
+  "summary": "An 11.5 s reel of the Data Viz patterns: a line chart drawing itself, ranked bars, a donut filling clockwise and a gauge.",
+  "use_when": "You need a ready chart sequence to copy into an explainer, report or investor video.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 345,
+    "seconds": 11.5
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Data viz showcase (345 frames)",
+    "scenes": [
+      "0-90 line chart (3% push)",
+      "90-180 ranked bars (3% push)",
+      "180-270 donut",
+      "270-345 gauge"
+    ]
+  },
+  "parameters": [
+    "values and labels inside each comp",
+    "scene starts in the master"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Bold/SemiBold/Medium"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint: 0 errors, 0 warnings, 0 notes. QC's 96 px analysis reports 'freeze' on the line-chart scene; the look shows the line drawing (see ai/patterns/data-viz.md).",
+    "Built by ai/scripts/motion/data_viz_showcase.py from the lab comps.",
+    "No sound yet: soft ticks on each data point, a riser under the donut sweep."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

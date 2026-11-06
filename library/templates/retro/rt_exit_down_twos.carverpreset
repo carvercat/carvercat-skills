@@ -1,0 +1,110 @@
+{
+ "presetVersion": 2,
+ "id": "cc.rt.exit_down_twos",
+ "name": "Exit down - on twos",
+ "category": "animation",
+ "tags": [
+  "out",
+  "exit",
+  "on twos",
+  "stepped",
+  "retro",
+  "retro"
+ ],
+ "note": "Drops 5% accelerating and fades over the second half, stepped on twos. Curves baked as keys (linear joins) - see the skill's ai/patterns/retro.md.",
+ "anchor": "out",
+ "frames": 12,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": [
+      0.0,
+      -0.00446
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.3333,
+     "value": [
+      0.0,
+      -0.01114
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.5,
+     "value": [
+      0.0,
+      -0.01931
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.6667,
+     "value": [
+      0.0,
+      -0.0286
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.8333,
+     "value": [
+      0.0,
+      -0.03883
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      -0.05
+     ],
+     "easing": "Hold"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.6667,
+     "value": 0.66667,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.8333,
+     "value": 0.33333,
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Hold"
+    }
+   ]
+  }
+ ]
+}

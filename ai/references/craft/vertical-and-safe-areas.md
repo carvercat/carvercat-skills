@@ -25,7 +25,7 @@ Measured from the top-left, in pixels:
    `comp.move_to_bin`). `comp.duplicate {comp:index}` each comp (copies land in the
    source bin; move them). `edit.save`.
 2. **Don't just run `comp.format`.** It changes only the frame: positions are normalised
-   per axis, shape/text sizes are fractions of frame width, and path points are
+   per axis (stored value), shape/text sizes are fractions of frame width (stored value), and path points are
    normalised per axis around 0.5 - so content shrinks to 56 % and paths stretch ~3.2x
    vertically.
 3. Write a layout spec (old-pixel anchor -> new-pixel anchor, scale per region) and run
@@ -41,3 +41,12 @@ Measured from the top-left, in pixels:
    - hand-off points between scenes (collapse dot -> burst) must line up
    - anything that moves outside the frame or into the button column mid-animation
 5. Check text sizes on a phone-sized preview: in-feed body >= 32 px, headline >= 90 px.
+
+## Authoring and checking 9:16 natively (measured on 0.1.6,)
+- Direct JSON: `json_author/cc.py` with `cc.W, cc.H = 1080, 1920` and `cc.EM = 1146.24 * 1080 / 1920`. Write the scene's `width`/`height` as 1080/1920 (see `VComp` in `../../scripts/motion/social_short_form_lab.py`). Text size follows comp width: 100 px Bold caps are 71 px tall in both orientations.
+- A new comp is 16:9. Run `comp.format {width:1080, height:1920}` before placing 9:16 templates; `template.apply` then reports "applied at 1080 x 1920".
+- Check the safe area per object with `measure.overlaps {within: "safe"}` (the box [61,268,955,1270] in px). For text below y 1151, also keep the right edge under x 851.
+- Ready-made 9:16 pieces: the Social Short-form pack ([../../patterns/social-short-form.md](../../patterns/social-short-form.md)).
+
+## Converting a finished 16:9 film (measured 0.1.6)
+`comp.format` changes the canvas, not the design: objects keep their size and are re-centred, so 16:9 layouts are cut at the sides. 16:9 templates placed into a 9:16 comp are fitted into a 1080 × 608 band and need an instance zoom plus a slow push. What carries over and what needs a manual re-cut: [../../recipes/vertical-recuts.md](../../recipes/vertical-recuts.md).

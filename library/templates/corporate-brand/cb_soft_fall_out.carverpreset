@@ -1,0 +1,93 @@
+{
+ "presetVersion": 2,
+ "id": "cc.cb.soft_fall_out",
+ "name": "Soft fade out",
+ "category": "animation",
+ "tags": [
+  "out",
+  "fade",
+  "calm",
+  "corporate",
+  "corporate brand"
+ ],
+ "note": "Fades out over 16 f while drifting 1% up, accelerating. The calm exit for anything that entered with Soft rise. Curve baked as keys (linear joins) - see the skill's ai/patterns/corporate-brand.md.",
+ "anchor": "out",
+ "frames": 16,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1875,
+     "value": [
+      0.0,
+      0.00104
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4375,
+     "value": [
+      0.0,
+      0.00322
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6875,
+     "value": [
+      0.0,
+      0.00597
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      0.01
+     ],
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1875,
+     "value": 0.89612,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4375,
+     "value": 0.67806,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6875,
+     "value": 0.40343,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "cartoon-bounce/ct-lab",
+  "title": "Cartoon bounce lab (source of the Cartoon Bounce pack)",
+  "category": "cartoon-bounce",
+  "tags": [
+    "cartoon",
+    "squash",
+    "stretch",
+    "bounce",
+    "anticipation",
+    "smear",
+    "character",
+    "1920x1080"
+  ],
+  "summary": "The comps every Cartoon Bounce template was built and verified in: bouncing ball, boing title, blinking face and smear whoosh.",
+  "use_when": "You want to see squash-and-stretch patterns working before using them, copy their keys into a cartoon job, or re-extract a template after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 100,
+    "seconds": 3.3
+  },
+  "contains": {
+    "timelines": 4,
+    "comps": [
+      "CT Bouncing ball (90 f)",
+      "CT Boing title (90 f)",
+      "CT Blink face (100 f)",
+      "CT Smear whoosh (45 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "texts",
+    "bounce heights and frames (keys)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Rebuild: ai/scripts/motion/cartoon_bounce_lab.py, then PRESETS, edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

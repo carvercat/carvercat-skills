@@ -1,0 +1,742 @@
+{
+ "templateVersion": 2,
+ "id": "cc.su.cursor_click",
+ "name": "Cursor click",
+ "category": "scene",
+ "apply": "scene",
+ "tags": [
+  "cursor",
+  "click",
+  "tap",
+  "saas ui",
+  "motion patterns"
+ ],
+ "note": "A pointer glides in on an S-curve (22 f), presses at f26 (scale 0.85 about its tip) and a ripple ring opens under the tip at f28. The tip sits at the comp centre: move the instance so the centre lands on your button. Docs: ai/patterns/su-cursor-click.md",
+ "frame": {
+  "width": 1920,
+  "height": 1080,
+  "fps": 30.0
+ },
+ "scene": {
+  "ppf": 4,
+  "sceneFps": 30.0,
+  "duration": 60.0,
+  "timelineWidth": 1920,
+  "timelineHeight": 1080,
+  "width": 1920,
+  "height": 1080,
+  "tracks": [
+   {
+    "id": "track_v2",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "cur_2",
+      "type": "shape",
+      "objectType": "shape",
+      "text": "Ellipse",
+      "left": 112.0,
+      "duration": 18.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Open Sans",
+       "style": "Regular",
+       "size": 0.08,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_2.position": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "tr.e_tr_placement_cur_2.scale": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_cur_2.scaleUniform": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0.25,
+          "easing": "Linear"
+         },
+         {
+          "frame": 1.0,
+          "value": 0.4811,
+          "easing": "Linear"
+         },
+         {
+          "frame": 2.0,
+          "value": 0.64974,
+          "easing": "Linear"
+         },
+         {
+          "frame": 3.0,
+          "value": 0.76452,
+          "easing": "Linear"
+         },
+         {
+          "frame": 4.0,
+          "value": 0.84105,
+          "easing": "Linear"
+         },
+         {
+          "frame": 5.0,
+          "value": 0.89235,
+          "easing": "Linear"
+         },
+         {
+          "frame": 7.0,
+          "value": 0.95102,
+          "easing": "Linear"
+         },
+         {
+          "frame": 9.0,
+          "value": 0.97883,
+          "easing": "Linear"
+         },
+         {
+          "frame": 11.0,
+          "value": 0.99532,
+          "easing": "Linear"
+         },
+         {
+          "frame": 17.0,
+          "value": 1.0,
+          "easing": "Linear"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_2.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_2.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_2.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_cur_2.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_cur_2.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0.7,
+          "easing": "Linear"
+         },
+         {
+          "frame": 3.0,
+          "value": 0.7,
+          "easing": "Linear"
+         },
+         {
+          "frame": 4.0,
+          "value": 0.66009,
+          "easing": "Linear"
+         },
+         {
+          "frame": 5.0,
+          "value": 0.35,
+          "easing": "Linear"
+         },
+         {
+          "frame": 6.0,
+          "value": 0.25441,
+          "easing": "Linear"
+         },
+         {
+          "frame": 7.0,
+          "value": 0.18768,
+          "easing": "Linear"
+         },
+         {
+          "frame": 8.0,
+          "value": 0.1384,
+          "easing": "Linear"
+         },
+         {
+          "frame": 10.0,
+          "value": 0.07199,
+          "easing": "Linear"
+         },
+         {
+          "frame": 12.0,
+          "value": 0.03256,
+          "easing": "Linear"
+         },
+         {
+          "frame": 14.0,
+          "value": 0.0106,
+          "easing": "Linear"
+         },
+         {
+          "frame": 17.0,
+          "value": 0.0,
+          "easing": "Linear"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_cur_2.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_cur_2.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_shape_geometry_ellipse_cur_2.width": {
+        "keyframes": [],
+        "static": 0.0625
+       },
+       "src.e_src_shape_geometry_ellipse_cur_2.height": {
+        "keyframes": [],
+        "static": 0.0625
+       },
+       "src.e_src_shape_geometry_ellipse_cur_2.angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_shape_fill_cur_2.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_shape_fill_cur_2.color": {
+        "keyframes": [],
+        "static": [
+         0.734703004360199,
+         0.0,
+         0.0,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_cur_2.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cur_2.color": {
+        "keyframes": [],
+        "static": [
+         0.10462,
+         0.10462,
+         0.92158,
+         1.0
+        ]
+       },
+       "src.e_src_shape_stroke_cur_2.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cur_2.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_shape_stroke_cur_2.width": {
+        "keyframes": [],
+        "static": 0.002604
+       },
+       "src.e_src_shape_stroke_cur_2.cap": {
+        "keyframes": [],
+        "static": "round"
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_shape_geometry_ellipse_cur_2",
+          "cap": "shape.geometry.ellipse",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_fill_cur_2",
+          "cap": "shape.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_stroke_cur_2",
+          "cap": "shape.stroke",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_cur_2",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_cur_2",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Ripple",
+      "keyGroups": [
+       {
+        "id": "kg_1",
+        "color": "hsl(0, 68%, 58%)",
+        "spans": [
+         {
+          "property": "tr.e_tr_placement_cur_2.scaleUniform",
+          "start": 0.0,
+          "end": 17.0
+         },
+         {
+          "property": "tr.e_tr_placement_cur_2.opacity",
+          "start": 0.0,
+          "end": 17.0
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "track_v3",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "cur_3",
+      "type": "shape",
+      "objectType": "shape",
+      "text": "Path",
+      "left": 0.0,
+      "duration": 60.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Open Sans",
+       "style": "Regular",
+       "size": 0.08,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_3.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           0.6725,
+           0.25186
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 22.0,
+          "value": [
+           0.51625,
+           0.45556
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.65,
+           0.0,
+           0.35,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.51625,
+         0.45556
+        ]
+       },
+       "tr.e_tr_placement_cur_3.scale": {
+        "keyframes": [
+         {
+          "frame": 26.0,
+          "value": [
+           1.0,
+           1.0
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 29.0,
+          "value": [
+           0.85,
+           0.85
+          ],
+          "easing": "Ease out"
+         },
+         {
+          "frame": 36.0,
+          "value": [
+           1.0,
+           1.0
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.34,
+           1.56,
+           0.64,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         1.0,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_cur_3.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_3.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_3.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cur_3.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_cur_3.anchor": {
+        "keyframes": [],
+        "static": [
+         -1,
+         1
+        ]
+       },
+       "tr.e_tr_placement_cur_3.opacity": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": 0,
+          "easing": "Linear"
+         },
+         {
+          "frame": 5.0,
+          "value": 1,
+          "easing": "Ease out"
+         }
+        ],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_cur_3.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_cur_3.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_shape_stroke_cur_3.width": {
+        "keyframes": [],
+        "static": 0.001302
+       },
+       "src.e_src_shape_stroke_cur_3.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_shape_stroke_cur_3.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cur_3.color": {
+        "keyframes": [],
+        "static": [
+         0.007,
+         0.0075,
+         0.01161,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_cur_3.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_shape_fill_cur_3.color": {
+        "keyframes": [],
+        "static": [
+         1.0,
+         1.0,
+         1.0,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_cur_3.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cur_3.cap": {
+        "keyframes": [],
+        "static": "round"
+       },
+       "fx.e_fx_shadow_cur_3.x": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "fx.e_fx_shadow_cur_3.y": {
+        "keyframes": [],
+        "static": -0.003
+       },
+       "fx.e_fx_shadow_cur_3.softness": {
+        "keyframes": [],
+        "static": 0.01
+       },
+       "fx.e_fx_shadow_cur_3.opacity": {
+        "keyframes": [],
+        "static": 0.3
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_shape_geometry_rectangle_cur_3",
+          "cap": "shape.geometry.rectangle",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_fill_cur_3",
+          "cap": "shape.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_stroke_cur_3",
+          "cap": "shape.stroke",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [
+         {
+          "id": "e_fx_shadow_cur_3",
+          "cap": "shadow",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_cur_3",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_cur_3",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "shape": {
+       "kind": "path",
+       "params": {
+        "closed": true,
+        "points": [
+         {
+          "x": 0.48374999999999996,
+          "y": 0.45555555555555555,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         },
+         {
+          "x": 0.48374999999999996,
+          "y": 0.5311111111111111,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         },
+         {
+          "x": 0.495,
+          "y": 0.5133333333333333,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         },
+         {
+          "x": 0.5025,
+          "y": 0.5444444444444444,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         },
+         {
+          "x": 0.51,
+          "y": 0.5377777777777777,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         },
+         {
+          "x": 0.5025,
+          "y": 0.508888888888889,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         },
+         {
+          "x": 0.51625,
+          "y": 0.508888888888889,
+          "inX": 0.0,
+          "inY": 0.0,
+          "outX": 0.0,
+          "outY": 0.0,
+          "corner": true
+         }
+        ]
+       }
+      },
+      "label": "Cursor"
+     }
+    ]
+   }
+  ],
+  "audioTracks": [
+   {
+    "id": "atrack_1",
+    "enabled": true,
+    "clips": []
+   }
+  ],
+  "clipCounter": 3
+ },
+ "authoredAspect": [
+  16,
+  9
+ ],
+ "authoredFps": 30.0,
+ "resolutionPolicy": "on_apply",
+ "fit": "contain",
+ "anchor": [
+  0.5,
+  0.5
+ ],
+ "authoredResolution": [
+  1920,
+  1080
+ ],
+ "requiredFonts": []
+}

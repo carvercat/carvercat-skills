@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "recipes/quarterly-results",
+  "title": "Quarterly results, 21.5 s (recipe)",
+  "category": "recipes",
+  "tags": [
+    "recipe",
+    "data-viz",
+    "results",
+    "quarterly",
+    "report",
+    "charts",
+    "1920x1080"
+  ],
+  "summary": "A 21.5 s results video from Data Viz templates: revenue line, before/after bars, donut, ranked bars, progress rings, data table and a gauge, with one dip.",
+  "use_when": "You need a short quarterly or annual results video made of charts.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 645,
+    "seconds": 21.5
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Quarterly results 21s (master, 7 charts + 1 transition)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "shot timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/SemiBold/Bold"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Data Viz",
+      "Transitions (Dip to colour)"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
+    "The packs listed in dependencies must be installed for library.place when you rebuild; the saved project already contains the placed comps.",
+    "Rebuild: ai/scripts/motion/recipes/rc_*.py (headless, isolated folders). Docs: ai/recipes/quarterly-results.md.",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc notes some long holds as freezes (see the doc)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

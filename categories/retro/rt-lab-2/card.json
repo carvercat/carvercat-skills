@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "retro/rt-lab-2",
+  "title": "Retro lab 2 (source of the round-2 templates)",
+  "category": "retro",
+  "tags": [
+    "retro",
+    "70s",
+    "80s",
+    "synthwave",
+    "on-twos",
+    "templates",
+    "lower-third",
+    "vhs",
+    "badge",
+    "neon",
+    "chrome",
+    "crt",
+    "arcade",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Retro templates were built and verified in: 70s stripe lower third, VHS overlay, groovy badge, neon sign, chrome title, TV switch-off, arcade start screen and venetian blinds.",
+  "use_when": "You want to see a round-2 retro template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "RT Stripe lower third (150 f)",
+      "RT VHS overlay (120 f)",
+      "RT Groovy badge (90 f)",
+      "RT Neon sign (120 f)",
+      "RT Chrome title (90 f, text gradient)",
+      "RT TV off (24 f)",
+      "RT Arcade start (150 f)",
+      "RT Blinds (54 f, transition)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "blink and flicker timing (Hold keys)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/SemiBold/Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Comps have a 'Lab bg' rectangle (dropped on extraction) except RT TV off and RT Blinds.",
+    "Clip ids are unique per comp (rlt_, rvh_, rgb_, rns_, rch_, rtv_, ras_, rbl_).",
+    "Rebuild: ai/scripts/motion/retro_lab2.py writes the comps; apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings; qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

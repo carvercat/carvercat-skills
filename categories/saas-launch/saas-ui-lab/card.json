@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "saas-launch/saas-ui-lab",
+  "title": "SaaS UI lab (source of the SaaS UI pack)",
+  "category": "saas-launch",
+  "tags": [
+    "saas",
+    "ui",
+    "product",
+    "templates",
+    "toast",
+    "cursor",
+    "toggle",
+    "kpi",
+    "drawer",
+    "counter",
+    "type-on",
+    "1920x1080"
+  ],
+  "summary": "The comps every SaaS UI template and recipe was built and verified in: cursor click, notification toast, toggle switch, KPI tile, sidebar drawer, rolling counter and search typing.",
+  "use_when": "You want to see a SaaS UI pattern working before using it, copy a comp's objects into a product video, or re-extract a template with comp_to_template.py after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 120,
+    "seconds": 4.0
+  },
+  "contains": {
+    "timelines": 7,
+    "comps": [
+      "SU Cursor click (60 f)",
+      "SU Notification toast (120 f)",
+      "SU Toggle switch (48 f)",
+      "SU KPI tile (90 f)",
+      "SU Sidebar drawer (60 f)",
+      "SU Counter (60 f, rolling digits behind masks)",
+      "SU Search typing (80 f, stagger type-on)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "KPI fill end",
+    "counter digits (regenerate with saas_ui_lab.py)",
+    "typed word and caret keys (regenerate)"
+  ],
+  "carvercat_version": "built on 0.1.6 (rev 1105, verification build); re-verified on 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Regular/Medium/SemiBold/Bold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (cur_, tst_, tgl_, kpi_, sbd_, cnt_, typ_).",
+    "Rebuild: ai/scripts/motion/saas_ui_lab.py writes the comps; apply its PRESETS (preset.apply) and MASKS (mask.make + parent.clear), then edit.save.",
+    "Lint on SU Counter shows 13 mask-blind warnings (KI-133); every other comp lints 0 errors / 0 warnings.",
+    "Rolling counter masks: each Window is the mask (isMask) and its digit column the target; fixed 2026-10-27 (the first release had them inverted)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

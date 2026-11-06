@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "retro/rt-showcase",
+  "title": "Retro showcase (9.5 s reel)",
+  "category": "retro",
+  "tags": [
+    "retro",
+    "reel",
+    "70s",
+    "80s",
+    "synthwave",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "A 9.5 s retro reel: sunburst title, rainbow stripes, a checkerboard wipe and a synthwave sun with a running grid.",
+  "use_when": "You need ready 70s/80s beats or a checkerboard transition example (cut under the cover).",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 285,
+    "seconds": 9.5
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Retro showcase (285 frames)",
+    "scenes": [
+      "0-90 sunburst title",
+      "90-165 rainbow stripes",
+      "139-193 checker wipe overlay (cut at 165)",
+      "165-285 synthwave"
+    ]
+  },
+  "parameters": [
+    "texts inside each comp"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold/SemiBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint 0/0/0; QC notes the synthwave hold as a freeze at 96 px (thin lines).",
+    "Built by ai/scripts/motion/retro_showcase.py from the lab comps (the checker overlay is nested without its lab background).",
+    "No sound yet: a vinyl crackle bed, a synth riser into the sun."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

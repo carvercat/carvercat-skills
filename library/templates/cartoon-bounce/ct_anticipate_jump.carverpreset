@@ -1,0 +1,200 @@
+{
+ "presetVersion": 2,
+ "id": "cc.ct.anticipate_jump",
+ "name": "Anticipate jump out",
+ "category": "animation",
+ "tags": [
+  "out",
+  "anticipation",
+  "jump",
+  "squash",
+  "cartoon",
+  "cartoon bounce"
+ ],
+ "note": "Crouches (118% wide, 78% tall), then stretches tall and shoots up 60% of the frame, accelerating. Anchor at the bottom edge ([0,-1]). Curves baked as keys (linear joins) - see the skill's ai/patterns/cartoon-bounce.md.",
+ "anchor": "out",
+ "frames": 20,
+ "tracks": [
+  {
+   "property": "scaleX",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.05,
+     "value": 1.12738,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1,
+     "value": 1.15445,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.15,
+     "value": 1.16712,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 1.17397,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.35,
+     "value": 1.18,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": 0.90923,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.45,
+     "value": 0.84169,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 0.82433,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6,
+     "value": 0.82,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.82,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "scaleY",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.05,
+     "value": 0.84431,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1,
+     "value": 0.81123,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.15,
+     "value": 0.79575,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 0.78738,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.35,
+     "value": 0.78,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": 1.17111,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.45,
+     "value": 1.26867,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.29374,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6,
+     "value": 1.3,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.3,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.35,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": [
+      0.0,
+      0.02051
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": [
+      0.0,
+      0.08182
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.65,
+     "value": [
+      0.0,
+      0.20775
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.8,
+     "value": [
+      0.0,
+      0.36137
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      0.6
+     ],
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

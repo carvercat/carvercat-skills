@@ -1,16 +1,17 @@
-# Native artwork contract (October 2026)
+# Current native artwork contract — overnight 15 October 2026
 
 Read alongside live resources, not as a replacement for their schemas. This guide
 supersedes the historical font list and stale-preview advice in api-gotchas.md.
+D125 intake maps all three artwork reports to D126–D133 and existing D112–D116.
 Source verification does not certify a different installed build or Windows device.
 
 ## Identify the actual editor
 
 Verify version, document path, scene pointer,
 comp dimensions, frame rate and revision through MCP state before any mutation.
-On macOS, discover the installed Carvercat app locally and use the executable
-inside its Contents/MacOS folder for explicitly isolated Client.stdio work.
-Do not launch a separately built verification binary as the user's editor. Windows
+Discover the installed Carvercat app locally and use the executable inside its
+Contents/MacOS folder for explicitly isolated Client.stdio work.
+Do not launch a Cargo verification binary as the user's editor. Windows current
 installed packaging can be MSIX/alias or a fixed Dev executable: inspect the actual
 installation, do not invent a universal path or convert distribution implicitly.
 Client() uses the current editor endpoint pointer and validates PID and handshake;
@@ -23,13 +24,11 @@ Read resources/list then current carvercat:// command, authoring and parameter
 resources. No-selection describe is a selection contract, not the capability
 catalog. For Windows scripts use UTF-8 JSON through stdin/structured arguments;
 never interpolate artwork text into PowerShell commands. Preserve Unicode and
-literal quotes. Client/Scene handle protocol encoding and typed values.
+literal quotes. Client/Scene handle protocol encoding.
 
 ## Mutation, receipts and observation
 
-Bind stable IDs, exact scope and revision; use guarded batches with expected
-revision/document. Scene.target(name) returns a stable ID or {$ref:name} for
-pending creation. edit.group supports a single member and creation aliases;
+Bind stable ids, exact scope and revision; send a whole scene as one `scene.apply` (or guard a plan with `expected_revision`). A scene id (`#name`) is a stable selector for the objects a scene made. edit.group supports a single member and creation aliases;
 explicit order is the exact selected ID set back-to-front, one member per source
 track. Omitted order preserves native ordering. Inspect masks and child IDs after
 grouping; do not fabricate entry IDs. Refused later batch steps restore the original
@@ -48,26 +47,14 @@ shared multi-clip tracks, cross-scope and locked crossings intentionally refuse.
 
 ## Paint, geometry and fonts
 
-Use carvercat_authoring controls/paint groups to distinguish physically bound,
-panel-visible and explicitly promoted controls. Promote only the intended absent
-control, then set its native path. RGB/RGBA arrays are finite numeric 3/4-channel
-values, HDR RGB is allowed, alpha stays 0..1. Gradient stops, positions, points and
-mode follow live declarations; a malformed color object is not a color. Rounded
-stroke requires explicit cap/join controls; unchanged global defaults are intentional.
-Scene.paint and maintained control helpers cover native formats; inspect current
-receipts rather than patching generated JSON to imitate a row.
+Paint and geometry are design keys: `fill` and `stroke` take CSS colours (hex with alpha, `rgb()`, names) or CSS gradients, `strokeWidth` is px, `strokeLinecap` and `strokeLinejoin` are explicit (the defaults are `butt` and `miter`; rounded strokes need `"round"`). A colour is what you see: there are no linear-light arrays and no gradient fractions. `carvercat://schema/design` lists every key and its carve status; `carve.preflight` says what a host will do with the scene.
 
-Scene.path points and optional handle offsets are comp pixels, y down; it converts
-both to normalized native coordinates. Duration is frames and track is the exact
-existing zero-based video track; native creation validates room and locks before
-minting. There is no temporary 90-frame clip followed by a trim. Use comp.duration
-for authored comp duration and existing object.new placement for primitives.
+A path is made with `object.path {d | pointsPx}`: SVG path data or points in comp px, y down, one subpath (arcs become cubic Beziers); `duration` is frames and `track` is the exact existing zero-based video track. Style it with `property.set` (see [design-units.md](design-units.md)). Use comp.duration for the authored comp duration.
 
 Only enabled publicly installed OS/user fonts are project fonts. Bundled UI fonts
 are not guaranteed project choices. Query carvercat_authoring mode=fonts with family,
 style and the actual Unicode sample; inspect effective family/style/glyph coverage.
-Mac and Windows fallbacks can differ. Scene.check_font(require=True) demands exact
-resolution, while ordinary authoring accepts the platform's installed fallback.
+Mac and Windows fallbacks can differ. A font family that is not installed is refused with the nearest installed names (`not-installed`); `face` and `substituted` in a text's reply say what was drawn.
 Never automatically install a font. Do not reuse the old Poppins/Montserrat/etc list
 as proof. Font-file hashes/index/axes explain the resolved face; no bytes transfer.
 
@@ -116,5 +103,6 @@ save/export drafts; Save As adopts a path only after successful write.
 app.update status exposes the one-control updater state. Check → Download → Update
 (prepare) → Restart captures the dirty project/history/redo/workspace/drafts before
 replacement. Active/unknown external jobs defer. Do not bypass signature/publisher
-checks or replay external transfer on restart. Update availability depends on the
-release channel of the installed build.
+checks or replay external transfer on restart. The checked-in Dev config is disabled
+until production R2 URL, signing trust and platform releases are configured and
+qualified; local native recovery fixtures are not public deployment evidence.

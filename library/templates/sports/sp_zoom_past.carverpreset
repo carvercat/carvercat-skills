@@ -1,0 +1,94 @@
+{
+ "presetVersion": 2,
+ "id": "cc.sp.zoom_past",
+ "name": "Zoom past",
+ "category": "animation",
+ "tags": [
+  "out",
+  "zoom",
+  "fast",
+  "transition",
+  "sports",
+  "sports pack"
+ ],
+ "note": "Rushes toward camera to 300% and fades in 8 f, accelerating. The exit that sells speed; cut on its last frame. Curves baked as keys (linear joins) - see the skill's ai/patterns/sports.md.",
+ "anchor": "out",
+ "frames": 8,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": 1.12379,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 1.30321,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.77226,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.75,
+     "value": 2.34411,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 3.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.52,
+     "value": 0.887,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.64,
+     "value": 0.71494,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.76,
+     "value": 0.50477,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.88,
+     "value": 0.26575,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

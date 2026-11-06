@@ -1,0 +1,139 @@
+{
+ "presetVersion": 2,
+ "id": "cc.su.tap_ripple",
+ "name": "Tap ripple",
+ "category": "animation",
+ "tags": [
+  "in",
+  "tap",
+  "ripple",
+  "click",
+  "cursor",
+  "saas ui"
+ ],
+ "note": "Grows from 25% and fades out: the ring under a click. Put a ring clip that starts on the tap frame and is 18 f long; it ends invisible. Curve baked as keys (linear joins) - see the skill's ai/patterns/su-*.md docs.",
+ "anchor": "in",
+ "frames": 18,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.25,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0556,
+     "value": 0.4811,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1111,
+     "value": 0.64974,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": 0.76452,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2222,
+     "value": 0.84105,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2778,
+     "value": 0.89235,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3889,
+     "value": 0.95102,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 0.97883,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6667,
+     "value": 0.99532,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0,
+     "value": 0.7,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.15,
+     "value": 0.7,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2067,
+     "value": 0.66009,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2633,
+     "value": 0.49803,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.32,
+     "value": 0.35,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3767,
+     "value": 0.25441,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4333,
+     "value": 0.18768,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.49,
+     "value": 0.1384,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6033,
+     "value": 0.07199,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7167,
+     "value": 0.03256,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.83,
+     "value": 0.0106,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

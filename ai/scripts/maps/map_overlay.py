@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Explainer overlay for a map built with geo_paths.py -> carvercat_batch steps.
+"""Explainer overlay for a map built with geo_paths.py, in design units (px, y down, CSS colours and easing).
 
 Builds, in comp space of the geo_paths output:
   * hero pin (accent dot + white rim) and a pulse ring
@@ -8,11 +8,12 @@ Builds, in comp space of the geo_paths output:
   * landmark pins + leader line (trim) + card (rounded rect) + name + sub-line
   * a callout text and a hand-built arrow (shaft with trim + chevron head)
 
-Usage:
-  python map_overlay.py dubai.json spec.json steps.json
+Usage (a private headless Carvercat; never the visible editor):
+  CARVERCAT_RESOURCE_ROOT=<the app resource folder> python map_overlay.py geo.json spec.json --exe /path/to/carvercat-host --out job.carverproj
+  or from Python: map_overlay.build_map(client, geo); map_overlay.build_overlay(client, geo, spec)
 spec.json example:
 {
-  "hero": "Project", "start": 64, "accent": [0.955,0.518,0.027,1],
+  "hero": "Project", "start": 64, "accent": "#F3840A",
   "rings_km": [5,10],
   "routes": [{"to": "Burj Khalifa", "via": [[985,560],[1005,665]], "frames": [98,128]}],
   "landmarks": [
@@ -27,115 +28,162 @@ camera (instance scale/position) moves them with the map. Then apply presets per
 (preset.apply is one id per call, not batchable): pins "Pop - spring", cards "Pop - gentle",
 texts "Rise - expo".
 """
-import json, math, sys
+import json, math, os, sys, tempfile
+from pathlib import Path
 
-W = H = None
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from cc_client import Client, Refused  # noqa: E402
 
-def fx(px, py):            # comp px (y down) -> center fraction (y up)
-    return [round(px / W, 4), round(1 - py / H, 4)]
+WHITE = "#ffffff"
 
-def pf(px, py):            # comp px -> object.path point (fraction, y down)
-    return [round(px / W, 5), round(py / H, 5)]
 
-def P(alias, key, value):
-    return {"command": "property.set", "args": {"id": {"$ref": alias}, "key": key, "value": value}}
+def build_map(c, geo):
+    """One closed or open path per ring (object.path pointsPx), named after its feature. Returns the object ids."""
+    ids = []
+    for step in geo["steps"]:
+        oid = c.run(step["command"], **step["args"])["touched"][0]
+        c.run("clip.rename", id=oid, name=step["name"])
+        ids.append(oid)
+    return ids
 
-def K(alias, key, value, frame, easing="Linear"):
-    return {"command": "key.set", "args": {"id": {"$ref": alias}, "key": key, "value": value, "easing": easing}, "frame": frame}
 
-def new(kind, alias, name, frame, end):
-    return [{"command": "object.new", "args": {"kind": kind, "duration": end - frame}, "frame": frame, "as": alias},
-            {"command": "clip.rename", "args": {"id": {"$ref": alias}, "name": name}}]
+def _style(c, oid, **style):
+    for k, v in style.items():
+        c.run("property.set", id=oid, key=k, value=v)
 
-def path(alias, name, pts, frame, end, smooth=False):
-    return [{"command": "object.path", "args": {"points": [pf(*p) for p in pts], "closed": False, "smooth": smooth,
-             "duration": end - frame}, "frame": frame, "as": alias},
-            {"command": "clip.rename", "args": {"id": {"$ref": alias}, "name": name}}]
 
-def stroke(alias, color, width, cap="round"):
-    return [P(alias, "shape.fill.paint", "none"), P(alias, "shape.stroke.paint", "solid"),
-            P(alias, "shape.stroke.color", color), P(alias, "shape.stroke.width", width),
-            P(alias, "shape.stroke.cap", cap)]
+def _new(c, kind, name, at, end, **style):
+    r = c.run("object.new", kind=kind, frame=at, duration=end - at)
+    oid = r["touched"][0]
+    c.run("clip.rename", id=oid, name=name)
+    return oid
 
-def trim(alias, a, b, easing="S-curve"):
-    fxa = alias + "_tr"
-    return [{"command": "effect.add", "args": {"id": {"$ref": alias}, "cap": "trim"}, "as": fxa},
-            K(alias, {"$param": [fxa, "end"]}, 0, a), K(alias, {"$param": [fxa, "end"]}, 1, b, easing)]
 
-def text(alias, name, s, size, color, at, frame, end, bold=False, tracking=None):
-    size = max(size, 0.01)          # text.font.size min is 0.01 (W fraction)
-    out = new("text", alias, name, frame, end) + [P(alias, "text", s), P(alias, "text.font.size", size),
-                                                  P(alias, "text.fill.color", color), P(alias, "center", fx(*at))]
-    if bold: out.insert(4, P(alias, "text.font.style", "Bold"))
-    if tracking: out.append(P(alias, "text.font.tracking", tracking))
-    return out
+def _box(c, kind, name, cx, cy, w, h, at, end, **style):
+    """A shape whose CENTRE is (cx, cy) px: x, y are the top-left."""
+    oid = _new(c, kind, name, at, end)
+    _style(c, oid, width=w, height=h, x=round(cx - w / 2, 2), y=round(cy - h / 2, 2), **style)
+    return oid
 
-def ellipse(alias, name, d_w, at, frame, end):
-    return new("ellipse", alias, name, frame, end) + [P(alias, "shape.geometry.ellipse.width", d_w),
-            P(alias, "shape.geometry.ellipse.height", d_w), P(alias, "center", fx(*at))]
 
-def main(geo_file, spec_file, out_file):
-    global W, H
-    geo = json.load(open(geo_file)); spec = json.load(open(spec_file))
+def _text(c, name, s, size, color, cx, cy, at, end, w=360, weight=400, spacing=None):
+    oid = _new(c, "text", name, at, end)
+    c.run("property.set", id=oid, key="text", value=s)
+    _style(c, oid, fontSize=size, fill=color, fontWeight=weight, textAlign="center", whiteSpace="normal", width=w, height=round(size * 1.4, 1))
+    if spacing:
+        c.run("property.set", id=oid, key="letterSpacing", value=spacing)
+    box = c.run("property.get", id=oid, key="width")["units"]["values"]
+    _style(c, oid, x=round(cx - w / 2, 2), y=round(cy - box["height"] / 2, 2))
+    return oid
+
+
+def _fade(c, oid, a, b, ease="ease-out"):
+    c.run("anim.set", id=oid, keyframes=[{"atComp": a, "opacity": 0, "ease": ease}, {"atComp": b, "opacity": 1}])
+
+
+def _draw_on(c, oid, a, b, ease="ease-in-out"):
+    """Draw a stroke on with trimEnd 0% -> 100%; fade it in if the build refuses the trim key."""
+    try:
+        c.run("anim.set", id=oid, keyframes=[{"atComp": a, "trimEnd": "0%", "ease": ease}, {"atComp": b, "trimEnd": "100%"}])
+        return "trim"
+    except Refused:
+        _fade(c, oid, a, b)
+        return "fade"
+
+
+def build_overlay(c, geo, spec):
     W, H = geo["comp"]
     pins = {p["name"]: p["px"] for p in geo.get("pins", [])}
     px_per_km = geo["transform"]["scale"] / 6371.0
     if geo.get("projection") == "mercator":
         px_per_km /= math.cos(math.radians(geo.get("lat0", 0)))
-    acc = spec.get("accent", [0.955, 0.518, 0.027, 1]); end = spec.get("end", 240)
-    white = [1, 1, 1, 1]; s = []
-    hx, hy = pins[spec["hero"]]; t0 = spec.get("start", 64)
+    acc = spec.get("accent", "#F3840A")
+    end = spec.get("end", 240)
+    t0 = spec.get("start", 64)
+    hx, hy = pins[spec["hero"]]
+    report = []
 
     for i, km in enumerate(spec.get("rings_km", [])):
-        a = f"ring{i}"; d = 2 * km * px_per_km / W; f = t0 + 6 + 8 * i
-        s += ellipse(a, f"Radius {km} km", round(d, 4), (hx, hy), f, end) + stroke(a, acc[:3] + [0.6], 0.0012)
-        s += [P(a, "shape.stroke.line", "dashed"), P(a, "shape.stroke.dashLength", 0.004),
-              P(a, "shape.stroke.dashGap", 0.004), K(a, "size", 0, f), K(a, "size", 1, f + 22, "Ease out")]
-        s += text(f"rl{i}", f"Radius label {km} km", f"{km} km", 0.011, acc, (hx, hy - km * px_per_km - 12), f + 12, end)
-        s += [K(f"rl{i}", "blend", 0, f + 12), K(f"rl{i}", "blend", 1, f + 22, "Ease out")]
+        f = t0 + 6 + 8 * i
+        d = 2 * km * px_per_km
+        ring = _box(c, "ellipse", f"Radius {km} km", hx, hy, d, d, f, end, fill="none", stroke=acc + "99", strokeWidth=2.3,
+                    strokeDasharray="7.7 7.7")
+        c.run("anim.set", id=ring, keyframes=[{"atComp": f, "scale": 0, "ease": "ease-out"}, {"atComp": f + 22, "scale": 1}])
+        lab = _text(c, f"Radius label {km} km", f"{km} km", 21, acc, hx, hy - km * px_per_km - 12, f + 12, end, w=140)
+        _fade(c, lab, f + 12, f + 22)
 
     for i, r in enumerate(spec.get("routes", [])):
-        a = f"route{i}"; a0, a1 = r.get("frames", [t0 + 34, t0 + 64])
+        a0, a1 = r.get("frames", [t0 + 34, t0 + 64])
         pts = [(hx, hy)] + [tuple(p) for p in r.get("via", [])] + [tuple(pins[r["to"]])]
-        s += path(a, f"Route to {r['to']}", pts, a0 - 2, end, smooth=True) + stroke(a, acc, 0.003) + trim(a, a0, a1)
-        g = a + "_gl"          # glow: amount <= 0.8 never burns; size 12 ~ 30 px halo
-        s += [{"command": "effect.add", "args": {"id": {"$ref": a}, "cap": "glow"}, "as": g},
-              P(a, {"$param": [g, "size"]}, 12), P(a, {"$param": [g, "amount"]}, 0.6)]
+        d = "M " + " L ".join("%s %s" % p for p in pts)
+        oid = c.path(d, duration=end, fill="none", stroke=acc, strokeWidth=5.8, strokeLinecap="round", strokeLinejoin="round")
+        c.run("clip.rename", id=oid, name=f"Route to {r['to']}")
+        c.run("property.set", id=oid, key="glow", value=f"12px {acc} 0.6 0.2")
+        report.append(("route %d" % i, _draw_on(c, oid, a0, a1)))
 
-    s += ellipse("hpulse", "Hero pulse", 0.02, (hx, hy), t0 + 2, end) + stroke("hpulse", acc, 0.0015)
-    s += [K("hpulse", "size", 0.5, t0 + 4), K("hpulse", "size", 3, t0 + 28, "Ease out"),
-          K("hpulse", "blend", 1, t0 + 4), K("hpulse", "blend", 0, t0 + 28, "Ease out")]
-    s += ellipse("hpin", "Hero pin", 0.016, (hx, hy), t0, end) + [P("hpin", "shape.fill.color", acc),
-          P("hpin", "shape.stroke.paint", "solid"), P("hpin", "shape.stroke.color", white), P("hpin", "shape.stroke.width", 0.002)]
+    pulse = _box(c, "ellipse", "Hero pulse", hx, hy, 38.4, 38.4, t0 + 2, end, fill="none", stroke=acc, strokeWidth=2.9)
+    c.run("anim.set", id=pulse, keyframes=[{"atComp": t0 + 4, "scale": 0.5, "opacity": 1, "ease": "ease-out"}, {"atComp": t0 + 28, "scale": 3, "opacity": 0}])
+    _box(c, "ellipse", "Hero pin", hx, hy, 30.7, 30.7, t0, end, fill=acc, stroke=WHITE, strokeWidth=3.8)
 
     for i, L in enumerate(spec.get("landmarks", [])):
-        px, py = pins[L["pin"]]; f = L.get("at", t0 + 66 + 8 * i)
-        dx, dy = L.get("card_offset", [116, -66]); cx, cy = px + dx, py + dy
-        s += ellipse(f"lp{i}", f"Pin {L['pin']}", 0.008, (px, py), f, end) + [P(f"lp{i}", "shape.fill.color", white)]
-        s += path(f"ll{i}", f"Leader {L['pin']}", [(px, py), (cx, cy)], f + 4, end) + \
-             [P(f"ll{i}", "shape.stroke.paint", "solid"), P(f"ll{i}", "shape.stroke.color", [1, 1, 1, 0.7]),
-              P(f"ll{i}", "shape.stroke.width", 0.0008)] + trim(f"ll{i}", f + 4, f + 12, "Ease out")
-        s += new("rectangle", f"lc{i}", f"Card {L['pin']}", f + 10, end) + [
-             P(f"lc{i}", "shape.fill.color", [0.96, 0.96, 0.97, 1]), P(f"lc{i}", "shape.geometry.rectangle.width", 0.1),
-             P(f"lc{i}", "shape.geometry.rectangle.height", 0.036), P(f"lc{i}", "shape.geometry.rectangle.cornerRadius", 0.008),
-             P(f"lc{i}", "center", fx(cx, cy))]
-        s += text(f"ln{i}", f"Card name {L['pin']}", L.get("label", L["pin"]), 0.0115, [0.02, 0.03, 0.06, 1], (cx, cy - 10), f + 12, end, bold=True)
+        px, py = pins[L["pin"]]
+        f = L.get("at", t0 + 66 + 8 * i)
+        dx, dy = L.get("card_offset", [116, -66])
+        cx, cy = px + dx, py + dy
+        _box(c, "ellipse", f"Pin {L['pin']}", px, py, 15.4, 15.4, f, end, fill=WHITE)
+        lead = c.path(f"M {px} {py} L {cx} {cy}", frame=f, duration=end - f, fill="none", stroke="#ffffffb3", strokeWidth=1.5)
+        c.run("clip.rename", id=lead, name=f"Leader {L['pin']}")
+        report.append(("leader %d" % i, _draw_on(c, lead, f + 4, f + 12, "ease-out")))
+        card = _box(c, "rectangle", f"Card {L['pin']}", cx, cy, 192, 69, f + 10, end, fill="#f5f5f7", borderRadius=15.4)
+        _fade(c, card, f + 10, f + 18)
+        name = _text(c, f"Card name {L['pin']}", L.get("label", L["pin"]), 22, "#050810", cx, cy - 10, f + 12, end, w=180, weight=700)
+        _fade(c, name, f + 12, f + 20)
         if L.get("sub"):
-            s += text(f"lt{i}", f"Card sub {L['pin']}", L["sub"], 0.01, [0.75, 0.38, 0, 1], (cx, cy + 14), f + 14, end)
+            sub = _text(c, f"Card sub {L['pin']}", L["sub"], 19, "#bf6100", cx, cy + 14, f + 14, end, w=180)
+            _fade(c, sub, f + 14, f + 22)
 
-    c = spec.get("callout")
-    if c:
-        s += text("callout", f"Callout {c['text']}", c["text"], 0.016, acc, c["at"], c["frame"], end, bold=True, tracking=1.1)
-        if c.get("arrow"):
-            (x0, y0), (x1, y1) = c["arrow"]; f = c["frame"] + 2
-            s += path("arw", "Arrow shaft", [(x0, y0), (x1, y1)], f, end) + stroke("arw", acc, 0.0021) + trim("arw", f, f + 10, "Ease out")
-            ux, uy = x0 - x1, y0 - y1; n = math.hypot(ux, uy); ux, uy = ux / n, uy / n; hl = 22
-            wing = lambda a: (x1 + hl * (ux * math.cos(a) - uy * math.sin(a)), y1 + hl * (ux * math.sin(a) + uy * math.cos(a)))
-            s += path("ahd", "Arrow head", [wing(0.52), (x1, y1), wing(-0.52)], f + 10, end) + stroke("ahd", acc, 0.0021) + \
-                 [P("ahd", "shape.stroke.corners", "round"), K("ahd", "blend", 0, f + 10), K("ahd", "blend", 1, f + 13, "Ease out")]
+    cal = spec.get("callout")
+    if cal:
+        t = _text(c, f"Callout {cal['text']}", cal["text"], 31, acc, cal["at"][0], cal["at"][1], cal["frame"], end, w=520, weight=700, spacing=1.1)
+        _fade(c, t, cal["frame"], cal["frame"] + 10)
+        if cal.get("arrow"):
+            (x0, y0), (x1, y1) = cal["arrow"]
+            f = cal["frame"] + 2
+            shaft = c.path(f"M {x0} {y0} L {x1} {y1}", frame=f, duration=end - f, fill="none", stroke=acc, strokeWidth=4, strokeLinecap="round")
+            c.run("clip.rename", id=shaft, name="Arrow shaft")
+            report.append(("arrow shaft", _draw_on(c, shaft, f, f + 10, "ease-out")))
+            ux, uy = x0 - x1, y0 - y1
+            n = math.hypot(ux, uy)
+            ux, uy = ux / n, uy / n
+            hl = 22
+            wing = lambda a: (round(x1 + hl * (ux * math.cos(a) - uy * math.sin(a)), 2), round(y1 + hl * (ux * math.sin(a) + uy * math.cos(a)), 2))
+            w1, w2 = wing(0.52), wing(-0.52)
+            head = c.path(f"M {w1[0]} {w1[1]} L {x1} {y1} L {w2[0]} {w2[1]}", frame=f, duration=end - f, fill="none", stroke=acc, strokeWidth=4,
+                          strokeLinecap="round", strokeLinejoin="round")
+            c.run("clip.rename", id=head, name="Arrow head")
+            _fade(c, head, f + 10, f + 13)
+    return report
 
-    json.dump(s, open(out_file, "w"))
-    print(f"{len(s)} steps -> {out_file} (px/km {px_per_km:.2f}); batches hold <= 256 steps")
+
+def main(geo_file, spec_file, exe, out):
+    geo = json.load(open(geo_file))
+    spec = json.load(open(spec_file))
+    with tempfile.TemporaryDirectory() as d:
+        with Client.stdio(exe, d) as c:
+            W, H = geo["comp"]
+            c.run("comp.format", width=W, height=H, fps=30)
+            build_map(c, geo)
+            report = build_overlay(c, geo, spec)
+            c.run("edit.save", path=str(Path(out).resolve()))
+    print("saved", out, report)
+
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("geo")
+    ap.add_argument("spec")
+    ap.add_argument("--exe", required=True)
+    ap.add_argument("--out", required=True)
+    a = ap.parse_args()
+    main(a.geo, a.spec, a.exe, a.out)

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "id": "recipes/kinetic-quote-reel",
+  "title": "Kinetic quote reel, 18 s (recipe)",
+  "category": "recipes",
+  "tags": [
+    "recipe",
+    "kinetic-type",
+    "typography",
+    "quote",
+    "manifesto",
+    "1920x1080"
+  ],
+  "summary": "An 18 s typographic piece from Kinetic Typography templates: focus pull, word swap, kinetic quote, beat words and a follow end card, with split doors.",
+  "use_when": "You need a type-only manifesto, quote or lyric-style piece.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 550,
+    "seconds": 18.3
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Quote reel 18s (master, 5 scenes + 1 transition)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "shot timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/ExtraBold"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Kinetic Typography",
+      "Transitions (Split doors)"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
+    "The packs listed in dependencies must be installed for library.place when you rebuild; the saved project already contains the placed comps.",
+    "Rebuild: ai/scripts/motion/recipes/rc_*.py (headless, isolated folders). Docs: ai/recipes/kinetic-quote-reel.md.",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc notes some long holds as freezes (see the doc)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

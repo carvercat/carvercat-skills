@@ -1,0 +1,564 @@
+{
+ "templateVersion": 2,
+ "id": "cc.cb.panel_wipe",
+ "name": "Brand panel wipe",
+ "category": "scene",
+ "apply": "scene",
+ "tags": [
+  "transition",
+  "wipe",
+  "panel",
+  "brand colours",
+  "corporate brand",
+  "motion patterns"
+ ],
+ "note": "Navy panel enters f0-16, teal panel f3-19 on top; the frame is fully covered f16-23 (cut at f20); teal leaves f20-36, navy f23-39. 40 f. Docs: ai/patterns/cb-panel-wipe.md",
+ "frame": {
+  "width": 1920,
+  "height": 1080,
+  "fps": 30.0
+ },
+ "scene": {
+  "ppf": 4,
+  "sceneFps": 30.0,
+  "duration": 40.0,
+  "timelineWidth": 1920,
+  "timelineHeight": 1080,
+  "width": 1920,
+  "height": 1080,
+  "tracks": [
+   {
+    "id": "track_v1",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "cpw_1",
+      "type": "shape",
+      "objectType": "shape",
+      "text": "Rectangle",
+      "left": 0.0,
+      "duration": 39.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Open Sans",
+       "style": "Regular",
+       "size": 0.08,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_1.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           -0.5,
+           0.5
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 16.0,
+          "value": [
+           0.5,
+           0.5
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.65,
+           0.0,
+           0.35,
+           1.0
+          ]
+         },
+         {
+          "frame": 23.0,
+          "value": [
+           0.5,
+           0.5
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 39.0,
+          "value": [
+           1.5,
+           0.5
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.65,
+           0.0,
+           0.35,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "tr.e_tr_placement_cpw_1.scale": {
+        "keyframes": [],
+        "static": [
+         1.94,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_cpw_1.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_1.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_1.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_1.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_cpw_1.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_cpw_1.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_cpw_1.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_cpw_1.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_1.width": {
+        "keyframes": [],
+        "static": 0.520833
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_1.height": {
+        "keyframes": [],
+        "static": 0.5625
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_1.cornerRadius": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_1.angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_shape_fill_cpw_1.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_shape_fill_cpw_1.color": {
+        "keyframes": [],
+        "static": [
+         0.00335,
+         0.0137,
+         0.04231,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_cpw_1.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cpw_1.color": {
+        "keyframes": [],
+        "static": [
+         0.038160715252161026,
+         0.17944560945034027,
+         0.4212897717952728,
+         1.0
+        ]
+       },
+       "src.e_src_shape_stroke_cpw_1.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cpw_1.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_shape_stroke_cpw_1.width": {
+        "keyframes": [],
+        "static": 0.02
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_shape_geometry_rectangle_cpw_1",
+          "cap": "shape.geometry.rectangle",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_fill_cpw_1",
+          "cap": "shape.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_stroke_cpw_1",
+          "cap": "shape.stroke",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_cpw_1",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_cpw_1",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Panel navy"
+     }
+    ]
+   },
+   {
+    "id": "track_v2",
+    "enabled": true,
+    "clips": [
+     {
+      "id": "cpw_2",
+      "type": "shape",
+      "objectType": "shape",
+      "text": "Rectangle",
+      "left": 12.0,
+      "duration": 33.0,
+      "sourceIn": 0.0,
+      "midEffects": [],
+      "textProps": {
+       "font": "Open Sans",
+       "style": "Regular",
+       "size": 0.08,
+       "tracking": 1.0,
+       "lineSpacing": 1.0,
+       "textMode": "titles",
+       "boxWidth": 0.5,
+       "boxHeight": 0.5,
+       "clipToBox": true
+      },
+      "properties": {
+       "center": {
+        "keyframes": [],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "size": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "blend": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_2.position": {
+        "keyframes": [
+         {
+          "frame": 0.0,
+          "value": [
+           -0.5,
+           0.5
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 16.0,
+          "value": [
+           0.5,
+           0.5
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.65,
+           0.0,
+           0.35,
+           1.0
+          ]
+         },
+         {
+          "frame": 17.0,
+          "value": [
+           0.5,
+           0.5
+          ],
+          "easing": "Linear"
+         },
+         {
+          "frame": 33.0,
+          "value": [
+           1.5,
+           0.5
+          ],
+          "easing": "Custom",
+          "customEase": [
+           0.65,
+           0.0,
+           0.35,
+           1.0
+          ]
+         }
+        ],
+        "static": [
+         0.5,
+         0.5
+        ]
+       },
+       "tr.e_tr_placement_cpw_2.scale": {
+        "keyframes": [],
+        "static": [
+         1.94,
+         1.0
+        ]
+       },
+       "tr.e_tr_placement_cpw_2.scaleUniform": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_2.scaleX": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_2.scaleY": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_placement_cpw_2.rotation": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "tr.e_tr_placement_cpw_2.anchor": {
+        "keyframes": [],
+        "static": [
+         0,
+         0
+        ]
+       },
+       "tr.e_tr_placement_cpw_2.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "tr.e_tr_compositing_cpw_2.blend": {
+        "keyframes": [],
+        "static": "Normal"
+       },
+       "tr.e_tr_compositing_cpw_2.combine": {
+        "keyframes": [],
+        "static": "Over"
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_2.width": {
+        "keyframes": [],
+        "static": 0.520833
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_2.height": {
+        "keyframes": [],
+        "static": 0.5625
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_2.cornerRadius": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_shape_geometry_rectangle_cpw_2.angle": {
+        "keyframes": [],
+        "static": 0.0
+       },
+       "src.e_src_shape_fill_cpw_2.paint": {
+        "keyframes": [],
+        "static": "solid"
+       },
+       "src.e_src_shape_fill_cpw_2.color": {
+        "keyframes": [],
+        "static": [
+         0.0,
+         0.36625,
+         0.3564,
+         1.0
+        ]
+       },
+       "src.e_src_shape_fill_cpw_2.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cpw_2.color": {
+        "keyframes": [],
+        "static": [
+         0.038160715252161026,
+         0.17944560945034027,
+         0.4212897717952728,
+         1.0
+        ]
+       },
+       "src.e_src_shape_stroke_cpw_2.opacity": {
+        "keyframes": [],
+        "static": 1.0
+       },
+       "src.e_src_shape_stroke_cpw_2.paint": {
+        "keyframes": [],
+        "static": "none"
+       },
+       "src.e_src_shape_stroke_cpw_2.width": {
+        "keyframes": [],
+        "static": 0.02
+       }
+      },
+      "containers": {
+       "source": {
+        "entries": [
+         {
+          "id": "e_src_shape_geometry_rectangle_cpw_2",
+          "cap": "shape.geometry.rectangle",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_fill_cpw_2",
+          "cap": "shape.fill",
+          "on": true
+         },
+         {
+          "id": "e_src_shape_stroke_cpw_2",
+          "cap": "shape.stroke",
+          "on": true
+         }
+        ],
+        "promoted": []
+       },
+       "effects": {
+        "entries": [],
+        "promoted": []
+       },
+       "transform": {
+        "entries": [
+         {
+          "id": "e_tr_placement_cpw_2",
+          "cap": "transform.placement",
+          "on": true
+         },
+         {
+          "id": "e_tr_compositing_cpw_2",
+          "cap": "transform.compositing",
+          "on": true
+         }
+        ],
+        "promoted": []
+       }
+      },
+      "label": "Panel teal"
+     }
+    ]
+   }
+  ],
+  "audioTracks": [
+   {
+    "id": "atrack_1",
+    "enabled": true,
+    "clips": []
+   }
+  ],
+  "clipCounter": 2
+ },
+ "authoredAspect": [
+  16,
+  9
+ ],
+ "authoredFps": 30.0,
+ "resolutionPolicy": "on_apply",
+ "fit": "contain",
+ "anchor": [
+  0.5,
+  0.5
+ ],
+ "authoredResolution": [
+  1920,
+  1080
+ ],
+ "requiredFonts": [
+  "Rethink Sans"
+ ]
+}

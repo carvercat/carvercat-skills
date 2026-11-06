@@ -1,0 +1,101 @@
+{
+ "presetVersion": 2,
+ "id": "cc.kt.char_pop",
+ "name": "Letters pop",
+ "category": "animation",
+ "tags": [
+  "stagger",
+  "in",
+  "character",
+  "pop",
+  "spring",
+  "playful",
+  "kinetic typography"
+ ],
+ "note": "Each letter pops from zero with a 16% spring, 1 f apart. Short words; energetic, social and funky styles. (A per-letter vertical flip is not possible: scaleY cannot be staggered.) Curve baked as keys (linear joins) - see the skill's ai/patterns/kinetic-typography.md.",
+ "anchor": "in",
+ "frames": 18,
+ "only": "text",
+ "stagger": {
+  "by": "character",
+  "order": "forward",
+  "gap": 1
+ },
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0556,
+     "value": 0.14052,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": 0.74538,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2222,
+     "value": 0.98105,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2778,
+     "value": 1.11658,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3333,
+     "value": 1.16205,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3889,
+     "value": 1.14599,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5556,
+     "value": 1.00813,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6667,
+     "value": 0.97399,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

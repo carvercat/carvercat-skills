@@ -11,7 +11,7 @@ python geo_paths.py ne_10m_admin_1_states_provinces.geojson uae.json --where adm
    --proj local --box 260,140,1400,800 --tol 2 --min-area 300 \
    --rename "Dubay:Dubai;Fujayrah:Fujairah" --pins "Burj Khalifa:55.2744,25.1972;DXB:55.3657,25.2532"
 ```
-Output: per feature the simplified rings in comp pixels, a **label anchor (pole of inaccessibility, not the centroid)**, bbox, pins in pixels, and ready `carvercat_batch` steps (one closed `object.path` per ring, largest first). Paste the steps (≤ 256 per batch), then style. For the UAE: 16 rings / 401 points at tol 2 px.
+Output: per feature the simplified rings in comp pixels, a **label anchor (pole of inaccessibility, not the centroid)**, bbox, pins in pixels, and ready `carvercat_batch` steps (stored format; design units: `scene.apply` and `object.path {d}`) (one closed `object.path` per ring, largest first). Paste the steps (≤ 256 per batch), then style. For the UAE: 16 rings / 401 points at tol 2 px.
 Ready-made (1920×1080): `ai/scripts/maps/data/uae_emirates_1920x1080.json` (local projection) and `western_asia_countries_1920x1080.json` (Equal Earth, 17 countries). Re-run the script for other boxes/aspects (9:16: `--comp 1080x1920 --box 61,268,955,1270`).
 
 | Source (all public domain unless noted) | Use |
@@ -42,39 +42,39 @@ Projections: `equal_earth` (world/region, honest areas), `mercator` (to match we
 ## 3. Shot recipes (timings at 30 fps)
 | Shot | Build | Timing |
 |---|---|---|
-| **Border draw-on** | Trim effect on every path, end 0 → 1 S-curve; stagger each ring 2 f, mainland first | 40 f per ring (~1.3 s); constant per item, don't scale with border length |
-| **Region highlight / fill bloom** | key `shape.fill.color` base → accent (Ease out) after its border completes; optional opacity overshoot | 14 f; label rises 0.7 s later (`Rise - expo`) |
-| **Pin drop** | white dot `Pop - spring` + pulse ring (stroke ellipse, size 0.5 → 3, opacity 1 → 0, Ease out) | pin 12–24 f, ring 24 f, 1–2 rings |
-| **Route** | open `object.path` (3–6 points, `smooth:true`), stroke round cap, dashed 0.006/0.005, Trim end 0 → 1 S-curve; destination pin pops when it arrives | 1–1.5 s local, 3–6 s long-haul; hold 0.3–0.5 s either side |
-| **Drive-time / distance label** | text after the route lands, `Words rise - expo`, seated with `authoring.place_bounds` clear of the line; say "approx." and the basis | holds ≥ 2 s |
+| **Border draw-on** | Trim on every path, `trimEnd` 0 → 1 ease-in-out; stagger each ring 2 f, mainland first | 40 f per ring (~1.3 s); constant per item, don't scale with border length |
+| **Region highlight / fill bloom** | key `fill` base → accent (ease-out; stored `shape.fill.color`) after its border completes; optional opacity overshoot | 14 f; label rises 0.7 s later (`Rise - expo`) |
+| **Pin drop** | white dot `Pop - spring` + pulse ring (stroke ellipse, `scale` 0.5 → 3, `opacity` 1 → 0, ease-out) | pin 12–24 f, ring 24 f, 1–2 rings |
+| **Route** | open `object.path` (3–6 points, `smooth:true`), stroke round cap, dashed 0.006/0.005 (stored fractions of width), `trimEnd` 0 → 1 ease-in-out; destination pin pops when it arrives | 1–1.5 s local, 3–6 s long-haul; hold 0.3–0.5 s either side |
+| **Drive-time / distance label** | text after the route lands, `Words rise - expo`, seated with `layout.fit` clear of the line; say "approx." and the basis | holds ≥ 2 s |
 | **Catchment rings** | concentric stroke ellipses at real distances (km → px with the script's transform scale; in Mercator divide by cos(lat)), grow 0 → 1 staggered 5–8 f, label on the ring edge | 0.6–1 s each |
-| **Zoom to location** | build the map in its own comp; place the instance, key its scale and position (scale in LOG space: equal ratios per frame), keep the target centred; cross-fade to a detailed comp at the end | 3–5 s, ease in-out (0.645, 0.045, 0.355, 1) |
+| **Zoom to location** | build the map in its own comp; place the instance, key its scale and position (scale in LOG space: equal ratios per frame), keep the target centred; cross-fade to a detailed comp at the end | 3–5 s, ease-in-out (cubic-bezier(0.645, 0.045, 0.355, 1)) |
 | **Leader-line label** | dot → short line draw (trim 10 f) → text rise | 0.3 s + 0.3 s |
 | **Masterplan reveal** | map at community scale cross-dissolves into the plan registered to the same geography; plots draw on → phase fills wipe → amenity icons pop | 4–8 s |
 
 ## 3b. Explainer kit — `ai/scripts/maps/map_overlay.py` (verified, `MAP Dubai base`)
-One spec file → batch steps for every explainer element, all in the map comp's pixel space:
+One spec file → batch steps for every explainer element, all in the map comp's pixel space (sizes written `W` below are stored fractions of comp width; at 1920 wide 0.01 W = 19.2 px):
 ```
 python map_overlay.py dubai.json spec.json overlay_steps.json      # 212 steps for the Dubai demo
 ```
 | Element | How it is built | Timing used |
 |---|---|---|
-| **Road draw-on** | each road an open path, stroke 0.0012 W light grey, `trim` end 0→1 S-curve | 36 f per road, staggered 3 f, starts f12 |
-| **Hero pin + pulse** | accent ellipse 0.016 W with 0.002 white stroke; pulse = stroke ellipse, `size` 0.5→3 and `blend` 1→0, Ease out | pin f64 (`Pop - spring`), pulse 24 f |
-| **Catchment rings** | stroke ellipses, diameter = 2 × km × px/km ÷ W (px/km = transform.scale ÷ 6371; Mercator ÷ cos lat), dashed 0.004/0.004, 60 % alpha; `size` 0→1 Ease out; label above the ring | 22 f, 8 f apart |
-| **Hero route** | smooth open path hero → landmark, width 0.003, round cap, trim S-curve, **glow size 12 / amount 0.6** (halo ~30 px, never burns — see [glow](../effects/glow.md)) | 30 f |
+| **Road draw-on** | each road an open path, stroke 0.0012 W light grey, `trimEnd` 0→1 ease-in-out | 36 f per road, staggered 3 f, starts f12 |
+| **Hero pin + pulse** | accent ellipse 0.016 W with 0.002 white stroke; pulse = stroke ellipse, `scale` 0.5→3 and `opacity` 1→0, ease-out | pin f64 (`Pop - spring`), pulse 24 f |
+| **Catchment rings** | stroke ellipses, diameter = 2 × km × px/km ÷ W (px/km = transform.scale ÷ 6371; Mercator ÷ cos lat), dashed 0.004/0.004, 60 % alpha; `scale` 0→1 ease-out; label above the ring | 22 f, 8 f apart |
+| **Hero route** | smooth open path hero → landmark, width 0.003, round cap, trim ease-in-out, **glow size 12 / amount 0.6** (halo ~30 px, never burns — see [glow](../effects/glow.md)) | 30 f |
 | **Landmark pop-up** | white dot (`Pop - spring`) → leader line trim 8 f → white rounded card 0.1 × 0.036 W, radius 0.008 (`Pop - gentle`) → bold name 0.0115 + accent sub-line 0.01 (`Rise - expo`) | +4 / +10 / +12 / +14 f; next landmark 8 f later |
 | **Callout + arrow** | bold tracked text; arrow = shaft path with trim + separate 3-point chevron head path (round corners) that fades in as the shaft lands | shaft 10 f, head 3 f |
-| **Zoom in / out (camera)** | new comp → `comp.place {comp: <map comp index>, at:0}`; on the instance set `tr.e_tr_placement_<id>.anchor` to the target, then key `.scale` and `.position` (see below) | in 32 f, hold 22 f, out 30 f, S-curve |
-| **Out** | instance opacity 1→0 + scale 1→1.06 Ease in over the last 14 f | |
+| **Zoom in / out (camera)** | new comp → `comp.place {comp: <map comp index>, at:0}`; on the instance set `tr.e_tr_placement_<id>.anchor` to the target, then key `.scale` and `.position` (see below) | in 32 f, hold 22 f, out 30 f, ease-in-out |
+| **Out** | instance opacity 1→0 + scale 1→1.06 ease-in over the last 14 f | |
 
 Presets after the batch (one id per `preset.apply` call): pins `Pop - spring`, cards `Pop - gentle`, names/sub-lines/callout `Rise - expo`.
 
 **Camera maths (verified).** On a comp *instance* the anchor is a pure pivot — setting it does NOT shift position to compensate (unlike shapes). With anchor `a` (half-sizes) and position `p`, the target sits at `p + a/2` on screen and stays put while scaling. So:
 - wide: `p = [0.5, 0.5]` (map unshifted), anchor = `(target − 0.5) × 2` (target in centre fractions, y up);
 - zoomed and centred: key `p = 0.5 − a/2` together with the scale key, back to `[0.5,0.5]` when pulling out.
-Example: project at [0.4689, 0.4042] → anchor [−0.0622, −0.1916]; zoom keys scale 1 (f62) → 1.9 (f94) hold → 1 (f146), position [0.5,0.5] → [0.5311,0.5958] → [0.5,0.5]. Vector paths and text inside the nested comp stayed sharp at ×1.9.
-Paths are parameter keys: `property.set`/`key.set` with key `tr.e_tr_placement_<instance id>.scale` (value `[x,y]`), `.position`, `.anchor`, `.opacity`; `param.list {id, where:"panel"}` lists them. The short keys (`scale`, `anchor`, `blend`) are refused on instances.
+Example: project at [0.4689, 0.4042] → anchor [−0.0622, −0.1916] (stored; as `transformOrigin` "46.89% 59.58%", y down); zoom keys scale 1 (f62) → 1.9 (f94) hold → 1 (f146), position [0.5,0.5] → [0.5311,0.5958] → [0.5,0.5]. Vector paths and text inside the nested comp stayed sharp at ×1.9.
+Paths are parameter keys: `property.set`/`key.set` with key `tr.e_tr_placement_<instance id>.scale` (value `[x,y]`), `.position`, `.anchor`, `.opacity`; `param.list {id, where:"panel"}` lists them. The short keys (`scale`, `anchor`, `blend`) are refused on instances (verified with these old keys).
 
 ## 4. Real-estate conventions
 - Establish → locate → connect → reveal: country/emirate → project pin → landmark distances → masterplan/render.
@@ -86,7 +86,7 @@ Paths are parameter keys: `property.set`/`key.set` with key `tr.e_tr_placement_<
 - Large map comps scaled up > 2.5× step their edges: build the detailed comp at the zoomed size instead.
 - Children of the map instance (pins/labels) belong INSIDE the map comp so they move with the zoom, or in the parent comp re-projected every key — prefer inside.
 - Don't clip borders to the frame; draw full geometry. If you fit to a bbox, make the bbox (or the clip) larger than the frame, or the land shows a straight cut edge in the wide shot (seen on `MAP Dubai base`; hidden once zoomed).
-- `text.font.size` has a floor of 0.01 W (≈ 19 px at 1080p) — smaller sizes refuse the whole batch.
+- Stored `text.font.size` (design `fontSize` px) has a floor of 0.01 W (≈ 19 px at 1080p) — smaller sizes refuse the whole batch.
 - There is no batch arrow command — build shaft + chevron (the script does).
 - Creating many objects at once: give every step a `frame`; the batch picks a free track. A batch ending in a refused step rolls back everything — split long builds (base, overlay, presets).
 - Never hide provider attribution (OSM, Mapbox, Google Earth imagery must stay credited).

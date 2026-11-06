@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "corporate-brand/cb-lab-3",
+  "title": "Corporate Brand lab 3 (source of the round-3 templates)",
+  "category": "corporate-brand",
+  "tags": [
+    "corporate",
+    "brand",
+    "templates",
+    "org-chart",
+    "values",
+    "anniversary",
+    "milestone",
+    "office",
+    "location",
+    "award",
+    "badge",
+    "partners",
+    "logo-wall",
+    "careers",
+    "hiring",
+    "safety",
+    "notice",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Corporate Brand templates were built and verified in: org chart, values grid, anniversary card, office location card, award badge, partner logo wall, careers card and safety notice.",
+  "use_when": "You want to see a round-3 corporate template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "CB Org chart (150 f)",
+      "CB Values grid (150 f, light)",
+      "CB Anniversary (120 f)",
+      "CB Office card (150 f, light)",
+      "CB Award badge (120 f)",
+      "CB Partner wall (120 f, light)",
+      "CB Careers card (150 f)",
+      "CB Safety notice (150 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "ORG_TOP / ORG_REPORTS, VALUES, PARTNERS, PILLS in corporate_brand_lab3.py",
+    "map and logo stand-ins (replace with media)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Regular/Medium/SemiBold/Bold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. The map, the partner logos, names, places and the company are invented stand-ins.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\". The light comps also have a 'Light background' that stays in the template.",
+    "Clip ids are unique per comp (cog_, cvg_, can_, cof_, caw_, cpl_, chr_, csn_).",
+    "Rebuild: ai/scripts/motion/corporate_brand_lab3.py; every move is baked as keys (Soft rise and Card settle written as keys), no presets to apply; open the file with edit.open {force:true}, then edit.save.",
+    "The warning triangle and the star are turned with the transform rotation (+90), because a polygon's Angle does not rotate it (KI-150).",
+    "Every comp lints 0 errors / 0 warnings / 0 notes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

@@ -55,32 +55,35 @@ before it** (use `scripts/motion/vo_align.py` for word frames).
 - Mid-film scenes don't need their own exit animation: the transition IS the exit.
   Only the last scene animates its elements out.
 - Spring equivalents (from Remotion's spring maths at 30 fps): a critically damped
-  "smooth" spring ~ Ease out settling in ~22 f; the default spring overshoots ~16 % and
+  "smooth" spring ~ ease-out settling in ~22 f; the default spring overshoots ~16 % and
   settles in ~28 f; a "snappy" UI spring overshoots ~4 % in ~15 f. Recreate with keys.
 
 ## 2. Easing - in Carvercat terms
 
-Carvercat stores the easing on a key and applies it to the segment **leaving** that key
-(key A "Ease out" -> the move from A to B decelerates into B).
+A key's `ease` shapes the segment that **leaves** it, as in CSS (key A `ease-out` -> the move
+from A to B decelerates into B; the last key's ease is not stored). Older projects store the
+easing on the arriving key (stored as Ease out for a decelerating arrival). Measured on 0.1.6
+(rev 1105) with that stored form: an accelerating curve on the second key accelerated the move;
+the same curve on the first key left it linear (constant 46.7 px/frame). See [../../patterns/saas-ui.md](../../patterns/saas-ui.md) pitfall 1.
 
-| Situation | Carvercat easing |
+| Situation | Easing (`ease` on the key that leaves) |
 |---|---|
-| Element **enters / arrives** | `Ease out` (decelerate) |
-| Element **leaves for good** | `Ease in` (accelerate) |
-| Element moves A->B while staying on screen, camera moves, transitions | `S-curve` |
-| Constant mechanical motion: rotation, drift, ticker, progress bar, loop | `Linear` - only here |
-| Steps: counters, cursor blink, on/off, stop-motion | `Hold` |
+| Element **enters / arrives** | `ease-out` (decelerate) |
+| Element **leaves for good** | `ease-in` (accelerate) |
+| Element moves A->B while staying on screen, camera moves, transitions | `ease-in-out` |
+| Constant mechanical motion: rotation, drift, ticker, progress bar, loop | `linear` - only here |
+| Steps: counters, cursor blink, on/off, stop-motion | `hold` |
 | Arrivals with personality: logo, icon, CTA, playful brand | overshoot (below) |
 
-The named curves are gentle (`Ease out` = bezier [0.33,0.67,0.67,1]). For premium motion
-write an exact curve in the project file - every keyframe accepts
-`"easing":"Custom","customEase":[x1,y1,x2,y2]` (CSS order; honoured by preview, render
-and the Resolve/Fusion export). Over MCP the same curve takes two `key.set` keys plus
-`key.handle` on each: out (x1,y1) on the first, in (x2,y2) on the second, `tied:false`.
+The plain curves are gentle (a decelerating arrival is cubic-bezier(0.333, 0.667, 0.667, 1)).
+For premium motion write an exact curve: `ease: "cubic-bezier(x1,y1,x2,y2)"` on the key that
+leaves, through `anim.set` or `key.set` (CSS order; honoured by preview, render
+and the Resolve/Fusion export). In the project file the same curve is stored as
+`"easing":"Custom","customEase":[x1,y1,x2,y2]` (stored value) on the arriving key.
 Verified on 0.0.72 to match the CSS curve frame for frame
 ([../patterns/custom-curves.md](../../patterns/custom-curves.md)).
 
-| Curve | customEase | Use |
+| Curve | cubic-bezier | Use |
 |---|---|---|
 | Expo-out (premium arrive) | `[0.16, 1, 0.3, 1]` | hero text, cards, UI windows |
 | Emphasized decelerate | `[0.05, 0.7, 0.1, 1]` | strong single entrances |
@@ -88,13 +91,13 @@ Verified on 0.0.72 to match the CSS curve frame for frame
 | Emphasized accelerate (exit) | `[0.3, 0, 0.8, 0.15]` | exits, things leaving fast |
 | Expressive in / out | `[0, 0, 0.3, 1]` / `[0.4, 0.14, 1, 1]` | brand moments |
 
-**Overshoot** - Carvercat has no spring parameter. Three ways, best first:
+**Overshoot** - Carvercat has no spring preset curve in the stored format (design units also take `spring(duration, bounce)` as an `ease`, baked into marked keys). Three ways, best first:
 1. Apply a spring preset from the Motion Patterns pack (`Pop - spring` 16 %, `Pop - gentle`
    about 4.5 %, `Swing in`, `Stamp`). The springs are simulated and baked into keys
    (`../scripts/motion/curves.py`).
-2. One overshoot: a back-out handle, `key.handle` out (0.34, 1.56), in (0.64, 1). That gives
-   about 10 %.
-3. By hand: `start -> target x 1.08 at ~65-70 % of the duration (Ease out) -> target (S-curve)`.
+2. One overshoot: a back-out curve, `ease: "cubic-bezier(0.34, 1.56, 0.64, 1)"` on the key that
+   leaves. That gives about 10 %.
+3. By hand: `start -> target x 1.08 at ~65-70 % of the duration (ease-out on start) -> target (ease-in-out on the 1.08 key)`.
 - 5-15 % past target for UI/product; 20-50 % only for playful/kinetic work.
 - Settle within 6-12 f, at most 1-3 decaying swings.
 - Never overshoot full-frame transitions or camera moves.
@@ -103,6 +106,8 @@ Rules: moves under ~5 f get ease-out only; keep **one easing family per piece** 
 duration, not curve style; no linear keys on anything that starts or stops.
 
 ## 3. The 12 principles, applied
+
+Each principle has its own page with Carvercat techniques and numbers measured on verified templates: [principles/README.md](principles/README.md).
 
 1. **Squash & stretch** - on landing, scaleX/scaleY opposite (~105/95 UI, 115/85 playful),
    area roughly constant; consistent across same-type elements.
@@ -115,7 +120,10 @@ duration, not curve style; no linear keys on anything that starts or stops.
    content lands 2-4 f later; on exit content leaves first, then the container.
 6. **Slow in / out** - every keyed transform eases; check the curve for kinks.
 7. **Arcs** - moves > ~15 % of frame width travel on a gentle curve, not a straight
-   diagonal (offset the mid key). UI-like moves stay straight.
+   diagonal. In Carvercat position moves in a straight line between keys whatever the
+   easing (measured 2026-10-28), so offsetting a middle key makes a corner, not a curve:
+   bake the curve to keys every 2 f, separate the axes with a nest, or rotate about a
+   pivot ([principles/arcs.md](principles/arcs.md)). UI-like moves stay straight.
 8. **Secondary action** - shadows, glows, ripples, particles respond 2-4 f after the
    primary, smaller, never competing.
 9. **Timing** - speed = weight and importance. Reuse the duration scale.
@@ -141,7 +149,7 @@ duration, not curve style; no linear keys on anything that starts or stops.
   left); carry a shared element across the cut (colour field, shape, logo, the pointer);
   one easing family; one light direction. To relocate something for no story reason,
   fade it out and in at the new place instead of flying it.
-- **Never static** (house rule): every scene has an IN, a living MID (a pointer action,
+- **Never static** : every scene has an IN, a living MID (a pointer action,
   a counter, a drift, a pulse) and an OUT that hands over to the next scene.
 
 ## 5. Pacing for promo & social video

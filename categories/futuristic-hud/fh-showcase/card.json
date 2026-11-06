@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "futuristic-hud/fh-showcase",
+  "title": "Futuristic HUD showcase (12.8 s reel)",
+  "category": "futuristic-hud",
+  "tags": [
+    "hud",
+    "sci-fi",
+    "reel",
+    "radar",
+    "reticle",
+    "readout",
+    "1920x1080"
+  ],
+  "summary": "A 12.8 s sci-fi HUD reel: corner brackets scan, typed data readout, radar sweep and targeting reticle.",
+  "use_when": "You need ready interface beats for a tech launch, game trailer, security or space explainer.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 385,
+    "seconds": 12.8
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Futuristic HUD showcase (385 frames)",
+    "scenes": [
+      "0-75 brackets scan",
+      "75-175 data readout",
+      "175-295 radar sweep",
+      "295-385 targeting reticle"
+    ]
+  },
+  "parameters": [
+    "texts inside each comp"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint 0/0/0; QC at 96 px reports freezes over thin-line scenes (not seen at 240 px per comp).",
+    "Built by ai/scripts/motion/futuristic_hud_showcase.py from the lab comps.",
+    "No sound yet: UI blips on each flicker, a low hum bed, a ping per radar blip."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

@@ -1,0 +1,108 @@
+{
+ "presetVersion": 2,
+ "id": "cc.sp.slash_in",
+ "name": "Slash in",
+ "category": "animation",
+ "tags": [
+  "in",
+  "slash",
+  "diagonal",
+  "fast",
+  "sports",
+  "sports pack"
+ ],
+ "note": "Cuts in along a diagonal from the lower left (22% W, 12% H) in 10 f on a hard expo. Add the Motion blur effect for the smear. Curves baked as keys (linear joins) - see the skill's ai/patterns/sports.md.",
+ "anchor": "in",
+ "frames": 10,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      -0.22,
+      -0.12
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1,
+     "value": [
+      -0.11123,
+      -0.06067
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": [
+      -0.05453,
+      -0.02974
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3,
+     "value": [
+      -0.02702,
+      -0.01474
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": [
+      -0.01325,
+      -0.00723
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": [
+      -0.00621,
+      -0.00339
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7,
+     "value": [
+      -0.00095,
+      -0.00052
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

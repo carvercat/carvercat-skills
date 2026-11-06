@@ -1,7 +1,7 @@
 # Export and delivery
 
 Read this when you render anything out of Carvercat: PNG sequences with alpha, stills, MP4s; when an export call times out or is interrupted; and before you hand any file to Resolve or to a person.
-Placement in Resolve is in [resolve-handoff.md](resolve-handoff.md). Command basics: [../mcp-essentials.md](../app/mcp-essentials.md), [../api-gotchas.md](../app/api-gotchas.md).
+Placement in Resolve is in [resolve-handoff.md](resolve-handoff.md) (run `carve.preflight {host}` first). Command basics: [../mcp-essentials.md](../app/mcp-essentials.md), [../api-gotchas.md](../app/api-gotchas.md).
 
 ## Contents
 1. [Settings](#1-settings)
@@ -13,7 +13,7 @@ Placement in Resolve is in [resolve-handoff.md](resolve-handoff.md). Command bas
 
 ## 1. Settings
 
-- Overlay delivery is native export, not `carvercat_render`. On an early pre-release build `carvercat_render` wrote RGBA PNGs with alpha 255 everywhere on a black ground ([KI-070](../known-issues.md#ki-070)).
+- Overlay delivery is native export, not `carvercat_render`. On build c423 `carvercat_render` wrote RGBA PNGs with alpha 255 everywhere on a black ground ([KI-070](../known-issues.md#ki-070)).
 - PNG sequence with alpha:
   `export.set {settings: {format:"sequence", sequenceType:"png", alpha:true, scale:100, range:"comp", dir:<existing dir>, name:<versioned name>, collision:"ask"|"numbered"|"replace"}}` → read `export.plan` → `export.run` once.
 - MP4: `export.set {settings: {format:"video", videoCodec:"h264", container:"mp4", range:"comp", sound:true, soundCodec:"aac", dir, name, collision:"replace"}}` → `export.run`.
@@ -24,7 +24,7 @@ Placement in Resolve is in [resolve-handoff.md](resolve-handoff.md). Command bas
 
 ## 2. The export job model
 
-Current since the 2026-10-01 exact-release build (first seen live on a pre-release build). Older builds blocked the call.
+Current since the 2026-10-01 exact-release build (app commit; first seen live on). Older builds blocked the call.
 
 - `export.run` returns at once with the durable job path in `why`. Poll `export.status`; never call `export.run` again for the same work.
 - Each job owns an immutable document snapshot (revision + source hash). Later edits are not in it; Deliver says so.
@@ -39,7 +39,7 @@ Speed reference: a 434-frame 1080×1920 comp wrote in under a minute.
 
 ## 3. Agent exports, visibility and interruption
 
-Requirements, implemented and verified in the 2026-10-01 exact-release build. Check the live build exposes `carvercat_state.revision`, top-level `expected_revision` and v2 `carvercat_list` tracks before relying on them; an older installed executable (a pre-release build) did not.
+User requirements, implemented and verified in the 2026-10-01 exact-release build. Check the live build exposes `carvercat_state.revision`, top-level `expected_revision` and v2 `carvercat_list` tracks before relying on them; an older installed executable did not.
 
 - Any export, human or agent, opens Deliver and keeps live or terminal status visible there.
 - Export runs in a background worker; the editor must stay responsive (a timeline seek measured 0 ms during a live 180-frame export; limit 250 ms). The user can scrub, zoom and navigate; this never cancels the export.
@@ -79,7 +79,7 @@ Stills: unique explicit filenames, exact expected count, decode each. Video: che
 | Deliverable | Must pass before handoff |
 |---|---|
 | PNG sequence for Resolve | §4 steps 1–7; versioned prefix; Resolve import at timeline fps, Straight alpha, exact start/duration ([resolve-handoff.md §4](resolve-handoff.md#4-route-a-import-png-sequences)) |
-| Native Fusion clip | ready plan with fresh scope; one send; preserved neighbours; graph contents; saved/reopened; RTL correction if Arabic |
+| Native Fusion clip | run `carve.preflight {host}` first; ready plan with fresh scope; one send; preserved neighbours; graph contents; saved/reopened; RTL correction if Arabic |
 | Verification stills | timecode asserted before and after; explicit names; count reached |
 | MP4 / master | duration and fps; audio present and balanced by listening; loudness/true peak; first/last frame; no black or audio-only tail |
 | Editable source | saved `.carverproj` in the job folder (never only in Temp), reopened and checked; file index of comps, assets and sequences |

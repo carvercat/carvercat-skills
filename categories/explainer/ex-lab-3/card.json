@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "id": "explainer/ex-lab-3",
+  "title": "Explainer lab 3 (source of the round-3 templates)",
+  "category": "explainer",
+  "tags": [
+    "explainer",
+    "education",
+    "templates",
+    "cause-effect",
+    "pros-cons",
+    "seesaw",
+    "diagram",
+    "leader-lines",
+    "icons",
+    "steps",
+    "faq",
+    "definition",
+    "pronunciation",
+    "carousel",
+    "tips",
+    "problem-solution",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Explainer templates were built and verified in: cause and effect, pros and cons, labelled diagram, icon steps, FAQ card, word definition, tip carousel and problem and solution.",
+  "use_when": "You want to see a round-3 explainer template working before using it, copy a comp's objects (a seesaw baked to the beam, an accordion that opens, a carousel whose cards never overlap), or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 210,
+    "seconds": 7.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "EX Cause effect (150 f)",
+      "EX Pros cons (165 f, seesaw baked)",
+      "EX Labelled diagram (165 f, gradients)",
+      "EX Icon steps (150 f)",
+      "EX FAQ card (165 f)",
+      "EX Word definition (150 f)",
+      "EX Tip carousel (210 f)",
+      "EX Problem solution (150 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light; BT.709 curve, deeper accents that pass contrast)",
+    "text content (sample copy: names, numbers and claims are invented)",
+    "pros and cons: TILT angle and ball sizes (regenerate; positions are baked every frame)",
+    "tip carousel: slide frames (f_slide) and card size",
+    "FAQ: which row opens (shift and panel)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/SemiBold/Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. The phone in the labelled diagram is a shape stand-in.",
+    "Each comp has a 'Lab bg' rectangle (dropped on extraction) and a 'Light background' that stays in the template.",
+    "Clip ids are unique per comp (ece_, epc_, eld_, eis_, efq_, ewd_, etp_, epb_).",
+    "Rebuild: ai/scripts/motion/explainer_lab3.py writes the comps; every move is baked as keys (no presets to apply); open with edit.open {force:true}, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings with contrast:true (notes: repeated_key_value on holds, speed_jump on slides and the tilt; intended)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

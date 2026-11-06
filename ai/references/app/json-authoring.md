@@ -1,8 +1,12 @@
 # Writing comps straight into the project JSON
 
+> **Format.** Carvercat now saves `carvercat/2` (px from the top-left with y down, frames, CSS-style easing, `color(srgb ...)`; spec: the app's `carvercat://schema/scene` resource). A file in the older v1 shape below still opens and the first save keeps it as `<file>.v1.bak`. For a small generator write v2 with [`cc_project.py`](../../scripts/cc_project.py) (the recipe builders do); the tables below describe the v1 shape that `json_author/cc.py` writes.
+>
+> **Units.** The rest of this page is about the v1 project shape (fractions, y up, linear colour, stored easing names). Over MCP everything is design units ([design-units.md](design-units.md)), and `scene.apply` sends a whole scene in one validated call, which is the shorter route for most jobs; keep this page for films too big for one call or for exact stored-format work. Everything below is stored-format.
+
 Read this when a build is too big for MCP batches (hundreds of objects, many comps, long films), or when you need exact, continuous motion across many sub-comps. Verified on Carvercat 0.0.72 (20 Oct 2026). The reference implementation is [`../../scripts/motion/json_author/`](../../scripts/motion/json_author/README.md).
 
-## Standing rule: edit the project file directly
+## Standing rule (23 Oct 2026): edit the project file directly
 
 **Direct project-file editing is the default way to build and change Carvercat scenes.** Write the clips, keys and effects straight into the `.carverproj`, then reopen it in the app. It is the fastest route by a wide margin: one write and one reload, however many objects. MCP batches took about 10 minutes per caption scene; Python builder scripts that send hundreds of MCP calls were the slowest of all.
 
@@ -60,7 +64,7 @@ Older guidance kept for context:
 | Custom ease | On the arriving key: `{"easing":"Custom","customEase":[x1,y1,x2,y2]}`. |
 | Stagger effect | `{id:"e_fx_stagger_<clip>", cap:"stagger", by, order, amount, amountMode:"each", seed, connected:[paths]}`. |
 | Audio clip | Type `media` with `media{id,path,kind}`. It needs a matching entry in the project `media` pool. Gain is at `src.e_src_media_audio_<id>.gain`. |
-| Parenting | `parentId` on the child. A non-nested child's screen position = parent_pos + s·(child − parent_static_pos). **Nested-comp instances ignore their parent**: bake camera moves into their own keys. |
+| Parenting | `parentId` on the child. **Measured 0.1.6 (2026-10-27): the child's stored position is an offset from the comp centre**, so its screen position = parent_pos + (child − [0.5, 0.5]), turned and scaled with the parent. A child written at its absolute comp position lands displaced by (parent − centre): store `0.5 + (child − parent)` instead (`rig()` in `ai/scripts/motion/cartoon_bounce_lab2.py`). Parent rotation and scale then pivot on the parent's position. **Nested-comp instances ignore their parent**: bake camera moves into their own keys. |
 
 ## Continuous motion across sub-comps
 

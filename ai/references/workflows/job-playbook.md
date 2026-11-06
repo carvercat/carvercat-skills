@@ -24,7 +24,7 @@ Task-specific workflows: [captions-and-voiceover.md](captions-and-voiceover.md),
 7. **Deliver** with verified exports and placement; run a combined composite review after any design-system change (an isolated comp looked fine but overlapped a later hierarchy on the real timeline).
 8. **Report** and save everything.
 
-Keep one deterministic build script per comp; full rebuilds then take minutes and revision rounds are cheap. Use `carvercat_batch` (≤256 steps, one undo step) rather than hundreds of single calls: an equal-output scene went from 48 requests to 2.
+Keep one deterministic build script per comp; full rebuilds then take minutes and revision rounds are cheap. Use `scene.apply` (one document, checked whole, one undo step; the older `carvercat_batch` took ≤256 steps) rather than hundreds of single calls: an equal-output scene went from 48 requests to 2.
 
 ## 2. Scope and permission
 
@@ -69,7 +69,7 @@ Keep one deterministic build script per comp; full rebuilds then take minutes an
 - The user owns the interface. Their scrubbing is view state; their clicks during an open agent transaction roll it back. If they switch comps, your next commands act on their comp: check `carvercat_list` when a reply looks wrong, and ask them to keep hands off during scripted builds and force-reopen loops.
 - Let the user watch: agent edits bring the workspace back to Canvas/Create.
 - Work through MCP and Resolve scripting, not desktop UI automation; the PC may be locked.
-- Preferences seen across jobs: smooth curves everywhere, no linear segments; captions without boxes unless asked; solid white Arabic without outline; fixed type roles; keep spoken timing over lint suggestions; preserve every user edit; numbers clear and static in fast speech.
+- User preferences seen across jobs: smooth curves everywhere, no linear segments; captions without boxes unless asked; solid white Arabic without outline; fixed type roles; keep spoken timing over lint suggestions; preserve every user edit; numbers clear and static in fast speech.
 - When the user reviews and accepts ("looks good"), record the exact words and what they reviewed.
 
 ## 7. Stopping and handing over

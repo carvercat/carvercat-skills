@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "cartoon-bounce/ct-lab-2",
+  "title": "Cartoon Bounce lab 2 (source of the round-2 templates)",
+  "category": "cartoon-bounce",
+  "tags": [
+    "cartoon",
+    "bounce",
+    "squash",
+    "stretch",
+    "anticipation",
+    "rig",
+    "parenting",
+    "templates",
+    "speech-bubble",
+    "button",
+    "character",
+    "burst",
+    "sign",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Cartoon Bounce templates were built and verified in: speech bubble, button press, rigged character hop, sticker burst, end card, ribbon lower third, rigged hanging sign and bouncy list.",
+  "use_when": "You want to see a round-2 cartoon template or a working parent rig (pivot at the feet or a nail) before using it, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 90,
+    "seconds": 3.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "CT Speech bubble (90 f)",
+      "CT Button press (60 f)",
+      "CT Character hop (90 f, rig)",
+      "CT Sticker burst (75 f)",
+      "CT End card (120 f)",
+      "CT Ribbon lower third (150 f)",
+      "CT Hanging sign (90 f, rig)",
+      "CT Bouncy list (120 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "hop distance and height (regenerate)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (csb_, cbp_, cch_, csk_, cec_, crl_, chs_, cbl_).",
+    "Rigs: children are parented (parentId) to a visible pivot (Feet, Nail) and their stored positions are offsets from the comp centre.",
+    "Rebuild: ai/scripts/motion/cartoon_bounce_lab2.py writes the comps; apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

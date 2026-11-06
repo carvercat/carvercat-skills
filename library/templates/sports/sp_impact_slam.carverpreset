@@ -1,0 +1,99 @@
+{
+ "presetVersion": 2,
+ "id": "cc.sp.impact_slam",
+ "name": "Impact slam",
+ "category": "animation",
+ "tags": [
+  "in",
+  "slam",
+  "impact",
+  "hit",
+  "sports",
+  "sports pack"
+ ],
+ "note": "Slams down from 220%, accelerating, overshoots to 92% on impact (frame 5) and springs back to rest. Scores, GOAL, big words; put the hit SFX on the impact frame. Curves baked as keys (linear joins) - see the skill's ai/patterns/sports.md.",
+ "anchor": "in",
+ "frames": 12,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 2.2,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.08,
+     "value": 2.05536,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.16,
+     "value": 1.83513,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.24,
+     "value": 1.5661,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.32,
+     "value": 1.26016,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": 0.92,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4857,
+     "value": 0.9475,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5714,
+     "value": 0.98232,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6571,
+     "value": 0.99966,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7429,
+     "value": 1.00365,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.15,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

@@ -5,7 +5,7 @@
 ## Timing chart
 
 ```
-LT bar   6 grow Y (expo, 16 f) ........................ 92 scaleY -> 0 (Ease in, 9 f) 101
+LT bar   6 grow Y (expo, 16 f) ........................ 92 scale Y -> 0 (accelerating arrival `cubic-bezier(0.333, 0, 0.667, 0.333)`, 9 f) 101
 LT name     9 words rise (gap 3) ............... 89 exit down (12 f) 100
 LT role         13 rise expo ....................... 93 fade (8 f) 100
 ```
@@ -14,8 +14,8 @@ Entrances are spaced 3–4 f apart: bar, then name, then role. Exits go in rever
 ## Layout used (1920×1080)
 
 - Bar: 11 × 144 px at x = 173, centred on the two lines.
-- Name: Open Sans Bold, size 0.045, left-aligned, seated with `authoring.place_bounds {box:[196,822,900,52], horizontal:"left"}`. Use `frame: 40`, because the clip starts at frame 9.
-- Role: size 0.026 (58% of the name), grey (0.75 linear), box `[196,880,900,34]`.
+- Name: Open Sans Bold, size 0.045 (stored value), left-aligned, seated in the box `[196,822,900,52]` with `layout.*` / `property.set`. Put the playhead at frame 40, because the clip starts at frame 9.
+- Role: size 0.026 (stored value; 58% of the name), grey (0.75 linear, stored value), box `[196,880,900,34]`.
 - All inside the 16:9 title-safe area. For 9:16, see `../references/craft/vertical-and-safe-areas.md`.
 
 ## Pitfalls

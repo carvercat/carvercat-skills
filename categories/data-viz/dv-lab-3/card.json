@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "id": "data-viz/dv-lab-3",
+  "title": "Data Viz lab 3 (source of the round-3 templates)",
+  "category": "data-viz",
+  "tags": [
+    "data-viz",
+    "charts",
+    "templates",
+    "funnel",
+    "bubble",
+    "scatter",
+    "bar-race",
+    "ranking",
+    "stacked-area",
+    "mask",
+    "map",
+    "tile-grid",
+    "choropleth",
+    "icon-array",
+    "pictogram",
+    "heatmap",
+    "calendar",
+    "1920x1080"
+  ],
+  "summary": "The 7 comps the round-3 Data Viz templates were built and verified in: conversion funnel, bubble chart, bar chart race, stacked area chart (masked reveal), tile-grid map, icon array and calendar heatmap.",
+  "use_when": "You want to see a round-3 data-viz template working before using it, copy a comp's objects into a data story or infographic, or re-extract a template with comp_to_template.py after changing its data.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 220,
+    "seconds": 7.33
+  },
+  "contains": {
+    "timelines": 7,
+    "comps": [
+      "DV Funnel (150 f)",
+      "DV Bubble chart (150 f)",
+      "DV Bar race (220 f)",
+      "DV Stacked area (150 f)",
+      "DV Tile map (150 f)",
+      "DV Icon array (120 f)",
+      "DV Heatmap (150 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "the data lists in data_viz_lab3.py (FUNNEL, BUBBLES, RACE, LAYERS, SOLAR/BINS, heat_minutes)",
+    "titles and annotations",
+    "race transition frames (T)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Bold/SemiBold/Medium"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "All numbers are sample data, and each comp says so on screen.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (dfn_, dbc_, drc_, dsa_, dcm_, dia_, dhm_).",
+    "Rebuild: ai/scripts/motion/data_viz_lab3.py; every move is baked as keys, no presets to apply; open the file, run mask.make {ids:[window, layer]} + parent.clear for the three MASKS pairs of DV Stacked area, then edit.save.",
+    "Lint: every comp 0 errors / 0 warnings (notes only on Bubble chart and Bar race: held key values)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

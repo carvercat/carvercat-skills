@@ -6,7 +6,7 @@ numpy/scipy, so there are no licence questions; swap in licensed music or librar
 the client prefers.
 
 ## What "punchy" means (measured)
-Reference: Carvercat's built-in SFX pack `library/sfx/carvercat-starter` (in the installed app)
+Reference: Carvercat's built-in starter sound pack (`carvercat-starter`)
 (5 CC0 sounds). Each one has an attack under 2 ms, a decay of 40-180 ms, a length of
 0.12-0.55 s, and sits in one tight frequency band (peak -7 dBFS, RMS -21 dBFS).
 Sounds that failed review had whooshes that took ~450 ms to reach the hit, tails of
@@ -14,7 +14,7 @@ Sounds that failed review had whooshes that took ~450 ms to reach the hit, tails
 
 ## One clip per event
 Every element that appears gets its own sound, as its own clip on its own audio track
-(house rule). Build a cue sheet first:
+. Build a cue sheet first:
 1. Entrances: `carverproj.entrances(timeline, scene_start)` lists every opacity/scale
    0->1 moment.
 2. Add the actions that keyframe opacity doesn't reveal: pointer clicks, drags, scrubs,
@@ -38,7 +38,7 @@ Every element that appears gets its own sound, as its own clip on its own audio 
 | Line/curve draw-on | `draw(d)` | -14 | |
 | Outro | `sting()` | -5 | |
 
-### The pop (approved)
+### The pop (approved by the user)
 A pop is an **upward** pitch glide: ~390 -> 860 Hz in ~20 ms, a 3-4 ms soft onset, a
 ~25 ms decay, a faint resonant ring and **no sub**. A falling pitch plus a sub reads as
 a thud, and was rejected.

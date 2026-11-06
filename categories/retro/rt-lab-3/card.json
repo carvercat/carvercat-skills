@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "retro/rt-lab-3",
+  "title": "Retro lab 3 (source of the round-3 templates)",
+  "category": "retro",
+  "tags": [
+    "retro",
+    "70s",
+    "80s",
+    "90s",
+    "on-twos",
+    "templates",
+    "action-movie",
+    "chrome",
+    "mixtape",
+    "cassette",
+    "tracklist",
+    "under-construction",
+    "web",
+    "film-leader",
+    "countdown",
+    "pixel",
+    "level-up",
+    "game",
+    "tv-ident",
+    "polaroid",
+    "photo",
+    "weather",
+    "map",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Retro templates were built and verified in: 80s action title, mixtape tracklist, under construction page, film countdown leader, pixel level up, 70s TV ident, polaroid memory and retro weather map.",
+  "use_when": "You want to see a round-3 retro template working before using it, copy a comp's objects into a retro film, or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "RT Action title (150 f, ground included)",
+      "RT Mixtape (150 f)",
+      "RT Under construction (150 f, ground included, seamless hazard bands)",
+      "RT Film leader (120 f, 4 beats of 30 f)",
+      "RT Level up (120 f)",
+      "RT TV ident (150 f, ground included)",
+      "RT Polaroid (150 f)",
+      "RT Weather map (150 f, sea included)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content (sample copy: titles, songs, towns, dates and numbers are invented)",
+    "the lists in retro_lab3.py (TRACKS, SPRITE, ISLAND, CITIES)",
+    "the photo stand-in (replace with a real picture)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium",
+      "Rethink Sans Bold",
+      "Rethink Sans ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. The polaroid photo is a gradient stand-in.",
+    "RT Mixtape, RT Level up and RT Polaroid have a 'Lab bg' rectangle, dropped on extraction; the other comps keep their own ground (Title ground, Page ground, Leader ground, Ident ground, Sea).",
+    "Clip ids are unique per comp (rat_, rmx_, ruc_, rfl_, rlu_, rti_, rpo_, rwm_).",
+    "Rebuild: ai/scripts/motion/retro_lab3.py; every move is baked as keys (on twos with Hold), no presets to apply; open the file and edit.save.",
+    "Lint: every comp 0 errors / 0 warnings; the notes are speed_jump on the stepped (on twos) moves plus one outside_graphics_safe while the polaroid drops in. qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

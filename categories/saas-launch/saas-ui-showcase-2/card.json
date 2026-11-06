@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "saas-launch/saas-ui-showcase-2",
+  "title": "SaaS UI showcase 2 (round-2 templates, 25 s)",
+  "category": "saas-launch",
+  "tags": [
+    "saas",
+    "ui",
+    "showcase",
+    "reel",
+    "round-2",
+    "1920x1080"
+  ],
+  "summary": "A 25 s master that plays every round-2 SaaS UI template back to back, placed from the Library: Feature title, SaaS lower third, Chat thread, Dropdown menu, Modal over app, Chart card, CTA end card.",
+  "use_when": "You want to see the round-2 templates of this style in sequence, or start a film from a verified cut.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 750,
+    "seconds": 25.0
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "SaaS UI showcase 2 (master, 7 placed templates)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "order and timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans"
+    ],
+    "media": "none",
+    "library_packs": [
+      "SaaS UI"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Each scene is a Library template placed with library.place + template.apply on a master with a background rectangle.",
+    "Rebuild: ai/scripts/motion/recipes/showcase2.py saas-ui (headless, isolated folders).",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc notes the long holds as freezes.",
+    "Pack doc: ai/patterns/saas-ui.md."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

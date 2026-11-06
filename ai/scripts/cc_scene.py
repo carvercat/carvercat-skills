@@ -1,461 +1,388 @@
-"""Pixel-first editable scene plans, native measurement and optional components.
-All times are comp frames. Plans patch explicit IDs; no document clearing.
-"""
-from dataclasses import dataclass, field
-import json
-import math
-from functools import lru_cache
-from pathlib import Path
-from cc_client import Client, CarvercatError
+"""Scene builder in Carvercat design units (API 1.0).
 
-@lru_cache(maxsize=1)
-def _control_declarations():
-    path=Path(__file__).resolve().parent.parent/'references/app/native-controls.json'
-    return json.loads(path.read_text(encoding='utf8'))['caps']
+Everything is px from the frame's top-left with y down, degrees clockwise, CSS colours and CSS easing, and time as
+frames, "1.5s" or "500ms". The builder collects objects into ONE scene document and sends it with `scene.apply`:
+the whole document is checked before anything changes, it is one undo step, and applying it again changes only what
+differs (objects keep the scene `id` they were given).
+
+    from cc_client import Client
+    from cc_scene import Scene, Box
+
+    with Client.stdio(exe, state_dir) as c:
+        s = Scene(c, width=1920, height=1080, fps=30, duration="4s")
+        s.rectangle("plate", Box(160, 700, 900, 220), fill="#1a1c26", radius=24)
+        s.text("name", "Alex Morgan", box=Box(220, 730, 780, 110), size=88, weight=700)
+        s.entrance(["plate", "name"], frames=14, stagger=4)
+        s.apply(dry_run=True)            # what would change, in design units; nothing changes
+        s.apply(preflight="resolve")     # applies, then says what carves exactly, approximately or not at all
+
+Renamed from the earlier toolkit (see references/app/design-units.md "Old names"): `linear_hex` is gone (colours are
+plain CSS strings), `size` is px (a true em), `radius` is px, `rebind` and `manifest` are gone (scene ids are the
+identity), `fx_set`/`fx_keys`/`remove_effect` are replaced by effect style keys, `image_card` is gone (use
+`media.import`, `layout.fit` and a `clipPath`). `Scene.path(name, d, ...)` is a `type: "path"` scene node (KI-166 is fixed);
+`Client.path(d, **style)` still makes one outside a scene with object.path. `Scene.null(name, x, y)` is a null object.
+"""
+import json
+import re
+from dataclasses import dataclass
+
+from cc_client import CarvercatError
+
+COLOUR = re.compile(r"^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
+
 
 def finite(*values):
-    if not all(isinstance(v,(int,float)) and math.isfinite(v) for v in values):raise ValueError("Expected finite numbers")
-def linear_hex(value):
-    value=value.lstrip("#")
-    if len(value) not in (6,8):raise ValueError("Use #RRGGBB or #RRGGBBAA")
-    rgb=[int(value[i:i+2],16)/255 for i in (0,2,4)]
-    # Carvercat uses the established BT.709 transfer conversion (matches cc_build.lin).
-    return [v/4.5 if v<0.081 else ((v+0.099)/1.099)**(1/0.45) for v in rgb]+([int(value[6:8],16)/255] if len(value)==8 else [])
+    for v in values:
+        if isinstance(v, bool) or not isinstance(v, (int, float)) or v != v or v in (float("inf"), float("-inf")):
+            raise ValueError("finite numbers only")
+    return values
 
-@dataclass
+
+def css_colour(value):
+    """Validate a CSS colour string and return it unchanged. Names, rgb() and hsl() pass through (the app checks them)."""
+    if not isinstance(value, str) or not value:
+        raise ValueError("a colour is a CSS string such as '#FF7A00', 'rgb(255 122 0)' or 'orange'")
+    if value.startswith("#") and not COLOUR.match(value):
+        raise ValueError("bad hex colour: " + value)
+    return value
+
+
+def gradient(stops, *, angle=90, radial=False):
+    """CSS gradient string from [(percent_0_to_100, colour), ...]. `angle` is CSS degrees (90 = left to right)."""
+    if len(stops) < 2:
+        raise ValueError("at least two gradient stops are required")
+    body = ", ".join("%s %s%%" % (css_colour(c), p) for p, c in sorted(stops))
+    return ("radial-gradient(circle, %s)" % body) if radial else ("linear-gradient(%sdeg, %s)" % (angle, body))
+
+
+@dataclass(frozen=True)
 class Box:
-    x:float;y:float;w:float;h:float
+    """A box in frame px: x, y are the top-left, y grows downward."""
+    x: float
+    y: float
+    w: float
+    h: float
+
     def __post_init__(self):
-        finite(self.x,self.y,self.w,self.h)
-        if self.w<0 or self.h<0:raise ValueError("Negative box size")
+        finite(self.x, self.y, self.w, self.h)
+        if self.w < 0 or self.h < 0:
+            raise ValueError("a box has no negative size")
+
     @property
-    def center(self):return self.x+self.w/2,self.y+self.h/2
-    def inset(self,padding):
+    def center(self):
+        return self.x + self.w / 2, self.y + self.h / 2
+
+    def inset(self, padding):
         finite(padding)
-        if padding<0 or padding*2>min(self.w,self.h):raise ValueError("Padding does not fit")
-        return Box(self.x+padding,self.y+padding,self.w-2*padding,self.h-2*padding)
-    def overlaps(self,other):return self.x<other.x+other.w and self.x+self.w>other.x and self.y<other.y+other.h and self.y+self.h>other.y
-    def contains(self,other):return self.x<=other.x and self.y<=other.y and self.x+self.w>=other.x+other.w and self.y+self.h>=other.y+other.h
+        if padding * 2 > min(self.w, self.h):
+            raise ValueError("inset larger than the box")
+        return Box(self.x + padding, self.y + padding, self.w - 2 * padding, self.h - 2 * padding)
 
-@dataclass
+    def overlaps(self, o):
+        return self.x < o.x + o.w and self.x + self.w > o.x and self.y < o.y + o.h and self.y + self.h > o.y
+
+    def contains(self, o):
+        return self.x <= o.x and self.y <= o.y and self.x + self.w >= o.x + o.w and self.y + self.h >= o.y + o.h
+
+
+def _slug(name):
+    s = re.sub(r"[^A-Za-z0-9_-]+", "-", name).strip("-")
+    return s or "object"
+
+
+def _frames(at, fps=30):
+    if isinstance(at, (int, float)):
+        return float(at)
+    m = re.match(r"^([0-9.]+)(f|s|ms)?$", str(at))
+    if not m:
+        return 0.0
+    v = float(m.group(1))
+    return v * fps if m.group(2) == "s" else v * fps / 1000 if m.group(2) == "ms" else v
+
+
 class Scene:
-    client:Client
-    width:float=1920
-    height:float=1080
-    ids:dict=field(default_factory=dict)
-    steps:list=field(default_factory=list)
-    revision:str=None
-    def __post_init__(self):
-        state=self.client.state();self.width=state['comp']['width'];self.height=state['comp']['height'];self.revision=state['revision'];self.comp=state['comp']['name'];self.text_factor=state['authoringUnits']['textSizeToPixels'];self.document=state['document'];self.effects={};self.effect_owners={};self.scales={};self.pending_scales={};self.effect_removals=set();self.font_units={};self.pending_fonts={}
-        listed=self.client.tool('carvercat_list');self.scope=[(c['index'],c['name'],c['open']) for c in listed['comps']]
-        self.objects={};self.ambiguous={};self.pending_objects={};self.pending_removals=set();self.font_resolutions={}
-        grouped={}
-        for obj in listed.get('objects',[]):grouped.setdefault(obj['name'],[]).append(obj)
-        for name,objects in grouped.items():
-            if len(objects)==1:
-                self.objects[name]=objects[0];self.ids.setdefault(name,objects[0]['id'])
-            else:self.ambiguous[name]=[o['id'] for o in objects]
-    def target(self,name):
-        if name in self.ambiguous and name not in self.ids:raise CarvercatError(f"Ambiguous object name {name}; bind one stable ID deliberately")
-        if name in self.ids:return self.ids[name]
-        if any(s.get('as')==name for s in self.steps):return {'$ref':name}
-        raise KeyError(f"Unknown scene object {name}")
-    def command(self,command,args=None,*,frame=None,alias=None):
-        step={'command':command,'args':args or {}}
-        if frame is not None:finite(frame);step['frame']=frame
-        if alias is not None:step['as']=alias
-        self.steps.append(step);return self
-    def create(self,name,kind,*,start=0,duration=90,track=None):
-        if name in self.ambiguous or name in self.ids or name in self.effect_owners or any(s.get('as')==name for s in self.steps):raise ValueError(f"Duplicate scene name {name}")
-        if duration<=0:raise ValueError("Duration must be positive")
-        args={'kind':kind,'duration':duration}
-        if track is not None:args['track']=track
-        self.pending_objects[name]={'name':name,'kind':kind,'start':start,'length':duration}
-        self.command('object.new',args,frame=start,alias=name)
-        self.command('clip.rename',{'id':self.target(name),'name':name})
-        return self.set(name,'transform.placement.scale',[1,1])
-    def set(self,name,key,value):
-        if key=='transform.placement.scale':self.pending_scales[name]=value
-        if key=='text.font.size':self.pending_fonts[name]=value
-        return self.command('property.set',{'id':self.target(name),'key':key,'value':value})
-    def position(self,name,x,y):
-        finite(x,y);return self.set(name,'transform.placement.position',[x/self.width,1-y/self.height])
-    def rectangle(self,name,box,*,fill='#151B2A',alpha=1,radius=.2,start=0,duration=90,track=None):
-        self.create(name,'rectangle',start=start,duration=duration,track=track)
-        self.set(name,'shape.geometry.rectangle.width',box.w/self.width).set(name,'shape.geometry.rectangle.height',box.h/self.width)
-        self.set(name,'shape.geometry.rectangle.cornerRadius',radius)
-        color=linear_hex(fill);self.set(name,'shape.fill.paint','solid').set(name,'shape.fill.color',color[:3]+[color[3] if len(color)==4 else alpha])
-        return self.position(name,*box.center)
-    def text(self,name,content,*,x=960,y=540,size=64,family='Open Sans',style='Regular',color='#FFFFFF',direction='auto',start=0,duration=90,track=None,require_font=False):
-        self.check_font(family,style,content,require=require_font)
-        self.create(name,'text',start=start,duration=duration,track=track)
-        for key,value in {'text.content.content':content,'text.font.family':family,'text.font.style':style,'text.font.size':size/(self.width*self.text_factor),'text.fill.color':linear_hex(color)[:3],}.items():self.set(name,key,value)
-        if direction!='auto':
-            self.command('param.promote',{'id':self.target(name),'path':'text.typography.readingDirection','on':True})
-            self.set(name,'text.typography.readingDirection',direction)
-        return self.position(name,x,y)
-    def keys(self,name,key,pairs,*,ease=True):
-        # Repeated frame values have one deterministic last value; one key gets no handle.
-        pairs=sorted(dict(pairs).items())
-        if not pairs:raise ValueError('Empty animation')
-        for frame,value in pairs:self.command('key.set',{'id':self.target(name),'key':key,'value':value},frame=frame)
-        if ease:
-            for (a,_),(b,_) in zip(pairs,pairs[1:]):
-                self.command('key.handle',{'id':self.target(name),'path':key,'frame':a,'side':'out','x':.2,'y':.8,'tied':False})
-                self.command('key.handle',{'id':self.target(name),'path':key,'frame':b,'side':'in','x':.4,'y':1,'tied':False})
-        return self
-    def entrance(self,names,*,start=0,frames=12,stagger=0,scale=.94):
-        if frames<1:raise ValueError('Entrance needs at least one frame')
-        for i,name in enumerate(names):
-            f=start+i*stagger
-            self.keys(name,'transform.placement.opacity',[(f,0),(f+frames,1)])
-            base=self.pending_scales.get(name,self.scales.get(name))
-            if base is None:
-                params=self.parameters(name)
-                base=json.loads(next(p['value'] for p in params if p['cap']=='transform.placement' and p['path'].endswith('.scale')))
-            self.keys(name,'transform.placement.scale',[(f,[base[0]*scale,base[1]*scale]),(f+frames,base)])
-        return self
-    def envelope(self,name,*,start,hold_end,end,fade=8):
-        if not start<=start+fade<=hold_end<end:raise ValueError('Invalid visibility envelope')
-        return self.keys(name,'transform.placement.opacity',[(start,0),(start+fade,1),(hold_end,1),(end,0)])
-    def discard(self):
-        """Discard an unapplied/rejected plan; never use this to replay an unknown outcome."""
-        self.steps.clear();self.pending_objects.clear();self.pending_removals.clear();self.pending_scales.clear();self.pending_fonts.clear();self.effect_removals.clear();self.effect_owners={a:n for a,n in self.effect_owners.items() if a in self.effects};return self
-    def _observe(self,name,mode,frame=0,query=None):
-        target=self.target(name);args={'mode':mode,'id':target,'frame':frame}
-        if query is not None:args['query']=query
-        if self.steps:
-            receipt=self.client.batch(self.steps,expected_revision=self.revision,expected_document=self.document,dry_run=True,observe=[args])
-            if not receipt.get('validated') or not receipt.get('rolled_back') or receipt['revision']!=self.revision:raise CarvercatError('Plan observation did not restore its original revision')
-            return receipt['observations'][0]
-        result=self.client.tool('carvercat_authoring',**args)
-        if result['revision']!=self.revision or result['document']!=self.document:raise CarvercatError('Scene changed during discovery; rebind deliberately')
-        return result
-    def bindings(self,name,*,frame=0,query=None):return self._observe(name,'controls',frame,query)
-    def check_font(self,family,style='Regular',content='Aa09',*,require=False):
-        sample='Aa09'+''.join(sorted(set(c for c in content if ord(c)>127)))
-        cache=(family,style,sample)
-        if cache not in self.font_resolutions:
-            data=self.client.tool('carvercat_authoring',mode='fonts',query=family,family=family,style=style,sample=sample)
-            self.font_resolutions[cache]=data.get('resolution',{'available':False})
-        result=self.font_resolutions[cache]
-        if require and not (result.get('exact_family') and result.get('exact_style')):raise CarvercatError(f'Font substitution: requested {family} / {style}; resolved {result}')
-        return result
-    def component(self,name,*,remove_missing=False):
-        from cc_components import Component
-        return Component(self,name,remove_missing=remove_missing)
-    def place_center(self,name,x,y,*,frame=0):
-        box=self.measure(name,frame)
-        return self.place_bounds(name,x-box.w/2,y-box.h/2,frame)
-    def ensure_effect(self,name,cap,*,alias=None,properties=None,entry=None):
-        alias=alias or name+' '+cap
-        if alias in self.effects:
-            if self.effect_owners[alias]!=name:raise CarvercatError('Effect alias belongs to another object')
-        elif any(step.get('as')==alias for step in self.steps):
-            if self.effect_owners.get(alias)!=name:raise CarvercatError('Pending effect belongs to another object')
+    """Collects objects into one `carvercat/2.0` scene document; `apply()` sends it."""
+
+    def __init__(self, client, *, width=None, height=None, fps=None, duration="4s", prefix=""):
+        self.client = client
+        comp = {}
+        if width or height or fps:
+            if not (width and height and fps):
+                raise ValueError("give width, height and fps together")
+            comp = {"width": width, "height": height, "fps": fps}
+        comp["duration"] = duration
+        self.comp = comp
+        self.width, self.height = width, height
+        self.prefix = prefix
+        self.nodes = []
+        self.by_id = {}
+        self.names = {}
+        self.ids = {}  # scene id -> object id, filled by apply()
+
+    # -- identity --------------------------------------------------------------------------------------------
+    def sid(self, name):
+        """The scene id a name gets. Scene ids hold letters, digits, _ and -; the display name is kept as `name`."""
+        return self.names.setdefault(name, self.prefix + _slug(name))
+
+    def node(self, name, type, *, parent=None, text=None, d=None, start=None, duration=None, tags=None, **style):
+        sid = self.sid(name)
+        if sid in self.by_id:
+            n = self.by_id[sid]
+            if n["type"] != type:
+                raise CarvercatError("%s is a %s; it cannot become a %s" % (name, n["type"], type))
+            n["style"].update(style)
         else:
-            parameters=self.bindings(name)['parameters']
-            entries={p['entry'] for p in parameters if p['cap']==cap and (entry is None or p['entry']==entry)}
-            if len(entries)>1:raise CarvercatError('Repeated effects are ambiguous; supply a specific entry')
-            if entries:
-                self.effects[alias]='fx.'+next(iter(entries));self.effect_owners[alias]=name
-            elif entry is not None:raise CarvercatError('Requested effect entry is not on this object')
-            else:return self.effect(name,cap,alias=alias,properties=properties)
-        for key,value in (properties or {}).items():self.fx_set(alias,key,value)
+            n = {"id": sid, "type": type, "name": name, "style": dict(style)}
+            if parent:
+                self.by_id[self.sid(parent)].setdefault("children", []).append(n)
+            else:
+                self.nodes.append(n)
+            self.by_id[sid] = n
+        for k, v in (("text", text), ("d", d), ("start", start), ("duration", duration), ("tags", tags)):
+            if v is not None:
+                n[k] = v
+        for k, v in n["style"].items():
+            if k in ("fill", "stroke") and isinstance(v, str) and v.startswith("#"):
+                css_colour(v)
+        return n
+
+    def target(self, name):
+        """Selector for a scene object: use it wherever a command takes an id."""
+        return "#" + self.sid(name)
+
+    # -- objects ---------------------------------------------------------------------------------------------
+    def rectangle(self, name, box, *, fill="#151B2A", alpha=1, radius=0, start=None, duration=None, **style):
+        return self.node(name, "rect", start=start, duration=duration, x=box.x, y=box.y, width=box.w, height=box.h,
+                         fill=fill, opacity=alpha, borderRadius=radius, **style)
+
+    def ellipse(self, name, box, *, fill="#151B2A", alpha=1, start=None, duration=None, **style):
+        return self.node(name, "ellipse", start=start, duration=duration, x=box.x, y=box.y, width=box.w, height=box.h,
+                         fill=fill, opacity=alpha, **style)
+
+    def text(self, name, content, *, box=None, x=None, y=None, size=64, family=None, weight=400, color="#FFFFFF",
+             align="left", start=None, duration=None, **style):
+        """Text in px. With `box` it is box text that wraps at spaces; with x and y it is point text (top-left of its
+        layout box). `size` is the true em size in px."""
+        base = {"fontSize": size, "fontWeight": weight, "fill": color, "textAlign": align}
+        if family:  # leave it out for the app's bundled default; name an installed family otherwise
+            base["fontFamily"] = family
+        if box is not None:
+            base.update(x=box.x, y=box.y, width=box.w, height=box.h, whiteSpace="normal")
+        else:
+            if x is None or y is None:
+                raise ValueError("give a box, or x and y")
+            base.update(x=x, y=y)
+        base.update(style)
+        return self.node(name, "text", text=content, start=start, duration=duration, **base)
+
+    def group(self, name, **style):
+        return self.node(name, "group", **style)
+
+    def path(self, name, d, *, stroke="#FFFFFF", stroke_width=2, parent=None, start=None, duration=None, **style):
+        """A path node: SVG path data `d` in frame px (y down; one subpath), an open stroked line by default. Key `trimEnd`
+        0% -> 100% to draw it on. Children of a parent are measured from the parent's top-left."""
+        base = {"fill": "none", "stroke": stroke, "strokeWidth": stroke_width}
+        base.update(style)
+        return self.node(name, "path", parent=parent, d=d, start=start, duration=duration, **base)
+
+    def null(self, name, x, y, *, parent=None, **style):
+        """A null object: a transform only, drawn as nothing, the parent of a rig. `x`, `y` are the top-left of its nominal
+        100 x 100 px box, so its centre (and the default pivot) is (x + 50, y + 50). Put children under it with
+        `parent=name` on their own calls (their x, y then count from the null's top-left) and animate the null with
+        `keys(name, "rotate" | "x" | "y" | "scale", ...)`. It takes no width, height or opacity."""
+        return self.node(name, "null", parent=parent, x=x, y=y, **style)
+
+    def set(self, name, key, value):
+        """Set one design key (the scene stores it as `style`)."""
+        self.by_id[self.sid(name)]["style"][key] = value
         return self
-    def fx_color(self,alias,color,*,alpha=None):
-        rgba=linear_hex(color)
-        if alpha is not None:finite(alpha);rgba=rgba[:3]+[alpha]
-        return self.fx_set(alias,'color',rgba)
-    def parameters(self,name):
-        if name not in self.ids:raise ValueError('Apply object creation before discovery')
-        return self.client.run('param.list',id=self.ids[name])['readings'][0]['params']
-    def resolve_parameter(self,name,cap,parameter):
-        matches=[p for p in self.parameters(name) if p['cap']==cap and p['path'].endswith('.'+parameter)]
-        if len(matches)!=1:raise CarvercatError('Missing or ambiguous parameter; use a specific native effect entry')
-        if not matches[0].get('available',True):raise CarvercatError(matches[0].get('unavailable_reason','Unavailable native parameter'))
-        live=[p for p in self.bindings(name)['parameters'] if p['path']==matches[0]['path']]
-        if len(live)!=1 or not live[0]['writable']:raise CarvercatError('Parameter has no writable native binding')
-        return matches[0]
-    def effect(self,name,cap,*,alias,properties=None):
-        if alias in self.effects or alias in self.effect_owners or alias in self.ids:raise ValueError('Duplicate effect alias')
-        self.effect_owners[alias]=name
-        self.command('effect.add',{'id':self.target(name),'cap':cap},alias=alias)
-        for parameter,value in (properties or {}).items():self.fx_set(alias,parameter,value)
+
+    # -- animation -------------------------------------------------------------------------------------------
+    def keys(self, name, key, pairs, *, ease="ease-out"):
+        """Keyframes of one design key: pairs of (at, value); `at` is frames from the object's start or "0.5s".
+        `ease` shapes the segment that LEAVES a key, as in CSS."""
+        n = self.by_id[self.sid(name)]
+        frames = n.setdefault("keyframes", [])
+        for at, value in pairs:
+            row = next((f for f in frames if f["at"] == at), None)
+            if row is None:
+                row = {"at": at, "props": {}}
+                frames.append(row)
+            row["props"][key] = value
+            if ease and "ease" not in row:
+                row["ease"] = ease
+        frames.sort(key=lambda f: _frames(f["at"]))
         return self
-    def fx_key(self,alias,parameter):
-        if alias not in self.effect_owners:raise KeyError(alias)
-        if alias in self.effects:return self.effects[alias]+'.'+parameter
-        return {'$param':[alias,parameter]}
-    def _fx_live(self,alias,parameter,*,animate=False):
-        if alias not in self.effects:
-            step=next((s for s in self.steps if s.get('as')==alias and s['command']=='effect.add'),None)
-            if step:
-                cap=step['args']['cap'];declared=next((p for p in _control_declarations().get(cap,[]) if p['param']==parameter),None)
-                if declared is not None:return {'requires_promotion':not declared.get('factoryPromote') and not declared.get('absorbedBy')}
-            return
-        owner=self.effect_owners[alias];path=self.effects[alias]+'.'+parameter
-        live=[p for p in self.bindings(owner)['parameters'] if p['path']==path]
-        if len(live)!=1 or not (live[0]['writable'] or live[0].get('requires_promotion')) or animate and not live[0]['keyframeable']:raise CarvercatError('Effect parameter has no supported native binding; discover controls first')
-        return live[0]
-    def fx_set(self,alias,parameter,value,*,promote=False):
-        live=self._fx_live(alias,parameter)
-        key=self.fx_key(alias,parameter)
-        if promote or live and live.get('requires_promotion'):self.command('param.promote',{'id':self.target(self.effect_owners[alias]),'path':key,'on':True})
-        return self.set(self.effect_owners[alias],key,value)
-    def fx_keys(self,alias,parameter,pairs,*,ease=True,promote=False):
-        live=self._fx_live(alias,parameter,animate=True)
-        key=self.fx_key(alias,parameter)
-        if promote or live and live.get('requires_promotion'):self.command('param.promote',{'id':self.target(self.effect_owners[alias]),'path':key,'on':True})
-        return self.keys(self.effect_owners[alias],key,pairs,ease=ease)
-    def remove_effect(self,alias):
-        if alias not in self.effects:raise ValueError('Apply effect creation before removal')
-        self.effect_removals.add(alias)
-        return self.command('effect.remove',{'id':self.target(self.effect_owners[alias]),'entry':self.effects[alias].split('.',1)[1]})
-    def blur(self,name,*,size=10,alias=None):return self.effect(name,'blur',alias=alias or name+' blur',properties={'size':size})
-    def glow(self,name,*,size=10,amount=.8,blend=.2,alias=None):return self.effect(name,'glow',alias=alias or name+' glow',properties={'size':size,'amount':amount,'blend':blend})
-    def shadow(self,name,*,x_px=8,y_px=8,softness_px=12,opacity=.38,color='#000000',alias=None):
-        color=linear_hex(color)
-        return self.effect(name,'shadow',alias=alias or name+' shadow',properties={'x':x_px/self.width,'y':-y_px/self.height,'softness':softness_px/self.width,'opacity':opacity,'red':color[0],'green':color[1],'blue':color[2]})
-    def trim_path(self,name,*,start=0,end=1,offset=0,alias=None):return self.effect(name,'trim',alias=alias or name+' trim',properties={'start':start,'end':end,'offset':offset})
-    def paint(self,name,*,layer='shape.fill',color=None,opacity=None,mode=None,gradient=None,width_px=None):
-        if mode is not None:self.set(name,layer+'.paint',mode)
-        if color is not None:
-            rgb=linear_hex(color);self.set(name,layer+'.color',rgb[:3])
-            if len(rgb)==4:self.command('param.promote',{'id':self.target(name),'path':layer+'.opacity','on':True});self.set(name,layer+'.opacity',rgb[3])
-        if opacity is not None:self.command('param.promote',{'id':self.target(name),'path':layer+'.opacity','on':True});self.set(name,layer+'.opacity',opacity)
-        if gradient is not None:self.set(name,layer+'.gradient',gradient)
-        if width_px is not None:
-            if layer=='text.outline':
-                font=self.pending_fonts.get(name,self.font_units.get(name))
-                if font is None:font=float(self.resolve_parameter(name,'text.font','size')['value'])
-                self.set(name,layer+'.thickness',width_px/(font*self.width))
-            else:self.set(name,layer+'.width',width_px/self.width)
+
+    def entrance(self, names, *, start=0, frames=12, stagger=0, scale=0.94, rise=0, ease="cubic-bezier(.16,1,.3,1)"):
+        """Fade (and optionally scale from `scale`, rise `rise` px) each object in; `stagger` frames between objects."""
+        for i, name in enumerate(names):
+            n = self.by_id[self.sid(name)]
+            a = start + i * stagger
+            first, last = {"opacity": 0}, {"opacity": 1}
+            if scale != 1:
+                first["scale"], last["scale"] = scale, 1
+            if rise:
+                y = n["style"]["y"]
+                first["y"], last["y"] = y + rise, y
+            n["keyframes"] = [{"at": a, "props": first, "ease": ease}, {"at": a + frames, "props": last}]
         return self
-    def transform(self,name,*,position=None,scale=None,rotation=None,opacity=None,anchor=None):
-        if position is not None:self.position(name,*position)
-        for parameter,value in [('scale',scale),('rotation',rotation),('opacity',opacity)]:
-            if value is not None:self.set(name,'transform.placement.'+parameter,value)
-        if anchor is not None:self.set(name,'transform.placement.anchor',list(anchor))
+
+    def envelope(self, name, *, start, hold_end, end, fade=8):
+        """Opacity in, hold, out: explicit frames from the object's start."""
+        n = self.by_id[self.sid(name)]
+        n["keyframes"] = [{"at": start, "props": {"opacity": 0}, "ease": "ease-out"},
+                          {"at": start + fade, "props": {"opacity": 1}, "ease": "linear"},
+                          {"at": hold_end, "props": {"opacity": 1}, "ease": "ease-in"},
+                          {"at": end, "props": {"opacity": 0}}]
         return self
-    def stagger(self,name,*,by='word',gap=4,order='forward',channels=('text.position','fill.opacity')):
-        self.command('stagger.new',{'id':self.target(name)})
-        for channel in channels:self.command('stagger.connect',{'id':self.target(name),'param':channel})
-        return self.command('stagger.set',{'id':self.target(name),'by':by,'gap':gap,'order':order})
-    def path(self,name,points,*,closed=False,start=0,duration=90,track=None,handles=None,fill=None,stroke='auto'):
-        if name in self.ids or name in self.ambiguous or any(s.get('as')==name for s in self.steps):raise ValueError('Path name already exists')
-        finite(start,duration)
-        if duration<=0:raise ValueError('Duration must be positive')
-        if track is not None and (type(track) is not int or track<0):raise ValueError('Track must be a nonnegative native index')
-        native=[]
-        for x,y in points:finite(x,y);native.append([x/self.width,y/self.height])
-        if not 2<=len(native)<=4096:raise ValueError('Path requires 2..4096 points')
-        args={'points':native,'closed':closed,'duration':duration}
-        if track is not None:args['track']=track
-        if handles is not None:
-            if len(handles)!=len(native):raise ValueError('One handle pair required per point')
-            converted=[]
-            for h in handles:
-                ix,iy=h['in'];ox,oy=h['out'];finite(ix,iy,ox,oy)
-                if type(h.get('corner',False)) is not bool:raise ValueError('Corner must be Boolean')
-                converted.append({'in':[ix/self.width,iy/self.height],'out':[ox/self.width,oy/self.height],'corner':h.get('corner',False)})
-            args['handles']=converted
-        self.pending_objects[name]={'name':name,'kind':'path','start':start,'length':duration}
-        self.command('object.path',args,frame=start,alias=name)
-        self.command('clip.rename',{'id':self.target(name),'name':name})
-        if closed and stroke=='auto' or stroke is None:self.paint(name,layer='shape.stroke',mode='none')
-        elif stroke!='auto':self.paint(name,layer='shape.stroke',mode='solid',color=stroke)
-        if fill is not None:self.paint(name,mode='solid',color=fill)
+
+    def stagger(self, name, *, by="words", each="80ms", from_="start", keyframes=None):
+        """GSAP-style stagger of a text's parts (target words, chars or lines). `keyframes` is the tween each part plays."""
+        n = self.by_id[self.sid(name)]
+        st = {"target": by, "each": each, "from": from_}
+        if keyframes:
+            st["keyframes"] = keyframes
+        n["stagger"] = st
         return self
-    def replace_keys(self,name,key,pairs,*,ease=True):
-        target=self.target(name)
-        retained=[]
-        for step in self.steps:
-            same=step['args'].get('id')==target and step['args'].get('key',step['args'].get('path'))==key
-            if not (same and step['command'] in ('key.set','key.remove','key.handle')):retained.append(step)
-        frames=[]
-        if name in self.ids:
-            listed=self.client.run('key.list',id=self.ids[name],key=key)['readings'][0];frames=listed['frames']
-        self.steps=retained
-        for frame in frames:self.command('key.remove',{'id':target,'key':key},frame=frame)
-        return self.keys(name,key,pairs,ease=ease)
-    def extend_hold(self,name,*,duration,start,hold_end,end,fade=8):
-        if self.steps:raise ValueError('Apply pending plan before extending hold')
-        # Inspect and deliberately remove the obsolete relative text envelope, then replace placement keys.
-        listed=self.client.run('key.list',id=self.ids[name],key='text.relative.opacity')['readings'][0]
-        for frame in listed['frames']:self.command('key.remove',{'id':self.ids[name],'key':'text.relative.opacity'},frame=frame)
-        params=self.client.run('param.list',id=self.ids[name])['readings'][0]['params']
-        relative=next(p for p in params if p['cap']=='text.relative' and p['path'].endswith('.opacity'))
-        if relative['on']!='panel':self.command('param.promote',{'id':self.ids[name],'path':relative['path'],'on':True})
-        self.set(name,relative['path'],1)
-        placement=self.client.run('key.list',id=self.ids[name],key='transform.placement.opacity')['readings'][0]
-        for frame in placement['frames']:self.command('key.remove',{'id':self.ids[name],'key':'transform.placement.opacity'},frame=frame)
-        self.command('clip.trim',{'id':self.ids[name],'duration':duration})
-        return self.envelope(name,start=start,hold_end=hold_end,end=end,fade=fade)
-    def patch(self,objects):
-        # Properties/timing are explicit; unmentioned channels and user edits remain untouched.
-        for name,spec in objects.items():
-            if name not in self.ids:raise KeyError(name)
-            for key,value in spec.get('properties',{}).items():self.set(name,key,value)
-            for key,pairs in spec.get('keys',{}).items():self.keys(name,key,pairs)
+
+    # -- effects and paint (CSS terms; every reply states the carve status) ----------------------------------
+    def blur(self, name, px=8):
+        return self.set(name, "blur", px)
+
+    def glow(self, name, *, radius=12, color="#ffcc00", strength=0.6, mix=0.2):
+        return self.set(name, "glow", "%spx %s %s %s" % (radius, color, strength, mix))
+
+    def shadow(self, name, *, x=0, y=8, blur=12, color="#00000066"):
+        return self.set(name, "dropShadow", "%spx %spx %spx %s" % (x, y, blur, color))
+
+    def soft_edge(self, name, px):
+        """The visible 10-90 % ramp of a shape's edge, in px."""
+        return self.set(name, "softEdge", px)
+
+    def trim_path(self, name, *, start="0%", end="100%", offset="0%"):
+        return self.set(name, "trimStart", start).set(name, "trimEnd", end).set(name, "trimOffset", offset)
+
+    def paint(self, name, *, fill=None, stroke=None, stroke_width=None):
+        for k, v in (("fill", fill), ("stroke", stroke), ("strokeWidth", stroke_width)):
+            if v is not None:
+                self.set(name, k, v)
         return self
-    def anchor(self,name,box,*,horizontal='center',vertical='center',frame=0):
-        size=self.measure(name,frame)
-        x={'left':box.x,'center':box.x+(box.w-size.w)/2,'right':box.x+box.w-size.w}[horizontal]
-        y={'top':box.y,'center':box.y+(box.h-size.h)/2,'bottom':box.y+box.h-size.h}[vertical]
-        return self.place_bounds(name,x,y,frame)
-    def baseline(self,names,y,*,frame=0):
-        # Native point-text bottom alignment anchors the last baseline, not the glyph ink bottom.
-        for name in names:
-            params=self.client.run('param.list',id=self.ids[name])['readings'][0]['params']
-            mode=next(p for p in params if p['cap']=='text.layout' and p['path'].endswith('.mode'))
-            if mode['value']!='titles':raise CarvercatError('Baseline helper requires point text, not paragraph boxes')
-            placement=next(p for p in params if p['cap']=='transform.placement' and p['path'].endswith('.position'))
-            x=json.loads(placement['value'])[0]*self.width
-            self.set(name,'text.layout.vAlign','bottom');self.position(name,x,y)
+
+    def transform(self, name, *, x=None, y=None, scale=None, rotate=None, opacity=None, origin=None):
+        for k, v in (("x", x), ("y", y), ("scale", scale), ("rotate", rotate), ("opacity", opacity), ("transformOrigin", origin)):
+            if v is not None:
+                self.set(name, k, v)
         return self
-    def spec(self,description):
-        for name,item in description['objects'].items():
-            if name not in self.ids:self.create(name,item['kind'],start=item.get('start',0),duration=item.get('duration',90),track=item.get('track'))
-            for key,value in item.get('properties',{}).items():self.set(name,key,value)
-            for key,pairs in item.get('keys',{}).items():self.keys(name,key,pairs)
-        return self
-    def apply(self,*,dry_run=False):
-        if not self.steps:return {'applied':False,'steps':[]}
-        # Expected revision protects both user changes and accidental cross-comp application.
-        state=self.client.state()
-        if state['comp']['name']!=self.comp or state['revision']!=self.revision or state['document']!=self.document:raise CarvercatError('Scene context changed; deliberately rebind before patching')
-        receipt=self.client.batch(self.steps,expected_revision=self.revision,expected_document=self.document,dry_run=dry_run)
+
+    # -- the document ----------------------------------------------------------------------------------------
+    def to_dict(self):
+        return {"schema": "carvercat/2.0", "comp": dict(self.comp), "children": self.nodes}
+
+    def dumps(self, **kw):
+        return json.dumps(self.to_dict(), **kw)
+
+    def apply(self, *, dry_run=False, mode="merge", preflight=None):
+        """scene.apply. Returns the reply (or (reply, preflight) with preflight='resolve'|'aftereffects')."""
+        out = self.client.apply_scene(self.to_dict(), mode=mode, dry_run=dry_run, preflight=preflight)
+        reply = out[0] if isinstance(out, tuple) else out
         if not dry_run:
-            self.ids.update(receipt['aliases']);self.effects.update(receipt.get('effects',{}));
-            for name,obj in self.pending_objects.items():self.objects[name]={**obj,'id':self.ids[name]}
-            self.pending_objects.clear()
-            for name in self.pending_removals:self.ids.pop(name,None);self.objects.pop(name,None)
-            self.pending_removals.clear()
-            for alias in self.effect_removals:self.effects.pop(alias,None);self.effect_owners.pop(alias,None)
-            self.effect_removals.clear();self.scales.update(self.pending_scales);self.font_units.update(self.pending_fonts);self.pending_fonts.clear();self.pending_scales.clear();self.revision=receipt['revision'];self.steps.clear()
-        return receipt
-    def rebind(self):
-        state=self.client.state();listed=self.client.tool('carvercat_list')
-        if state['comp']['name']!=self.comp or [(c['index'],c['name'],c['open']) for c in listed['comps']]!=self.scope:raise CarvercatError('Comp scope changed')
-        objects={o['id']:o for o in listed['objects']}
-        for name,id in self.ids.items():
-            if id not in objects or objects[id]['name']!=name:raise CarvercatError(f'Object identity changed: {name}')
-        self.revision=state['revision'];self.document=state['document'];return self
-    def manifest(self,path):
-        Path(path).write_text(json.dumps({'version':1,'comp':self.comp,'scope':self.scope,'ids':self.ids,'revision':self.revision,'document':self.document,'effects':self.effects,'effect_owners':self.effect_owners,'scales':self.scales},indent=2),encoding='utf8')
-    def load_manifest(self,path):
-        saved=json.loads(Path(path).read_text(encoding='utf8'))
-        if saved['comp']!=self.comp or saved['scope']!=[list(c) for c in self.scope]:raise CarvercatError('Manifest belongs to another comp scope')
-        if saved.get('document',{}).get('path') and saved['document']!=self.document:raise CarvercatError('Manifest belongs to another project file')
-        self.ids=saved['ids'];self.effects=saved.get('effects',{});self.effect_owners=saved.get('effect_owners',{});self.scales=saved.get('scales',{});return self.rebind()
-    def measure(self,name,frame=0):
-        bounds=self._observe(name,'geometry',frame)['bounds']
-        return Box(bounds['x'],bounds['y'],bounds['w'],bounds['h'])
-    def place_bounds(self,name,x,y,frame=0):
-        geometry=self._observe(name,'geometry',frame)
-        b=geometry['bounds'];box=Box(b['x'],b['y'],b['w'],b['h'])
-        # Native glyph bounds may be offset from the placement anchor; preserve that offset.
-        params=self.bindings(name,frame=frame)['parameters']
-        p=next(p for p in params if p['alias']=='transform.placement.position')
-        if p['keyframes']:raise CarvercatError('Bounds placement on animated position requires a deliberate curve revision')
-        native=p['value'];cx=native[0]*self.width;cy=(1-native[1])*self.height
-        basis=geometry.get('placement_basis',[[1,0],[0,1]])
-        a,b=basis[0];c,d=basis[1];det=a*d-b*c
-        if abs(det)<1e-8:raise CarvercatError('Cannot place bounds through a zero-scale parent')
-        dx,dy=x-box.x,y-box.y
-        self.position(name,cx+(d*dx-b*dy)/det,cy+(-c*dx+a*dy)/det);return self
-    def fit(self,name,box,*,frame=0,minimum_px=20,max_iterations=4):
-        for _ in range(max_iterations):
-            measured=self.measure(name,frame)
-            if measured.w<=box.w+.5 and measured.h<=box.h+.5:return measured
-            params=self.client.run('param.list',id=self.ids[name])['readings'][0]['params']
-            font=next(p for p in params if p['cap']=='text.font' and p['path'].endswith('.size'))
-            old=float(font['value'])*self.width*self.text_factor;new=old*min(box.w/max(measured.w,1),box.h/max(measured.h,1))*.98
-            if new<minimum_px:raise CarvercatError('Text cannot fit without violating minimum size')
-            self.rebind();self.set(name,'text.font.size',new/(self.width*self.text_factor));self.apply()
-        raise CarvercatError('Text fitting did not converge')
-    def flow(self,names,box,*,axis='row',gap=24,padding=0,rtl=False,align='center',frame=0):
-        if axis not in ('row','column') or align not in ('start','center','end'):raise ValueError('Invalid flow mode')
-        area=box.inset(padding);sizes={n:self.measure(n,frame) for n in names};ordered=list(reversed(names)) if rtl and axis=='row' else list(names)
-        total=sum((sizes[n].w if axis=='row' else sizes[n].h) for n in ordered)+gap*max(0,len(names)-1)
-        span=area.w if axis=='row' else area.h
-        if total>span+.5:raise CarvercatError('Flow overflows its available span')
-        cursor=(area.x if axis=='row' else area.y)+(span-total)/2
-        for name in ordered:
-            size=sizes[name];cross=(area.h-size.h) if axis=='row' else (area.w-size.w)
-            if cross<0:raise CarvercatError('Flow overflows cross axis')
-            offset={'start':0,'center':cross/2,'end':cross}[align]
-            # Queue positions directly after individual native reads; one batch commits the group.
-            self.place_bounds(name,cursor if axis=='row' else area.x+offset,area.y+offset if axis=='row' else cursor,frame)
-            cursor+=(size.w if axis=='row' else size.h)+gap
+            self.ids = dict((reply.get("scene") or {}).get("ids", {}))
+        return out
+
+    # -- feedback with no render -----------------------------------------------------------------------------
+    def measure(self, name):
+        rows = self.client.measure([self.target(name)])["objects"]
+        b = rows[0]["box"]
+        return Box(b["x"], b["y"], b["width"], b["height"])
+
+    def fit(self, name, box, *, minimum=20, maximum=400):
+        """text.fit: the largest fontSize in [minimum, maximum] px whose text fits `box` (same shaper as the canvas)."""
+        return self.client.run("text.fit", id=self.target(name), box={"width": box.w, "height": box.h},
+                               min="%spx" % minimum, max="%spx" % maximum)
+
+    def flow(self, names, *, axis="x", gap=24):
+        """layout.stack: one after another along an axis, `gap` px apart, from the first object's place."""
+        return self.client.run("layout.stack", ids=[self.target(n) for n in names], axis=axis, gap=gap)
+
+    def align(self, names, mode="centerX", to="frame"):
+        return self.client.run("layout.align", ids=[self.target(n) for n in names], mode=mode, to=to)
+
+    def check_zones(self, names, *, within="safe"):
+        """measure.overlaps with `within`: what sticks out of the frame or the safe area, and what overlaps."""
+        r = self.client.run("measure.overlaps", ids=[self.target(n) for n in names], within=within)["readings"][0]
+        if r.get("outside"):
+            raise CarvercatError("outside the %s area: %s" % (within, json.dumps(r["outside"])))
+        return r
+
+    def contrast(self, fg, bg):
+        return self.client.run("measure.contrast", fg=fg, bg=bg)["readings"][0]
+
+    def review(self, path, *, frames=(0, 12, 45, 80)):
+        """Lint (no render) then one look. Returns {'lint', 'look'}; read the image, do not just trust the flags."""
+        lint = self.client.tool("carvercat_inspect", mode="lint")
+        look = self.client.look(path, looks=[{"from": f, "to": f, "count": 1} for f in frames])
+        return {"lint": lint, "look": look}
+
+    def component(self, name):
+        """A namespace: the scene ids of its children are `<name>-<child>`, so applying again updates the same objects."""
+        return Component(self, name)
+
+
+class Component:
+    """Scene objects under one prefix. Repeating it with the same child names updates, never duplicates."""
+
+    def __init__(self, scene, name):
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError("a component needs a name")
+        self.scene, self.prefix = scene, _slug(name) + "-"
+
+    def __enter__(self):
         return self
-    def check_zones(self,names,*,safe=None,avoid=(),frame=0):
-        safe=safe or Box(self.width*.05,self.height*.05,self.width*.9,self.height*.9)
-        bounds={n:self.measure(n,frame) for n in names}
-        for name,b in bounds.items():
-            if not safe.contains(b):raise CarvercatError(f'{name} leaves safe area')
-            if any(b.overlaps(zone) for zone in avoid):raise CarvercatError(f'{name} overlaps a protected zone')
-        return bounds
-    def review(self,path,*,frames=(0,12,45,80),checks=()):
-        if self.steps:raise ValueError('Apply plan before review')
-        lint=self.client.tool('carvercat_inspect',mode='lint')
-        expectation=self.client.tool('carvercat_inspect',mode='expect',checks=list(checks)) if checks else None
-        look=self.client.look(path,looks=[{'from':f,'to':f,'count':1,'ground':'checker','overlay':['ids','safe'],'force':True} for f in frames])
-        return {'lint':lint,'expect':expectation,'look':look,'font_resolutions':list(self.font_resolutions.values())}
 
-def title_pair(scene,title,subtitle,*,box,start=0,duration=90,accent='#F0BD35'):
-    scene.text('title',title,x=box.center[0],y=box.y+box.h*.35,size=76,color=accent,start=start,duration=duration)
-    scene.text('subtitle',subtitle,x=box.center[0],y=box.y+box.h*.7,size=36,start=start,duration=duration)
+    def __exit__(self, *exc):
+        return False
+
+    def _n(self, child):
+        return self.prefix + child
+
+    def rectangle(self, child, box, **kw):
+        return self.scene.rectangle(self._n(child), box, **kw)
+
+    def text(self, child, content, **kw):
+        return self.scene.text(self._n(child), content, **kw)
+
+
+def title_pair(scene, title, subtitle, *, box, start=None, duration=None, accent="#F0BD35"):
+    scene.text("title", title, box=Box(box.x, box.y, box.w, box.h * 0.6), size=76, weight=700, color=accent, start=start, duration=duration)
+    scene.text("subtitle", subtitle, box=Box(box.x, box.y + box.h * 0.62, box.w, box.h * 0.38), size=36, start=start, duration=duration)
     return scene
 
-def number_highlight(scene,name,number,label,*,box,start=0,duration=90):
-    scene.rectangle(name+' plate',box,start=start,duration=duration)
-    scene.text(name+' number',number,size=68,direction='ltr',start=start,duration=duration)
-    scene.text(name+' label',label,size=40,family='Almarai',style='ExtraBold',direction='rtl',start=start,duration=duration)
+
+def number_highlight(scene, name, number, label, *, box, start=None, duration=None):
+    scene.rectangle(name + " plate", box, start=start, duration=duration)
+    scene.text(name + " number", number, box=Box(box.x, box.y, box.w, box.h * 0.6), size=68, weight=700, align="center", start=start, duration=duration)
+    scene.text(name + " label", label, box=Box(box.x, box.y + box.h * 0.6, box.w, box.h * 0.4), size=36, align="center", start=start, duration=duration)
     return scene
 
-def caption(scene,name,content,*,box,start=0,duration=90,direction='auto',background=True):
-    if background:scene.rectangle(name+' plate',box,start=start,duration=duration)
-    scene.text(name,content,x=box.center[0],y=box.center[1],size=48,family='Almarai' if direction=='rtl' else 'Open Sans',style='ExtraBold' if direction=='rtl' else 'Regular',direction=direction,start=start,duration=duration)
+
+def caption(scene, name, content, *, box, start=None, duration=None, direction="auto", background=True):
+    if background:
+        scene.rectangle(name + " plate", box, start=start, duration=duration, alpha=0.7, fill="#0B0B0F")
+    fam, wt = ("Almarai", 800) if direction == "rtl" else (None, 400)
+    scene.text(name, content, box=box.inset(min(24, box.h / 4)), size=48, family=fam, weight=wt, align="center",
+               start=start, duration=duration)
     return scene
 
-def card_group(scene,name,title,label,*,box,start=0,duration=90):
-    scene.rectangle(name+' card',box,start=start,duration=duration)
-    scene.text(name+' title',title,x=box.center[0],y=box.y+box.h*.35,size=52,start=start,duration=duration)
-    scene.text(name+' label',label,x=box.center[0],y=box.y+box.h*.7,size=30,start=start,duration=duration)
+
+def card_group(scene, name, title, label, *, box, start=None, duration=None):
+    scene.rectangle(name + " card", box, start=start, duration=duration, radius=24)
+    scene.text(name + " title", title, box=Box(box.x, box.y + box.h * 0.12, box.w, box.h * 0.4), size=52, weight=700, align="center", start=start, duration=duration)
+    scene.text(name + " label", label, box=Box(box.x, box.y + box.h * 0.58, box.w, box.h * 0.3), size=30, align="center", start=start, duration=duration)
     return scene
 
-def icon_label(scene,icon_name,label_name,label,*,box,start=0,duration=90):
-    """Reuse a native icon already in Scene.ids; preserves the original icon geometry."""
-    scene.target(icon_name)
-    scene.text(label_name,label,x=box.center[0],y=box.center[1],size=36,start=start,duration=duration)
-    return scene
 
-def image_card(scene,name,media,*,box,start=0,duration=90,radius=.2):
-    """Place an existing project-pool asset, measure cover scale and create its native mask.
-    Import assets explicitly before this helper; import may auto-place objects.
-    """
-    if name in scene.ids:raise ValueError('Image already exists; patch it instead')
-    scene.command('pool.place',{'media':media,'frame':start},alias=name)
-    scene.command('clip.rename',{'id':scene.target(name),'name':name})
-    scene.command('clip.trim',{'id':scene.target(name),'duration':duration});scene.apply()
-    measured=scene.measure(name,start)
-    if not measured.w or not measured.h:raise CarvercatError('Media has no measurable native bounds')
-    scale=max(box.w/measured.w,box.h/measured.h)
-    scene.set(name,'transform.placement.scale',[scale,scale]);scene.position(name,*box.center)
-    scene.rectangle(name+' mask',box,fill='#FFFFFF',radius=radius,start=start,duration=duration);scene.apply()
-    # Primary selection is the mask; image is the other selected member.
-    scene.command('mask.make',{'ids':[scene.ids[name+' mask'],scene.ids[name]]});scene.apply()
+def icon_label(scene, icon_name, label_name, label, *, box, start=None, duration=None):
+    """A label beside an icon that already exists in the comp (the icon is not touched)."""
+    scene.text(label_name, label, box=box, size=36, start=start, duration=duration)
     return scene
-
-def gradient(stops,*,mode='linear',start=(0,.5),end=(1,.5)):
-    """Normalized object-local gradient coordinates; explicit linear/radial native mode."""
-    if mode not in ('linear','radial'):raise ValueError('Unsupported gradient mode')
-    values=[]
-    for position,color in stops:
-        finite(position)
-        if not 0<=position<=1:raise ValueError('Gradient stops must lie in 0..1')
-        value=linear_hex(color);values.append({'p':position,'color':value[:3],'a':value[3] if len(value)==4 else 1})
-    if len(values)<2:raise ValueError('At least two gradient stops required')
-    return {'mode':mode,'start':list(start),'end':list(end),'stops':sorted(values,key=lambda s:s['p'])}

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "id": "sports/sp-showcase",
+  "title": "Sports showcase (10 s match graphics)",
+  "category": "sports",
+  "tags": [
+    "sports",
+    "reel",
+    "score-bug",
+    "goal",
+    "player-card",
+    "stats",
+    "1920x1080"
+  ],
+  "summary": "A 10 s match-graphics reel: score bug and GOAL slam over a pitch stand-in (the score rolls as GOAL lands), then a player card and head-to-head stats.",
+  "use_when": "You need ready match graphics or an example of syncing two overlays (GOAL! and the score change) over footage.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 300,
+    "seconds": 10.0
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Sports showcase (300 frames)",
+    "scenes": [
+      "0-120 pitch stand-in with score bug overlay",
+      "49-109 GOAL slam overlay",
+      "120-210 player card",
+      "210-300 head to head"
+    ]
+  },
+  "parameters": [
+    "texts and colours inside each comp",
+    "replace the pitch stand-in with footage"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold/SemiBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint 0/0/0; QC notes the player-card hold as a freeze at its 96 px size.",
+    "Built by ai/scripts/motion/sports_showcase.py from the lab comps (overlays nested without backgrounds).",
+    "No sound yet: crowd roar and a hit at 58, whooshes on each slash."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

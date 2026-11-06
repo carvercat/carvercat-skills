@@ -4,23 +4,22 @@ For new builds use [creative-toolkit.md](creative-toolkit.md) and cc_scene. The 
 
 # Programmatic build over the relay (no MCP tools required)
 
-Tested 2026-09-30 on a 1080x1920 @30 caption + highlight job. Gotchas: `api-gotchas.md`. Delivery details: `workflows/captions-and-voiceover.md`, `workflows/resolve-handoff.md`.
+Gotchas: `api-gotchas.md`. Delivery details: `workflows/captions-and-voiceover.md`, `workflows/resolve-handoff.md`. The calls are in [design-units.md](design-units.md).
 
-## Toolkit (copy to the job folder; stdlib + Pillow)
+## Toolkit (stdlib; Pillow only for pixel checks)
 | File | Purpose |
 |---|---|
-| `ai/scripts/cc_client.py` | JSON-RPC over the loopback relay: `run(cmd, **args)`, `tool(name, **a)`, `look(path, **a)`, `res(uri)`. Port auto-read from the pid file. |
-| `ai/scripts/cc_build.py` | `lin/rgba/grad` colours, `Obj` (set / key / ease / anim with reselect), `new`, `card`, `text`, `stagger_caption`, `clear`. |
-| `ai/scripts/resolve_tools.py` | `import_place(seq_dir,prefix,n,track,local_start)` with assertions; `stills(out,a,b,step)` composite grabs. |
-
-Run scripts from a folder containing these (or add `ai/scripts` to `sys.path`). In PowerShell there is no heredoc: write scripts with a single-quoted here-string and `Set-Content -Encoding utf8`.
+| `ai/scripts/cc_client.py` | JSON-RPC over the loopback relay or a private headless process: `run`, `tool`, `look`, `apply_scene`, `scene`, `query`, `set`, `animate`, `preflight`, `path`. Port auto-read from the pid file |
+| `ai/scripts/cc_scene.py` | `Scene`, `Box`, `gradient`: a scene document in design units sent with one `scene.apply` |
+| `ai/scripts/cc_build.py` | procedural helpers (`card`, `text`, `new`, `stagger_caption`) over the same design keys |
+| `ai/scripts/resolve_tools.py` | `import_place(seq_dir,prefix,n,track,local_start)` with assertions; `stills(out,a,b,step)` composite grabs |
 
 ## Job loop (per clip / comp)
 1. Prepare (see `prepare-resolve-project.md`): duplicate the timeline, one comp per clip at the timeline size/fps, named after the clip; `edit.save`. Keep a `subs.json` of subtitle cues (Resolve `GetSubtitles`-style read or export) with timeline-local frames.
 2. Sample stills of the clip (`resolve_tools.stills`) every ~20 frames; find framing changes, face zone (keep it free) and gesture frames (the hand-point / finger count moments -> place live graphics there; note centre and size in fractions of frame).
 3. Plan track rows: row 0 captions (no box); rows 1..N highlights, one row per simultaneous item (occupied rows refuse). `track.add` as needed.
-4. Captions: 3-4 word phrases, `stagger_caption` per phrase, start = first word frame - 1, out = last word end; keep phrases from overlapping on a row. Position lower third, y_up about 0.28 (user request). No background box on captions; card only on highlights.
-5. Highlights: `card` + `text` (gradient fills) with pop/slide keys; hand-point rings via ellipse with stroke gradient + `fx trim` end 0->1; number reveals (Montserrat ExtraBold) with gradient fills.
+4. Captions: 3-4 word phrases, `cc_build.stagger_caption` per phrase (or one scene with a word stagger), start = first word frame - 1, out = last word end; keep phrases from overlapping on a row. Position the lower third at about 72 % of the frame height from the top (user request: y_up 0.28). No background box on captions; card only on highlights.
+5. Highlights: `card` + `text` (gradient fills) with pop/slide keys; hand-point rings via ellipse with a gradient stroke and `trimEnd` 0% -> 100% (keyed by name); number reveals (Montserrat ExtraBold) with gradient fills.
 6. Verify with `look` at entrance, hold and exit frames of each item (force:true). Check row layering, text overflow and that nothing sits on the face.
 7. `edit.save`, export PNG sequence (see gotchas), verify pixels, `import_place`, composite stills, save Resolve.
 8. Log the job in your own work history and new Carvercat issues in `ai/references/known-issues.md` (generic, no client names).
@@ -28,7 +27,7 @@ Run scripts from a folder containing these (or add `ai/scripts` to `sys.path`). 
 For a final cross-clip Resolve sheet, do not infer requested-frame order from Gallery-generated still filenames. Seek each frame, allow the compositor to settle, assert the current timecode, and call `Project.ExportCurrentFrameAsStill` with an explicit frame-named path. This made a 19-frame timeline check deterministic after the Gallery workflow produced a shuffled/stale sheet.
 
 ## Conventions that held up
-- One comp per clip, comp name = clip name (e.g. `clip-01`); output folder `<job>/carvercat/out/<clip>/<clip>/`.
+- One comp per clip, comp name = clip name (e.g. C2264); output folder `<job>/carvercat/out/<clip>/<clip>/`.
 - Time base: comp frame = timeline-local frame; Resolve record frame = timeline start + local.
 - Palette used for a generic (non-brand) job: ink #0A0F1F, teal #20D6C7, violet #7A5CFF, gold #FFC65A, pink #FF7AB6, white captions in Poppins Bold; numbers Montserrat ExtraBold; labels Poppins SemiBold.
 - Expect roughly 150 relay calls per comp; only reselect/seek when needed, and write builders as functions in one script so a redo is a single run: `clear()` then build.
@@ -46,9 +45,10 @@ For a final cross-clip Resolve sheet, do not infer requested-frame order from Ga
 
 ## Untested (do not assume)
 WebP import (convert to PNG/JPG first) and multi-comp template reuse.
-## Workflow additions
-- Per-clip flow: sample stills (Resolve `grab.py`) -> read subs.json (track 2 for text; track 1 for word timings, has ASR errors) -> write bN.py from b2/b3 template -> build -> export `<clip>_vN` -> composite over stills + alpha head-box check -> `import_place` on V2 -> Resolve stills check -> save -> log.
+## Workflow additions (C2267)
+- Per-clip flow: sample stills (Resolve `grab.py`) -> read subs.json (track 2 for text; track 1 for word timings, has ASR errors) -> write bN.py from b2/b3 template -> build -> export `<clip>_vN` -> composite over stills + alpha head-box check -> `import_place` on V2 -> Resolve stills check -> save -> log/commit.
 - Head boxes differ per framing: check each shot's box (close shot vs wide shot) and keep text out of it; sides/top band are the free zones.
 - Fonts: Impact for numbers, Montserrat ExtraBold labels, Poppins Bold captions; avoid Sora/Outfit/Manrope/Lexend (fallback).
 - Row plan: captions row 0; highlights rows 1-10 reused when time-disjoint; cards rows 11+ (image, mask, frame) with pills/labels on higher rows; add spare tracks first.
-- Archive the editable project and reproducibility scripts at the job destination the user approved; follow the explicit job instruction.
+- Subtitle SRT export of on-screen captions: see video_edit job folder `carvercat/srt`.
+- Archive the editable project and reproducibility scripts at the approved job destination. Do not assume `video_edit` is that destination: its general policy currently excludes job binaries, while older Carvercat notes placed projects and zipped sequences there. Follow an explicit job instruction until those policies are reconciled.

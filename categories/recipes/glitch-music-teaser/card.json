@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "id": "recipes/glitch-music-teaser",
+  "title": "Glitch music teaser, 14 s (recipe)",
+  "category": "recipes",
+  "tags": [
+    "recipe",
+    "glitch",
+    "music",
+    "teaser",
+    "release",
+    "1920x1080"
+  ],
+  "summary": "A 14 s music or release teaser: stutter words, a corrupted title, an RGB split mark and a terminal reveal, under a VHS tracking band, with a pixel dissolve.",
+  "use_when": "You need a short teaser for a release, drop or tech launch with a glitch look.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 430,
+    "seconds": 14.3
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Glitch music teaser (master, 6 placed templates)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "shot timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Glitch"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
+    "Rebuild: ai/scripts/motion/recipes/rc_glitch.py (headless, isolated folders). Docs: ai/recipes/glitch-music-teaser.md.",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc (240 px) notes the terminal's final hold (f280\u2013383 as typed lines build slowly) as a freeze and finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

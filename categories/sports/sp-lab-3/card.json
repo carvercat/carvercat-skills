@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "id": "sports/sp-lab-3",
+  "title": "Sports lab 3 (source of the round-3 templates)",
+  "category": "sports",
+  "tags": [
+    "sports",
+    "broadcast",
+    "templates",
+    "score",
+    "clock",
+    "substitution",
+    "transfer",
+    "signing",
+    "celebration",
+    "confetti",
+    "bracket",
+    "tournament",
+    "table",
+    "fixtures",
+    "poster",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Sports templates were built and verified in: live score clock, substitution card, signing announcement, touchdown burst, tournament bracket, league table movement, fixture list and match-day poster.",
+  "use_when": "You want to see a round-3 sports template working before using it, copy a comp's objects (the confetti physics, the bracket joins, the table climb), or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 210,
+    "seconds": 7.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "SP Live clock (210 f)",
+      "SP Substitution (150 f)",
+      "SP Signing (150 f)",
+      "SP Touchdown burst (90 f, 28 confetti)",
+      "SP Bracket (180 f)",
+      "SP Table move (150 f)",
+      "SP Fixtures (150 f)",
+      "SP Match day (120 f)"
+    ]
+  },
+  "parameters": [
+    "team colours (linear light; text colours converted with BT.709)",
+    "text content (sample copy: teams, players, leagues and scores are invented)",
+    "confetti: count, speed, drag and gravity (regenerate; baked every 2 f)",
+    "clock: the six one-second clips are separate texts (text.content cannot be keyed)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. The player in SP Signing and the crests in SP Match day are shape stand-ins.",
+    "Comps have a 'Lab bg' rectangle (dropped on extraction).",
+    "Clip ids are unique per comp (slc_, ssu_, ssg_, stb_, sbr_, stm_, sfx_, smd_).",
+    "Rebuild: ai/scripts/motion/sports_lab3.py writes the comps; every move is baked as keys (no presets to apply); open with edit.open {force:true}, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings with contrast:true (notes: repeated_key_value on holds, speed_jump on the table climb; intended)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

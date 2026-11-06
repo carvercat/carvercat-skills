@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "saas-launch/saas-ui-showcase",
+  "title": "SaaS UI showcase (15 s product-UI reel)",
+  "category": "saas-launch",
+  "tags": [
+    "saas",
+    "ui",
+    "product",
+    "launch",
+    "reel",
+    "cursor",
+    "toggle",
+    "kpi",
+    "counter",
+    "type-on",
+    "toast",
+    "1920x1080"
+  ],
+  "summary": "A 15.3 s reel cutting the SaaS UI patterns together: search typing, sidebar drawer, KPI tile, a cursor clicking a toggle, a rolling revenue counter and a notification toast.",
+  "use_when": "You need a ready product-UI sequence to copy into a SaaS launch or feature video, or an example of nesting pattern comps with exact cue timing (cursor ripple on the toggle's first frame).",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 458,
+    "seconds": 15.3
+  },
+  "contains": {
+    "timelines": 8,
+    "master": "SaaS UI showcase (458 frames)",
+    "scenes": [
+      "0-80 search typing",
+      "80-140 sidebar drawer",
+      "140-230 KPI tile (3% push)",
+      "230-278 toggle + cursor click (cursor sourceIn 14)",
+      "278-338 rolling counter",
+      "338-458 notification toast (3% push)"
+    ]
+  },
+  "parameters": [
+    "scene texts and colours inside each comp",
+    "scene starts in the master",
+    "cursor sourceIn (ripple timing)"
+  ],
+  "carvercat_version": "built on 0.1.6 (rev 1105, verification build); re-verified on 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Regular/Medium/SemiBold/Bold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint: 0 errors, 0 warnings, 0 notes. QC notes long holds in the KPI and toast scenes (intended, with a slow push).",
+    "Built by ai/scripts/motion/saas_ui_showcase.py from the lab comps; re-run it after changing saas_ui_lab.py.",
+    "No sound yet: add a click on f244 and soft pops on the toast (f338) with the starter SFX.",
+    "Rolling counter masks: each Window is the mask (isMask) and its digit column the target; fixed 2026-10-27 (the first release had them inverted)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

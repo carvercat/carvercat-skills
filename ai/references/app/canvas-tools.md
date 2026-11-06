@@ -1,4 +1,4 @@
-# Canvas tool families and option popups
+# Canvas tool families and option popups (C457)
 
 The native app has one Canvas-owned top tools surface. Selection, Shapes, Draw
 and View reveal their variants on hover; following families move within reserved
@@ -46,6 +46,9 @@ are retained.
 Align/Distribute actions and Pencil Softness were proposal controls in the
 browser mockup. This migration does not implement those future features or
 expose inert substitutes. Text/stroke alignment properties remain available.
+
+Verification and exact executable hashes are recorded in the app repository's
+`docs/logs/Log6-10-26-C457-merged-canvas-tools.txt` and `.ai/results/C457.json`.
 
 ## Complete Canvas panel polish
 

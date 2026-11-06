@@ -1,0 +1,125 @@
+{
+ "presetVersion": 2,
+ "id": "cc.kt.char_zoom_in",
+ "name": "Letters zoom in",
+ "category": "animation",
+ "tags": [
+  "stagger",
+  "in",
+  "character",
+  "zoom",
+  "expo",
+  "kinetic typography"
+ ],
+ "note": "Letters fly in from 240% toward their place, 1 f apart, on an expo landing. Single words and short titles. Curve baked as keys (linear joins) - see the skill's ai/patterns/kinetic-typography.md.",
+ "anchor": "in",
+ "frames": 16,
+ "only": "text",
+ "stagger": {
+  "by": "character",
+  "order": "forward",
+  "gap": 1
+ },
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 2.4,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0625,
+     "value": 1.92294,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": 1.59195,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1875,
+     "value": 1.37911,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 1.24413,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3125,
+     "value": 1.1575,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.375,
+     "value": 1.10106,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.03951,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6875,
+     "value": 1.00697,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0667,
+     "value": 0.40633,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1333,
+     "value": 0.73188,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 0.87783,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2667,
+     "value": 0.95349,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3333,
+     "value": 0.98973,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

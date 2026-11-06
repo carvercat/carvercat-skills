@@ -1,0 +1,34 @@
+{
+ "presetVersion": 2,
+ "id": "cc.cb.photo_push",
+ "name": "Photo push - 5 s",
+ "category": "animation",
+ "tags": [
+  "in",
+  "push",
+  "photo",
+  "ken burns",
+  "hold",
+  "corporate brand"
+ ],
+ "note": "A linear 6% push over 150 f (5 s) so stills, plates and held frames keep moving. Keep the clip no longer than 150 f: once the push stops, a full-frame plate held above 100% is reported by lint as cropped at rest. Curve baked as keys (linear joins) - see the skill's ai/patterns/corporate-brand.md.",
+ "anchor": "in",
+ "frames": 150,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.06,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

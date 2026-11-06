@@ -1,6 +1,6 @@
-# Project Navigator
+# Project Navigator (C456)
 
-Tested against the native 0.1.4 review build, 2026-10-05.
+Tested against the native 0.1.4 C456 review build, 2026-10-05.
 
 Read `carvercat_state.navigator` before navigating. It includes the current
 lineage and graph nodes, each with an exact `target`. Pass that target unchanged
@@ -32,7 +32,7 @@ Re-read state after navigation or document edits. Clip IDs can repeat across
 compositions; a clip ID alone cannot identify a usage. Do not substitute a
 composition definition for an exact usage when per-instance context matters.
 
-Side columns (8 October 2026): use `workspace.column` with `column:left|right`
+D51 side columns (8 October 2026): use `workspace.column` with `column:left|right`
 and either `width` in logical pixels or `collapsed:true|false`. Omitting both
 inspects the column. Expanded bounds are 320-520; dragging below 296 collapses
 to a 42px rail and reaching 344 restores. Explicit restore keeps the previous

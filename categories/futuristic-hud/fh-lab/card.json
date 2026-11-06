@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "futuristic-hud/fh-lab",
+  "title": "Futuristic HUD lab (source of the Futuristic HUD pack)",
+  "category": "futuristic-hud",
+  "tags": [
+    "hud",
+    "sci-fi",
+    "glow",
+    "reticle",
+    "radar",
+    "readout",
+    "scan",
+    "1920x1080"
+  ],
+  "summary": "The comps every Futuristic HUD template was built and verified in: targeting reticle, corner brackets scan, data readout and radar sweep.",
+  "use_when": "You want to see a HUD pattern working before using it, copy its objects into a tech or gaming job, or re-extract a template after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 120,
+    "seconds": 4.0
+  },
+  "contains": {
+    "timelines": 4,
+    "comps": [
+      "FH Reticle (90 f)",
+      "FH Brackets (75 f)",
+      "FH Readout (100 f, Stagger Text type-on)",
+      "FH Radar (120 f)"
+    ]
+  },
+  "parameters": [
+    "texts",
+    "colours (linear light)",
+    "blip angles and frames"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Rebuild: ai/scripts/motion/futuristic_hud_lab.py, then PRESETS, edit.save.",
+    "Every comp lints 0/0; qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

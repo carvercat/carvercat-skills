@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "retro/rt-lab",
+  "title": "Retro lab (source of the Retro pack)",
+  "category": "retro",
+  "tags": [
+    "retro",
+    "70s",
+    "80s",
+    "synthwave",
+    "on-twos",
+    "sunburst",
+    "stripes",
+    "checkerboard",
+    "1920x1080"
+  ],
+  "summary": "The comps every Retro template was built and verified in: sunburst title, synthwave sun, rainbow stripes and checker wipe.",
+  "use_when": "You want to see a retro pattern working before using it, copy its objects into a 70s/80s job, or re-extract a template after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 120,
+    "seconds": 4.0
+  },
+  "contains": {
+    "timelines": 4,
+    "comps": [
+      "RT Sunburst title (90 f)",
+      "RT Synthwave (120 f)",
+      "RT Rainbow stripes (75 f)",
+      "RT Checker wipe (54 f, 40 squares)"
+    ]
+  },
+  "parameters": [
+    "texts",
+    "colours (linear light)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold/SemiBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; the sunburst and synthwave templates keep it (full-frame looks), the others drop it.",
+    "Rebuild: ai/scripts/motion/retro_lab.py, then PRESETS, edit.save.",
+    "Every comp lints 0/0; qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

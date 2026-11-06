@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "kinetic-typography/kt-lab-2",
+  "title": "Kinetic Typography lab 2 (source of the round-2 templates)",
+  "category": "kinetic-typography",
+  "tags": [
+    "kinetic-type",
+    "typography",
+    "templates",
+    "lower-third",
+    "title",
+    "highlight",
+    "quote",
+    "stat",
+    "list",
+    "end-card",
+    "1920x1080"
+  ],
+  "summary": "The 7 comps the round-2 Kinetic Typography templates were built and verified in: lower third, split title, highlight sweep, quote, stat punch, numbered list and follow end card.",
+  "use_when": "You want to see a round-2 kinetic-type template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 7,
+    "comps": [
+      "KT Lower third (150 f)",
+      "KT Split title (90 f)",
+      "KT Highlight sweep (90 f)",
+      "KT Quote (150 f)",
+      "KT Stat punch (90 f)",
+      "KT Numbered list (120 f)",
+      "KT End card (120 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "highlight words (regenerate: positions come from cc.textw)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold/Medium"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (klt_, kst_, khs_, kqt_, ksp_, knl_, kec_).",
+    "Rebuild: ai/scripts/motion/kinetic_type_lab2.py writes the comps (needs Pillow for cc.textw); apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

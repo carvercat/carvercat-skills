@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "id": "recipes/sports-score-update",
+  "title": "Sports score update, 14 s (recipe)",
+  "category": "recipes",
+  "tags": [
+    "recipe",
+    "sports",
+    "score",
+    "goal",
+    "replay",
+    "broadcast",
+    "1920x1080"
+  ],
+  "summary": "A 14 s match-update overlay over a pitch stand-in: score bug with a score change, GOAL! on the change, replay stinger, player lower third, slash wipe and full-time score.",
+  "use_when": "You need a score-change or goal update over match footage.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 420,
+    "seconds": 14.0
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Sports score update 14s (master, 6 placed templates)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "shot timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold/ExtraBold"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Sports"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
+    "The packs listed in dependencies must be installed for library.place when you rebuild; the saved project already contains the placed comps.",
+    "Rebuild: ai/scripts/motion/recipes/rc_*.py (headless, isolated folders). Docs: ai/recipes/sports-score-update.md.",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc notes some long holds as freezes (see the doc)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

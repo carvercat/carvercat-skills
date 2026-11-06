@@ -10,11 +10,11 @@ overlays (roads on an emirate map) line up exactly.
 
 Writes OUT.json:
   {comp, box, projection, transform, features:[{name, rings:[[[x,y]...]...], label:[x,y], bbox}],
-   pins:[{name, lonlat, px}], steps:[ carvercat_batch steps: one closed object.path per ring ]}
+   pins:[{name, lonlat, px}], steps:[ one `object.path {pointsPx, closed}` call per ring, with its `name` ]}
 
 * rings / label / px are comp PIXELS, top-left origin, y down.
-* steps use object.path with frame-fraction points (y DOWN); paste into carvercat_batch
-  (<= 256 steps per call). Largest ring first per feature so the mainland draws first.
+* steps are `object.path {pointsPx, closed}` calls in comp px (y DOWN) plus the object's name; run them with
+  `map_overlay.build_map(client, geo)`. Largest ring first per feature so the mainland draws first.
 * Projections: equal_earth (world/region, honest areas), mercator (matches web maps,
   satellite plates), local (equirectangular scaled by cos(lat0); city/community scale).
 * Douglas-Peucker in PIXELS (--tol), ring-safe. Rings under --min-area px^2 are dropped.
@@ -193,8 +193,8 @@ def main():
     for fi, f in enumerate(out["features"]):
         for ri, r in enumerate(f["rings"]):
             al = f"f{fi}r{ri}"
-            out["steps"] += [{"command": "object.path", "args": {"points": [[round(x / W, 5), round(y / H, 5)] for x, y in r], "closed": not f["line"]}, "as": al},
-                             {"command": "clip.rename", "args": {"id": {"$ref": al}, "name": f["name"] + ("" if ri == 0 else f" island {ri}")}}]
+            out["steps"].append({"command": "object.path", "args": {"pointsPx": [[round(x, 2), round(y, 2)] for x, y in r], "closed": not f["line"]},
+                                 "name": f["name"] + ("" if ri == 0 else f" island {ri}")})
     json.dump(out, open(a.out, "w", encoding="utf-8"), indent=1)
     print(f"{len(out['features'])} features, {sum(len(f['rings']) for f in out['features'])} rings, "
           f"{sum(len(r) for f in out['features'] for r in f['rings'])} points, {len(out['steps'])} steps; scale {s:.1f}")

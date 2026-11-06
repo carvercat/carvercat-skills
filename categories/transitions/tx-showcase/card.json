@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "id": "transitions/tx-showcase",
+  "title": "Transitions showcase (12 s, 7 cuts)",
+  "category": "transitions",
+  "tags": [
+    "transitions",
+    "reel",
+    "cuts",
+    "wipe",
+    "1920x1080"
+  ],
+  "summary": "Eight stand-in scenes cut through the seven cover transitions, each instance placed so its cover frame lands on the cut.",
+  "use_when": "You need an example of placing cover transitions over real cuts (instance start = cut - cut frame), or a reel to pick a transition from.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 360,
+    "seconds": 12.0
+  },
+  "contains": {
+    "timelines": 8,
+    "master": "Transitions showcase (360 frames)",
+    "scenes": [
+      "8 scenes of 45 f",
+      "cuts at 45, 90, ... 315 under slide wipe, diagonal, doors, bars, clock, bubbles, dip"
+    ]
+  },
+  "parameters": [
+    "replace the stand-in scenes with your shots"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold (scene labels; install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint 0/0/0; qc at 240 px: no flashes, no freezes.",
+    "Built by ai/scripts/motion/transitions_showcase.py from the lab comps."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

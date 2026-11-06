@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "glitch/gl-lab-2",
+  "title": "Glitch lab 2 (source of the round-2 templates)",
+  "category": "glitch",
+  "tags": [
+    "glitch",
+    "rgb-split",
+    "vhs",
+    "terminal",
+    "error",
+    "pixels",
+    "stepped",
+    "templates",
+    "lower-third",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Glitch templates were built and verified in: glitch lower third, block artifact title, error cascade, terminal type-on, stutter words, RGB split mark, tracking band and pixel dissolve.",
+  "use_when": "You want to see a round-2 glitch template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "GL Lower third (150 f)",
+      "GL Block title (90 f)",
+      "GL Error cascade (120 f)",
+      "GL Terminal (150 f)",
+      "GL Stutter words (100 f)",
+      "GL RGB mark (90 f)",
+      "GL Tracking band (90 f, overlay)",
+      "GL Pixel dissolve (40 f, transition)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "random seeds for blocks, jumps and pixel order (regenerate)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/SemiBold/Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Comps have a 'Lab bg' rectangle (dropped on extraction) except GL Tracking band and GL Pixel dissolve.",
+    "Clip ids are unique per comp (glt_, gbt_, gec_, gtm_, gsw_, grm_, gtb_, gpd_).",
+    "Rebuild: ai/scripts/motion/glitch_lab2.py writes the comps (cc.textw needs Pillow); apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings; qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

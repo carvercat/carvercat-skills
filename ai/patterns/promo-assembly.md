@@ -28,11 +28,11 @@ Track indexes count audio tracks too; re-read `carvercat_list` after `track.add`
 Rules: content clips END at the cut; the next beat's clips START at (or 3–4 f before) the cut; presets are anchored to clip ends, so trimming a clip moves its entrance/exit with it.
 
 ## 3. Per beat
-- Build objects (style fully: always set `text.fill.color`; place with `authoring.place_bounds` BEFORE animating).
+- Build objects (style fully: always set the text `fill`; place with `layout.*` / `property.set` BEFORE animating).
 - Group things that move together (card + label) and animate the group.
 - Entrances from the pack (one `preset.apply` per object), 3–6 f apart, hero last.
-- Hold motion: 2–4 % scale or a 1–2 % drift over the hold (two `key.set` keys, S-curve) on the hero or the group.
+- Hold motion: 2–4 % scale or a 1–2 % drift over the hold (two `key.set` keys, `cubic-bezier(0.333, 0, 0.667, 1)` on the first) on the hero or the group.
 - Exits: `Exit … - accelerate` / `Exit fade - fast` / `Exit zoom through`, ~70 % of the entrance length, ending at the cut.
 
 ## 4. Check
-`carvercat_look` entrance / hold / exit of every beat (`count` 4–6, `max_edge` ≤ 1000), `inspect lint` (notes from presets are expected), `authoring validate` for safe area and overlaps (ignore false failures on nested instances), then `edit.save {path}` (save-as).
+`carvercat_look` entrance / hold / exit of every beat (`count` 4–6, `max_edge` ≤ 1000), `inspect lint` (notes from presets are expected), `measure.overlaps {within: "safe"}` and `inspect lint` for safe area and overlaps (ignore false failures on nested instances), then `carve.preflight` before a send, and `edit.save {path}` (save-as).

@@ -1,0 +1,99 @@
+{
+ "presetVersion": 2,
+ "id": "cc.fh.power_down",
+ "name": "Power down",
+ "category": "animation",
+ "tags": [
+  "out",
+  "crt",
+  "power",
+  "hud",
+  "futuristic",
+  "futuristic hud"
+ ],
+ "note": "The CRT switch-off: collapses to a 2% line (6 f), then the line shrinks to a point (6 f). Curves baked as keys (linear joins) - see the skill's ai/patterns/futuristic-hud.md.",
+ "anchor": "out",
+ "frames": 12,
+ "tracks": [
+  {
+   "property": "scaleY",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0833,
+     "value": 0.91258,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": 0.78168,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 0.62159,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4167,
+     "value": 0.23894,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 0.02,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.02,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "scaleX",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5833,
+     "value": 0.9108,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6667,
+     "value": 0.77722,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.75,
+     "value": 0.61387,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.9167,
+     "value": 0.22341,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

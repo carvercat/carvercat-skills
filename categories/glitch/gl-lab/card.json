@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "glitch/gl-lab",
+  "title": "Glitch lab (source of the Glitch pack)",
+  "category": "glitch",
+  "tags": [
+    "glitch",
+    "rgb-split",
+    "slice",
+    "noise",
+    "transition",
+    "stepped",
+    "mask",
+    "1920x1080"
+  ],
+  "summary": "The comps every Glitch template was built and verified in: RGB split title, slice shift, noise bars overlay and glitch cut.",
+  "use_when": "You want to see a glitch pattern working before using it, copy its keys into an edgy job, or re-extract a template after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 90,
+    "seconds": 3.0
+  },
+  "contains": {
+    "timelines": 4,
+    "comps": [
+      "GL RGB title (90 f, two drop shadows)",
+      "GL Slice shift (75 f, 5 masked slices)",
+      "GL Noise bars (60 f)",
+      "GL Glitch cut (30 f, stand-in scenes)"
+    ]
+  },
+  "parameters": [
+    "texts",
+    "colours (linear light)",
+    "random seeds in glitch_lab.py"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Masks: each band is the mask; mask.make takes the FIRST id as the mask.",
+    "Rebuild: ai/scripts/motion/glitch_lab.py (seeded random), then PRESETS and MASKS, edit.save.",
+    "Every comp lints 0/0; qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

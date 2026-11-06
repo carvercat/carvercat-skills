@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "corporate-brand/cb-lab-2",
+  "title": "Corporate Brand lab 2 (source of the round-2 templates)",
+  "category": "corporate-brand",
+  "tags": [
+    "corporate",
+    "brand",
+    "templates",
+    "chapter",
+    "quote",
+    "end-card",
+    "agenda",
+    "team",
+    "split-screen",
+    "callout",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Corporate Brand templates were built and verified in: chapter title, quote, end card, agenda, team row, split screen, leader callout and a two-colour panel wipe.",
+  "use_when": "You want to see a round-2 corporate template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 90,
+    "seconds": 3.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "CB Chapter title (90 f)",
+      "CB Quote (150 f)",
+      "CB End card (120 f, light)",
+      "CB Agenda (150 f)",
+      "CB Team row (120 f, light)",
+      "CB Split screen (150 f, light)",
+      "CB Leader callout (120 f)",
+      "CB Panel wipe (40 f, transition)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "photo stand-ins (replace with media)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Regular/Medium/SemiBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Portraits and the split-screen photo are grey/navy stand-ins.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\". The light comps also have a 'Light background' that stays in the template.",
+    "Clip ids are unique per comp (cch_, cqt_, cec_, cag_, ctm_, css_, clc_, cpw_).",
+    "Rebuild: ai/scripts/motion/corporate_brand_lab2.py writes the comps; apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "id": "recipes/funky-sale-promo",
+  "title": "Funky sale promo, 18 s (recipe)",
+  "category": "recipes",
+  "tags": [
+    "recipe",
+    "funky",
+    "sale",
+    "promo",
+    "retail",
+    "1920x1080"
+  ],
+  "summary": "A loud 18 s sale promo: swing headline, sale badge, photo stack, squiggle underline and an orbit end card, with a star cover into the products.",
+  "use_when": "You need a bold retail or event promo with a sale message.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 540,
+    "seconds": 18.0
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Funky sale promo (master, 6 placed templates)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "shot timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Funky"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
+    "Rebuild: ai/scripts/motion/recipes/rc_funky.py (headless, isolated folders). Docs: ai/recipes/funky-sale-promo.md.",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc (240 px) notes three holds as freezes (f25\u201389, f215\u2013299, f318\u2013389)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "id": "minimal-luxury/ml-showcase",
+  "title": "Minimal luxury showcase (15.5 s premium film)",
+  "category": "minimal-luxury",
+  "tags": [
+    "luxury",
+    "minimal",
+    "film",
+    "fragrance",
+    "title",
+    "quote",
+    "1920x1080"
+  ],
+  "summary": "A 15.5 s premium film from the Minimal Luxury patterns: tracked title, feathered wipe, drawn product frame and slow quote.",
+  "use_when": "You need a ready slow, premium sequence to copy into a fashion, fragrance, jewellery or hospitality film.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 465,
+    "seconds": 15.5
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Minimal luxury showcase (465 frames)",
+    "scenes": [
+      "0-120 tracked title",
+      "120-195 feather wipe (2% push)",
+      "195-315 product frame",
+      "315-465 slow quote"
+    ]
+  },
+  "parameters": [
+    "texts inside each comp",
+    "replace the product stand-in"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Regular (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint 0/0/0; QC notes the product-frame hold as a freeze at its 96 px analysis size (the drift is 0.6%).",
+    "Built by ai/scripts/motion/minimal_luxury_showcase.py from the lab comps.",
+    "No sound yet: a soft piano or pad bed; no hits."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

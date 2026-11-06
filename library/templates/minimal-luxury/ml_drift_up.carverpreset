@@ -1,0 +1,40 @@
+{
+ "presetVersion": 2,
+ "id": "cc.ml.drift_up",
+ "name": "Drift up - 4 s",
+ "category": "animation",
+ "tags": [
+  "in",
+  "drift",
+  "hold",
+  "luxury",
+  "minimal",
+  "minimal luxury"
+ ],
+ "note": "A linear 0.6% rise over 120 f (4 s) under a hold, so a still frame keeps breathing. Apply after the entrance, on clips of 120 f or less. Curve baked as keys (linear joins) - see the skill's ai/patterns/minimal-luxury.md.",
+ "anchor": "in",
+ "frames": 120,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.0,
+      -0.006
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

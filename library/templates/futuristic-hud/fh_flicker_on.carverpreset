@@ -1,0 +1,59 @@
+{
+ "presetVersion": 2,
+ "id": "cc.fh.flicker_on",
+ "name": "Flicker on",
+ "category": "animation",
+ "tags": [
+  "in",
+  "flicker",
+  "hud",
+  "tech",
+  "futuristic",
+  "futuristic hud"
+ ],
+ "note": "Switches on in 12 f with stepped opacity (0 > 80 > 15 > 90 > 50 > 100%), like a display warming up. Two steps per 4 f stay well under flash limits. Curves baked as keys (linear joins) - see the skill's ai/patterns/futuristic-hud.md.",
+ "anchor": "in",
+ "frames": 12,
+ "tracks": [
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.17,
+     "value": 0.8,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.33,
+     "value": 0.15,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.5,
+     "value": 0.9,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.67,
+     "value": 0.5,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.83,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Hold"
+    }
+   ]
+  }
+ ]
+}

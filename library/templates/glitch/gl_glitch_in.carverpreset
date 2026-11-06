@@ -1,0 +1,119 @@
+{
+ "presetVersion": 2,
+ "id": "cc.gl.glitch_in",
+ "name": "Glitch in",
+ "category": "animation",
+ "tags": [
+  "in",
+  "glitch",
+  "jump",
+  "stepped",
+  "glitch pack"
+ ],
+ "note": "Arrives in 12 f as a broken signal: held horizontal jumps of 3%, -2%, 1.2%, -0.6%, 0.3% of the frame width with stepped opacity, then locks in. Curves baked as keys (linear joins) - see the skill's ai/patterns/glitch.md.",
+ "anchor": "in",
+ "frames": 12,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.03,
+      0
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.17,
+     "value": [
+      -0.02,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.33,
+     "value": [
+      0.012,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.5,
+     "value": [
+      -0.006,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.67,
+     "value": [
+      0.003,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.83,
+     "value": [
+      0,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0,
+      0
+     ],
+     "easing": "Hold"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.17,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.33,
+     "value": 0.4,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.5,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.67,
+     "value": 0.7,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.83,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Hold"
+    }
+   ]
+  }
+ ]
+}

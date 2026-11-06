@@ -1,10 +1,12 @@
-Override: [current-artwork-contract.md](current-artwork-contract.md) supersedes historical font availability lists and stale-look claims below. Query the installed editor; legacy observations remain version-specific evidence.
+Current15October override: [current-artwork-contract.md](current-artwork-contract.md) supersedes historical font availability lists and stale-look claims below. Query the installed editor; legacy observations remain version-specific evidence.
 
 # Current toolkit corrections ? 10 October 2026
 
 Prefer [creative-toolkit.md](creative-toolkit.md). Current inspect/probe does not change selection. Use explicit native IDs, capability keys and bounded batches; copied historical helpers and reports below are version-specific. The current editor endpoint is carvercat-mcp-editor.pid. Refusals stop dependent work. Pixel/font/color conversions are centralized in cc_scene; mixed RTL numbers still need explicit runs and actual preview inspection.
 
 # Carvercat API gotchas (quick lookup)
+
+> **Design units.** The unit, colour, easing, selection and keying gotchas below were written for the OLD keys and are marked "old" now: the design names (`x`, `y`, `rotate`, `fontSize`, `fill`, `ease`, selectors, `scene.apply`) have none of them. See [design-units.md](design-units.md). Operational notes (export, Resolve, RTL, files) are unchanged.
 
 Verified live, build seen 2026-10-01. Each line = symptom -> cause -> fix. Read this BEFORE scripting a build.
 
@@ -18,14 +20,14 @@ Verified live, build seen 2026-10-01. Each line = symptom -> cause -> fix. Read 
 - After `edit.new` the app has an empty default comp; see multi-section-caption-delivery.md.
 
 ## Keys, params, selection
-- `key.set` / `key.handle` take `id` (preferred, 0.0.7x). Without `id` they act on the SELECTED object. Wrong selection gives misleading "no such property on this clip" / "not animated on this object". Reselect (`select.clip index=<list index>`) before every key call. List index shifts as objects are added: re-resolve it each time (cc_build.Obj.sel).
-- `key.set` `easing` takes Linear / Ease in / Ease out / S-curve / Hold; any other name silently becomes Linear (0.0.72; very old builds ignored it). For exact curves use `key.handle`. Shape curves with `key.handle path frame side x y`: out (0.32,0), in (0.68,1). A handle needs an existing key at that frame.
+- `key.set` and the other per-object commands take `id` or a selector (`#title`, `text`); name the object every time. (Old: without `id` they acted on the SELECTED object.) Wrong selection gives misleading "no such property on this clip" / "not animated on this object". Reselect (`select.clip index=<list index>`) before every key call. List index shifts as objects are added: re-resolve it each time (cc_build.Obj.sel).
+- Easing: `key.set {ease}` / `anim.set` take CSS easing and refuse a name they do not know. (The old `easing` names `Linear`/`Ease in`/`Ease out`/`S-curve`/`Hold` still work as old names; `Ease in`/`Ease out` are not CSS `ease-in`/`ease-out`.) For exact curves use `key.handle`. Shape curves with `key.handle path frame side x y`: out (0.32,0), in (0.68,1). A handle needs an existing key at that frame.
 - Key at frame = comp frame; set the playhead with `view.seek` before `key.set`.
 - Param path forms: `tr.e_tr_placement_<id>.{position,scale,opacity}`, `src.e_src_shape_fill_<id>.*`, `src.e_src_shape_stroke_<id>.*`, `src.e_src_shape_geometry_{rectangle,ellipse}_<id>.{width,height,cornerRadius}`, `src.e_src_text_{font,fill,outline,relative}_<id>.*`, `fx.e_fx_trim_<id>.end`. Prefer `param.list` over constructing.
-- Beta availability: `param.list` now reports `available` and `unavailable_reason` per Basement row. A listed path is not permission to write: declared-but-unimplemented controls remain visible and faded, and `param.promote`, reset, wiring and `property.set` refuse them without changing the project. Check `available` before automation. Working gradient paint uses the `gradient` object; do not write separate `gradientAngle`/`gradientSize`/related advanced registry fields, which do not drive the native picture. `media.trim.sourceIn` is a working clip field in Controls, not a promotable Basement lane.
+- Beta availability (C439): `param.list` now reports `available` and `unavailable_reason` per Basement row. A listed path is not permission to write: declared-but-unimplemented controls remain visible and faded, and `param.promote`, reset, wiring and `property.set` refuse them without changing the project. Check `available` before automation. Working gradient paint uses the `gradient` object; do not write separate `gradientAngle`/`gradientSize`/related advanced registry fields, which do not drive the native picture. `media.trim.sourceIn` is a working clip field in Controls, not a promotable Basement lane.
 - `property.set key=text value="..."` sets the text of the selected text object.
-- Units: position y-UP 0..1; shape width/height = fractions of frame WIDTH; `cornerRadius` 0.5 = pill, 0.3 = rounded card; text size 0.088 ~ 62 px cap-height-ish (0.078 ~ 55 px); text tracking units unclear (values 6 and 0.12 garbled tiny text; leave unset).
-- Colours are LINEAR light (Rec.709 inverse, see `lin()` in cc_build). RGBA arrays; fill/stroke alpha is the 4th component.
+- Units (old keys only): position y-UP 0..1; shape width/height = fractions of frame WIDTH; `cornerRadius` 0.5 = pill; text `size` is not a pixel height. Design names: `x`, `y` px top-left y down; `width`, `height`, `borderRadius` px (`"50%"` = stadium); `fontSize` px; `letterSpacing` px..
+- Colours: write CSS strings (`"#FF7A00"`, `"#FF7A0080"`); only the old raw arrays are linear light.
 - Fill/stroke `paint` = solid | gradient | none. Gradient: `{"mode":"linear|radial","start":[x,y],"end":[x,y],"stops":[{"p":0,"color":[r,g,b],"a":1},...]}` in the object's box, y DOWN. Text gradient goes in `src.e_src_text_fill_<id>.gradient`.
 - Imported media has no cornerRadius: make a rounded rectangle and `mask.make` (verified — see Masks below).
 
@@ -64,8 +66,8 @@ Verified live, build seen 2026-10-01. Each line = symptom -> cause -> fix. Read 
 - Composite verification: export each frame with `Project.ExportCurrentFrameAsStill(<explicit frame-named path>)` (not Gallery GrabStill, whose names/order are unreliable), then contact-sheet with PIL. Allow the compositor to settle; assert timecode.
 - Resolve still export can race the filesystem: `Gallery.ExportStills(...)` may return success before every PNG is stable enough for an immediate contact-sheet read. Clear stale `f_*.png` files in the target folder first, then poll until the exact expected PNG count exists before opening or renaming them. Otherwise sheet generation can hit `FileNotFoundError` or mix a prior grab into the new sheet.
 - For ordered multi-frame QC, prefer `Project.ExportCurrentFrameAsStill(<explicit path>)` once per requested frame. Gallery-generated filenames/order produced a chronologically wrong sheet even after timecode settle and exact-count polling. Reliable loop: `SetCurrentTimecode`, wait ~0.75 s, assert `GetCurrentTimecode`, export to a filename containing the requested local frame, then build the sheet from those explicit names.
-## Added after revision (2026-09-30)
-- object.path points are frame fractions with y DOWN (unlike position, y-up); it takes `track`/`duration`; in a batch give the step `frame` and it lands on a free row. Never relocate with `clip.move` — it is an overwrite edit that trims/deletes clips underneath. Style it with the same shape fill/stroke keys (fill paint none, stroke gradient, width ~0.016) and animate with effect.add cap=trim (fx.e_fx_trim_<id>.end). Arrowheads: a second open 3-point path.
+## Added after C2264 revision (2026-09-30)
+- `object.path {d | pointsPx}` is px, y down (the old `points` were frame fractions); it takes `track`/`duration`; in a batch give the step `frame` and it lands on a free row. Never relocate with `clip.move` — it is an overwrite edit that trims/deletes clips underneath. Style it with the same shape fill/stroke keys (fill paint none, stroke gradient, width ~0.016) and animate with effect.add cap=trim (fx.e_fx_trim_<id>.end). Arrowheads: a second open 3-point path.
 - Impact resolves with style Normal. Impact digit height ~0.54 x size x frame width.
 - Reselect before property.set too, after any inspect probe (probe changes selection): 'no such property on this clip' means wrong selection.
 - Ellipse tr.scale keys work once the ellipse is selected (earlier refusal was selection). Bar growth: key rectangle height and centre y together (centre = base + h/2/aspect).
@@ -90,9 +92,9 @@ Verified live, build seen 2026-10-01. Each line = symptom -> cause -> fix. Read 
 - `stagger.list` returns `stagger: null` for text without a card. Treat that as an absent card, not an empty dictionary.
 
 ## Export visual QA — observed 2026-10-01
-- On a pre-release build, alpha sequence/still exports intermittently produced glyph triangles and stray lines despite terminal complete and correct PNG dimensions. Pausing transport did not resolve it; no verified workaround. Do not accept a job from count/alpha checks alone: compare temporal disk frames to native look and inspect glyph geometry.
+- On build, alpha sequence/still exports intermittently produced glyph triangles and stray lines despite terminal complete and correct PNG dimensions. Pausing transport did not resolve it; no verified workaround. Do not accept a job from count/alpha checks alone: compare temporal disk frames to native look and inspect glyph geometry.
 
-- Follow-up: patched executable with a patched pre-release base passed a 1030-frame export and sampled Resolve composite review. Prior failure is historical for the clean build. Still validate actual outputs. After any session reset/refusal, stop dependent scripts and verify project identity before save; durable job completion alone does not prove the currently open document is the intended project.
+- Follow-up: a patched executable passed a 1030-frame export and sampled Resolve composite review. Prior failure is historical for the clean build. Still validate actual outputs. After any session reset/refusal, stop dependent scripts and verify project identity before save; durable job completion alone does not prove the currently open document is the intended project.
 
 
 ## Revision delivery and cleanup
@@ -102,7 +104,7 @@ Verified live, build seen 2026-10-01. Each line = symptom -> cause -> fix. Read 
 - A requested unused-render cleanup requires checking all timelines in the target project, not only the active timeline. Distinguish timeline references, media-pool entries, and files on disk. Older prefixes are not sufficient evidence of disuse. Keep editable sources and source snapshots outside sequence deletion scope.
 - A false MediaPool.DeleteClips result does not confirm removal. Verify state before claiming success. A filesystem cleanup being policy-blocked is not an API limitation.
 
-## Project Navigator
+## Project Navigator (C456, 2026-10-05)
 - Read carvercat_state.navigator node targets and pass the whole target to workspace.navigator open. Shared definition opens the comp; an exact usage restores parent/group path and selects that clip. Clip IDs alone are ambiguous across comps. Map is pan-only; workspace preferences never belong in the project. See project-navigator.md.
 
 ## Extending an authored text highlight (2026-10-10)
@@ -118,12 +120,12 @@ Verified live, build seen 2026-10-01. Each line = symptom -> cause -> fix. Read 
 - After comp.switch, check that transfer.scopes[comp].frames equals the new comp duration before any write; this build can retain the old cached span. Ready deliver.plan alone was insufficient. A refused straddler send changes no timeline item, but inspect before another attempt.
 - Fusion modifier names may be normalized on import; discover the curve through DelayByCharacterPosition.GetConnectedOutput().GetTool(). SetKeyFrames can return None on a successful write; read back exact key positions/values.
 
-## Actual Fusion review and audit/capture sequencing
+## Actual Fusion review and audit/capture sequencing (D99–D101, 2026-10-12)
 
 - A native geometry measurement may return bounds for a hidden clip. Verify its enabled/hidden state and actual composite before diagnosing missing text as a font/compiler problem.
 - Native/Fusion glyph widths can differ even with the intended resolved family. Final symbol gaps and card padding need actual destination review.
 - A keyed compound currency path rendered only one contour in the measured transfer; six simple positive filled native paths worked. Low-alpha icon tiles appeared opaque in the actual Fusion result; removing the tiles exposed the line drawings. These are bounded observations needing isolated reproduction, not general fixes or proven causes.
-- An all-timeline protection audit calls SetCurrentTimeline repeatedly. Let the final target selection settle before setting the capture timecode, then verify exact timecode before and after export. Immediate1.1-second capture assertions failed in one run; a4-second settle after the audit passed. Playback/navigation can invalidate the observation; a successful setter alone is not a capture proof.
+- An all-timeline protection audit calls SetCurrentTimeline repeatedly. Let the final target selection settle before setting the capture timecode, then verify exact timecode before and after export. Immediate1.1-second capture assertions failed in D101; a4-second settle after the audit passed. Playback/navigation can invalidate the observation; a successful setter alone is not a capture proof.
 - Native look takes from/to, not frame. An unsupported argument is a known refusal; correct the observation only, without repeating completed authoring or transfer.
 - Manual aliases made from object IDs are not a substitute for validated name mappings in name-based rebind/fit. Preserve binding identity and use measured placement for the intended stable objects.
 - Fusion SaveSettings needed OrderedDict in Python __main__ in this session. SetKeyFrames can return None on success; validate the exact stored key/value table instead of treating that return as failure.

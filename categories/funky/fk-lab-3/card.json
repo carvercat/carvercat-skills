@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "id": "funky/fk-lab-3",
+  "title": "Funky lab 3 (source of the round-3 templates)",
+  "category": "funky",
+  "tags": [
+    "funky",
+    "memphis",
+    "pop",
+    "templates",
+    "gig",
+    "music",
+    "poster",
+    "menu",
+    "food",
+    "new-drop",
+    "streetwear",
+    "marquee",
+    "ticker",
+    "blob",
+    "mask",
+    "photo-frame",
+    "party",
+    "invite",
+    "countdown",
+    "zine",
+    "quote",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Funky templates were built and verified in: gig poster, menu special, new drop reveal, marquee bands, blob photo frame (mask window), party invite, countdown and zine quote.",
+  "use_when": "You want to see a round-3 funky template working before using it, copy a comp's objects into a funky film, or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "FK Gig poster (150 f)",
+      "FK Menu special (150 f)",
+      "FK New drop (120 f)",
+      "FK Marquee bands (150 f, seamless scroll)",
+      "FK Blob frame (120 f, mask window)",
+      "FK Party invite (150 f)",
+      "FK Countdown (120 f, 4 beats of 30 f)",
+      "FK Zine quote (150 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content (sample copy: acts, dishes, names, dates and prices are invented)",
+    "the lists in funky_lab3.py (MQ, DETAILS, BEATS, ZINE, BLOB)",
+    "photo and product stand-ins (replace with real pictures)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Bold",
+      "Rethink Sans ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Photos, the dish and the product are coloured stand-in shapes.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (fgp_, fmn_, fnd_, fmq_, fbf_, fpi_, fcd_, fzq_).",
+    "Rebuild: ai/scripts/motion/funky_lab3.py; every move is baked as keys, no presets to apply; open the file, run mask.make {ids:[window, content]} + parent.clear for the one MASKS pair (FK Blob frame), then edit.save.",
+    "Lint: every comp 0 errors / 0 warnings / 0 notes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

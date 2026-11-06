@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "id": "explainer/ex-lab",
+  "title": "Explainer lab (source of the Explainer pack)",
+  "category": "explainer",
+  "tags": [
+    "explainer",
+    "steps",
+    "arrows",
+    "icons",
+    "callout",
+    "timeline",
+    "1920x1080"
+  ],
+  "summary": "The comps every Explainer template was built and verified in: process steps, icon grid, pointer callout and milestone timeline.",
+  "use_when": "You want to see an explainer pattern working before using it, copy its objects into a tutorial, or re-extract a template after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 4,
+    "comps": [
+      "EX Process steps (120 f)",
+      "EX Icon grid (90 f)",
+      "EX Callout (75 f)",
+      "EX Timeline (150 f)"
+    ]
+  },
+  "parameters": [
+    "texts",
+    "colours (linear light)",
+    "icons (native shapes)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold/Bold/Medium (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Rebuild: ai/scripts/motion/explainer_lab.py, then PRESETS, edit.save.",
+    "Every comp lints 0/0."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

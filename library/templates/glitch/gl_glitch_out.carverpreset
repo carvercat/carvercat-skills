@@ -1,0 +1,106 @@
+{
+ "presetVersion": 2,
+ "id": "cc.gl.glitch_out",
+ "name": "Glitch out",
+ "category": "animation",
+ "tags": [
+  "out",
+  "glitch",
+  "jump",
+  "stepped",
+  "glitch pack"
+ ],
+ "note": "The signal breaks up and drops out in 10 f: growing held jumps with stepped opacity, gone by the last 2 frames. Curves baked as keys (linear joins) - see the skill's ai/patterns/glitch.md.",
+ "anchor": "out",
+ "frames": 10,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0,
+      0
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": [
+      -0.008,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.4,
+     "value": [
+      0.015,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.6,
+     "value": [
+      -0.025,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.8,
+     "value": [
+      0.04,
+      0
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.04,
+      0
+     ],
+     "easing": "Hold"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 0.6,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.4,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.6,
+     "value": 0.3,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.8,
+     "value": 0.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Hold"
+    }
+   ]
+  }
+ ]
+}

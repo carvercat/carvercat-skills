@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "transitions/tx-lab",
+  "title": "Transitions lab (source of the Transitions pack)",
+  "category": "transitions",
+  "tags": [
+    "transitions",
+    "wipe",
+    "doors",
+    "bars",
+    "clock-wipe",
+    "bubbles",
+    "dip",
+    "mask",
+    "whip-pan",
+    "zoom",
+    "1920x1080"
+  ],
+  "summary": "The 11 comps the Transitions pack was built and verified in: 7 cover transitions with stand-in scenes and 4 reveal recipes (shape reveal, line sweep, whip pan, zoom blur punch).",
+  "use_when": "You want to see a transition working with two scenes before using it, or copy a reveal recipe's keys onto your own scenes.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 40,
+    "seconds": 1.3
+  },
+  "contains": {
+    "timelines": 11,
+    "comps": [
+      "TX Slide wipe",
+      "TX Diagonal wipe",
+      "TX Split doors",
+      "TX Bars stagger",
+      "TX Clock wipe",
+      "TX Bubble cover",
+      "TX Dip to colour",
+      "TX Shape reveal (mask)",
+      "TX Line sweep (mask)",
+      "TX Whip pan (motion blur)",
+      "TX Zoom blur punch (Gaussian blur)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "cut frames"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Stand-in scenes are 'Scene A' / 'Scene B'; templates are extracted with --drop for both.",
+    "Masks: the window or star is the mask; mask.make takes the FIRST id as the mask.",
+    "Every comp lints 0/0; qc at 240 px finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

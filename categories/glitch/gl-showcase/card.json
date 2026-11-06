@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "id": "glitch/gl-showcase",
+  "title": "Glitch showcase (5.5 s sting)",
+  "category": "glitch",
+  "tags": [
+    "glitch",
+    "sting",
+    "rgb-split",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "A 5.5 s glitch sting: RGB split title, a glitch cut, and a slice-shift logo under a noise overlay.",
+  "use_when": "You need a ready glitch intro or logo sting, or an example of overlay transitions placed on a cut.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 165,
+    "seconds": 5.5
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Glitch showcase (165 frames)",
+    "scenes": [
+      "0-90 RGB title",
+      "75-105 glitch cut overlay (cut at 90)",
+      "90-165 slice shift",
+      "105-165 noise bars overlay"
+    ]
+  },
+  "parameters": [
+    "texts and the logo inside each comp"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint 0/0/0; qc at 240 px: no flashes, no freezes.",
+    "Built by ai/scripts/motion/glitch_showcase.py from the lab comps (overlays nested without backgrounds).",
+    "No sound yet: digital stutters on each glitch step, a bass hit at 90."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

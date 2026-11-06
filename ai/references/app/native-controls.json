@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "registrySha256": "260ac4519c6b9b77d2c94745b901f3c1167436e947ba27ee97fdc1e7ccb5b695",
+  "registrySha256": "ee9bfe22520626da7eb1e6924825d8dbfeba24679dbfdd7869d8c0da747d318a",
   "authority": "Declarations only. Discover actual native bindings, values, units and availability with carvercat_authoring mode=controls; param.list describes panel/promotion state; unavailable native controls must not be treated as rendered. Repeated effects use exact entry aliases.",
   "caps": {
     "text.content": [
@@ -1652,19 +1652,6 @@
         "absorbedBy": "color"
       },
       {
-        "param": "softEdge",
-        "label": "Soft edge",
-        "type": "number",
-        "min": 0,
-        "max": 0.2,
-        "default": 0,
-        "options": null,
-        "keyframeable": true,
-        "container": "source.shape",
-        "factoryPromote": true,
-        "absorbedBy": null
-      },
-      {
         "param": "paint",
         "label": "Paint",
         "type": "enum",
@@ -1935,7 +1922,7 @@
         "label": "Corner radius",
         "type": "number",
         "min": 0,
-        "max": 0.5,
+        "max": 1,
         "default": 0,
         "options": null,
         "keyframeable": true,
@@ -2183,6 +2170,21 @@
         "default": 0,
         "options": null,
         "keyframeable": false,
+        "container": "source.media",
+        "factoryPromote": true,
+        "absorbedBy": null
+      }
+    ],
+    "media.audio": [
+      {
+        "param": "gain",
+        "label": "Level (dB)",
+        "type": "number",
+        "min": -60,
+        "max": 24,
+        "default": 0,
+        "options": null,
+        "keyframeable": true,
         "container": "source.media",
         "factoryPromote": true,
         "absorbedBy": null

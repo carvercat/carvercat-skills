@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "sports/sp-lab-2",
+  "title": "Sports lab 2 (source of the round-2 templates)",
+  "category": "sports",
+  "tags": [
+    "sports",
+    "broadcast",
+    "templates",
+    "lower-third",
+    "versus",
+    "table",
+    "score",
+    "lineup",
+    "spotlight",
+    "replay",
+    "transition",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-2 Sports templates were built and verified in: player lower third, match up, standings table, full-time score, starting lineup, player spotlight, replay stinger and slash wipe.",
+  "use_when": "You want to see a round-2 sports template working before using it, copy a comp's objects, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "SP Lower third (150 f)",
+      "SP Match up (90 f)",
+      "SP Standings (150 f)",
+      "SP Full time (120 f)",
+      "SP Lineup (150 f)",
+      "SP Spotlight (120 f, overlay)",
+      "SP Replay stinger (45 f, transition)",
+      "SP Slash wipe (30 f, transition)"
+    ]
+  },
+  "parameters": [
+    "team colours (linear light)",
+    "text content"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Comps have a 'Lab bg' rectangle (dropped on extraction) except the two transitions.",
+    "Clip ids are unique per comp (slt_, smu_, sst_, sft_, slu_, ssp_, srs_, ssw_).",
+    "Rebuild: ai/scripts/motion/sports_lab2.py writes the comps; apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

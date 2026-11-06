@@ -1,0 +1,121 @@
+{
+ "presetVersion": 2,
+ "id": "cc.rt.rise_twos",
+ "name": "Rise - on twos",
+ "category": "animation",
+ "tags": [
+  "in",
+  "rise",
+  "on twos",
+  "stepped",
+  "retro",
+  "retro"
+ ],
+ "note": "Rises 4% on an expo curve, but held on every other frame: the hand-drawn, 12-drawings-a-second look. Curves baked as keys (linear joins) - see the skill's ai/patterns/retro.md.",
+ "anchor": "in",
+ "frames": 16,
+ "tracks": [
+  {
+   "property": "center",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": [
+      0.0,
+      -0.04
+     ],
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": [
+      0.0,
+      -0.01691
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.25,
+     "value": [
+      0.0,
+      -0.00698
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.375,
+     "value": [
+      0.0,
+      -0.00289
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.5,
+     "value": [
+      0.0,
+      -0.00113
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.625,
+     "value": [
+      0.0,
+      -0.00038
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.75,
+     "value": [
+      0.0,
+      -9e-05
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 0.875,
+     "value": [
+      0.0,
+      -1e-05
+     ],
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": [
+      0.0,
+      0.0
+     ],
+     "easing": "Hold"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": 0.5,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.25,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Hold"
+    }
+   ]
+  }
+ ]
+}

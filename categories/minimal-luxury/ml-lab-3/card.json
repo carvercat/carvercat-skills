@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "id": "minimal-luxury/ml-lab-3",
+  "title": "Minimal Luxury lab 3 (source of the round-3 templates)",
+  "category": "minimal-luxury",
+  "tags": [
+    "luxury",
+    "minimal",
+    "templates",
+    "swatches",
+    "materials",
+    "hotel",
+    "real-estate",
+    "index",
+    "fragrance",
+    "notes",
+    "invitation",
+    "save-the-date",
+    "boutique",
+    "address",
+    "limited-edition",
+    "editorial",
+    "magazine",
+    "mask",
+    "gradient",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Minimal Luxury templates were built and verified in: material swatches, property feature (masked photo window), collection index, fragrance notes, save the date, boutique address, limited edition number (masked rise) and editorial spread (feathered photo window).",
+  "use_when": "You want to see a round-3 luxury template working before using it, copy a comp's objects into a luxury film, or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 210,
+    "seconds": 7.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "ML Swatch card (180 f)",
+      "ML Property feature (180 f, mask window)",
+      "ML Collection index (210 f)",
+      "ML Fragrance notes (180 f)",
+      "ML Invitation (180 f)",
+      "ML Boutique address (180 f)",
+      "ML Limited edition (150 f, mask window)",
+      "ML Editorial spread (180 f, feathered mask window)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content (sample copy: names, places and numbers are invented)",
+    "the lists in minimal_luxury_lab3.py (SWATCHES, LOOKS, NOTES)",
+    "photo stand-ins (replace with real photos)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Regular"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. The two photos are gradient rectangles standing in for real photos.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (msw_, mpy_, mci_, mfn_, miv_, mba_, mle_, mes_).",
+    "Rebuild: ai/scripts/motion/minimal_luxury_lab3.py; every move is baked as keys, no presets to apply; open the file, run mask.make {ids:[window, content]} + parent.clear for the three MASKS pairs, then edit.save.",
+    "Lint: every comp 0 errors / 0 warnings (ML Collection index has 8 notes: held opacity before the dim, intended)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

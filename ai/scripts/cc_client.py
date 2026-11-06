@@ -14,6 +14,12 @@ class CarvercatError(RuntimeError):
     def __init__(self, message, receipt=None):
         super().__init__(message); self.receipt = receipt
 class OutcomeUnknown(CarvercatError): pass
+class Refused(CarvercatError):
+    """A command or scene was refused. .receipt is the reply: code, why, valid, example."""
+    @property
+    def code(self):return (self.receipt or {}).get('code')
+    @property
+    def example(self):return (self.receipt or {}).get('example')
 
 def endpoint():
     """Prefer current editor; legacy fallback only when no current pointer exists."""
@@ -45,20 +51,29 @@ class Client:
         self.process=process; self.timeout=timeout;self.request_count=0;self.receipts=[];self._next=1;self.identity=None;self._txn_revision=None
         if process: self._request("initialize",INIT)
     @classmethod
-    def stdio(cls, exe, state_dir):
+    def stdio(cls, exe, state_dir, resource_root=None):
+        """A private headless document. A host built from source needs its resource folder (the app repo root, which
+        holds the fonts and the parameter registry): pass resource_root or set CARVERCAT_RESOURCE_ROOT."""
         state=Path(state_dir).resolve();state.mkdir(parents=True,exist_ok=True)
         env=os.environ.copy();env["RUST_MIN_STACK"]="268435456"
+        if resource_root:env["CARVERCAT_RESOURCE_ROOT"]=str(resource_root)
         for key,leaf in [("CARVERCAT_PREFS_DIR","preferences"),("CARVERCAT_DATA_DIR","data"),("CARVERCAT_CACHE_DIR","cache")]:
             p=state/leaf;p.mkdir(exist_ok=True);env[key]=str(p)
         env["CARVERCAT_MCP_SESSION"]="skills-scratch-"+str(os.getpid())
         # No --ui/--connect: owns an isolated document, never attaches to the visible editor.
         proc=subprocess.Popen([str(exe),"--mcp"],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,text=True,encoding="utf8",env=env)
-        try:return cls(process=proc)
+        try:
+            client=cls(process=proc)
+            client.load_fonts()
+            return client
         except BaseException:
             proc.terminate()
             try:proc.wait(timeout=5)
             except subprocess.TimeoutExpired:proc.kill();proc.wait(timeout=5)
             raise
+    def load_fonts(self):
+        """A fresh headless process measures text only after its font list has loaded; this loads it (scene.apply does too)."""
+        return self.tool("carvercat_authoring",mode="fonts",query="Open Sans")
     def close(self):
         if self.process:
             self.process.stdin.close()
@@ -112,10 +127,15 @@ class Client:
         if result.get("isError"):raise CarvercatError("; ".join(c.get("text","") for c in result.get("content",[])),result)
         return result
     def tool(self,name,**args):
-        result=self.call(name,args);blocks=[c["text"] for c in result.get("content",[]) if c.get("type")=="text"]
+        """One tool call, parsed. A refusal (isError with a JSON body) comes back as data: read `refused`, `code`, `why`."""
+        result=self._request("tools/call",{"name":name,"arguments":args or {}})
+        blocks=[c["text"] for c in result.get("content",[]) if c.get("type")=="text"]
         if len(blocks)!=1:raise CarvercatError(f"Expected one text receipt from {name}",result)
-        try:return json.loads(blocks[0])
-        except json.JSONDecodeError:return blocks[0]
+        try:body=json.loads(blocks[0])
+        except json.JSONDecodeError:body=blocks[0]
+        if result.get("isError") and not isinstance(body,dict):raise CarvercatError(str(body),result)
+        if result.get("isError") and isinstance(body,dict):body.setdefault("refused",True)
+        return body
     def resource(self,uri):return self._request("resources/read",{"uri":uri})
     def state(self):return self.tool("carvercat_state")
     def bind(self, *, commit=None, comp=None, project=None):
@@ -124,17 +144,65 @@ class Client:
         if comp is not None and state.get("comp",{}).get("name")!=comp:raise CarvercatError("Unexpected comp identity",state)
         if project is not None and Path(state["document"]["path"] or "").resolve()!=Path(project).resolve():raise CarvercatError("Unexpected project file",state)
         self.identity=state;return state
-    def run(self,command,*,quiet=True,expected_revision=None,transaction=None,dry_run=False,**args):
+    def run(self,command,*,quiet=True,expected_revision=None,transaction=None,dry_run=False,check=True,**args):
+        """One carvercat_run call. A refusal raises CarvercatError carrying the reply: .receipt has code, why, valid, example.
+        Pass check=False to get the refusal back as data (a refusal is an answer, not a crash)."""
         if expected_revision is None and self._txn_revision is not None and transaction not in ("abort","commit"):expected_revision=self._txn_revision
         data={"command":command,"args":args}
         if dry_run:data["dry_run"]=True
         if expected_revision is not None:data["expected_revision"]=expected_revision
         if transaction is not None:data["transaction"]=transaction
         r=self.tool("carvercat_run",**data)
-        if isinstance(r,dict) and (r.get("refused") or r.get("conflict")):raise CarvercatError(f"{command}: {r.get('why',r)}",r)
+        if check and isinstance(r,dict) and (r.get("refused") or r.get("conflict")):
+            extra="" if not r.get("example") else f" (example: {json.dumps(r['example'])})"
+            raise Refused(f"{command}: {r.get('code','')} {r.get('why',r)}{extra}",r)
         if isinstance(r,dict) and self._txn_revision is not None:self._txn_revision=r.get("revision",self._txn_revision)
         if not quiet:print(command,json.dumps(r,ensure_ascii=False))
         return r
+    # -- design-unit helpers (API 1.0): plain wrappers, no logic of their own ---------------------------------
+    def apply_scene(self,scene,*,mode="merge",dry_run=False,preflight=None):
+        """scene.apply: ONE document, validated whole, one undo step. dry_run=True changes nothing.
+        preflight='resolve'|'aftereffects' runs carve.preflight afterwards and returns (reply, preflight_reading)."""
+        doc=scene.to_dict() if hasattr(scene,"to_dict") else scene
+        # dry_run is an ARGUMENT of scene.apply here, not the envelope's dry_run of carvercat_run
+        reply=self.tool("carvercat_run",command="scene.apply",args={"scene":doc,"mode":mode,"dry_run":dry_run})
+        if not (reply.get("scene") or {}).get("validated",False):
+            problems=(reply.get("scene") or {}).get("refused",[])
+            why="; ".join(f"{x.get('object')} {x.get('path')}: {x.get('why')}" for x in problems[:8]) or str(reply.get("why"))
+            raise Refused("scene.apply refused: "+why,reply)
+        if preflight:return reply,self.preflight(preflight)
+        return reply
+    def scene(self,selector=None):
+        """scene.get: the open comp as a scene document (the format apply_scene takes)."""
+        r=self.run("scene.get",**({"selector":selector} if selector else {}))
+        return r["readings"][0]["scene"]
+    def query(self,selector,limit=200):
+        return self.run("select.query",selector=selector,limit=limit)["readings"][0]["matches"]
+    def ids(self,selector):return [m["id"] for m in self.query(selector)]
+    def set(self,target,**props):
+        """property.set of design keys on every object `target` (an id, a scene id as #id, or a selector) finds."""
+        last=None
+        for key,value in props.items():last=self.run("property.set",id=target,key=key,value=value)
+        return last
+    def get(self,target,key):return self.run("property.get",id=target,key=key)["readings"][0]
+    def animate(self,target,**anim):
+        """anim.set: keyframes=[{at, <props>, ease}] or to/from/fromTo + duration/delay/ease, stagger, motionPath."""
+        if "from_" in anim:anim["from"]=anim.pop("from_")
+        return self.run("anim.set",id=target,**anim)
+    def path(self,d,frame=None,duration=None,**style):
+        """object.path from SVG path data in px (y down; one subpath), then its design style. Returns the object id.
+        (Inside a scene document use `Scene.path`, a `type: "path"` node.)"""
+        extra={"duration":duration} if duration is not None else {}
+        if frame is not None:self.run("view.seek",frame=frame)   # object.path places at the playhead
+        oid=self.run("object.path",d=d,**extra)["touched"][0]
+        if frame is not None:self.run("view.seek",frame=0)
+        for key,value in style.items():self.run("property.set",id=oid,key=key,value=value)
+        return oid
+    def preflight(self,host):
+        """carve.preflight: what carves exactly, approximately or not at all on 'resolve' or 'aftereffects'. Nothing is sent."""
+        return self.run("carve.preflight",host=host)["readings"][0]
+    def measure(self,ids=None):
+        return self.run("measure.boxes",**({"ids":ids} if ids else {}))["readings"][0]
     def batch(self,steps,*,expected_revision=None,expected_document=None,dry_run=False,observe=None):
         if expected_revision is None:
             state=self.state();expected_revision=state["revision"];expected_document=state["document"]

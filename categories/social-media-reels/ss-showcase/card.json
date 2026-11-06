@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "social-media-reels/ss-showcase",
+  "title": "Social short showcase (9.5 s vertical)",
+  "category": "social-media-reels",
+  "tags": [
+    "vertical",
+    "1080x1920",
+    "reel",
+    "shorts",
+    "hook",
+    "captions",
+    "progress",
+    "cta"
+  ],
+  "summary": "A 9.5 s vertical short from the Social Short-form patterns: hook title, word-by-word caption pages and a follow end card, with a story progress bar over the whole piece.",
+  "use_when": "You need a ready Reels/Shorts/TikTok skeleton to copy: hook, captions, CTA and a progress bar timed to the full length.",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 285,
+    "seconds": 9.5
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Social short showcase (285 frames)",
+    "scenes": [
+      "0-75 hook title",
+      "75-195 caption pages",
+      "195-285 follow end card",
+      "0-285 progress bar overlay"
+    ]
+  },
+  "parameters": [
+    "texts inside each comp",
+    "progress comp length = video length"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans ExtraBold/Bold (install it: Google Fonts, SIL OFL)"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink; put footage on a track under the scenes.",
+    "Master lint 0/0/0; QC finds no freezes or flashes.",
+    "Built by ai/scripts/motion/social_short_form_showcase.py from the lab comps.",
+    "No sound yet: a whoosh-hit on f0 and f4, a pop per caption word, a click on the button (f16)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

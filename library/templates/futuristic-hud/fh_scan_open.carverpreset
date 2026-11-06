@@ -1,0 +1,89 @@
+{
+ "presetVersion": 2,
+ "id": "cc.fh.scan_open",
+ "name": "Scan open (Y)",
+ "category": "animation",
+ "tags": [
+  "in",
+  "scan",
+  "open",
+  "hud",
+  "futuristic",
+  "futuristic hud"
+ ],
+ "note": "Opens vertically from a 2% scanline to full height on an expo landing. Panels, readouts, video windows. Curves baked as keys (linear joins) - see the skill's ai/patterns/futuristic-hud.md.",
+ "anchor": "in",
+ "frames": 14,
+ "tracks": [
+  {
+   "property": "scaleY",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.02,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0714,
+     "value": 0.39314,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1429,
+     "value": 0.63534,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2143,
+     "value": 0.78037,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2857,
+     "value": 0.86694,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3571,
+     "value": 0.91961,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 0.97234,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7143,
+     "value": 0.99642,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

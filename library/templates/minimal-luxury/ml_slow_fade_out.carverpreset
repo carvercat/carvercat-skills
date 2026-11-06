@@ -1,0 +1,99 @@
+{
+ "presetVersion": 2,
+ "id": "cc.ml.slow_fade_out",
+ "name": "Slow fade out",
+ "category": "animation",
+ "tags": [
+  "out",
+  "fade",
+  "slow",
+  "luxury",
+  "minimal",
+  "minimal luxury"
+ ],
+ "note": "A 30 f fade on a soft curve while the object grows 1.5%. The exit for anything that entered with Slow fade in. Curve baked as keys (linear joins) - see the skill's ai/patterns/minimal-luxury.md.",
+ "anchor": "out",
+ "frames": 30,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.015,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0333,
+     "value": 0.98867,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0667,
+     "value": 0.94298,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1,
+     "value": 0.84375,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": 0.59367,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2333,
+     "value": 0.42498,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3,
+     "value": 0.31193,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3667,
+     "value": 0.23042,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 0.12217,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6333,
+     "value": 0.05788,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.8,
+     "value": 0.01514,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

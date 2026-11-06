@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "corporate-brand/cb-showcase",
+  "title": "Corporate brand showcase (14 s brand film)",
+  "category": "corporate-brand",
+  "tags": [
+    "corporate",
+    "brand",
+    "film",
+    "logo",
+    "title-card",
+    "stats",
+    "lower-third",
+    "1920x1080"
+  ],
+  "summary": "A 14 s brand film from the Corporate Brand patterns: logo resolve, split-rule title card, three stats and a lower third over a pushing footage stand-in.",
+  "use_when": "You need a ready calm brand sequence to copy into a company film, annual report or event opener.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 420,
+    "seconds": 14.0
+  },
+  "contains": {
+    "timelines": 5,
+    "master": "Corporate brand showcase (420 frames)",
+    "scenes": [
+      "0-90 logo resolve",
+      "90-180 title card (3% push)",
+      "180-270 three stats (3% push)",
+      "270-420 lower third over a gradient footage stand-in (Photo push - 5 s)"
+    ]
+  },
+  "parameters": [
+    "texts inside each comp",
+    "replace the gradient stand-in with footage"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold/Bold/Medium/Regular"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Master lint 0/0/0. QC notes the title-card and stats holds as freezes at its 96 px analysis size.",
+    "Built by ai/scripts/motion/corporate_brand_showcase.py from the lab comps.",
+    "No sound yet: a soft riser under the logo frame, a light tick on each stat rule."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

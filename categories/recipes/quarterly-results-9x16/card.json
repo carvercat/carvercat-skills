@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "id": "recipes/quarterly-results-9x16",
+  "title": "Quarterly results 9:16, 17.5 s (recipe)",
+  "category": "recipes",
+  "tags": [
+    "recipe",
+    "9:16",
+    "vertical",
+    "1080x1920",
+    "re-cut"
+  ],
+  "summary": "A vertical re-cut of the quarterly results: comparison bars, donut, progress rings, waffle and gauge fitted into 9:16 and zoomed, then a 9:16 follow card.",
+  "use_when": "You need the vertical version of the quarterly-results recipe for Reels, Shorts or TikTok.",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 525,
+    "seconds": 17.5
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Quarterly results 9:16 (master)"
+    ]
+  },
+  "parameters": [
+    "instance zoom per shot",
+    "template copy",
+    "shot timing"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Data Viz",
+      "Social Short-form"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media. 16:9 templates are placed into the 1080 x 1920 master; template.apply fits them into a 1080 x 608 band, so each is zoomed (instance size) and pushed 3% so it is never still.",
+    "Rebuild: ai/scripts/motion/recipes/rc_saas_9x16.py, rc_dataviz_9x16.py or rc_kinetic_9x16.py (headless). Docs: ai/recipes/quarterly-results-9x16.md and ai/recipes/vertical-recuts.md.",
+    "Master lint 0 errors / 0 warnings / 0 notes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

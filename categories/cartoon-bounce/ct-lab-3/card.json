@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "id": "cartoon-bounce/ct-lab-3",
+  "title": "Cartoon Bounce lab 3 (source of the round-3 templates)",
+  "category": "cartoon-bounce",
+  "tags": [
+    "cartoon",
+    "bounce",
+    "squash",
+    "stretch",
+    "arcs",
+    "rig",
+    "parenting",
+    "templates",
+    "walk-cycle",
+    "map-pin",
+    "thought-bubble",
+    "logo",
+    "price-tag",
+    "arrow",
+    "comic",
+    "pow",
+    "lesson",
+    "kids",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Cartoon Bounce templates were built and verified in: rigged walk cycle, rigged map pin drop, thought bubble (rigged cloud), squash-and-stretch logo reveal on real parabolas, rigged swinging price tag, rigged boing arrow, comic POW and kids' lesson title card.",
+  "use_when": "You want to see a round-3 cartoon template, a walk rig with planted feet, or a real arc (parabola baked every 2 f, rotation about a pivot) before using it, or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "CT Walk cycle (150 f, rig)",
+      "CT Map pin (120 f, rig)",
+      "CT Thought bubble (120 f, rig)",
+      "CT Logo reveal (120 f)",
+      "CT Price tag (150 f, rig)",
+      "CT Boing arrow (90 f, rig)",
+      "CT Comic pow (75 f)",
+      "CT Lesson title (150 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content (sample copy: names, prices and places are invented)",
+    "walk: leg length, swing angle, step frames (regenerate; the stride follows)",
+    "logo: the word and its size (the lockup is centred from the measured word width)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. The map is a shape stand-in.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (cwk_, cmp_, ctb_, clr_, cpt_, cba_, cpw_, clt_).",
+    "Rigs: children are parented (parentId) to a visible pivot with a centred anchor (Shorts, Pin tip, Cloud, Nail, Arrow tail); their stored positions are offsets from the comp centre.",
+    "Rebuild: ai/scripts/motion/cartoon_bounce_lab3.py writes the comps; every move is baked as keys (no presets, no masks); open with edit.open {force:true}, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings (notes: speed_jump on impacts and the walk start, repeated_key_value on held keys; intended)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

@@ -1,0 +1,78 @@
+{
+ "presetVersion": 2,
+ "id": "cc.fk.spin_out",
+ "name": "Spin out",
+ "category": "animation",
+ "tags": [
+  "out",
+  "spin",
+  "shrink",
+  "funky",
+  "funky"
+ ],
+ "note": "A quarter turn while shrinking to nothing, accelerating. The exit for Spin in and Tilt pop. Curves baked as keys (linear joins) - see the skill's ai/patterns/funky.md.",
+ "anchor": "out",
+ "frames": 14,
+ "tracks": [
+  {
+   "property": "angle",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2143,
+     "value": 11.1318,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4286,
+     "value": 28.17427,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7143,
+     "value": 56.57477,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 90.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.2143,
+     "value": 0.87631,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4286,
+     "value": 0.68695,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.7143,
+     "value": 0.37139,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 0.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

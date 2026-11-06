@@ -1,5 +1,5 @@
 """cc.py - write Carvercat comps straight into a .carverproj (verified 0.0.72: JSON-authored clips render and animate).
-Pixel space 1920x1080, y down. Times in comp frames."""
+Pixel space 1920x1080, y down. Times in comp frames. Obj.gradient() takes comp pixels too (KI-155)."""
 import json, copy, math, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 1920, 1080
@@ -99,9 +99,27 @@ class Obj:
         return self
     def nostroke(self): return self.set(self.src('shape_stroke', 'paint'), 'none')
     def soft(self, px): return self.set(self.src('shape_fill', 'softEdge'), round(px / W, 5))
-    def gradient(self, stops, start, end, mode='linear'):
+    def box(self):
+        """(cx, cy, w, h) of a rectangle or ellipse at rest, in comp pixels, y down."""
+        g = {'rect': 'shape_geometry_rectangle', 'ellipse': 'shape_geometry_ellipse'}.get(self.kind)
+        if g is None or self.base is None: return None
+        w = self.clip['properties'][self.src(g, 'width')]['static'] * W
+        h = self.clip['properties'][self.src(g, 'height')]['static'] * W
+        return self.base[0] * W, (1 - self.base[1]) * H, w, h
+    def gradient(self, stops, start, end, mode='linear', local=False):
+        """Gradient fill. start/end are comp pixels, y down (the space of rect(), ell() and at()), read on the
+        object at rest (its at() position, scale 1, no rotation). They are stored as the app wants them:
+        object-local units, y down, [0, 0] = top-left and [1, 1] = bottom-right of the shape's box, so the
+        gradient then moves, scales and turns with the object (KI-155). local=True takes start/end as those
+        object-local units directly. Comp pixels work for rect() and ell() only; other kinds need local=True.
+        Linear: stop 0 at start, stop 1 at end. Radial: start is the centre, the distance to end the radius."""
+        if not local:
+            b = self.box()
+            if b is None: raise ValueError(f'gradient(): comp-pixel endpoints need a rect or ellipse; use local=True on {self.kind}')
+            cx, cy, w, h = b
+            start, end = [[round((x - cx) / w + 0.5, 4) + 0.0, round((y - cy) / h + 0.5, 4) + 0.0] for x, y in (start, end)]   # 4 places: at() rounds the centre
         self.set(self.src('shape_fill', 'paint'), 'gradient')
-        g = {'mode': mode, 'stops': [{'p': p, 'color': c[:3], 'a': c[3]} for p, c in stops], 'start': P(*start), 'end': P(*end)}
+        g = {'mode': mode, 'stops': [{'p': p, 'color': c[:3], 'a': c[3]} for p, c in stops], 'start': list(start), 'end': list(end)}
         return self.set(self.src('shape_fill', 'gradient'), g)
     def pop(self, f, d=14, ease='pop', frm=0.0, to=1.0):
         self.scale([(f, frm, 'Linear'), (f + d, to, ease)]); self.op([(f, 0, 'Linear'), (f + 3, 1, 'Linear')]); return self

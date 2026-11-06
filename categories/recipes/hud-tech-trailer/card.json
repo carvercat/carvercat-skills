@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "id": "recipes/hud-tech-trailer",
+  "title": "HUD tech trailer, 23 s (recipe)",
+  "category": "recipes",
+  "tags": [
+    "recipe",
+    "hud",
+    "sci-fi",
+    "tech",
+    "trailer",
+    "1920x1080"
+  ],
+  "summary": "A 23 s sci-fi tech trailer: hex grid boot, target lock, signal analysis, a map ping, an alert and an upload that completes, with a scan wipe.",
+  "use_when": "You need a sci-fi or tech-product teaser with interface graphics.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 700,
+    "seconds": 23.3
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "HUD tech trailer (master, 7 placed templates)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "shot timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Futuristic HUD"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
+    "Rebuild: ai/scripts/motion/recipes/rc_hud.py (headless, isolated folders). Docs: ai/recipes/hud-tech-trailer.md.",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc (240 px) notes the hex-grid hold (f23\u2013119) as a freeze and finds no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

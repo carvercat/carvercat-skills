@@ -1,0 +1,94 @@
+{
+ "presetVersion": 2,
+ "id": "cc.dv.point_pop",
+ "name": "Data point pop",
+ "category": "animation",
+ "tags": [
+  "in",
+  "point",
+  "dot",
+  "marker",
+  "chart",
+  "data viz"
+ ],
+ "note": "A 12 f pop for chart markers: size 0 to 1 with a 16% spring. Start each marker's clip on the frame the line reaches it. Curve baked as keys (linear joins) - see the skill's ai/patterns/data-viz.md.",
+ "anchor": "in",
+ "frames": 12,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.0833,
+     "value": 0.27989,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.1667,
+     "value": 0.74538,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 1.06136,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.3333,
+     "value": 1.16205,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.4167,
+     "value": 1.12491,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.04888,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5833,
+     "value": 0.99372,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.6667,
+     "value": 0.97399,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ]
+}

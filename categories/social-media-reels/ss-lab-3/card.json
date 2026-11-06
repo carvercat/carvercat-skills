@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "id": "social-media-reels/ss-lab-3",
+  "title": "Social Short-form lab 3 (source of the round-3 9:16 templates)",
+  "category": "social-media-reels",
+  "tags": [
+    "social",
+    "reels",
+    "shorts",
+    "tiktok",
+    "9:16",
+    "1080x1920",
+    "templates",
+    "story",
+    "link-in-bio",
+    "cta",
+    "pov",
+    "hook",
+    "comment-reply",
+    "this-or-that",
+    "price-drop",
+    "sale",
+    "giveaway",
+    "reaction",
+    "duet"
+  ],
+  "summary": "The 8 vertical comps the round-3 Social Short-form templates were built and verified in: story tap-through, link in bio, POV hook, comment reply, this or that, price drop, giveaway rules and reaction picture-in-picture.",
+  "use_when": "You want to see a round-3 vertical template working before using it, copy a comp's objects into a 9:16 piece, or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 120,
+    "seconds": 4.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "SS Story tap (160 f)",
+      "SS Link in bio (120 f)",
+      "SS POV hook (90 f)",
+      "SS Comment reply (120 f)",
+      "SS This or that (150 f)",
+      "SS Price drop (120 f)",
+      "SS Giveaway (150 f)",
+      "SS Reaction (120 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content (plates behind the POV lines and the REACTING TO tag are sized with cc.textw)",
+    "ST_SEG / ST_PER, POV_LINES, TT, RULES in social_short_form_lab3.py",
+    "panel stand-ins (replace with clips or stills)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Handles, prices, the URL and the clip and product panels are invented stand-ins.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (sst_, slb_, spv_, scr_, sto_, spd_, sga_, srx_).",
+    "Place 9:16 templates into a comp formatted 1080 x 1920 first (comp.format).",
+    "Rebuild: ai/scripts/motion/social_short_form_lab3.py writes the comps (cc.textw needs Pillow); every move is baked as keys (Hook punch, Whip in - left and the badge pop written as keys), no presets to apply; open the file with edit.open {force:true}, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings / 0 notes; bounds_inside the safe box [61, 268, 955, 1270] passes for every object, and nothing reaches right of x 851 below y 1151."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

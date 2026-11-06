@@ -13,14 +13,20 @@ before calling it done.
 ```
 ai/                                   the motion skill (start at ai/SKILL.md)
   SKILL.md                            entry point for agents
-  references/                         craft, app, effects, drawing, maps, workflows, known issues
-  patterns/                           docs for the Motion Patterns presets and templates
-  scripts/                            Python helpers (MCP client, scene builder, curves, maps, SFX, VO)
-library/templates/motion-patterns/    the Motion Patterns pack: 25 presets + 5 templates, with thumbnails
+  references/                         craft, app (incl. design-units.md), effects, drawing, maps, workflows, known issues
+  patterns/                           docs for every preset and template pack
+  recipes/                            whole short videos for common briefs, built from the packs
+  scripts/                            Python helpers (MCP client, scene builder, project writer, curves, maps, SFX, VO)
+wiki/                                 the motion-design wiki: principles, techniques, genres, cookbook, labs
+library/templates/<pack>/             the preset and template packs (Motion Patterns plus 14 style packs), with thumbnails
 categories/<category>/<slug>/         sample .carverproj projects, each with a card.json
 INDEX.json  INDEX.md                  generated index of the sample projects
 tools/                                index builder, link checker, skill installer
 ```
+
+Everything is written for Carvercat 0.1.8 in its design units: pixels from the top-left with y down,
+CSS colours and easing, frames or seconds for time. Carvercat 0.1.8 saves projects as `carvercat/2`;
+files saved in 0.1.8 do not open in 0.1.7. Older files still open in 0.1.8.
 
 ## Use the skill with an agent
 
@@ -41,11 +47,11 @@ Then ask for motion work in plain words, for example "add a lower third for Alex
 Morgan, Senior Motion Designer, at 2 seconds" or "make a 9:16 version of this comp".
 The skill tells the agent which reference to read for each part of the job.
 
-## Install the Motion Patterns pack
+## Install a pack
 
-Copy `library/templates/motion-patterns/` into the installed app's
-`library/templates/` folder, then run `library.reload` (or restart the app).
-Details are in [ai/patterns/README.md](ai/patterns/README.md).
+Copy a pack folder from `library/templates/` (for example `motion-patterns/`) into the
+Library folder of the app, then run `library.reload` (or restart the app).
+Details are in [ai/patterns/README.md](ai/patterns/README.md#installing-a-pack).
 
 ## Sample projects
 
@@ -76,6 +82,10 @@ node tools/build_index.mjs --check
 
 ```bash
 python tools/check_links.py
+```
+
+```bash
+python wiki/tools/wiki_index.py
 ```
 
 ## Contact

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "saas-launch/saas-ui-lab-3",
+  "title": "SaaS UI lab 3 (source of the round-3 SaaS UI templates)",
+  "category": "saas-launch",
+  "tags": [
+    "saas",
+    "ui",
+    "product",
+    "templates",
+    "pricing",
+    "browser",
+    "skeleton",
+    "loading",
+    "button",
+    "success",
+    "kanban",
+    "drag-and-drop",
+    "integrations",
+    "zoom",
+    "camera",
+    "review",
+    "testimonial",
+    "1920x1080"
+  ],
+  "summary": "The 7 comps the round-3 SaaS UI templates were built and verified in: pricing plans, browser window load, submit to success, kanban drag, integrations hub, zoom to card and review card.",
+  "use_when": "You want to see a round-3 SaaS UI template working before using it, copy a comp's objects into a product video, or re-extract a template with comp_to_template.py after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 7,
+    "comps": [
+      "SU Pricing plans (150 f)",
+      "SU Browser load (150 f)",
+      "SU Submit success (150 f)",
+      "SU Kanban drag (150 f)",
+      "SU Integrations hub (150 f)",
+      "SU Zoom focus (150 f, full app frame)",
+      "SU Review card (150 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "plan prices and features",
+    "bar heights",
+    "zoom target and amount"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/SemiBold/Bold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp except SU Zoom focus has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\". SU Zoom focus is extracted whole (it is a full app frame).",
+    "Clip ids are unique per comp (spp_, sbw_, sss_, skd_, sih_, szf_, srv_).",
+    "Rebuild: ai/scripts/motion/saas_ui_lab3.py writes the comps with every move baked as keys (no presets to apply); open the file and edit.save.",
+    "Parented parts: card contents ride their card, and in SU Zoom focus every object rides the App canvas (the camera).",
+    "Lint: every comp 0 errors / 0 warnings (notes only)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

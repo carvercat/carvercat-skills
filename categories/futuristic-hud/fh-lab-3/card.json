@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "id": "futuristic-hud/fh-lab-3",
+  "title": "Futuristic HUD lab 3 (source of the round-3 templates)",
+  "category": "futuristic-hud",
+  "tags": [
+    "hud",
+    "sci-fi",
+    "interface",
+    "templates",
+    "biometric",
+    "health",
+    "telemetry",
+    "drone",
+    "boot",
+    "hologram",
+    "faux-3d",
+    "turntable",
+    "mission",
+    "briefing",
+    "voice",
+    "waveform",
+    "satellite",
+    "orbit",
+    "warning",
+    "1920x1080"
+  ],
+  "summary": "The 8 comps the round-3 Futuristic HUD templates were built and verified in: biometric scan, drone telemetry, boot sequence, holographic turntable (faux 3D), mission briefing, voice waveform, orbit tracker and warning cascade.",
+  "use_when": "You want to see a round-3 HUD template working before using it, see how faux 3D is baked to keys (a turning wireframe box, turning globe meridians, a satellite hidden behind a planet), or re-extract a template with comp_to_template.py after changing its copy.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 180,
+    "seconds": 6.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "FH Bio scan (150 f)",
+      "FH Telemetry (150 f, rig)",
+      "FH Boot sequence (150 f)",
+      "FH Holo turntable (150 f, faux 3D)",
+      "FH Mission briefing (180 f)",
+      "FH Voice waveform (150 f, 3 masks)",
+      "FH Orbit tracker (150 f, faux 3D)",
+      "FH Warning cascade (120 f)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light; text colours converted with BT.709)",
+    "text content (sample copy: names, numbers and places are invented)",
+    "turntable: box half-sizes, tilt, focal length and turn speed (regenerate; edges are baked every 2 f)",
+    "orbit: planet radius, orbit size and tilt, satellite start and travel (regenerate)",
+    "waveform: wavelengths, travel and the amplitude keys"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold/Medium"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. The body, map and planet are shape stand-ins.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (fbs_, ftm_, fbt_, fho_, fmb_, fvw_, fob_, fwc_).",
+    "FH Telemetry: the pitch ladder is parented (parentId) to the Horizon line, a visible centred pivot.",
+    "FH Voice waveform: each Wave is masked by its own soft 'Wave window' (mask.make, window first, then parent.clear).",
+    "Rebuild: ai/scripts/motion/futuristic_hud_lab3.py writes the comps; every move is baked as keys (no presets); open with edit.open {force:true}, make the three masks, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings with contrast:true (notes: repeated_key_value on holds, speed_jump on the scan stop and the stepped progress fill; intended)."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

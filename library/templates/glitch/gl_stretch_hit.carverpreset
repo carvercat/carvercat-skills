@@ -1,0 +1,79 @@
+{
+ "presetVersion": 2,
+ "id": "cc.gl.stretch_hit",
+ "name": "Glitch stretch hit",
+ "category": "animation",
+ "tags": [
+  "in",
+  "glitch",
+  "stretch",
+  "hit",
+  "stepped",
+  "glitch pack"
+ ],
+ "note": "An 8 f stepped squash: 160% x 60%, 85% x 110%, 112% x 95%, then rest. Logos and words on a beat hit. Curves baked as keys (linear joins) - see the skill's ai/patterns/glitch.md.",
+ "anchor": "in",
+ "frames": 8,
+ "tracks": [
+  {
+   "property": "scaleX",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 1.6,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 0.85,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.5,
+     "value": 1.12,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.75,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Hold"
+    }
+   ]
+  },
+  {
+   "property": "scaleY",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.6,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 1.1,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.5,
+     "value": 0.95,
+     "easing": "Hold"
+    },
+    {
+     "at": 0.75,
+     "value": 1.0,
+     "easing": "Hold"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Hold"
+    }
+   ]
+  }
+ ]
+}

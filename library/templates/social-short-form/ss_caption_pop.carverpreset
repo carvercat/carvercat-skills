@@ -1,0 +1,85 @@
+{
+ "presetVersion": 2,
+ "id": "cc.ss.caption_pop",
+ "name": "Caption words pop",
+ "category": "animation",
+ "tags": [
+  "stagger",
+  "in",
+  "word",
+  "caption",
+  "social",
+  "social short-form"
+ ],
+ "note": "Captions word by word, 3 f apart: each word pops from 70% in 8 f with a small spring. Fast enough to follow speech. Curve baked as keys (linear joins) - see the skill's ai/patterns/social-short-form.md.",
+ "anchor": "in",
+ "frames": 8,
+ "tracks": [
+  {
+   "property": "size",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.7,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.125,
+     "value": 0.78465,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 0.90648,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.375,
+     "value": 0.98198,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.5,
+     "value": 1.01033,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.625,
+     "value": 1.01309,
+     "easing": "Linear"
+    },
+    {
+     "at": 1.0,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  },
+  {
+   "property": "blend",
+   "keys": [
+    {
+     "at": 0.0,
+     "value": 0.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 0.25,
+     "value": 1.0,
+     "easing": "Linear"
+    },
+    {
+     "at": 1,
+     "value": 1.0,
+     "easing": "Linear"
+    }
+   ]
+  }
+ ],
+ "only": "text",
+ "stagger": {
+  "by": "word",
+  "order": "forward",
+  "gap": 3
+ }
+}

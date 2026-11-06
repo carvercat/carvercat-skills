@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "id": "retro/rt-showcase-2",
+  "title": "Retro showcase 2 (round-2 templates, 25 s)",
+  "category": "retro",
+  "tags": [
+    "retro",
+    "showcase",
+    "reel",
+    "round-2",
+    "1920x1080"
+  ],
+  "summary": "A 25 s master that plays the round-2 Retro templates back to back, placed from the Library: Chrome title, Neon sign, Arcade start screen, VHS overlay, Groovy badge, 70s stripe lower third, TV switch-off, with Venetian blinds on one cut.",
+  "use_when": "You want to see the round-2 templates of this style in sequence, or start a film from a verified cut.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 744,
+    "seconds": 24.8
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Retro showcase 2 (master, 8 placed templates)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "order and timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Retro"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Each scene is a Library template placed with library.place + template.apply on a master with a background rectangle.",
+    "Rebuild: ai/scripts/motion/recipes/showcase2.py retro (headless, isolated folders).",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc (240 px) notes five holds as freezes and no flashes."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

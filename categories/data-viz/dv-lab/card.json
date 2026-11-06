@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "data-viz/dv-lab",
+  "title": "Data viz lab (source of the Data Viz pack)",
+  "category": "data-viz",
+  "tags": [
+    "data-viz",
+    "chart",
+    "line-chart",
+    "donut",
+    "bars",
+    "gauge",
+    "trim",
+    "1920x1080"
+  ],
+  "summary": "The comps every Data Viz template was built and verified in: line chart - draw, donut - fill, ranked bars and gauge.",
+  "use_when": "You want to see a chart pattern working before using it, copy a chart's objects into a job, or re-extract a template after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 90,
+    "seconds": 3.0
+  },
+  "contains": {
+    "timelines": 4,
+    "comps": [
+      "DV Line chart (90 f)",
+      "DV Donut (90 f)",
+      "DV Ranked bars (90 f)",
+      "DV Gauge (75 f)"
+    ]
+  },
+  "parameters": [
+    "values (regenerate with data_viz_lab.py)",
+    "series colours (linear light)",
+    "labels"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Bold/SemiBold/Medium"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Rebuild: ai/scripts/motion/data_viz_lab.py, then apply its PRESETS with preset.apply and edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

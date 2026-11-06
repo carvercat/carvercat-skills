@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "id": "corporate-brand/cb-lab",
+  "title": "Corporate brand lab (source of the Corporate Brand pack)",
+  "category": "corporate-brand",
+  "tags": [
+    "corporate",
+    "brand",
+    "title-card",
+    "lower-third",
+    "logo",
+    "stats",
+    "mask",
+    "1920x1080"
+  ],
+  "summary": "The comps every Corporate Brand template was built and verified in: split-rule title card, two-box lower third, frame logo resolve and three stats.",
+  "use_when": "You want to see a corporate pattern working before using it, copy its objects into a brand film, or re-extract a template after changing it.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 150,
+    "seconds": 5.0
+  },
+  "contains": {
+    "timelines": 4,
+    "comps": [
+      "CB Title card (90 f, masked)",
+      "CB Lower third (150 f, masked, growing windows)",
+      "CB Logo resolve (90 f)",
+      "CB Three stats (90 f, light)"
+    ]
+  },
+  "parameters": [
+    "texts",
+    "colours (linear light)",
+    "logo mark (replace the disc)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans SemiBold/Bold/Medium/Regular"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\" (Three stats keeps its light background).",
+    "Masks: each window is the mask; mask.make takes the FIRST id as the mask.",
+    "Rebuild: ai/scripts/motion/corporate_brand_lab.py, then PRESETS and MASKS, edit.save.",
+    "Every comp lints 0 errors / 0 warnings."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

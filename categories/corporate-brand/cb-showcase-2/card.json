@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "corporate-brand/cb-showcase-2",
+  "title": "Corporate Brand showcase 2 (round-2 templates, 30 s)",
+  "category": "corporate-brand",
+  "tags": [
+    "corporate",
+    "brand",
+    "showcase",
+    "reel",
+    "round-2",
+    "1920x1080"
+  ],
+  "summary": "A 30 s master that plays every round-2 Corporate Brand template back to back, placed from the Library: Chapter title, Brand quote, Agenda, Team row (after a Brand panel wipe), Split screen, Leader callout, Brand end card.",
+  "use_when": "You want to see the round-2 templates of this style in sequence, or start a film from a verified cut.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 900,
+    "seconds": 30.0
+  },
+  "contains": {
+    "timelines": 1,
+    "comps": [
+      "Corporate Brand showcase 2 (master, 7 placed templates)"
+    ]
+  },
+  "parameters": [
+    "template copy (edit inside each placed template's comp)",
+    "order and timing (move the placed clips)",
+    "background colour"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans"
+    ],
+    "media": "none",
+    "library_packs": [
+      "Corporate Brand"
+    ]
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink. Each scene is a Library template placed with library.place + template.apply on a master with a background rectangle.",
+    "Rebuild: ai/scripts/motion/recipes/showcase2.py corporate-brand (headless, isolated folders).",
+    "Master lint 0 errors / 0 warnings / 0 notes; qc notes the long holds as freezes.",
+    "Pack doc: ai/patterns/corporate-brand.md."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-28"
+}

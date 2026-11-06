@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "social-media-reels/ss-lab-2",
+  "title": "Social Short-form lab 2 (source of the round-2 9:16 templates)",
+  "category": "social-media-reels",
+  "tags": [
+    "social",
+    "reels",
+    "shorts",
+    "tiktok",
+    "9:16",
+    "1080x1920",
+    "templates",
+    "name-tag",
+    "listicle",
+    "poll",
+    "countdown",
+    "post-card",
+    "caption",
+    "transition"
+  ],
+  "summary": "The 8 vertical comps the round-2 Social Short-form templates were built and verified in: name tag, listicle, before/after split, poll sticker, countdown, post card, highlight caption and swipe-up transition.",
+  "use_when": "You want to see a round-2 vertical template working before using it, copy a comp's objects into a 9:16 piece, or re-extract a template with comp_to_template.py.",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 120,
+    "seconds": 4.0
+  },
+  "contains": {
+    "timelines": 8,
+    "comps": [
+      "SS Name tag (120 f)",
+      "SS Listicle (150 f)",
+      "SS Before after (120 f)",
+      "SS Poll (150 f)",
+      "SS Countdown (100 f)",
+      "SS Post card (150 f)",
+      "SS Highlight caption (90 f)",
+      "SS Swipe up (24 f, transition)"
+    ]
+  },
+  "parameters": [
+    "colours (linear light)",
+    "text content",
+    "poll results (bar widths)",
+    "panel stand-ins (replace with clips)"
+  ],
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; pack added to the bundled Library for the test), 2026-10-27",
+  "dependencies": {
+    "fonts": [
+      "Rethink Sans Medium/Bold/ExtraBold"
+    ],
+    "media": "none"
+  },
+  "license": "Carvercat Skills Licence (LICENSE); original work",
+  "status": "verified",
+  "copy_notes": [
+    "No media; nothing to relink.",
+    "Each comp except SS Swipe up has a 'Lab bg' rectangle; templates are extracted with --drop \"Lab bg\".",
+    "Clip ids are unique per comp (snt_, sli_, sba_, spl_, scd_, spc_, shc_, ssu_).",
+    "Place 9:16 templates into a comp formatted 1080 x 1920 first (comp.format).",
+    "Rebuild: ai/scripts/motion/social_short_form_lab2.py writes the comps (cc.textw needs Pillow); apply its PRESETS with preset.apply, then edit.save.",
+    "Every comp lints 0 errors / 0 warnings; bounds_inside the safe box [61, 268, 955, 1270] passes for every object."
+  ],
+  "source": "Carvercat team, built with an AI agent, 2026-10-27"
+}

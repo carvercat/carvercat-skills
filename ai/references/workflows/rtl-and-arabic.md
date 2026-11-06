@@ -18,7 +18,7 @@ General caption timing is in [captions-and-voiceover.md](captions-and-voiceover.
 - Only enabled, publicly installed OS/user fonts are project fonts. Query `carvercat_authoring mode=fonts` with family, style and an actual Arabic sample, and check the resolved face. A successful family write does not prove glyph coverage. Use `require_font=True` / `Scene.check_font(require=True)` or the `font_exact` validation check when substitution must be refused.
 - Fonts that resolved with Arabic: Almarai (Regular/Bold/ExtraBold, face 0 of `Almarai-ExtraBold.ttf`), Alan Sans (Light to Black; its ExtraBold file contains Arabic). Default RTL caption font in `cc_scene` is Almarai ExtraBold. Number fonts used beside Arabic: Poppins Bold, Barlow Condensed SemiBold, Impact Normal.
 - A missing font silently falls back to Segoe UI (seen with Almarai absent from the system and per-user font folders). Install it only with the user's consent (Almarai came from Google Fonts' official repository), keep a copy in the job assets folder, then save, quit normally and relaunch the app: a font installed after launch is not picked up ([KI-042](../known-issues.md#ki-042)). Re-probe after reopening.
-- On an early pre-release build a relaunch from the chat's directory exited; launching the same executable with the app repository as working directory worked.
+- On build c423 a relaunch from the chat's directory exited; launching the same executable with the app repository as working directory worked.
 - Style names are font-specific: Impact's style is **Normal**; requesting "Regular" resolves the same file but reports a substitution.
 - The live family name can differ from a bundled file's internal family or CSS alias. Discover the name from the running app.
 - `textProps.fontResolved` in project JSON is a derived cache and changes on save. It is not font evidence; use native probe/look font notes and exported glyphs.
@@ -26,12 +26,12 @@ General caption timing is in [captions-and-voiceover.md](captions-and-voiceover.
 ## 2. Reading direction and word stagger
 
 - Set `readingDirection` to `rtl` (promote its stored param path if needed). Do not reverse the string.
-- Word stagger with `order: forward` reveals the **rightmost** (first-read) Arabic word first, because stagger follows logical string order. `reverse` would reverse the reading order. Verified on an early pre-release build in rendered frames 9/13/17/21/25 and in later builds.
+- Word stagger with `order: forward` reveals the **rightmost** (first-read) Arabic word first, because stagger follows logical string order. `reverse` would reverse the reading order. Verified on c423 in rendered frames 9/13/17/21/25 and in later builds.
 - Stagger by word. Do not break Arabic into characters or separate per-word objects.
 - Verify the first revealed word in rendered or composited intermediate frames, not on a fully revealed still. Keep an inverted-RTL expectation as a negative test (it must fail).
 - Outlined Arabic: connect `stroke.opacity` as well as `fill.opacity` with matching curves, or the outline exposes a word before its fill.
-- After a stagger connection, `param.list` may show fill opacity only as a slot proxy. Read `stagger.list` and use the slot's underlying `key`. `stagger.list` returns `stagger: null` for text without a card: handle with `(value or {})`.
-- Preference seen in recent Arabic jobs: solid white Arabic fill, no outline (outline paint none, thickness 0), keep the soft shadow. When removing an outline, also remove any animated fill-colour switch that would bring the old colour back.
+- After a stagger connection, `param.list` (stored paths) may show fill opacity only as a slot proxy. Read `stagger.list` and use the slot's underlying `key`. `stagger.list` returns `stagger: null` for text without a card: handle with `(value or {})`.
+- User preference seen in recent Arabic jobs: solid white Arabic fill, no outline (outline paint none, thickness 0), keep the soft shadow. When removing an outline, also remove any animated fill-colour switch that would bring the old colour back.
 
 ## 3. Numbers and Latin inside Arabic
 
@@ -60,12 +60,12 @@ Mixed bidi is not handled inside one text object ([KI-040](../known-issues.md#ki
 
 ## 5. Colour conversion
 
-Current builds: give hex to `cc_scene` (BT.709 transfer); do not linearise twice.
+Current builds: give CSS colours (`"#282965"`) to `scene.apply` or `cc_scene` (BT.709 transfer); the app converts inside, so do not linearise at all.
 
-For raw writes, colours are linear light encoded with Rec.709. For an 8-bit display value v, c = v/255:
+For raw project-file writes (stored value), colours are linear light encoded with Rec.709. For an 8-bit display value v, c = v/255:
 `linear = c/4.5` if c < 0.081, else `((c + 0.099)/1.099)^(1/0.45)`.
 
-- Superseded: an early pre-release build's live conventions said sRGB. sRGB-decoding a navy `#282965` exported as RGB(24,25,87) instead of (40,41,101); inverse Rec.709 gave the exact (40,41,101). A later pre-release build's conventions already describe inverse Rec.709.
+- Superseded: build c423's live conventions said sRGB. sRGB-decoding a navy `#282965` exported as RGB(24,25,87) instead of (40,41,101); inverse Rec.709 gave the exact (40,41,101). An earlier build's conventions already describe inverse Rec.709.
 - Always confirm a brand colour by reading actual exported PNG pixels.
 
 ## 6. PNG delivery of RTL work
@@ -77,7 +77,7 @@ Use the native export route in [export-and-delivery.md](export-and-delivery.md) 
 
 ## 7. Fusion transfer: the RTL stagger workaround
 
-Applies to Carvercat an early 0.1.4 pre-release build with Resolve Studio 21.1.0.14. Status: open, temporary destination-only fix ([KI-080](../known-issues.md#ki-080)).
+Applies to Carvercat 0.1.4 Build46 (commit) with Resolve Studio 21.1.0.14. Status: open, temporary destination-only fix ([KI-080](../known-issues.md#ki-080)).
 
 Symptom: native Arabic word entrances read right-to-left, but after native Fusion transfer an intermediate frame reveals the LEFT word first. Glyph shaping and the final string are correct. The defect is the mapping of character-index delay tables between native and Fusion text layout.
 

@@ -9,7 +9,7 @@ it, e.g. a fade over the first 40%). Curves are baked to keys with LINEAR
 joins, because Carvercat preset keys accept only the named easings
 (Linear / Ease in / Ease out / S-curve / Hold) and anything else silently
 falls back to Linear. Values are RELATIVE to the object (positions/angles
-add, size/opacity/scaleX/scaleY multiply) - Carvercat's rule.
+add, size/opacity/scaleX/scaleY multiply) - Carvercat's C221 rule.
 
 The FIRST tag is the Library shelf (in / out / stagger), so staggered presets lead with "stagger".
 
