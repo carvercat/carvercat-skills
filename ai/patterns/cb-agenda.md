@@ -1,6 +1,6 @@
 # Agenda
 
-**Template** `cb_agenda` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Agenda` in `categories/corporate-brand/cb-lab-2`.
+**Template** `cb_agenda` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Agenda` in `categories/corporate-brand/cb-lab-2`.
 
 A title and four numbered items (teal numbers, Medium 40 px items, 100 px apart) with a teal marker that moves to the active item. 150 f, holds.
 

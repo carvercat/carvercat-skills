@@ -1,6 +1,6 @@
 # Bouncing ball
 
-**Template** `ct_bouncing_ball` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Bouncing ball` in `categories/cartoon-bounce/ct-lab`.
+**Template** `ct_bouncing_ball` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Bouncing ball` in `categories/cartoon-bounce/ct-lab`.
 
 A 120 px red ball travels left to right (x 300 → 1500 by f62) and bounces on a ground line at y 900, with a soft shadow under it.
 

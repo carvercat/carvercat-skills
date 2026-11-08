@@ -1,6 +1,6 @@
 # Zine quote
 
-**Template** `fk_zine_quote` (Library name "Zine quote") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Zine quote` in `categories/funky/fk-lab-3`.
+**Template** `fk_zine_quote` (Library name "Zine quote") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Zine quote` in `categories/funky/fk-lab-3`.
 
 For briefs like "a quote, but loud", "DIY / zine look", "fan testimonial". Six words, each on its own tilted paper plate in a different colour, weight and size (110–150 px), slap in one after another; a tape strip and the credit follow. 150 f, holds. The quote is invented.
 

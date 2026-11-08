@@ -1,12 +1,12 @@
 # Replay stinger
 
-**Template** `sp_replay_stinger` · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Replay stinger` in `categories/sports/sp-lab-2`.
+**Template** `sp_replay_stinger` · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Replay stinger` in `categories/sports/sp-lab-2`.
 
-A transition into a replay: three diagonal stripes (red, blue, yellow; 1000 × 500 px drawn, scale X 2.6, turned −20° (stored value)) sweep across 3 f apart while "REPLAY" (white, outlined, 200 px) slams in. 45 f.
+A transition into a replay: three diagonal stripes (red, blue, yellow; 1000 × 500 px drawn, scale X 2.6, turned 20° clockwise) sweep across 3 f apart while "REPLAY" (white, outlined, 200 px) slams in. 45 f.
 
 | Part | Clip | Motion | Measured |
 |---|---|---|---|
-| Replay stripe 1–3 | f0/3/6, 30 f each | in from −3072 px (expo, 12 f), drift 57.6 px for 6 f, out to +3072 px (accelerating) | clear by **f33** |
+| Replay stripe 1–3 | f0/3/6, 30 f each | in from −3072 px (expo, 12 f), drift 57.6 px for 6 f, out to +3072 px (accelerating) | nothing on screen from **f41** (`gone`; the word runs to f42) |
 | Replay word | f10–42 | Impact slam; Zoom past (last 8 f) | |
 
 Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0.

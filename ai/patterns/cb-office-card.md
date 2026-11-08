@@ -1,6 +1,6 @@
 # Office location card
 
-**Template** `cb_office_card` (Library name "Office location card") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Office card` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_office_card` (Library name "Office location card") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Office card` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "we're opening a new office", "visit us at", "our locations". A map stand-in on the left half (pale panel and white streets) with a teal pin that sends one pulse, and the city, address and opening date on the right. The light background is part of the template. 150 f, holds.
 

@@ -1,20 +1,15 @@
-"""Data Viz round 2: eight more lab comps (column chart, stacked bar, progress rings,
-before/after, timeline, waffle chart, area chart, data table), written straight into a
-.carverproj.
+"""Data Viz round 2 in design units: eight more lab comps (column chart, stacked bar, progress rings, before/after, timeline,
+waffle chart, area chart, data table), written with cc2.py (through dvsu_kit.py).
 
-    import data_viz_lab2 as L; presets, masks = L.build(PROJECT.carverproj)
+    import data_viz_lab2 as L; doc = L.build(); doc.send(client, PROJECT.carverproj)
 
-Same palette, geometry rules and verification as data_viz_lab.py. After writing:
-edit.open {path, force:true}; apply PRESETS (preset.apply); run mask.make + parent.clear
-for each MASKS entry (the window FIRST); edit.save; check with carvercat_inspect and
-carvercat_look; extract templates with comp_to_template.py (--drop "Lab bg").
-Docs: ai/patterns/data-viz.md. Pixel space 1920x1080, y down; comp frames, 30 fps.
+Same palette, geometry rules and verification as data_viz_lab.py. Presets are applied after the comps exist (KDoc.send); the
+area chart's reveal window is a scene mask. Docs: ai/patterns/data-viz.md. Design units: px from the top-left, y down; frames, 30 fps.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from data_viz_lab import Doc, lin, COL, EXPO, SMOOTH, SNAP, lab_bg, t_for_progress
-
-PRESETS, MASKS = [], []
+from dvsu_kit import KDoc, css
+from data_viz_lab import COL, EXPO, SMOOTH, SNAP, lab_bg, t_for_progress
 
 
 def fade(o, f, d=8):
@@ -22,8 +17,9 @@ def fade(o, f, d=8):
 
 
 def rise(o, f, dy=16, d=12):
+    """starts dy px above its place and settles down into it (dy < 0: starts below)"""
     bx, by = o.base
-    o.pos([(f, [bx, by + dy / 1080], 'Linear'), (f + d, [bx, by], EXPO)])   # y up: + starts it above and it settles down
+    o.pos([(f, (bx, by - dy), 'Linear'), (f + d, (bx, by), EXPO)])
     return fade(o, f, max(4, d // 2))
 
 
@@ -42,7 +38,7 @@ def column_chart(d):
         last = i == len(vals) - 1
         b = k.rect(f"Column {i + 1}", cx, yb - bh / 2, 96, bh, COL['cyan'] if last else COL['bar'], r=8, f0=f, dur=n - f, center=True)
         b.anchor(0, -1)
-        PRESETS.append(("DV Column chart", f"Column {i + 1}", "Bar grow up - spring"))
+        k.preset(f"Column {i + 1}", "Bar grow up - spring")
         fade(k.text(f"Month {i + 1}", m, cx, yb + 40, 28, COL['muted'], f0=0, dur=n, style='Medium', align='center'), 4 + i * 2)
     g = 8 + 5 * 4 + 18                                                   # after the last column's spring
     cx = x0 + pitch * (len(vals) - 0.5)
@@ -77,8 +73,8 @@ def progress_rings(d):
         tr = k.ell(f"Track {i + 1}", cx, cy, dia, dia, None, f0=0, dur=n); tr.stroke(COL['track'], th)
         fade(tr, i * 3)
         o = k.ell(f"Ring {i + 1}", cx, cy, dia, dia, None, f0=0, dur=n); o.stroke(col, th, cap='round')
-        o.rotv(90)                                                      # path starts at 12 o'clock (see data_viz_lab.py)
-        tp = o.trim([(f, 1.0, 'Linear'), (f + 30, 1 - v, EXPO)], which='start'); o.set(tp + '.end', 1.0)
+        o.rotv(-90)                                                     # path starts at 12 o'clock (see data_viz_lab.py)
+        o.trim([(f, 1.0, 'Linear'), (f + 30, 1 - v, EXPO)], which='start'); o.trim_static('end', 1.0)
         o.op([(f, 0, 'Hold'), (f + 1, 1, 'Hold')])                      # round cap: hide the zero-length dot before the sweep
         fade(k.text(f"Value {i + 1}", f"{round(v * 100)}%", cx, cy, 64, COL['ink'], f0=0, dur=n, style='Bold', align='center'), f + 16)
         fade(k.text(f"Label {i + 1}", name, cx, cy + dia / 2 + 60, 30, COL['muted'], f0=0, dur=n, style='Medium', align='center'), i * 3 + 4)
@@ -93,14 +89,14 @@ def before_after(d):
         cx, bh, f = 800 + i * 320, v / 100 * h, 6 + i * 10
         b = k.rect(f"Bar {name}", cx, yb - bh / 2, 200, bh, col, r=12, f0=f, dur=n - f, center=True)
         b.anchor(0, -1)
-        PRESETS.append(("DV Before after", f"Bar {name}", "Bar grow up - spring"))
+        k.preset(f"Bar {name}", "Bar grow up - spring")
         fade(k.text(f"Label {name}", name, cx, yb + 44, 32, COL['muted'], f0=0, dur=n, style='Medium', align='center'), 2 + i * 4)
         g = f + 18
-        rise(k.text(f"Value {name}", f"{v} min" if i == 0 else f"{v} min", cx, yb - bh - 44, 40, COL['ink'], f0=g, dur=n - g, style='Bold', align='center'), g)
-    badge = k.rect("Delta badge", 1460, 400, 200, 76, COL['green'], r=38, f0=40, dur=n - 40, center=True)
-    PRESETS.append(("DV Before after", "Delta badge", "Pop - gentle"))
+        rise(k.text(f"Value {name}", f"{v} min", cx, yb - bh - 44, 40, COL['ink'], f0=g, dur=n - g, style='Bold', align='center'), g)
+    k.rect("Delta badge", 1460, 400, 200, 76, COL['green'], r=38, f0=40, dur=n - 40, center=True)
+    k.preset("Delta badge", "Pop - gentle")
     k.text("Delta", "2.8x", 1460, 400, 40, COL['bg'], f0=42, dur=n - 42, style='Bold', align='center')
-    PRESETS.append(("DV Before after", "Delta", "Zoom settle"))
+    k.preset("Delta", "Zoom settle")
 
 
 def timeline(d):
@@ -116,7 +112,7 @@ def timeline(d):
         f = a + round(t_for_progress(SMOOTH, frac) * (b - a)) if frac > 0 else a
         col = COL['cyan'] if i == len(ms) - 1 else COL['ink']
         dot = k.ell(f"Milestone {i + 1}", x, y, 28, 28, col, f0=f, dur=n - f); dot.stroke(COL['bg'], 6)
-        PRESETS.append(("DV Timeline", f"Milestone {i + 1}", "Data point pop"))
+        k.preset(f"Milestone {i + 1}", "Data point pop")
         rise(k.text(f"Year {i + 1}", yr, x, y - 70, 40, col, f0=f + 2, dur=n - f - 2, style='Bold', align='center'), f + 2)
         rise(k.text(f"Caption {i + 1}", cap, x, y + 70, 28, COL['muted'], f0=f + 5, dur=n - f - 5, style='Medium', align='center'), f + 5, dy=-16)
 
@@ -151,9 +147,9 @@ def area_chart(d):
     win = k.rect("Window", x0 + (x1 - x0 + 20) / 2 - 10, yb - h / 2 - 10, x1 - x0 + 20, h + 40, COL['ink'], f0=0, dur=n, center=True)
     win.anchor(-1, 0)
     win.scale([(a, [0.0, 1.0], 'Linear'), (b, [1.0, 1.0], SMOOTH)])        # same timing as the line: the fill follows the pen
-    area = k.path("Area", pts + [(x1, yb), (x0, yb)], f0=0, dur=n, closed=True)
+    area = k.poly("Area", pts + [(x1, yb), (x0, yb)], f0=0, dur=n)
     area.fill(COL['cyan']); area.opv(0.28)
-    MASKS.append(("DV Area chart", "Area", "Window"))
+    k.mask(area, win)
     ln = k.line("Line", pts, COL['cyan'], px=6, f0=0, dur=n)
     ln.trim([(a, 0.0, 'Linear'), (b, 1.0, SMOOTH)])
     lx, ly = pts[-1]
@@ -169,7 +165,7 @@ def data_table(d):
     fade(k.line("Header rule", [(400, 330), (1520, 330)], COL['muted'], px=2, f0=0, dur=n), 0)
     for j, (x, al) in enumerate(cols):
         fade(k.text(f"Head {j + 1}", head[j], x, 290, 28, COL['muted'], f0=0, dur=n, style='SemiBold', align=al), j * 2)
-    hl = k.rect("Row highlight", 960, 400 + 3 * 90, 1140, 76, lin('1B2B3F'), r=12, f0=56, dur=n - 56, center=True)
+    hl = k.rect("Row highlight", 960, 400 + 3 * 90, 1140, 76, css('1B2B3F'), r=12, f0=56, dur=n - 56, center=True)
     hl.anchor(-1, 0); hl.scale([(56, [0.0, 1.0], 'Linear'), (70, [1.0, 1.0], EXPO)])
     for i, row in enumerate(rows):
         y, f = 400 + i * 90, 8 + i * 6
@@ -179,12 +175,10 @@ def data_table(d):
             rise(k.text(f"Cell {i + 1}.{j + 1}", row[j], x, y, 34, col, f0=f, dur=n - f, style='Bold' if j in (0, 3) else 'Medium', align=al), f)
 
 
-def build(path, m=None):
-    d = Doc(path); d.d.setdefault("bins", []); d.d.setdefault("media", [])
-    PRESETS.clear(); MASKS.clear()
+def build(path=None, m=None):
+    d = KDoc()
     column_chart(d); stacked_bar(d); progress_rings(d); before_after(d); timeline(d); waffle(d); area_chart(d); data_table(d)
-    d.save()
-    return PRESETS, MASKS
+    return d
 
 
 if __name__ == "__main__":

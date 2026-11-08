@@ -1,6 +1,9 @@
 # Neon sign
 
-**Template** `rt_neon_sign` · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT Neon sign` in `categories/retro/rt-lab-2`.
+**Template** `rt_neon_sign` · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT Neon sign` in `categories/retro/rt-lab-2`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.22 % (limit 2 %) and every object is present with the same text (box offset at most 0.1 px); colours are now the exact hex the page states (mean shift 3.1 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 "OPEN LATE" in pink neon (Bold 170 px, text glow 4 plus a Glow effect 0.55), a cyan neon underline and "diner & bar" in cyan. 120 f.
 

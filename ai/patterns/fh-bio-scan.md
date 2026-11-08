@@ -1,6 +1,6 @@
 # Biometric scan
 
-**Template** `fh_bio_scan` (Library name "Biometric scan") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Bio scan` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_bio_scan` (Library name "Biometric scan") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Bio scan` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "health tech", "medical device", "fitness wearable" or a sci-fi medbay. A body outline draws on, a scan beam passes over it once, markers ping on the brain and heart as the beam reaches them, an ECG trace draws with a pen dot, and three vitals type on. 150 f.
 

@@ -1,6 +1,6 @@
 # Data table
 
-**Template** `dv_data_table` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Data table` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_data_table` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Data table` in `categories/data-viz/dv-lab-2`.
 
 A four-column table (Team, Q1, Q2, Change) with a header rule, four rows 90 px apart, green/pink change values, and a highlight bar that sweeps behind the last row. 120 f, holds.
 

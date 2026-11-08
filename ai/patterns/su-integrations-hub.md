@@ -1,6 +1,8 @@
 # Integrations hub
 
-**Template** `su_integrations_hub` (Library name "Integrations hub") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Integrations hub` in `categories/saas-launch/saas-ui-lab-3`.
+**Template** `su_integrations_hub` (Library name "Integrations hub") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Integrations hub` in `categories/saas-launch/saas-ui-lab-3`.
+
+Object check: "Hub mark" reads 35 px off in measure.boxes with identical pixels; with the rendered ink boxes (`verify_pack.py --ink-templates`) v1 and v2 differ by at most 2 px.
 
 For briefs like "works with your tools", "connects everything", "an ecosystem". A 180 px accent hub tile with the product mark "A" in the centre; six white 120 px app tiles on an ellipse around it (380 × 270 px radii), each with a simple coloured shape (circle, diamond, star, square, hexagon, ring) as a stand-in icon; links draw out from the hub, and a small pulse runs along every link twice. A headline below (Bold 44). 150 f, holds.
 

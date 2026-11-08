@@ -1,6 +1,9 @@
 # Chrome title
 
-**Template** `rt_chrome_title` · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT Chrome title` in `categories/retro/rt-lab-2`.
+**Template** `rt_chrome_title` · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT Chrome title` in `categories/retro/rt-lab-2`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 0.1 px); colours are now the exact hex the page states (mean shift 15.5 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 "TURBO" (ExtraBold 240 px) with an 80s chrome fill: a static vertical gradient from pale sky to a bright band, a hard step to dark purple at the middle, and magenta at the bottom. A glowing pink horizon line and a yellow subline. 90 f, holds.
 

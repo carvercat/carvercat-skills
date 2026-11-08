@@ -1,6 +1,6 @@
 # Photo stack
 
-**Template** `fk_photo_stack` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Photo stack` in `categories/funky/fk-lab-2`.
+**Template** `fk_photo_stack` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Photo stack` in `categories/funky/fk-lab-2`.
 
 Three white 420 × 500 px photo frames (ink outline, soft shadow) tilted −9°, +5° and −3°, each with a 360 px coloured picture area. 120 f, holds.
 

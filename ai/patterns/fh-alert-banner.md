@@ -1,6 +1,6 @@
 # Alert banner
 
-**Template** `fh_alert_banner` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Alert banner` in `categories/futuristic-hud/fh-lab-2`.
+**Template** `fh_alert_banner` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Alert banner` in `categories/futuristic-hud/fh-lab-2`.
 
 A 1600 × 150 px dark-amber band with glowing amber edges and "WARNING // HULL BREACH" (amber SemiBold 64 px). 120 f.
 

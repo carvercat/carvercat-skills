@@ -1,33 +1,32 @@
-"""Write the Data Viz lab comps into a .carverproj (direct project-file authoring).
+"""Write the Data Viz lab comps (round 1) in design units (cc2.py through dvsu_kit.py).
 
-    import data_viz_lab as L; presets, masks = L.build(PROJECT.carverproj)
+    import data_viz_lab as L; doc = L.build(); doc.send(client, PROJECT.carverproj)   # scene.apply per comp, presets, edit.save
 
-After writing: edit.open {path, force:true}, apply PRESETS with preset.apply
-(comp, object label, preset name), edit.save, then check with carvercat_inspect
-(curves, lint) and carvercat_look; extract templates with comp_to_template.py
-(--drop "Lab bg").
+Measured on 0.1.8.1: an ellipse's stroke path starts at 3 o'clock and runs counter-clockwise, so Trim Stroke 0 -> 0.25 draws
+3 -> 12 o'clock. The donut turns its rings by -90 degrees (a quarter turn counter-clockwise, which is how design units say
+the old kit's +90), so the path starts at 12 o'clock, and draws each clockwise share [a, b] as native [1 - b, 1 - a].
+The gauge needle sweeps from -180 to -50.4 degrees (clockwise, over the top).
 
-Measured on 0.1.6: an ellipse's stroke path starts at 3 o'clock and runs
-counter-clockwise, so Trim Stroke 0 -> 0.25 draws 3 -> 12 o'clock. The donut
-turns its rings +90 (counter-clockwise), so the path starts at 12 o'clock, and
-draws each clockwise share [a, b] as native [1 - b, 1 - a]. Rotation is positive
-counter-clockwise (the gauge needle sweeps 180 -> 50.4 over the top).
-
-Docs: ai/patterns/data-viz.md. Pixel space 1920x1080, y down; comp frames, 30 fps.
+Presets (Bar grow across - spring, Data point pop) are applied after the comps exist (KDoc.send), as before.
+Docs: ai/patterns/data-viz.md. Design units: px from the top-left, y down; comp frames, 30 fps.
 """
 import os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "json_author"))
-from cc import Doc, lin, P, BEZ, _cub
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dvsu_kit import KDoc, css, BEZ, bezier, EASE_OUT
 
-COL = dict(bg=lin('0F1420'), ink=lin('E8ECF4'), muted=lin('7C8599'), grid=lin('252C3B'), track=lin('2A3244'),
-           cyan=lin('3FB8F0'), orange=lin('F59E0B'), green=lin('34D399'), pink=lin('F472B6'), bar=lin('3A4458'))
+COL = dict(bg=css('0F1420'), ink=css('E8ECF4'), muted=css('7C8599'), grid=css('252C3B'), track=css('2A3244'),
+           cyan=css('3FB8F0'), orange=css('F59E0B'), green=css('34D399'), pink=css('F472B6'), bar=css('3A4458'))
 EXPO, SMOOTH = BEZ['expo'], BEZ['smooth']
 SNAP = (0.34, 1.15, 0.64, 1)
-PRESETS, MASKS = [], []
 
 
 def lab_bg(k, n):
     k.rect("Lab bg", 0, 0, 1920, 1080, COL['bg'], f0=0, dur=n)
+
+
+def cubic(p0, p1, p2, p3, u):
+    v = 1 - u
+    return v * v * v * p0 + 3 * v * v * u * p1 + 3 * v * u * u * p2 + u * u * u * p3
 
 
 def t_for_progress(bez, frac):
@@ -36,9 +35,9 @@ def t_for_progress(bez, frac):
     lo, hi = 0.0, 1.0
     for _ in range(60):
         u = (lo + hi) / 2
-        if _cub(0, y1, y2, 1, u) < frac: lo = u
+        if cubic(0, y1, y2, 1, u) < frac: lo = u
         else: hi = u
-    return _cub(0, x1, x2, 1, (lo + hi) / 2)
+    return cubic(0, x1, x2, 1, (lo + hi) / 2)
 
 
 def line_chart(d):
@@ -64,11 +63,11 @@ def line_chart(d):
         f = a + round(t_for_progress(SMOOTH, frac) * (b - a)) if frac > 0 else a
         dot = k.ell(f"Point {i + 1}", x, y, 20, 20, COL['cyan'], f0=f, dur=n - f)
         dot.stroke(COL['bg'], 4)
-        PRESETS.append(("DV Line chart", f"Point {i + 1}", "Data point pop"))
+        k.preset(f"Point {i + 1}", "Data point pop")
     lx, ly = pts[-1]
     val = k.text("End value", "84%", lx, ly - 52, 40, COL['ink'], f0=b, dur=n - b, style='Bold', align='center')
     bx, by = val.base
-    val.pos([(b, [bx, by - 16 / 1080], 'Linear'), (b + 12, [bx, by], EXPO)])
+    val.pos([(b, (bx, by + 16), 'Linear'), (b + 12, (bx, by), EXPO)])      # rises 16 px into place
     val.op([(b, 0, 'Linear'), (b + 6, 1, 'Ease out')])
 
 
@@ -81,9 +80,9 @@ def donut(d):
     segs = [("Segment 1", 0.0, 0.46, COL['cyan'], 6), ("Segment 2", 0.46, 0.74, COL['orange'], 20), ("Segment 3", 0.74, 0.92, COL['green'], 32)]
     for name, s0, s1, col, f in segs:
         o = k.ell(name, cx, cy, dia, dia, None, f0=0, dur=n); o.stroke(col, th, cap='butt')
-        o.rotv(90)                              # +90 is counter-clockwise: the path now starts at 12 o'clock, still running CCW
+        o.rotv(-90)                              # a quarter turn counter-clockwise: the path now starts at 12 o'clock, still running CCW
         # clockwise share [s0, s1] from 12 o'clock = native [1 - s1, 1 - s0]: hold the end, sweep the start
-        tp = o.trim([(f, 1 - s0, 'Linear'), (f + 16, 1 - s1, EXPO)], which='start'); o.set(tp + '.end', 1 - s0)
+        o.trim([(f, 1 - s0, 'Linear'), (f + 16, 1 - s1, EXPO)], which='start'); o.trim_static('end', 1 - s0)
     big = k.text("Centre value", "92%", cx, cy - 14, 96, COL['ink'], f0=0, dur=n, style='Bold', align='center')
     big.op([(30, 0, 'Linear'), (40, 1, 'Ease out')])
     sub = k.text("Centre label", "of goal", cx, cy + 56, 28, COL['muted'], f0=0, dur=n, style='Medium', align='center')
@@ -101,11 +100,11 @@ def ranked_bars(d):
         w = v / 100 * 1000
         bar = k.rect(f"Bar {i + 1}", 560 + w / 2, y, w, 56, COL['cyan'] if i == 0 else COL['bar'], r=8, f0=f, dur=n - f, center=True)
         bar.anchor(-1, 0)
-        PRESETS.append(("DV Ranked bars", f"Bar {i + 1}", "Bar grow across - spring"))
+        k.preset(f"Bar {i + 1}", "Bar grow across - spring")
         g = f + 18                               # after the bar's spring has settled (its 4.4% overshoot reaches 40 px)
         val = k.text(f"Value {i + 1}", str(v), 560 + w + 20, y, 28, COL['ink'], f0=g, dur=n - g, style='SemiBold')
         vx, vy = val.base
-        val.pos([(g, [vx - 12 / 1920, vy], 'Linear'), (g + 10, [vx, vy], EXPO)])
+        val.pos([(g, (vx - 12, vy), 'Linear'), (g + 10, (vx, vy), EXPO)])
         val.op([(g, 0, 'Linear'), (g + 6, 1, 'Ease out')])
 
 
@@ -114,25 +113,23 @@ def gauge(d):
     k = d.comp("DV Gauge", n, "dgg"); lab_bg(k, n)
     cx, cy, dia, th, v = 960, 660, 600, 40, 0.72
     track = k.ell("Gauge track", cx, cy, dia, dia, None, f0=0, dur=n); track.stroke(COL['track'], th, cap='butt')
-    tp = track.trim([(0, 0.5, 'Linear')], which='end'); track.set(tp + '.start', 0.0)   # top half: 3 -> 12 -> 9 o'clock
+    track.trim([(0, 0.5, 'Linear')], which='end'); track.trim_static('start', 0.0)   # top half: 3 -> 12 -> 9 o'clock
     fill = k.ell("Gauge fill", cx, cy, dia, dia, None, f0=0, dur=n); fill.stroke(COL['cyan'], th, cap='butt')
-    fp = fill.trim([(8, 0.5, 'Linear'), (40, 0.5 - 0.5 * v, SNAP)], which='start'); fill.set(fp + '.end', 0.5)
+    fill.trim([(8, 0.5, 'Linear'), (40, 0.5 - 0.5 * v, SNAP)], which='start'); fill.trim_static('end', 0.5)
     L = 250
     needle = k.rect("Needle", cx + L / 2, cy, L, 10, COL['ink'], r=5, f0=0, dur=n, center=True)
     needle.anchor(-1, 0)
-    needle.rot([(8, 180.0, 'Linear'), (40, 180.0 - 180.0 * v, SNAP)])
+    needle.rot([(8, -180.0, 'Linear'), (40, -(180.0 - 180.0 * v), SNAP)])      # clockwise over the top
     k.ell("Hub", cx, cy, 40, 40, COL['ink'], f0=0, dur=n)
     val = k.text("Gauge value", "72", cx, cy + 100, 96, COL['ink'], f0=0, dur=n, style='Bold', align='center')
     val.op([(30, 0, 'Linear'), (40, 1, 'Ease out')])
     k.text("Gauge label", "Health score", cx, cy + 172, 30, COL['muted'], f0=0, dur=n, style='Medium', align='center')
 
 
-def build(path, m=None):
-    d = Doc(path); d.d.setdefault("bins", []); d.d.setdefault("media", [])
-    PRESETS.clear(); MASKS.clear()
+def build(path=None, m=None):
+    d = KDoc()
     line_chart(d); donut(d); ranked_bars(d); gauge(d)
-    d.save()
-    return PRESETS, MASKS
+    return d
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # Game over screen
 
-**Template** `gl_game_over` (Library name "Game over screen") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Game over` in `categories/glitch/gl-lab-3`.
+**Template** `gl_game_over` (Library name "Game over screen") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Game over` in `categories/glitch/gl-lab-3`.
 
 For briefs like "game over", "you died / continue?", "stream fail moment". GAME OVER (red ExtraBold 200) lands with the stretch hit and a cyan offset, score and hi-score lines, then CONTINUE? with a 3-2-1 count. 150 f. (The Retro pack's arcade start screen is the attract screen; this is the losing one.)
 

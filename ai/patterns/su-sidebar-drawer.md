@@ -1,6 +1,6 @@
 # Sidebar drawer
 
-**Template** `su_sidebar_drawer` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Sidebar drawer`.
+**Template** `su_sidebar_drawer` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Sidebar drawer`.
 
 A full 1920×1080 app frame: a light canvas, a header with a "Dashboard" title, and three stand-in cards. A 360 px dark sidebar (brand dot plus four menu bars) slides in over it while a scrim dims the dashboard.
 

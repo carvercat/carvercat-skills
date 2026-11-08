@@ -1,4 +1,6 @@
 {
+ "format": "carvercat/2",
+ "minApp": "0.1.8",
  "templateVersion": 2,
  "id": "cc.fk.zigzag_ribbon",
  "name": "Zigzag ribbon",
@@ -18,371 +20,6 @@
   "height": 1080,
   "fps": 30.0
  },
- "scene": {
-  "ppf": 4,
-  "sceneFps": 30.0,
-  "duration": 60.0,
-  "timelineWidth": 1920,
-  "timelineHeight": 1080,
-  "width": 1920,
-  "height": 1080,
-  "tracks": [
-   {
-    "id": "track_v2",
-    "enabled": true,
-    "clips": [
-     {
-      "id": "fzr_2",
-      "type": "shape",
-      "objectType": "shape",
-      "text": "Path",
-      "left": 0.0,
-      "duration": 60.0,
-      "sourceIn": 0.0,
-      "midEffects": [],
-      "textProps": {
-       "font": "Open Sans",
-       "style": "Regular",
-       "size": 0.08,
-       "tracking": 1.0,
-       "lineSpacing": 1.0,
-       "textMode": "titles",
-       "boxWidth": 0.5,
-       "boxHeight": 0.5,
-       "clipToBox": true
-      },
-      "properties": {
-       "center": {
-        "keyframes": [],
-        "static": [
-         0.5,
-         0.5
-        ]
-       },
-       "size": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "angle": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "blend": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_fzr_2.position": {
-        "keyframes": [],
-        "static": [
-         0.5,
-         0.5
-        ]
-       },
-       "tr.e_tr_placement_fzr_2.scale": {
-        "keyframes": [],
-        "static": [
-         1.0,
-         1.0
-        ]
-       },
-       "tr.e_tr_placement_fzr_2.scaleUniform": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_fzr_2.scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_fzr_2.scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_fzr_2.rotation": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "tr.e_tr_placement_fzr_2.anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "tr.e_tr_placement_fzr_2.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_compositing_fzr_2.blend": {
-        "keyframes": [],
-        "static": "Normal"
-       },
-       "tr.e_tr_compositing_fzr_2.combine": {
-        "keyframes": [],
-        "static": "Over"
-       },
-       "src.e_src_shape_stroke_fzr_2.width": {
-        "keyframes": [],
-        "static": 0.022917
-       },
-       "src.e_src_shape_stroke_fzr_2.paint": {
-        "keyframes": [],
-        "static": "solid"
-       },
-       "src.e_src_shape_stroke_fzr_2.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_fzr_2.color": {
-        "keyframes": [],
-        "static": [
-         1.0,
-         0.07819,
-         0.36625,
-         1.0
-        ]
-       },
-       "src.e_src_shape_fill_fzr_2.paint": {
-        "keyframes": [],
-        "static": "none"
-       },
-       "src.e_src_shape_fill_fzr_2.color": {
-        "keyframes": [],
-        "static": [
-         0.734703004360199,
-         0.0,
-         0.0,
-         1.0
-        ]
-       },
-       "src.e_src_shape_fill_fzr_2.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_fzr_2.cap": {
-        "keyframes": [],
-        "static": "round"
-       },
-       "fx.e_fx_trim_fzr_2.start": {
-        "keyframes": [
-         {
-          "frame": 18.0,
-          "value": 0.0,
-          "easing": "Linear"
-         },
-         {
-          "frame": 44.0,
-          "value": 1.0,
-          "easing": "Custom",
-          "customEase": [
-           0.65,
-           0.0,
-           0.35,
-           1.0
-          ]
-         }
-        ],
-        "static": 0.0
-       },
-       "fx.e_fx_trim_fzr_2.end": {
-        "keyframes": [
-         {
-          "frame": 0.0,
-          "value": 0.0,
-          "easing": "Linear"
-         },
-         {
-          "frame": 24.0,
-          "value": 1.0,
-          "easing": "Custom",
-          "customEase": [
-           0.65,
-           0.0,
-           0.35,
-           1.0
-          ]
-         }
-        ],
-        "static": 1.0
-       },
-       "fx.e_fx_trim_fzr_2.offset": {
-        "keyframes": [],
-        "static": 0.0
-       }
-      },
-      "containers": {
-       "source": {
-        "entries": [
-         {
-          "id": "e_src_shape_geometry_rectangle_fzr_2",
-          "cap": "shape.geometry.rectangle",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_fill_fzr_2",
-          "cap": "shape.fill",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_stroke_fzr_2",
-          "cap": "shape.stroke",
-          "on": true
-         }
-        ],
-        "promoted": []
-       },
-       "effects": {
-        "entries": [
-         {
-          "id": "e_fx_trim_fzr_2",
-          "cap": "trim",
-          "on": true
-         }
-        ],
-        "promoted": []
-       },
-       "transform": {
-        "entries": [
-         {
-          "id": "e_tr_placement_fzr_2",
-          "cap": "transform.placement",
-          "on": true
-         },
-         {
-          "id": "e_tr_compositing_fzr_2",
-          "cap": "transform.compositing",
-          "on": true
-         }
-        ],
-        "promoted": []
-       }
-      },
-      "shape": {
-       "kind": "path",
-       "params": {
-        "closed": false,
-        "points": [
-         {
-          "x": 0.0625,
-          "y": 0.3888888888888889,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.1597222222222222,
-          "y": 0.6111111111111112,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.2569444444444444,
-          "y": 0.3888888888888889,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.35416666666666663,
-          "y": 0.6111111111111112,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.45138888888888884,
-          "y": 0.3888888888888889,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.5486111111111112,
-          "y": 0.6111111111111112,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.6458333333333334,
-          "y": 0.3888888888888889,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.7430555555555556,
-          "y": 0.6111111111111112,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.8402777777777777,
-          "y": 0.3888888888888889,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.9375,
-          "y": 0.6111111111111112,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         }
-        ]
-       }
-      },
-      "label": "Ribbon"
-     }
-    ]
-   }
-  ],
-  "audioTracks": [
-   {
-    "id": "atrack_1",
-    "enabled": true,
-    "clips": []
-   }
-  ],
-  "clipCounter": 2
- },
  "authoredAspect": [
   16,
   9
@@ -398,5 +35,453 @@
   1920,
   1080
  ],
- "requiredFonts": []
+ "requiredFonts": [],
+ "scene": {
+  "fps": 30.0,
+  "width": 1920,
+  "height": 1080,
+  "layers": [
+   {
+    "id": "track_v2",
+    "enabled": true,
+    "objects": [
+     {
+      "id": "fzr_2",
+      "type": "rect",
+      "name": "Ribbon",
+      "caption": "Path",
+      "start": 0.0,
+      "duration": 60.0,
+      "sourceIn": 0.0,
+      "stack": {
+       "source": [
+        {
+         "id": "e_src_shape_geometry_rectangle_clip_2",
+         "cap": "shape.geometry.rectangle",
+         "on": true
+        },
+        {
+         "id": "e_src_shape_fill_clip_2",
+         "cap": "shape.fill",
+         "on": true,
+         "params": {
+          "paint": {
+           "value": "none"
+          },
+          "fill": {
+           "value": "color(srgb 1 1 1)"
+          },
+          "opacity": {
+           "value": 1.0
+          }
+         }
+        },
+        {
+         "id": "e_src_shape_stroke_clip_2",
+         "cap": "shape.stroke",
+         "on": true,
+         "params": {
+          "strokeWidth": {
+           "value": 44.0
+          },
+          "paint": {
+           "value": "solid"
+          },
+          "opacity": {
+           "value": 1.0
+          },
+          "stroke": {
+           "value": "color(srgb 1 0.30980392156862746 0.6392156862745098)"
+          },
+          "lineCap": {
+           "value": "round"
+          }
+         }
+        }
+       ],
+       "effects": [
+        {
+         "id": "e_fx_trim_clip_2",
+         "cap": "trim",
+         "on": true,
+         "params": {
+          "trimStart": {
+           "value": 0.0,
+           "keys": [
+            {
+             "at": 18.0,
+             "value": 0.0,
+             "x-leave": "cubic-bezier(0.65, 0, 0.35, 1)",
+             "ease": "cubic-bezier(0.65, 0, 0.35, 1)"
+            },
+            {
+             "at": 44.0,
+             "value": 100.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "trimEnd": {
+           "value": 100.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 0.0,
+             "x-leave": "cubic-bezier(0.65, 0, 0.35, 1)",
+             "ease": "cubic-bezier(0.65, 0, 0.35, 1)"
+            },
+            {
+             "at": 24.0,
+             "value": 100.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "trimOffset": {
+           "value": 0.0
+          }
+         }
+        }
+       ],
+       "transform": [
+        {
+         "id": "e_tr_placement_clip_2",
+         "cap": "transform.placement",
+         "on": true,
+         "params": {
+          "center": {
+           "value": [
+            960.0,
+            540.0
+           ]
+          },
+          "scale": {
+           "value": [
+            1.0,
+            1.0
+           ]
+          },
+          "scaleUniform": {
+           "value": 1.0
+          },
+          "scaleX": {
+           "value": 1.0
+          },
+          "scaleY": {
+           "value": 1.0
+          },
+          "rotate": {
+           "value": 0.0
+          },
+          "transformOrigin": {
+           "value": [
+            50.0,
+            50.0
+           ],
+           "x-int": [
+            0,
+            1
+           ]
+          },
+          "opacity": {
+           "value": 1.0
+          }
+         }
+        },
+        {
+         "id": "e_tr_compositing_clip_2",
+         "cap": "transform.compositing",
+         "on": true,
+         "params": {
+          "mixBlendMode": {
+           "value": "Normal"
+          },
+          "combine": {
+           "value": "Over"
+          }
+         }
+        }
+       ]
+      },
+      "controls": {
+       "promoted": {
+        "source": [],
+        "effects": [],
+        "transform": []
+       }
+      },
+      "path": {
+       "kind": "path",
+       "params": {
+        "closed": false,
+        "points": [
+         {
+          "x": 120.0,
+          "y": 420.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 306.667,
+          "y": 660.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 493.33299999999997,
+          "y": 420.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 680.0,
+          "y": 660.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 866.667,
+          "y": 420.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 1053.33,
+          "y": 660.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 1240.0,
+          "y": 420.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 1426.67,
+          "y": 660.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 1613.33,
+          "y": 420.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 1800.0,
+          "y": 660.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         }
+        ]
+       }
+      },
+      "x-legacy": {
+       "fields": {
+        "x-scene": {
+         "id": "fzr_2"
+        }
+       },
+       "derived": {
+        "flat": {
+         "order": [
+          "center",
+          "size",
+          "scaleX",
+          "scaleY",
+          "angle",
+          "anchor",
+          "blend"
+         ],
+         "same": [
+          "center",
+          "size",
+          "scaleX",
+          "scaleY",
+          "angle",
+          "anchor",
+          "blend"
+         ]
+        },
+        "midEffects": true,
+        "textProps": {
+         "set": {
+          "font": "Open Sans",
+          "style": "Regular",
+          "size": 0.08,
+          "tracking": 1.0,
+          "lineSpacing": 1.0,
+          "textMode": "titles",
+          "boxWidth": 0.5,
+          "boxHeight": 0.5,
+          "clipToBox": true
+         },
+         "absent": []
+        }
+       },
+       "order": {
+        "clip": [
+         "id",
+         "type",
+         "objectType",
+         "text",
+         "left",
+         "duration",
+         "sourceIn",
+         "midEffects",
+         "textProps",
+         "properties",
+         "containers",
+         "shape",
+         "x-scene",
+         "label"
+        ],
+        "properties": [
+         "center",
+         "size",
+         "scaleX",
+         "scaleY",
+         "angle",
+         "anchor",
+         "blend",
+         "tr.e_tr_placement_clip_2.position",
+         "tr.e_tr_placement_clip_2.scale",
+         "tr.e_tr_placement_clip_2.scaleUniform",
+         "tr.e_tr_placement_clip_2.scaleX",
+         "tr.e_tr_placement_clip_2.scaleY",
+         "tr.e_tr_placement_clip_2.rotation",
+         "tr.e_tr_placement_clip_2.anchor",
+         "tr.e_tr_placement_clip_2.opacity",
+         "tr.e_tr_compositing_clip_2.blend",
+         "tr.e_tr_compositing_clip_2.combine",
+         "src.e_src_shape_stroke_clip_2.width",
+         "src.e_src_shape_stroke_clip_2.paint",
+         "src.e_src_shape_stroke_clip_2.opacity",
+         "src.e_src_shape_stroke_clip_2.color",
+         "src.e_src_shape_fill_clip_2.paint",
+         "src.e_src_shape_fill_clip_2.color",
+         "src.e_src_shape_fill_clip_2.opacity",
+         "src.e_src_shape_stroke_clip_2.cap",
+         "fx.e_fx_trim_clip_2.start",
+         "fx.e_fx_trim_clip_2.end",
+         "fx.e_fx_trim_clip_2.offset"
+        ],
+        "containers": [
+         "source",
+         "effects",
+         "transform"
+        ]
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "audioLayers": [
+   {
+    "id": "atrack_1",
+    "enabled": true,
+    "objects": []
+   }
+  ],
+  "x-legacy": {
+   "fields": {
+    "ppf": 4,
+    "duration": 60.0,
+    "width": 1920,
+    "height": 1080,
+    "clipCounter": 2
+   },
+   "order": [
+    "ppf",
+    "sceneFps",
+    "duration",
+    "timelineWidth",
+    "timelineHeight",
+    "width",
+    "height",
+    "tracks",
+    "audioTracks",
+    "clipCounter"
+   ]
+  }
+ }
 }

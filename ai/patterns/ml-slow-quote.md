@@ -1,6 +1,6 @@
 # Slow quote
 
-**Template** `ml_slow_quote` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Slow quote`.
+**Template** `ml_slow_quote` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Slow quote`.
 
 A two-line quote (Regular 64 px, ivory, centred, line spacing 1.3) with the author line "— ANONYMOUS" (28 px, muted, tracking 1.5) under it.
 

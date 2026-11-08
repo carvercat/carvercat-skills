@@ -1,6 +1,6 @@
 # Area chart
 
-**Template** `dv_area_chart` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Area chart` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_area_chart` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Area chart` in `categories/data-viz/dv-lab-2`.
 
 An 8-point line (6 px, cyan) over a filled area (cyan at 28% opacity), revealed left to right, with the end value. Plot 1200×520 px, baseline y 820. 90 f, holds.
 

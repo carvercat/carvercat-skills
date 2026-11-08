@@ -1,6 +1,6 @@
 # Fragrance notes
 
-**Template** `ml_fragrance_notes` (Library name "Fragrance notes") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Fragrance notes` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_fragrance_notes` (Library name "Fragrance notes") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Fragrance notes` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "the notes of the fragrance", "what is inside", "key ingredients", or a care list with three headings. Top, heart and base notes arrive one tier at a time, each with a gold rule that opens under it; the rules widen from tier to tier, so the three read as a pyramid. The product line comes last. 180 f, holds.
 

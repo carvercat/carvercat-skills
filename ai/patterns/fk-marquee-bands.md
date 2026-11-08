@@ -1,6 +1,6 @@
 # Marquee bands
 
-**Template** `fk_marquee_bands` (Library name "Marquee bands") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Marquee bands` in `categories/funky/fk-lab-3`.
+**Template** `fk_marquee_bands` (Library name "Marquee bands") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Marquee bands` in `categories/funky/fk-lab-3`.
 
 For briefs like "scrolling ticker", "crossing tape bands", "marquee of words over the footage". Two slanted bands (pink rising 100 px across the frame, yellow falling 100 px; 170 px tall, ink edge) grow across from opposite sides, and their words scroll in opposite directions at a constant speed. 150 f.
 

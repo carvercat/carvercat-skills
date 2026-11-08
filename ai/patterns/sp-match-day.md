@@ -1,6 +1,6 @@
 # Match-day poster
 
-**Template** `sp_match_day` (Library name "Match-day poster") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Match day` in `categories/sports/sp-lab-3`.
+**Template** `sp_match_day` (Library name "Match-day poster") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Match day` in `categories/sports/sp-lab-3`.
 
 For briefs like "match day", "fixture promo", "kick-off tonight". Red and blue slanted bands slash in from opposite corners, MATCH DAY slams, two crests pop in either side of a VS and a yellow info bar slashes in with the date, time and venue. 120 f, holds.
 

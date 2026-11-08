@@ -1,6 +1,6 @@
 # Gauge
 
-**Template** `dv_gauge` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Gauge`.
+**Template** `dv_gauge` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Gauge`.
 
 A 600 px half-circle meter centred at (960, 660) with a 40 px butt-capped stroke. The cyan fill and a 250 px needle sweep together from 0 to 72%. The value "72" (Bold 96 px) and the label "Health score" sit below the hub.
 

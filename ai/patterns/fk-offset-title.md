@@ -1,6 +1,6 @@
 # Offset shadow title
 
-**Template** `fk_offset_title` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Offset title`.
+**Template** `fk_offset_title` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Offset title`.
 
 "GROOVY" (ExtraBold 240 px, orange) with a hard purple offset shadow and a teal zigzag underline (14 px).
 

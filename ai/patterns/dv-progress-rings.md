@@ -1,6 +1,6 @@
 # Progress rings
 
-**Template** `dv_progress_rings` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Progress rings` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_progress_rings` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Progress rings` in `categories/data-viz/dv-lab-2`.
 
 Three 300 px rings (26 px stroke, round caps) on dark tracks, filling clockwise from 12 o'clock to 82%, 64% and 45%, with the value in the centre and a label below. 90 f, holds.
 

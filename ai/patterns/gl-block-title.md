@@ -1,6 +1,6 @@
 # Block artifact title
 
-**Template** `gl_block_title` (Library name "Block artifact title") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Block title` in `categories/glitch/gl-lab-2`.
+**Template** `gl_block_title` (Library name "Block artifact title") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Block title` in `categories/glitch/gl-lab-2`.
 
 "CORRUPTED" (white ExtraBold 190 px) landing under compression-style block artefacts, then a red rule that steps on. 90 f, holds.
 

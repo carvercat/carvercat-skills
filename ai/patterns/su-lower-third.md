@@ -1,6 +1,6 @@
 # SaaS lower third
 
-**Template** `su_lower_third` (Library name "SaaS lower third") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Lower third` in `categories/saas-launch/saas-ui-lab-2`.
+**Template** `su_lower_third` (Library name "SaaS lower third") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Lower third` in `categories/saas-launch/saas-ui-lab-2`.
 
 A 680×104 px white pill at bottom left (left edge x 120, y 860) with a 72 px accent logo chip, a name and a role. 150 f (5 s) with its own exit.
 

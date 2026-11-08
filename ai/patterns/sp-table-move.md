@@ -1,6 +1,6 @@
 # League table movement
 
-**Template** `sp_table_move` (Library name "League table movement") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Table move` in `categories/sports/sp-lab-3`.
+**Template** `sp_table_move` (Library name "League table movement") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Table move` in `categories/sports/sp-lab-3`.
 
 For briefs like "league table", "climb the table", "promotion", "standings update". Six rows slash in; the red row wins (44 → 47), steps out to the right, climbs three places while the rows between drop one place, and a green +3 badge lands. 150 f.
 

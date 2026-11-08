@@ -1,6 +1,6 @@
 # Brand quote
 
-**Template** `cb_quote` (Library name "Brand quote") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Quote` in `categories/corporate-brand/cb-lab-2`.
+**Template** `cb_quote` (Library name "Brand quote") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Quote` in `categories/corporate-brand/cb-lab-2`.
 
 A vertical teal bar at x 300, a two-line quote (SemiBold 64 px, line spacing 1.15), the speaker (teal) and role. 150 f (5 s) with its own exit.
 

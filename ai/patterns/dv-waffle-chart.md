@@ -1,6 +1,6 @@
 # Waffle chart
 
-**Template** `dv_waffle_chart` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Waffle chart` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_waffle_chart` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Waffle chart` in `categories/data-viz/dv-lab-2`.
 
 A 10×10 grid of 44 px rounded cells (10 px gaps): 64 filled cyan, 36 empty, then a big "64%" and a label to the right. 90 f, holds.
 

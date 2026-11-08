@@ -1,6 +1,6 @@
 # Title card - split rule
 
-**Template** `cb_title_card` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Title card` in `categories/corporate-brand/cb-lab`.
+**Template** `cb_title_card` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Title card` in `categories/corporate-brand/cb-lab`.
 
 A 4 × 168 px teal rule at the frame centre. "Annual Report" (SemiBold 64 px, white) and "2026" (40 px, teal) are right-aligned to its left. "Growth, focus, people" (40 px, grey) sits to its right.
 

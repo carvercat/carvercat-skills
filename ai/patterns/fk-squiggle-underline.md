@@ -1,6 +1,6 @@
 # Squiggle underline
 
-**Template** `fk_squiggle_underline` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Squiggle underline` in `categories/funky/fk-lab-2`.
+**Template** `fk_squiggle_underline` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Squiggle underline` in `categories/funky/fk-lab-2`.
 
 "Totally fresh" (ink ExtraBold 150 px) with a pink zigzag underline and three four-point sparkles around it. 90 f, holds.
 

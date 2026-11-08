@@ -1,6 +1,6 @@
 # Gig poster
 
-**Template** `fk_gig_poster` (Library name "Gig poster") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Gig poster` in `categories/funky/fk-lab-3`.
+**Template** `fk_gig_poster` (Library name "Gig poster") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Gig poster` in `categories/funky/fk-lab-3`.
 
 For briefs like "gig poster", "club night on Friday", "live music announcement". A LIVE MUSIC kicker, the act on two big lines with hard purple offset shadows, a yellow date plate, the venue and doors line, a teal squiggle, and a record that rolls in from the right and keeps spinning. 150 f, holds. The act, date and venue are invented stand-ins.
 

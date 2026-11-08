@@ -1,6 +1,6 @@
 # Funky sale promo, 18 s
 
-**Brief:** you need a bold retail or event promo with a sale message. **Verified 0.1.6 (rev 1105), 2026-10-28; builder and measures re-run on Carvercat 0.1.8, 2026-11-04** Sample: `categories/recipes/funky-sale-promo` (540 f, 1920 × 1080). Builder: `ai/scripts/motion/recipes/rc_funky.py` (the master is a `carvercat/2` file or one `scene.apply`: [how](README.md#how-the-samples-are-built)).
+**Brief:** you need a bold retail or event promo with a sale message. **Verified 0.1.6 (rev 1105), 2026-10-28; rebuilt as a `carvercat/2` file and measured on 0.1.8.1 (rev 1127), 2026-11-07** Sample: `categories/recipes/funky-sale-promo` (540 f, 1920 × 1080). Builder: `ai/scripts/motion/recipes/rc_funky.py` (the master is a `carvercat/2` file or one `scene.apply`: [how](README.md#how-the-samples-are-built)).
 
 ## Shot list
 | Time | Frames | Template (track) | Job |
@@ -14,7 +14,7 @@
 
 ## Measured on the master
 - Lint 0 / 0 / 0; every template applied at 1920 × 1080.
-- `qc` (240 px) notes three holds as freezes (f25–89, f215–299, f318–389).
+- `qc` (240 px) notes three holds as freezes (f19–89, f215–299, f318–389).
 
 ## Adapt it
 1. Open each placed template's comp and edit the copy.

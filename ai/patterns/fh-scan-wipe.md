@@ -1,6 +1,6 @@
 # Scan wipe
 
-**Template** `fh_scan_wipe` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Scan wipe` in `categories/futuristic-hud/fh-lab-2`.
+**Template** `fh_scan_wipe` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Scan wipe` in `categories/futuristic-hud/fh-lab-2`.
 
 A transition: a glowing cyan beam sweeps down the frame with a dark-teal panel growing behind it, then both retract upward. 30 f.
 

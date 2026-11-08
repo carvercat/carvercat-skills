@@ -1,6 +1,6 @@
 # Browser window load
 
-**Template** `su_browser_load` (Library name "Browser window load") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Browser load` in `categories/saas-launch/saas-ui-lab-3`.
+**Template** `su_browser_load` (Library name "Browser window load") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Browser load` in `categories/saas-launch/saas-ui-lab-3`.
 
 For briefs like "show the product", "hero shot of the dashboard" or "it's fast". A 1280×760 px browser window (title bar with three dots and an address bar reading acme.app/dashboard) rises in; grey skeleton blocks pulse while the page "loads"; then the real dashboard appears: a greeting, three KPI tiles and a 12-bar chart. 150 f, holds.
 

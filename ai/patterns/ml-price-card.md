@@ -1,6 +1,6 @@
 # Price card
 
-**Template** `ml_price_card` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Price card` in `categories/minimal-luxury/ml-lab-2`.
+**Template** `ml_price_card` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Price card` in `categories/minimal-luxury/ml-lab-2`.
 
 Product name (56 px, tracking 1.5), a 320 px gold rule, the material and a gold price, left-aligned at x 900. The left of the frame is left for the product shot. 150 f, holds.
 

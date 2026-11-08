@@ -1,6 +1,9 @@
 # Listicle (9:16)
 
-**Template** `ss_listicle` · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Listicle` in `categories/social-media-reels/ss-lab-2`.
+**Template** `ss_listicle` · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Listicle` in `categories/social-media-reels/ss-lab-2`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.11 % (limit 2 %) and every object is present with the same text (box offset at most 2.0 px); colours are now the exact hex the page states (mean shift 6.1 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 A two-line hook header ("3 THINGS / I WISH I KNEW", ExtraBold 96 px, line spacing 1.05) and three tips, each with a pink numbered badge (96 px), 150 px apart. 150 f (5 s), holds.
 

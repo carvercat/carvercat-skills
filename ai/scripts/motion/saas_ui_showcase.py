@@ -1,43 +1,39 @@
-"""Write the saas-launch/saas-ui-showcase sample project: the SaaS UI lab comps cut
-together into one 15.3 s master (direct project-file authoring).
+"""Write the saas-launch/saas-ui-showcase sample project in design units: the SaaS UI lab comps cut together into one 15.3 s master,
+each scene a nested comp (cc2 Comp.nest).
 
-    python saas_ui_showcase.py PROJECT.carverproj MEASURE.json
+    import saas_ui_showcase as SH; doc = SH.build(); doc.send(client, PROJECT.carverproj)
 
-MEASURE.json holds the text bounds the lab's "SU Measure" comp produced
-(see saas_ui_lab.py). After writing: edit.open {path, force:true}, apply
-saas_ui_lab.PRESETS and MASKS (preset.apply; mask.make {ids:[window, content]} - the FIRST id is the mask - then parent.clear),
-edit.save, then check the master with carvercat_inspect lint and carvercat_look.
+Hard cuts, every scene plays its full length. The cursor plays over the toggle: its own background is dropped, and it starts 14 f
+into its own comp (the in edge is trimmed to master frame 230 after the placing), so its ripple (local f28) lands at 244 = the
+knob's start. The long holds (KPI tile, toast) keep a slow 3 % push on their instance.
 """
-import json, os, sys
+import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import saas_ui_lab as L
+from dvsu_kit import KDoc
 
-# (comp, start frame in the master, length): hard cuts, every scene plays its full length
-SCENES = [("SU Search typing", 0, 80), ("SU Sidebar drawer", 80, 60), ("SU KPI tile", 140, 90),
-          ("SU Toggle switch", 230, 48), ("SU Counter", 278, 60), ("SU Notification toast", 338, 120)]
-CURSOR_AT, CURSOR_IN = 230, 14   # cursor starts 14 f into its own comp, so its ripple (local f28) lands at 244 = the knob's start
+SCENES = [("SU Search typing", 0), ("SU Sidebar drawer", 80), ("SU KPI tile", 140), ("SU Toggle switch", 230), ("SU Counter", 278),
+          ("SU Notification toast", 338)]
+CURSOR_AT, CURSOR_IN = 230, 14
 LENGTH = 458
 
 
-def build(path, m):
-    d = L.Doc(path); d.d.setdefault("bins", []); d.d.setdefault("media", [])
-    L.PRESETS.clear()
-    L.cursor_click(d); L.toast(d); L.toggle(d); L.kpi(d); L.sidebar(d); L.counter(d, m); L.typing(d, m)
+def build():
+    d = KDoc()
+    L.cursor_click(d); L.toast(d); L.toggle(d); L.kpi(d); L.sidebar(d); L.counter(d); L.typing(d)
     comps = {c.name: c for c in d.comps}
-    cur = comps["SU Cursor click"]                       # the cursor plays over the toggle: drop its own background
-    cur.vtracks = [t for t in cur.vtracks if t[0].get("label") != "Lab bg"]
+    cur = comps["SU Cursor click"]
+    cur.objs = [o for o in cur.objs if o.name != "Lab bg"]
     master = d.comp("SaaS UI showcase", LENGTH, "show")
     master.rect("Background", 0, 0, 1920, 1080, L.COL['bg'], f0=0, dur=LENGTH)
-    inst = {}
-    for name, f0, dur in SCENES:
-        inst[name] = master.nest(name, comps[name], f0=f0, dur=dur)
-    for name in ("SU KPI tile", "SU Notification toast"):  # long holds keep a slow 3% push so the frame never freezes
-        f0, dur = [(a, b) for n, a, b in SCENES if n == name][0]
-        inst[name].scale([(f0, 1.0, 'Linear'), (f0 + dur, 1.03, 'Linear')])
-    master.nest("SU Cursor click", cur, f0=CURSOR_AT, dur=60 - CURSOR_IN, src_in=CURSOR_IN)
-    d.save()
-    return L.PRESETS, L.MASKS
+    for name, f0 in SCENES:
+        master.nest(comps[name], f0=f0)
+        if name in ("SU KPI tile", "SU Notification toast"):
+            master.nest_edit(name, f0, scale=[(f0, 1.0, 'Linear'), (f0 + comps[name].length, 1.03, 'Linear')])
+    master.nest(cur, f0=CURSOR_AT - CURSOR_IN)
+    master.nest_edit("SU Cursor click", CURSOR_AT - CURSOR_IN, trim_in=CURSOR_AT)
+    return d
 
 
 if __name__ == "__main__":
-    for x in build(sys.argv[1], json.load(open(sys.argv[2]))): print(x)
+    print(__doc__)

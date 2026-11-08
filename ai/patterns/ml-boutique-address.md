@@ -1,6 +1,6 @@
 # Boutique address
 
-**Template** `ml_boutique_address` (Library name "Boutique address") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Boutique address` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_boutique_address` (Library name "Boutique address") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Boutique address` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "our new store", "now open in Paris", "visit us", or the last card of a store-opening film. A small gold pin ring draws itself, then NOW OPEN, the boutique name, a rule, a two-line address and the opening hours. 180 f, holds.
 

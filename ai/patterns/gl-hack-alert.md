@@ -1,6 +1,6 @@
 # Hacker alert
 
-**Template** `gl_hack_alert` (Library name "Hacker alert") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Hack alert` in `categories/glitch/gl-lab-3`.
+**Template** `gl_hack_alert` (Library name "Hacker alert") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Hack alert` in `categories/glitch/gl-lab-3`.
 
 For briefs like "you've been hacked", "intrusion detected", "security breach scene". A 1200 × 540 dark panel with a red edge, a red warning sign, INTRUSION DETECTED (white ExtraBold 96) with a red/cyan split, a green detail line and a red trace bar that fills in eight steps. 150 f.
 

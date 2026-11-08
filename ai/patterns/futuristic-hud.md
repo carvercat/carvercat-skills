@@ -8,11 +8,12 @@ The pack lives in `library/templates/futuristic-hud/`. Install it as in [Install
 - The templates come from `categories/futuristic-hud/fh-lab`, written by `ai/scripts/motion/futuristic_hud_lab.py`; round 2 from `fh-lab-2` (`futuristic_hud_lab2.py`) and round 3 from `fh-lab-3` (`futuristic_hud_lab3.py`).
 - The sample reel is `categories/futuristic-hud/fh-showcase`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
-- Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
-- Lint was 0 errors and 0 warnings on every lab comp and the preset bench, and 0/0/0 on the showcase.
-- `inspect qc` at 240 px found **no flashes** on the flicker presets or any lab comp.
-- Each template was placed into a fresh comp: lint 0/0/0 for all four.
+**Status: all 20 templates verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library), measured by `ai/scripts/motion/verify_pack.py futuristic-hud` (the harness with the object-level checks).**
+- The labs (`futuristic_hud_lab.py`, `_lab2.py`, `_lab3.py`) and the sample reel (`futuristic_hud_showcase.py`) speak design units (`json_author/cc2.py`: px from the top-left, y down, degrees clockwise, CSS colours and easing) and are sent with `scene.apply`. The pack's presets are baked as keys in the labs (nothing is applied after the send). `regen_pack.py` rebuilds the templates and the lab and showcase projects (carvercat/2).
+- Each template was placed into a fresh 16:9 and a fresh 9:16 comp: lint 0 errors / 0 warnings / 0 notes; qc found no flashes.
+- Against the v1 originals (7 frames each, over a magenta underlay): silhouettes match (at most 2 % of pixels differ), the object-level check finds no missing, empty or moved object and no changed text, and colours are now the exact hex values (the old kit's linear colour curve made them about 10/255 darker, which is gone).
+- Keyed frames in the tables below are the generators' (unchanged). Percentages that came from `inspect curves` (overshoot, "settles") and the faux-3D lane notes are 0.1.6 findings that were not re-measured.
+- The three presets (`.carverpreset`) are unchanged: they stay in the stored preset format and were verified by loading and applying them in 0.1.8.1.
 
 **Fonts:** Rethink Sans must be installed ([KI-136](../references/known-issues.md#ki-136)). The app's bundled JetBrains Mono would suit readouts, but text cannot use bundled fonts today (FR-037).
 

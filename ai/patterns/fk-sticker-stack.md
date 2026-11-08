@@ -1,6 +1,6 @@
 # Sticker stack
 
-**Template** `fk_sticker_stack` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Sticker stack`.
+**Template** `fk_sticker_stack` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Sticker stack`.
 
 Three 300 × 170 px rounded stickers (radius 28, 8 px ink outline, short hard drop shadow), tilted −8°, +6° and −3°: NEW (yellow), HOT (pink), WOW (teal), each with an ExtraBold 84 px label.
 

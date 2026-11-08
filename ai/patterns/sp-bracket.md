@@ -1,6 +1,6 @@
 # Tournament bracket
 
-**Template** `sp_bracket` (Library name "Tournament bracket") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Bracket` in `categories/sports/sp-lab-3`.
+**Template** `sp_bracket` (Library name "Tournament bracket") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Bracket` in `categories/sports/sp-lab-3`.
 
 For briefs like "bracket", "knockout stage", "cup draw", "playoffs". Eight quarter-final slots slash in, join lines draw to the semi-finals, then the final, and the CHAMPION panel slams in. 180 f.
 

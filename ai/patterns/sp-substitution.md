@@ -1,6 +1,6 @@
 # Substitution card
 
-**Template** `sp_substitution` (Library name "Substitution card") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Substitution` in `categories/sports/sp-lab-3`.
+**Template** `sp_substitution` (Library name "Substitution card") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Substitution` in `categories/sports/sp-lab-3`.
 
 For briefs like "substitution", "player change", "on and off". A yellow SUBSTITUTION 67' header and two slanted panels slash in at the lower left: the player coming OFF (red arrow down) and then the player coming ON (green arrow up). 150 f, with its own exit.
 

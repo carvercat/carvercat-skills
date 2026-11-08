@@ -1,6 +1,6 @@
 # Blinking face
 
-**Template** `ct_blink_face` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Blink face`.
+**Template** `ct_blink_face` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Blink face`.
 
 A 420 px yellow head with an 8 px ink outline, two 46 × 70 px eyes, and a smile drawn as the bottom arc of a 180 × 140 ellipse stroke.
 

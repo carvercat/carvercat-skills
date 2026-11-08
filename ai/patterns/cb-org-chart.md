@@ -1,6 +1,6 @@
 # Org chart
 
-**Template** `cb_org_chart` (Library name "Org chart") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Org chart` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_org_chart` (Library name "Org chart") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Org chart` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "introduce the new leadership team", "who reports to whom", "our structure after the merger". A top card (teal outline) joined by drawn connectors to three report cards, each with a name and a role. 150 f, holds.
 

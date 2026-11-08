@@ -1,6 +1,6 @@
 # Opening credits
 
-**Template** `kt_opening_credits` (Library name "Opening credits") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Opening credits` in `categories/kinetic-typography/kt-lab-3`.
+**Template** `kt_opening_credits` (Library name "Opening credits") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `KT Opening credits` in `categories/kinetic-typography/kt-lab-3`.
 
 For briefs like "opening titles", "series opener", "credits for a short film", "event speakers in order". Three credit cards: a small tracked role ("DIRECTED BY", Medium 40 px, tracking 1.6, muted) above a name (ExtraBold 110 px). The name's letter spacing closes in as it fades up. The main title ("NORTHBOUND", ExtraBold 200 px) then lands over an accent rule that draws out from its centre. 210 f (7 s).
 
@@ -13,7 +13,7 @@ Frames are comp frames.
 | Main title | 150 | scale 1.12 → 1, 20 f (expo), fade 6 f; then a slow pull to 0.98 by f210 | opaque **f156**; lands **f170** |
 | Title rule (8 px, accent) | 160 | Trim Stroke start 0.5 → 0, end 0.5 → 1, 16 f (expo) | settles **f170** |
 
-Lint 0 errors, 0 warnings (6 notes: held opacity keys). Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (41.2 px between role and name).
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 7 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (41.2 px between role and name).
 
 ## Steps
 1. Edit `CREDITS` and `TITLE` in `ai/scripts/motion/kinetic_type_lab3.py` and rebuild, or edit the texts of a placed instance.

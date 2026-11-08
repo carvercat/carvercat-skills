@@ -1,6 +1,6 @@
 # Player lower third
 
-**Template** `sp_lower_third` (Library name "Player lower third") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Lower third` in `categories/sports/sp-lab-2`.
+**Template** `sp_lower_third` (Library name "Player lower third") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Lower third` in `categories/sports/sp-lab-2`.
 
 Two slanted panels at bottom left: a red number panel (the shirt number, ExtraBold 96 px) and a navy name panel with the name (ExtraBold 56 px) and a yellow stat line. 150 f (5 s) with its own exit.
 

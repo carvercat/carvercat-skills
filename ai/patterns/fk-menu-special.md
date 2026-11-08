@@ -1,6 +1,6 @@
 # Menu special
 
-**Template** `fk_menu_special` (Library name "Menu special") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Menu special` in `categories/funky/fk-lab-3`.
+**Template** `fk_menu_special` (Library name "Menu special") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Menu special` in `categories/funky/fk-lab-3`.
 
 For briefs like "today's special", "lunch deal", "new on the menu". A pink TODAY'S SPECIAL ribbon, the dish on two lines with hard ink shadows, a short description, a serving-time pill, a plate stand-in that spins in, and a starburst price badge. 150 f, holds. Dish and price are invented.
 

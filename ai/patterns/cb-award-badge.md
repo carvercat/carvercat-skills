@@ -1,6 +1,6 @@
 # Award badge
 
-**Template** `cb_award_badge` (Library name "Award badge") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Award badge` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_award_badge` (Library name "Award badge") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Award badge` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "we won an award", "certified", "recognised as". A round badge (drawn teal ring, navy disc, teal star, "WINNER" and the year) above the award name and the awarding body. 120 f, holds.
 

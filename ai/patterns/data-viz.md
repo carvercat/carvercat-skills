@@ -8,10 +8,12 @@ The pack lives in `library/templates/data-viz/`. Install it as in [Installing a 
 - The templates are extracted with `comp_to_template.py` from `categories/data-viz/dv-lab/project.carverproj` (written by `ai/scripts/motion/data_viz_lab.py`) and, for round 2, `categories/data-viz/dv-lab-2/project.carverproj` (written by `ai/scripts/motion/data_viz_lab2.py`), and for round 3, `categories/data-viz/dv-lab-3/project.carverproj` (written by `ai/scripts/motion/data_viz_lab3.py`).
 - The sample film is `categories/data-viz/dv-showcase`, written by `ai/scripts/motion/data_viz_showcase.py`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
-- The build was the public release binary, run headless (`--mcp`) with isolated preferences, data and cache folders, on 2026-10-27.
-- The pack was copied into a scratch copy's bundled Library for the preset and placement tests ([FR-036](../references/known-issues.md#fr-036)).
-- Each item was checked with curves, look and lint (0 errors, 0 warnings on every lab comp and on the showcase master). Each template was also placed into a fresh comp, and lint was 0/0/0 for all four.
+**Status: Verified 0.1.8.4 (rev 1130; headless, isolated folders, `ai/scripts/motion/verify_pack.py`).** This is the build the harness report states (displayVersion 0.1.8.4, version 0.1.9-dev.4, rev 1130), run on 2026-11-08; it replaces the 0.1.6 verification. All 19 templates of the pack were regenerated as carvercat/2 by the design-unit lab scripts and checked:
+- Each template was placed in a fresh 16:9 and a fresh 9:16 comp: lint 0/0/0 and no flashes in qc, on all 19.
+- Each template was compared with its v1 original at 7 frames (silhouette difference at most 2 %; colours are now exact hex, a known and intended shift) and object by object (every object present, text identical, ink and box within 16 px): 19 of 19 pass.
+- The lab comps lint 0 errors on 0.1.8.4. Their warnings come from `--lab` lint, which resizes the comps to 320 × 180 and so over-reports; the placed templates are the reference (0/0/0).
+- Settle and start frames quoted on the pages below are the authored key frames, unchanged by the conversion (the 7-frame comparison with v1 confirms the motion); they were measured on 0.1.6 and not re-measured one by one.
+- The sample projects (labs, showcase, showcase-2) are rebuilt as carvercat/2 by `regen_pack.py` and `regen_showcase2.py`; a second run leaves `git status` unchanged.
 
 **Fonts:** the templates use Rethink Sans, which must be installed on the machine. It is a free Google Font (SIL OFL), and the file is in `ai/scripts/motion/json_author/RethinkSans.ttf`. Without it, text falls back to Arial ([KI-136](../references/known-issues.md#ki-136)). Check with `carvercat_authoring mode:validate` `font_exact`.
 
@@ -55,7 +57,7 @@ Round 2 (8 templates) was built and verified the same way on 2026-10-27: every l
 
 ## Round 3: briefs the pack could not serve before
 
-Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("quarterly / annual numbers, KPIs") and the wiki's [data stories](../../wiki/genres/data-stories.md) and [infographics](../../wiki/genres/infographics.md) pages (funnels, rankings over time, maps, icon counts). Built and verified on 0.1.6 (rev 1105) on 2026-10-28. Every move is baked as keys in `data_viz_lab3.py` (no presets to apply; the stacked area's three masks are made with `mask.make`). Every easing lands with **0% overshoot** (serious data, [data stories](../../wiki/genres/data-stories.md)). Every number is sample data and each template says "Sample data" on screen. Frames below are comp frames.
+Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("quarterly / annual numbers, KPIs") and the wiki's [data stories](../../wiki/genres/data-stories.md) and [infographics](../../wiki/genres/infographics.md) pages (funnels, rankings over time, maps, icon counts). Built on 0.1.6 (rev 1105) on 2026-10-28; re-verified on 0.1.8.4 (rev 1130) on 2026-11-08. Every move is baked as keys in `data_viz_lab3.py` (no presets to apply; the stacked area's three masks are made with `mask.make`). Every easing lands with **0% overshoot** (serious data, [data stories](../../wiki/genres/data-stories.md)). Every number is sample data and each template says "Sample data" on screen. Frames below are comp frames.
 
 | Template | Brief it serves | Measured | Lint (lab) | Placed |
 |---|---|---|---|---|
@@ -101,6 +103,6 @@ Notes are all `repeated_key_value` (held values between keys, intended). Each te
 
 ## Round-2 sample film
 
-`categories/data-viz/dv-showcase-2` is a 780 f (26 s) master at 1920 × 1080 that plays every round-2 template back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py data-viz`). Verified 0.1.6 (rev 1105), 2026-10-28, after the text-gap audit: master lint 0 / 0 / 0. `qc` (240 px) notes the long holds as freezes (fine for a hold).
+`categories/data-viz/dv-showcase-2` is a 780 f (26 s) master at 1920 × 1080 that plays every round-2 template back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py data-viz`). Verified 0.1.8.4 (rev 1130), 2026-11-08, rebuilt as carvercat/2 by `regen_showcase2.py`: master lint 0 / 0 / 0. `qc` (240 px) notes the long holds as freezes (fine for a hold).
 
 Inspiration: common data-storytelling motion conventions. No external text or code was used.

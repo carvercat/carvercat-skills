@@ -1,6 +1,6 @@
 # Monogram end card
 
-**Template** `ml_monogram_end` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Monogram end card` in `categories/minimal-luxury/ml-lab-2`.
+**Template** `ml_monogram_end` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Monogram end card` in `categories/minimal-luxury/ml-lab-2`.
 
 A 220 px gold ring drawn around a monogram ("ME", 72 px), a tracked wordmark (48 px, tracking 1.8) and an address. 150 f (5 s), holds.
 

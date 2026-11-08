@@ -1,6 +1,6 @@
 # HUD ID lower third
 
-**Template** `fh_id_lower_third` (Library name "HUD ID lower third") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH ID lower third` in `categories/futuristic-hud/fh-lab-2`.
+**Template** `fh_id_lower_third` (Library name "HUD ID lower third") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH ID lower third` in `categories/futuristic-hud/fh-lab-2`.
 
 Four cyan corner brackets (820 × 180 px box at bottom left, x 120–940, y 795–975, glow 0.45) around a tracked callsign (SemiBold 46 px, tracking 1.3), an ID line (28 px, dim cyan) and an amber status dot. 150 f (5 s) with its own exit.
 

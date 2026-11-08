@@ -1,6 +1,6 @@
 # Comparison bars
 
-**Template** `dv_before_after` (Library name "Comparison bars"; the essentials already have a "Before and after") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Before after` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_before_after` (Library name "Comparison bars"; the essentials already have a "Before and after") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Before after` in `categories/data-viz/dv-lab-2`.
 
 Two 200 px columns on a baseline (Before in grey at 30, After in cyan at 85, plot height 520 px), their values, and a green delta badge ("2.8x"). 90 f, holds.
 

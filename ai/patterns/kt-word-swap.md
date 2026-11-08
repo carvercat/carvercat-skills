@@ -1,6 +1,6 @@
 # Word swap
 
-**Template** `kt_word_swap` · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Word swap` in `categories/kinetic-typography/kt-lab`.
+**Template** `kt_word_swap` · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, not yet traced), qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `KT Word swap` in `categories/kinetic-typography/kt-lab`.
 
 "We build" stays put. The accent word next to it rolls up to the next one: faster → smarter → together. ExtraBold 96 px, centred on the longest phrase.
 
@@ -10,7 +10,7 @@
 | Word 2 "smarter" | 46–82 | f46–58 | f74–82 |
 | Word 3 "together" | 82–120 | f82–94 | holds |
 
-Measured: each entrance is a 12 f key pair (expo, no overshoot); peak speed 0.048 frame-height per frame on the first frame. Each word is clipped by its own window, a rectangle from the measured ink top − 6 px to the ink bottom (including the g's descender) + 6 px, wide enough for the widest word. Lint 0/0.
+Measured: each entrance is a 12 f key pair (expo, no overshoot); peak speed 0.048 frame-height per frame on the first frame. Each word is clipped by its own window, a rectangle from the measured ink top − 6 px to the ink bottom (including the g's descender) + 6 px, wide enough for the widest word. Lab comp lint on 0.1.8.1 (native size): 0 errors, 3 warnings, 2 notes.
 
 ## Steps
 1. Place and apply. To change the words, edit the texts inside the comp. If a new word is wider, widen all three windows to the widest word + 40 px.

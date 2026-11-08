@@ -1,6 +1,9 @@
 # Reaction picture-in-picture (9:16)
 
-**Template** `ss_reaction_pip` (Library name "Reaction picture-in-picture (9:16)") · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Reaction` in `categories/social-media-reels/ss-lab-3`.
+**Template** `ss_reaction_pip` (Library name "Reaction picture-in-picture (9:16)") · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Reaction pip` in `categories/social-media-reels/ss-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.08 % (limit 2 %) and every object is present with the same text (box offset at most 0.7 px); colours are now the exact hex the page states (mean shift 15.8 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "react to a clip", "duet / stitch layout", "face cam over the video". A clip panel stand-in (920 × 780 px, y 310–1090) with a REACTING TO tag and the original creator's handle, a round reaction cam (300 px, yellow ring) over its bottom-left corner, and a caption. 120 f, holds.
 

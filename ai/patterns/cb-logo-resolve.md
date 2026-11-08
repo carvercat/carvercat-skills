@@ -1,6 +1,6 @@
 # Logo resolve - frame
 
-**Template** `cb_logo_resolve` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Logo resolve`.
+**Template** `cb_logo_resolve` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Logo resolve`.
 
 Four 4 px teal lines draw a 240 px square frame clockwise. A white mark (a 120 px disc standing in for the logo) settles inside it. The wordmark "NORTHWIND" (SemiBold 56 px, tracking 1.25) and the tagline "Built to last" rise in below.
 

@@ -1,6 +1,6 @@
 # Pattern drift
 
-**Template** `fk_pattern_drift` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Pattern drift` in `categories/funky/fk-lab-2`.
+**Template** `fk_pattern_drift` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Pattern drift` in `categories/funky/fk-lab-2`.
 
 A background: a yellow ground with a staggered grid (240 × 216 px) of dots, triangles and bars in pink, teal, purple and orange, all drifting 240 px right and 216 px down over 150 f, linearly. 64 shapes plus the ground.
 

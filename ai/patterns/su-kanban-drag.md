@@ -1,6 +1,8 @@
 # Kanban drag
 
-**Template** `su_kanban_drag` (Library name "Kanban drag") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Kanban drag` in `categories/saas-launch/saas-ui-lab-3`.
+**Template** `su_kanban_drag` (Library name "Kanban drag") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Kanban drag` in `categories/saas-launch/saas-ui-lab-3`.
+
+Object check: measure.boxes gives a wrong ink box for text under a rotating parent card (card titles read 70–112 px off with identical pixels); with the rendered ink boxes (`verify_pack.py --ink-templates`) v1 and v2 differ by at most 2 px.
 
 For briefs like "project management", "move work forward", "drag and drop". A three-column board (To do, In progress, Done: 440×520 px columns) with four cards (376×110 px, title Medium 26 and a colour tag). The cursor picks up "Ship pricing page", carries it to Done over a dashed drop slot and drops it; the card below in To do moves up to close the gap. 150 f, holds.
 

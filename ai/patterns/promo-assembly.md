@@ -1,6 +1,6 @@
 # Assembling a multi-beat promo in ONE comp
 
-**Verified 0.0.72** by a cold-start field test: an agent with only this skill built a 15 s, 4-beat promo in about 80 tool calls (comp `FIELD TEST promo` in `lab/field-test.carverproj`).
+**Field test on 0.0.72, not re-run for 0.1.8.1:** by a cold-start field test: an agent with only this skill built a 15 s, 4-beat promo in about 80 tool calls (comp `FIELD TEST promo` in `lab/field-test.carverproj`).
 
 ## 1. Skeleton first (before any content)
 1. `comp.new` → `comp.format {width:1920,height:1080,fps:30}` → `comp.duration {frames:450}`.

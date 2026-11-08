@@ -13,6 +13,9 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent / "motion" / "json_author"))
+import cc2
 from cc_client import CarvercatError, Client, OutcomeUnknown, Refused, endpoint
 from cc_scene import Box, Scene, css_colour, gradient
 
@@ -141,6 +144,87 @@ class OfflineTests(unittest.TestCase):
             Project("x").rectangle("no comp")
 
 
+class Cc2OfflineTests(unittest.TestCase):
+    def test_bezier_points_become_path_data(self):
+        d = cc2.bezier([(100, 100), (300, 100, (-50, 0), (50, 0)), (500, 300, (-40, -40), None)])
+        self.assertEqual(d, "M 100 100 C 100 100 250 100 300 100 C 350 100 460 260 500 300")
+        self.assertEqual(cc2.bezier([(0, 0), (10, 0), (10, 10)], closed=True), "M 0 0 L 10 0 L 10 10 L 0 0 Z")
+
+    def test_path_node_has_data_and_no_box(self):
+        doc = cc2.Doc(); k = doc.comp("A", 30, "a")
+        p = k.path("Line", cc2.bezier([(200, 900), (1720, 900)]), "#00E5C3", 12)
+        p.trim([(0, 0, "linear"), (20, 100, "ease-out")])
+        n = k.scene()["children"][0]
+        self.assertEqual((n["type"], n["d"], "x" in n["style"], n["style"]["strokeWidth"]), ("path", "M 200 900 L 1720 900", False, 12))
+        self.assertEqual(n["keyframes"][1]["props"], {"trimEnd": "100%"})
+
+    def test_null_and_children_count_from_the_parent(self):
+        doc = cc2.Doc(); k = doc.comp("A", 30, "a")
+        nul = k.null("Pivot", 960, 540)                                   # nominal 100 x 100 box: top-left (910, 490)
+        box = k.rect("Sign", 1000, 500, 300, 200, "#FF7A00", center=False)   # top-left (1000, 500) in the comp
+        nul.child(box)
+        box.pos([(0, (1150, 600), "linear"), (10, (1250, 600), "linear")])
+        nul.rot([(0, 0, "ease-out"), (30, 20, "linear")])
+        scene = k.scene()
+        self.assertEqual([c["id"] for c in scene["children"]], ["a_1"])            # the child is no longer top level
+        n = scene["children"][0]
+        self.assertEqual((n["type"], n["style"]["x"], n["style"]["y"], "width" in n["style"]), ("null", 910, 490, False))
+        c = n["children"][0]
+        self.assertEqual((c["style"]["x"], c["style"]["y"]), (90, 10))              # 1000 - 910, 500 - 490
+        self.assertEqual(c["keyframes"][1]["props"], {"x": 190, "y": 10})
+
+    def test_text_stagger_and_per_property_keys(self):
+        doc = cc2.Doc(); k = doc.comp("A", 60, "a")
+        t = k.text("Title", "HELLO", 960, 540, 120, "#FFFFFF")
+        t.stagger(by="chars", each=2, keyframes=[(0, {"opacity": 0, "y": 40}, "ease-out"), (12, {"opacity": 1, "y": 0}, None)])
+        n = k.scene()["children"][0]
+        self.assertEqual(n["stagger"]["target"], "chars")
+        self.assertEqual(n["stagger"]["keyframes"][0], {"at": 0, "props": {"opacity": 0, "y": 40}, "ease": "ease-out"})
+        u = k.text("Other", "HI", 960, 800, 120, "#FFFFFF")
+        u.tracking([(0, 30, "ease-out"), (40, 0, "linear")])
+        u.size([(0, 100, "linear"), (40, 120, "linear")])
+        self.assertEqual(k.scene()["children"][1]["keyframes"][0]["props"], {"fontSize": 100, "letterSpacing": 30})
+        t.tracking([(0, 30, "ease-out"), (40, 0, "linear")])
+        with self.assertRaises(ValueError):
+            k.scene()
+
+    def test_nested_comps_are_sent_before_the_comp_that_places_them(self):
+        doc = cc2.Doc(); a = doc.comp("Outer", 60, "o"); b = doc.comp("Inner", 30, "i")
+        a.nest(b, f0=10)
+        self.assertEqual([c.name for c in doc.order()], ["Inner", "Outer"])
+
+    def test_v1_corrections_are_doc_options_and_off_by_default(self):
+        k = cc2.Doc().comp("A", 30, "a")
+        k.rect("R", 0, 0, 400, 100, "#FFFFFF", r=50).key("opacity", [(0, 0.0, "Linear"), (10, 1.0, "Ease out")])
+        self.assertEqual(k.scene()["children"][0]["keyframes"][0]["ease"], "ease-out")                  # the CSS curve, as before
+        doc = cc2.Doc(v1_look=True); k = doc.comp("A", 30, "a")
+        r = k.rect("R", 0, 0, 400, 100, "#FFFFFF", r=50).key("opacity", [(0, 0.0, "Linear"), (10, 1.0, "Ease out")])
+        doc.cap_radii()
+        n = k.scene()["children"][0]
+        self.assertEqual(n["keyframes"][0]["ease"], "cubic-bezier(0.33333, 0.66667, 0.66667, 1)")        # the app model's Ease out
+        self.assertEqual(n["style"]["borderRadius"], 25.0)                                               # a quarter of the short side
+        self.assertEqual(cc2.ease("v1-s-curve"), "cubic-bezier(0.33333, 0, 0.66667, 1)")
+
+    def test_hard_shadow_text_at_and_path_boxes(self):
+        doc = cc2.Doc(path_boxes=True); k = doc.comp("A", 30, "a")
+        o = k.rect("R", 0, 0, 100, 100, "#FFFFFF").hard_shadow("#000000", 16)
+        self.assertEqual(o.style["dropShadow"], "16px 9px 0px #000000")
+        t = k.text_at("T", "Hello", 100, 500, 50, "#FFFFFF", track=1.2, lh=1.1, align="right")
+        self.assertEqual((t.style["letterSpacing"], t.style["lineHeight"], t.box[1], t.px), (16.75, 1.474, 500, 50))
+        self.assertEqual(t.box[0], 100 - t.box[2] / 2)
+        p = k.path("P", cc2.bezier([(100, 100), (300, 100, (-50, 0), (50, 0)), (500, 300)]), "#FFFFFF", 4)
+        x, y, w, h = cc2.path_box(p.d)
+        self.assertEqual((x, w, p.base), (100, 400, (300.0, p.base[1])))
+        self.assertEqual(cc2.path_box("M 5 5 L 5 5")[2:], (1.0, 1.0))
+
+    def test_masks_carry_path_and_text_content_for_the_second_pass(self):
+        k = cc2.Doc().comp("A", 30, "a")
+        win = k.rect("Window", 0, 0, 200, 200, "#FFFFFF"); line = k.path("Line", "M 0 0 L 10 10", "#FFFFFF", 2); txt = k.text("Word", "Hi", 100, 100, 40, "#FFFFFF")
+        k.mask(line, win); k.mask(txt, win)
+        kids = k.mask_scene({win.id: "w"})["children"]
+        self.assertEqual((kids[0]["d"], kids[1]["text"]), ("M 0 0 L 10 10", "Hi"))
+
+
 @unittest.skipUnless(EXE and os.path.exists(EXE), "set CARVERCAT_EXE to a built carvercat-host to run the live tests")
 class LiveTests(unittest.TestCase):
     def setUp(self):
@@ -253,6 +337,45 @@ class LiveTests(unittest.TestCase):
                 h.text("Brand", title, box=Box(200, 85, 900, 70), size=48)
             s.apply()
         self.assertEqual(len(self.objects()), 2)
+
+    def test_cc2_path_null_stagger_and_text_keys_live(self):
+        doc = cc2.Doc(); k = doc.comp("Rig", 60, "r")
+        nul = k.null("Pivot", 960, 540)
+        sign = nul.child(k.rect("Sign", 1000, 500, 300, 200, "#FF7A00"))
+        nul.rot([(0, 0, "ease-out"), (30, 20, "linear")])
+        k.path("Line", cc2.bezier([(200, 900), (960, 700, (-100, 0), (100, 0)), (1720, 900)]), "#00E5C3", 12).trim([(0, 0, "linear"), (30, 100, "ease-out")])
+        t = k.text("Title", "HELLO WORLD", 960, 200, 120, "#FFFFFF")
+        t.stagger(by="words", each=4, keyframes=[(0, {"opacity": 0}, "ease-out"), (10, {"opacity": 1}, None)])
+        u = k.text("Spaced", "TRACKING", 960, 800, 100, "#FFFFFF")
+        u.tracking([(0, 20, "ease-out"), (30, 0, "linear")])
+        u.size([(0, 100, "ease-in"), (30, 120, "linear")])           # a second ease on the same frames: keyed after the apply
+        out = Path(self.tmp.name) / "rig.carverproj"
+        doc.send(self.c, str(out))
+        scene = self.c.scene()
+        kinds = {n["id"]: n["type"] for n in scene["children"]}
+        self.assertEqual(sorted(kinds.values()), ["null", "path", "text", "text"])
+        pivot = next(n for n in scene["children"] if n["type"] == "null")
+        self.assertEqual([c["type"] for c in pivot["children"]], ["rect"])
+        self.assertEqual(pivot["children"][0]["style"]["x"], 90)
+        text = next(n for n in scene["children"] if n.get("name") == "Title")
+        self.assertEqual(text["stagger"]["target"], "words")
+        spaced = next(n for n in scene["children"] if n.get("name") == "Spaced")
+        keys = self.c.run("anim.get", id="#" + spaced["id"])["readings"][0]["keys"]
+        self.assertEqual([x["value"] for x in keys["letterSpacing"]], [20, 0])
+        self.assertEqual([x["value"] for x in keys["fontSize"]], [100, 120])
+        self.assertEqual(json.loads(out.read_text())["format"], "carvercat/2")
+
+    def test_cc2_nested_comp_is_placed_as_an_instance_live(self):
+        doc = cc2.Doc(); outer = doc.comp("Outer", 60, "o"); inner = doc.comp("Inner", 30, "i")
+        inner.rect("Panel", 0, 0, 1920, 1080, "#5B5BF6")
+        outer.rect("Bg", 0, 0, 1920, 1080, "#14151C")
+        outer.nest(inner, f0=12)
+        doc.send(self.c, str(Path(self.tmp.name) / "nest.carverproj"))
+        comps = {c["name"]: c for c in self.c.tool("carvercat_list")["comps"]}
+        self.assertIn("Inner", comps)
+        self.c.run("comp.switch", comp=comps["Outer"]["index"])
+        inst = [o for o in self.objects() if o["kind"] == "nestedTimeline"]
+        self.assertEqual((len(inst), inst[0]["start"], inst[0]["length"]), (1, 12.0, 30.0))
 
     def test_cc_project_file_opens_reads_back_and_saves_as_v2(self):
         from cc_project import Project

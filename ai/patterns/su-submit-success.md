@@ -1,6 +1,6 @@
 # Submit to success
 
-**Template** `su_submit_success` (Library name "Submit to success") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Submit success` in `categories/saas-launch/saas-ui-lab-3`.
+**Template** `su_submit_success` (Library name "Submit to success") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Submit success` in `categories/saas-launch/saas-ui-lab-3`.
 
 For briefs like "sign up in one click", "checkout", "it just works". A 472×112 px accent button "Create account" (Bold 40) is pressed, closes into a circle, shows a spinner, turns into a green success circle with a tick, and two lines confirm it. Drawn at about 1.3× a desktop button so it reads in a full video frame. 150 f, holds.
 

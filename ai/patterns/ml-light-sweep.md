@@ -1,6 +1,6 @@
 # Light sweep
 
-**Template** `ml_light_sweep` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Light sweep` in `categories/minimal-luxury/ml-lab-2`.
+**Template** `ml_light_sweep` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Light sweep` in `categories/minimal-luxury/ml-lab-2`.
 
 A gold wordmark ("ELAN", 220 px, tracking 1.4) with an ivory gleam that crosses it letter by letter. 120 f, holds.
 

@@ -1,6 +1,6 @@
 # Line chart - draw
 
-**Template** `dv_line_chart` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Line chart` in `categories/data-viz/dv-lab`.
+**Template** `dv_line_chart` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Line chart` in `categories/data-viz/dv-lab`.
 
 A 1200×560 px plot (x 360–1560, y 260–820) with five gridlines (0, 25, 50, 75, 100) and right-aligned 28 px axis labels. A 6 px cyan line through six values (32, 45, 41, 58, 66, 84) draws itself, data points pop as it reaches them, and the last value appears above the final point.
 

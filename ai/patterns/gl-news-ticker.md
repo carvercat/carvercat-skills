@@ -1,6 +1,6 @@
 # Scan-line news ticker
 
-**Template** `gl_news_ticker` (Library name "Scan-line news ticker") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL News ticker` in `categories/glitch/gl-lab-3`.
+**Template** `gl_news_ticker` (Library name "Scan-line news ticker") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL News ticker` in `categories/glitch/gl-lab-3`.
 
 For briefs like "breaking news crawl", "stream ticker", "esports headlines along the bottom". A dark 100 px band at y 960 with three faint scan lines, a red BREAKING tag and a LIVE chip on top of it at the left, and headlines (white SemiBold 44) crawling left at a constant 7 px a frame. 150 f.
 

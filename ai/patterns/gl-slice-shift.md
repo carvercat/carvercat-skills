@@ -1,6 +1,6 @@
 # Slice shift
 
-**Template** `gl_slice_shift` · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Slice shift`.
+**Template** `gl_slice_shift` · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Slice shift`.
 
 A 460 px green hexagon with a white outline stands in for a logo. It is drawn five times, and each copy is masked by one 92 px horizontal band.
 

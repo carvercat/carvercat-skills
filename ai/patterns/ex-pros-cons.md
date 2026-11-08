@@ -1,6 +1,6 @@
 # Pros and cons
 
-**Template** `ex_pros_cons` (Library name "Pros and cons") · Explainer pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `EX Pros cons` in `categories/explainer/ex-lab-3`.
+**Template** `ex_pros_cons` (Library name "Pros and cons") · Explainer pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `EX Pros cons` in `categories/explainer/ex-lab-3`.
 
 For briefs like "should you...", "remote work: worth it?", "product trade-offs". Two lists with plus and minus icons, then a seesaw that tips once towards the heavier side and a verdict line. Compare columns (old way / new way) has no verdict; this one decides. Light background included. 165 f.
 
@@ -14,7 +14,7 @@ For briefs like "should you...", "remote work: worth it?", "product trade-offs".
 | Tilt: left end down 8° | 96 | one overshoot to 9.3° (116.5%, f105), then settles | settles **f117** |
 | Verdict "Worth it, on balance" (40 px) | 120 | Step in | settles **f129** |
 
-`inspect curves` reads the beam's rotation overshoot as 19% (a baked lane, [KI-152](../references/known-issues.md#ki-152); the formula gives 16.5%). Lint (with `contrast:true`) 0 errors, 0 warnings, 25 notes (23 `repeated_key_value` on holds, 2 `speed_jump` where the tilt starts; intended). `inspect qc` (240 px): no flashes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 153 pairs, closest 26.0 px (item text / its icon). Full-frame looks at f104 (peak tilt) and f164: nothing cut; the raised ball clears the cons column by 48 px.
+`inspect curves` reads the beam's rotation overshoot as 19% (a baked lane, [KI-152](../references/known-issues.md#ki-152); the formula gives 16.5%). Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 15 notes. `inspect qc` (240 px): no flashes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 153 pairs, closest 26.0 px (item text / its icon). Full-frame looks at f104 (peak tilt) and f164: nothing cut; the raised ball clears the cons column by 48 px.
 
 ## Steps
 1. Edit the two lists in `pros_cons()`; give the heavier list the bigger ball and the left end (or mirror `sign`, `rl`, `rr` and the verdict).

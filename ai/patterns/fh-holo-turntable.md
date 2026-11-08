@@ -1,6 +1,6 @@
 # Holo turntable (faux 3D)
 
-**Template** `fh_holo_turntable` (Library name "Holo turntable (faux 3D)") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Holo turntable` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_holo_turntable` (Library name "Holo turntable (faux 3D)") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Holo turntable` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "product reveal in a sci-fi style", "hologram", "360° view", "CAD / engineering". A wireframe box turns a full turn above a projector base in faux 3D, with perspective and depth brightness; a scan arc runs round the base, a scan line passes down the model and a callout lists its data. 150 f.
 

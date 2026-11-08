@@ -1,6 +1,6 @@
 # Orbit tracker
 
-**Template** `fh_orbit_tracker` (Library name "Orbit tracker") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Orbit tracker` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_orbit_tracker` (Library name "Orbit tracker") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Orbit tracker` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "satellite launch", "space mission", "GPS / telecom coverage", "mission control". A wireframe planet turns (faux 3D meridians), a tilted dashed orbit passes in front of it, a satellite with two trail dots runs one way along the orbit and hides behind the planet, the ground station pings as it passes and SIGNAL ACQUIRED flickers in. 150 f.
 

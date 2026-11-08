@@ -1,17 +1,21 @@
 # Logo: stamp reveal
 
-**Template:** `Logo - stamp reveal` (mp_logo_stamp_reveal) · **verified 0.0.72** · 90 f · overlay
+**Template:** `Logo - stamp reveal` (mp_logo_stamp_reveal) · **Verified 0.1.8.1 (rev 1127)** · 90 f · overlay
 
 ## Timing chart
 
 ```
-Logo mark   4 Stamp (1.9 -> 1, 14 f, rebound at about f11) ...........
-Wordmark       12 Letters cascade (char gap 2) ... last letter lands ~f48
+Logo mark   4 Stamp (1.9 -> 1, 14 f; lowest point of the rebound f12, settled f18) ...........
+Wordmark       12 Letters cascade (char gap 2) ... last letter's keys end f48
 Underline              20 Grow across X from its left edge (anchor [-1,0]) 18 f
 SFX         impact at f6 (landing), soft ticks per letter (optional), riser into the next scene
 ```
 
+
+**Measured** on `MP Logo stamp reveal` (one definition for every number below: the lab comp rendered at 320x180, `starts` = first frame that differs from frame 0 by at least 0.5 (mean channel value, 0-255), `steady` = the frames whose picture matches the settled one within 0.5; harness `ai/scripts/motion/verify_pack.py`): the first change is f5; the picture stops changing from f30 (the letters' last keys, f48, move by less than the threshold) and holds to f87; the template's last visible frame is f87 (the harness `gone` = 88). Lint 0/0/0 in 16:9 and 9:16. Text and box checks against v1: pass (ink overlap 0.87 at the first letters, 0.99 once settled).
+
 ## Steps
+
 
 1. The mark: an ellipse here; replace it with your logo image or shape, then `preset.apply Stamp`.
 2. The wordmark: tracking 1.15 and bold. `Letters cascade - spring`. **For more than 8 letters use gap 1** (`stagger.set {id: <text id>, gap: 1}`), or the reveal takes longer than a second.

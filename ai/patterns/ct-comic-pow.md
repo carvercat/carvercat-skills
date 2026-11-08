@@ -1,6 +1,6 @@
 # Comic POW
 
-**Template** `ct_comic_pow` (Library name "Comic POW") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Comic pow` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_comic_pow` (Library name "Comic POW") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Comic pow` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "a big hit", "BAM moment", "impact frame" in a comic or kids' film. Action lines shoot out, two jagged bursts slam in and POW! slams down into a squash and springs back. 75 f.
 

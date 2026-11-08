@@ -1,6 +1,6 @@
 # Echo stack
 
-**Template** `kt_echo_stack` (Library name "Echo stack") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Echo stack` in `categories/kinetic-typography/kt-lab-3`.
+**Template** `kt_echo_stack` (Library name "Echo stack") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `KT Echo stack` in `categories/kinetic-typography/kt-lab-3`.
 
 For briefs like "hype opener", "music drop", "say it louder", "event countdown": repetition, one of the kinetic-type devices the pack did not have. A hero word ("LOUDER", ExtraBold 150 px, accent) slams in; four outline-only copies (inner pair off-white, outer pair muted) ripple out to rows 150 px above and below it and keep spreading a little through the hold. 120 f.
 
@@ -13,7 +13,7 @@ Frames are comp frames.
 | Echo up 2 / down 2 (outline `#9A968E`) | 14 | the same to ±300 px | opacity **f18**, size **f23**, in by **f28** |
 | Drift | to f120 | inner echoes 6 px, outer 12 px further out (linear) | keeps the hold alive |
 
-Outline-only text: `text.fill` Paint none, `text.outline` Paint solid, Thickness 0.035. Lint 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (44.2 px between rows).
+Outline-only text: `text.fill` Paint none, `text.outline` Paint solid, Thickness 0.035. Lab comp lint on 0.1.8.1 (native size): 0 errors, 4 warnings, 0 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (44.2 px between rows).
 
 ## Steps
 1. Place and apply. Change the word in all five texts (they must match).

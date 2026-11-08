@@ -1,6 +1,6 @@
 # Sale badge
 
-**Template** `fk_sale_badge` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Sale badge` in `categories/funky/fk-lab-2`.
+**Template** `fk_sale_badge` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Sale badge` in `categories/funky/fk-lab-2`.
 
 A 520 px pink 16-point starburst (inner radius 0.82, ink outline) with "50%" (white, 150 px, hard ink offset shadow) and "OFF TODAY" (ink, 48 px). 90 f, holds.
 

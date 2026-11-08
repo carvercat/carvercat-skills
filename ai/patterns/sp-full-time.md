@@ -1,6 +1,6 @@
 # Full-time score
 
-**Template** `sp_full_time` (Library name "Full-time score") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Full time` in `categories/sports/sp-lab-2`.
+**Template** `sp_full_time` (Library name "Full-time score") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Full time` in `categories/sports/sp-lab-2`.
 
 "FULL TIME" (yellow), two slanted team boxes with names, the score between them (ExtraBold 140 px) and the scorers line. 120 f, holds.
 

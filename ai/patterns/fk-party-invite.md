@@ -1,6 +1,6 @@
 # Party invite
 
-**Template** `fk_party_invite` (Library name "Party invite") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Party invite` in `categories/funky/fk-lab-3`.
+**Template** `fk_party_invite` (Library name "Party invite") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Party invite` in `categories/funky/fk-lab-3`.
 
 For briefs like "birthday invite", "you're invited", "launch party, RSVP". A tracked YOU'RE INVITED, a slammed pink headline with a hard ink shadow, three tilted pills (date, time, place), an RSVP line, and 14 confetti pieces falling one way in the side lanes. 150 f, holds. Names and dates are invented.
 

@@ -1,6 +1,6 @@
 # Target lock
 
-**Template** `fh_target_lock` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Target lock` in `categories/futuristic-hud/fh-lab-2`.
+**Template** `fh_target_lock` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Target lock` in `categories/futuristic-hud/fh-lab-2`.
 
 Four corner brackets close in on an amber target at (1180, 470), then a leader line and the LOCKED label. 90 f, holds.
 

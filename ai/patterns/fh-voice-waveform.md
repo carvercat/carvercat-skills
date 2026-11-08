@@ -1,6 +1,6 @@
 # Voice waveform
 
-**Template** `fh_voice_waveform` (Library name "Voice waveform") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Voice waveform` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_voice_waveform` (Library name "Voice waveform") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Voice waveform` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "AI voice assistant", "voice command", "podcast or audio teaser". Three sine waves slide one way under soft mask windows while their height follows a voice; the spoken line types on and a confirmation flickers in. 150 f.
 

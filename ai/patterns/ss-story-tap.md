@@ -1,6 +1,9 @@
 # Story tap-through (9:16)
 
-**Template** `ss_story_tap` (Library name "Story tap-through (9:16)") · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Story tap` in `categories/social-media-reels/ss-lab-3`.
+**Template** `ss_story_tap` (Library name "Story tap-through (9:16)") · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Story tap` in `categories/social-media-reels/ss-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.10 % (limit 2 %) and every object is present with the same text (box offset at most 0.0 px); colours are now the exact hex the page states (mean shift 12.5 of 255, intended); windows over a magenta/green underlay: gone f127. The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "make it feel like a story", "a 4-part story with tap-through", "day 1 to day 4". Four segment bars across the top (8 px, x 90–990, y 290) fill one after another; a tap ring and dot on the right half mark each page change. 160 f (4 pages × 40 f). It is an overlay: put each page's clip under it, cut on f40 / f80 / f120.
 
@@ -10,7 +13,7 @@ Frames are comp frames.
 |---|---|---|---|
 | Segment tracks 1–4 (muted, 35%) | 0 | none | |
 | Segment 1–4 (white, 8 px) | 0 | trimEnd 0% → 100%, linear, one page each | full at **f39 / f79 / f119 / f159** |
-| Tap dot 1–3 (70 px, 55% → 0) and tap ring 1–3 (120 px, 6 px stroke) | 36, 76, 116 (14 f clips) | ring scale 0.6 → 1.5 (expo), fades out | ring 1 scale **f45**, gone **f49**; ring 3 **f125 / f129** |
+| Tap dot 1–3 (70 px, 55% → 0) and tap ring 1–3 (120 px, 6 px stroke) | 36, 76, 116 (14 f clips) | ring scale 0.6 → 1.5 (expo), fades out | ring 1 scale **f45**, gone **f49**; ring 3 scale **f125**; the whole template is gone **f127** (harness, 0.5 % visibility) |
 | Tap hint "Tap for the next one" (ExtraBold 52 px, outline) | 6 | Hook punch (as keys) | settles **f13**; cuts out with page 1 at f40 (32 opaque frames) |
 
 **0% overshoot** on every curve. Lint 0 errors, 0 warnings, 0 notes. `bounds_inside` the safe box [61, 268, 955, 1270] passed for every object, and nothing reaches right of x 851 below y 1151. Placed into a fresh 1080 × 1920 comp: applied at 1080 × 1920, lint 0/0/0. Text-gap audit: one text, no pairs. A full-frame look of the placed instance (f0–159) shows the bars and taps uncut.

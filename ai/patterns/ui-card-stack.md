@@ -1,16 +1,16 @@
 # UI card stack
 
-**Recipe** · **verified 0.0.72** (`RECIPES`, frames 100–150)
+**Recipe** · **Verified 0.1.8.1 (rev 1127)** (`RECIPES`, frames 100–150)
 
-Three rounded cards pop in left to right, 4 f apart. The hero card (accent colour) arrives last, with more spring.
+Three rounded cards pop in left to right, 4 f apart (angles are degrees clockwise, as in the design units; the old kit stored them counter-clockwise). In the `RECIPES` render the picture starts to change at f101 and is steady from f120. The hero card (accent colour) arrives last, with more spring.
 
 | Card | Clip start | Preset | Angle |
 |---|---|---|---|
-| 1 | 100 | Pop - gentle | +4° |
+| 1 | 100 | Pop - gentle | −4° |
 | 2 | 104 | Pop - gentle | 0° |
-| 3 (hero) | 108 | Pop - spring (16%) | −4° |
+| 3 (hero) | 108 | Pop - spring (16%) | +4° |
 
-Geometry (stored values): rectangle width 0.2 W, height 0.26 W, `cornerRadius` 0.012. The centres are 0.14 W apart, so each card overlaps the next by about 30%.
+Geometry (px, 1920 × 1080): rectangle 384 × 499.2, `borderRadius` 2.3, centres 268.8 px apart, so each card overlaps the next by about 30%.
 
 ## Steps
 

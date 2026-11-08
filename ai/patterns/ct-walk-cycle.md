@@ -1,6 +1,6 @@
 # Walk cycle (rigged)
 
-**Template** `ct_walk_cycle` (Library name "Walk cycle (rigged)") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Walk cycle` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_walk_cycle` (Library name "Walk cycle (rigged)") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Walk cycle` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "the mascot walks in", "a character strolls across", "arrives at the shop". A blob character walks 976 px to the right in eight steps, stops with a settle on its hips and blinks. 150 f.
 

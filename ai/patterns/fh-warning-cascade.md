@@ -1,6 +1,6 @@
 # Warning cascade
 
-**Template** `fh_warning_cascade` (Library name "Warning cascade") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Warning cascade` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_warning_cascade` (Library name "Warning cascade") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Warning cascade` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "hacked", "cyber attack", "system overload", "malfunction", "game over". Four warning windows scan open in a cascade, the last one CRITICAL in red, then a red SYSTEM OVERRIDE REQUIRED banner scans open. 120 f.
 

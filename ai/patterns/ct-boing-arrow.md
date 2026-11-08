@@ -1,6 +1,6 @@
 # Boing arrow
 
-**Template** `ct_boing_arrow` (Library name "Boing arrow") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Boing arrow` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_boing_arrow` (Library name "Boing arrow") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Boing arrow` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "tap here", "look at this", "click the button" in a kids' or playful tutorial. A label pops, a curved hand-drawn arrow draws toward a button, boings at it, and the button squashes from the poke. 90 f.
 

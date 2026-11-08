@@ -1,6 +1,6 @@
 # Player spotlight
 
-**Template** `sp_spotlight` (Library name "Player spotlight") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Spotlight` in `categories/sports/sp-lab-2`.
+**Template** `sp_spotlight` (Library name "Player spotlight") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Spotlight` in `categories/sports/sp-lab-2`.
 
 An overlay that marks a player in footage: a flat yellow ring on the ground at the feet (300 × 90 px), three rings rippling out from it, a yellow arrow above the head and a red name tag. 120 f.
 

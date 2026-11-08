@@ -1,6 +1,6 @@
 # Orbit end card
 
-**Template** `fk_orbit_end` (Library name "Orbit end card") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Orbit end card` in `categories/funky/fk-lab-2`.
+**Template** `fk_orbit_end` (Library name "Orbit end card") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Orbit end` in `categories/funky/fk-lab-2`.
 
 A 300 px purple hub ("BYE!", yellow 110 px) with four coloured satellites on a 260 px orbit, and a handle below. 150 f, holds.
 

@@ -1,6 +1,6 @@
 # Timeline
 
-**Template** `dv_timeline` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Timeline` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_timeline` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Timeline` in `categories/data-viz/dv-lab-2`.
 
 A 1400 px axis that draws left to right with five milestones: a dot, a year above (Bold 40 px) and a caption below (Medium 28 px). The last milestone is cyan. 120 f, holds.
 

@@ -1,6 +1,6 @@
 # Button press
 
-**Template** `ct_button_press` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Button press` in `categories/cartoon-bounce/ct-lab-2`.
+**Template** `ct_button_press` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Button press` in `categories/cartoon-bounce/ct-lab-2`.
 
 A chunky 480 × 150 px red button on an ink base 18 px below it, labelled "PRESS ME". 60 f.
 

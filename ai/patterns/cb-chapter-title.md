@@ -1,6 +1,6 @@
 # Chapter title
 
-**Template** `cb_chapter_title` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Chapter title` in `categories/corporate-brand/cb-lab-2`.
+**Template** `cb_chapter_title` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Chapter title` in `categories/corporate-brand/cb-lab-2`.
 
 A section opener, left-aligned at x 240: a teal chapter number (SemiBold 120 px), a 1100 px grey rule, the chapter name (SemiBold 88 px) and a note (Regular 34 px). 90 f, holds.
 

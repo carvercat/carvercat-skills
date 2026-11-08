@@ -1,6 +1,6 @@
 # Funky countdown
 
-**Template** `fk_countdown` (Library name "Funky countdown") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Countdown` in `categories/funky/fk-lab-3`.
+**Template** `fk_countdown` (Library name "Funky countdown") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Countdown` in `categories/funky/fk-lab-3`.
 
 For briefs like "3, 2, 1, go", "countdown into the drop", "start of the show". Four 30 f beats (3, 2, 1, GO!), each a 700 px 16-point starburst in a new colour, an ink disc and a yellow number with a hard shadow in the burst's colour. Hard cuts on the beat. 120 f (16:9; the Social pack's countdown is 9:16).
 

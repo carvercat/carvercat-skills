@@ -1,6 +1,6 @@
 # Drone telemetry
 
-**Template** `fh_telemetry` (Library name "Drone telemetry") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Telemetry` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_telemetry` (Library name "Drone telemetry") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Telemetry` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "drone footage overlay", "FPV", "vehicle or flight telemetry", "aerospace". A full-frame overlay to put over footage: frame corners, an artificial horizon that banks through a turn and settles level, a heading dial, stepped speed and altitude, and status corners. 150 f.
 

@@ -1,6 +1,6 @@
 # Speech bubble
 
-**Template** `ct_speech_bubble` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Speech bubble` in `categories/cartoon-bounce/ct-lab-2`.
+**Template** `ct_speech_bubble` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Speech bubble` in `categories/cartoon-bounce/ct-lab-2`.
 
 A 620 × 320 px white ellipse with an 8 px ink outline, a triangular tail (closed path) and a line of dialogue (ExtraBold 96 px). 90 f, holds.
 

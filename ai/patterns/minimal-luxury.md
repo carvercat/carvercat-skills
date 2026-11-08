@@ -8,10 +8,11 @@ The pack lives in `library/templates/minimal-luxury/`. Install it as in [Install
 - The templates come from `categories/minimal-luxury/ml-lab` (written by `ai/scripts/motion/minimal_luxury_lab.py`) and, for round 2, `categories/minimal-luxury/ml-lab-2` (written by `ai/scripts/motion/minimal_luxury_lab2.py`), and for round 3, `categories/minimal-luxury/ml-lab-3` (written by `ai/scripts/motion/minimal_luxury_lab3.py`).
 - The sample film is `categories/minimal-luxury/ml-showcase`, written by `ai/scripts/motion/minimal_luxury_showcase.py`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
-- Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
-- Lint was 0 errors, 0 warnings, 0 notes on every lab comp, the preset bench and the showcase master.
-- Each template was placed into a fresh comp: lint 0/0/0 for all four.
+**Status: Verified 0.1.8.1 (rev 1127).**
+- Headless `carvercat-host` built from Carvercat 0.1.8.1 (rev 1127), fresh preferences, data and cache folders; the pack was installed into a scratch user Library. Measured with `ai/scripts/motion/verify_pack.py minimal-luxury` (full table below).
+- Every template placed into a fresh 16:9 and a fresh 9:16 comp: lint 0 errors / 0 warnings / 0 notes, no flashes (qc), for all 20 templates.
+- Shape against the v1 original (7 frames; limit 2 %): all 20 pass, worst 1.72 % (Collection title). The object-level check (missing, empty, moved, text objects) passes for all 20. No `--ink-templates` was needed.
+- The showcase-2 master lints 0 / 0 / 0 (rebuilt by `ai/scripts/motion/recipes/showcase2.py minimal-luxury`). The per-part "settles" figures in the pages are the authored key frames and curves; they were not re-measured one by one.
 
 **Fonts:** Rethink Sans must be installed. It is a free Google Font (SIL OFL), and the file is also in `ai/scripts/motion/json_author/RethinkSans.ttf`. Without it, text falls back to Arial ([KI-136](../references/known-issues.md#ki-136)).
 
@@ -59,7 +60,7 @@ Round 2 (8 templates) was built and verified the same way on 2026-10-27: every l
 
 ## Round 3: briefs the pack could not serve before
 
-Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("fragrance, fashion, jewellery, hotel, premium product") and the wiki's [product launches](../../wiki/genres/product-launches.md), [title sequences](../../wiki/genres/title-sequences.md), [logo animation](../../wiki/genres/logo-animation.md) and [event openers](../../wiki/genres/event-openers.md) pages, against what rounds 1 and 2 already cover. Built and verified on 0.1.6 (rev 1105) on 2026-10-28. Every move is baked as keys in `minimal_luxury_lab3.py` (the pack's Slow fade in and Drift up written out; no presets to apply; three mask windows made with `mask.make`). Every easing lands with **0% overshoot** and every hold keeps moving (a drift, a tracking breathe, a sheen or a push). Names, places and numbers are sample copy; the two photos are gradient stand-ins. Frames are comp frames. Clip-id prefixes: `msw_`, `mpy_`, `mci_`, `mfn_`, `miv_`, `mba_`, `mle_`, `mes_`.
+Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("fragrance, fashion, jewellery, hotel, premium product") and the wiki's [product launches](../../wiki/genres/product-launches.md), [title sequences](../../wiki/genres/title-sequences.md), [logo animation](../../wiki/genres/logo-animation.md) and [event openers](../../wiki/genres/event-openers.md) pages, against what rounds 1 and 2 already cover. Built 2026-10-28; Verified 0.1.8.1 (rev 1127), see the 0.1.8.1 block below. Every move is baked as keys in `minimal_luxury_lab3.py` (the pack's Slow fade in and Drift up written out; no presets to apply; three mask windows made with `mask.make`). Every easing lands with **0% overshoot** and every hold keeps moving (a drift, a tracking breathe, a sheen or a push). Names, places and numbers are sample copy; the two photos are gradient stand-ins. Frames are comp frames. Clip-id prefixes: `msw_`, `mpy_`, `mci_`, `mfn_`, `miv_`, `mba_`, `mle_`, `mes_`.
 
 | Template | Brief it serves | Measured | Lint (lab) | Placed |
 |---|---|---|---|---|
@@ -89,9 +90,40 @@ Notes are `repeated_key_value` (opacity held before the dim, intended). Each tem
 
 ## Round-2 sample film
 
-`categories/minimal-luxury/ml-showcase-2` is a 1050 f (35 s) master at 1920 × 1080 that plays the round-2 templates back to back with Slow dip on one cut, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py minimal-luxury`). Verified 0.1.6 (rev 1105), 2026-10-28: master lint 0 / 0 / 0. Qc (240 px) reads most of it as frozen: the drifts, breathes and thin gold lines are below its threshold; judge with a look.
+`categories/minimal-luxury/ml-showcase-2` is a 1050 f (35 s) master at 1920 × 1080 that plays the round-2 templates back to back with Slow dip on one cut, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py minimal-luxury`). Verified 0.1.8.1 (rev 1127): master lint 0 / 0 / 0. Qc (240 px) reads most of it as frozen: the drifts, breathes and thin gold lines are below its threshold; judge with a look.
 
-## Pitfalls (0.1.6)
+## Verified 0.1.8.1 (rev 1127): design-unit generators
+
+All 20 templates were regenerated as carvercat/2 by the pack's lab modules (design units: px from the top-left, y down, degrees clockwise, exact hex colours, CSS easing); the lab, showcase, showcase-2 and recipe sample projects by the same modules. The `.carverpreset` files are unchanged and load in the app.
+- Harness (`verify_pack.py`, 7 frames per template; 320 x 180, 960 x 540 for templates with text; shape limit 2 %). `covered` / `cut` / `settled` / `gone` use the harness definition (covered = the frame reads the same over a magenta and a green underlay; settled = first frame from which the picture no longer changes; gone = last visible frame + 1); None means the template never covers the frame or never goes blank.
+
+| Template | lint 16:9 e/w/n | lint 9:16 e/w/n | v1 vs v2 | worst shape | colour shift | object check | box offset max px | worst ink IoU | covered | cut | settled | gone |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Attribute row | 0/0/0 | 0/0/0 | pass | 0.01 % | 2.4 | pass | 0.0 | 0.96 | None | None | None | None |
+| Boutique address | 0/0/0 | 0/0/0 | pass | 0.01 % | 3.3 | pass | 0.1 | 0.88 | None | None | None | None |
+| Collection index | 0/0/0 | 0/0/0 | pass | 0.00 % | 2.7 | pass | 0.0 | 0.69 | None | None | None | None |
+| Collection title | 0/0/0 | 0/0/0 | pass | 1.72 % | 22.5 | pass | 0.1 | 0.48 | None | None | None | None |
+| Editorial spread | 0/0/0 | 0/0/0 | pass | 0.01 % | 13.9 | pass | 0.1 | 0.95 | None | None | None | None |
+| Feather wipe reveal | 0/0/0 | 0/0/0 | pass | 0.00 % | 2.8 | pass | 0.0 | 1.0 | None | None | None | None |
+| Fragrance notes | 0/0/0 | 0/0/0 | pass | 0.01 % | 3.2 | pass | 0.1 | 0.97 | None | None | None | None |
+| Framed word | 0/0/0 | 0/0/0 | pass | 0.05 % | 7.1 | pass | 0.5 | 0.96 | None | None | None | None |
+| Light sweep | 0/0/0 | 0/0/0 | pass | 0.00 % | 8.8 | pass | 0.0 | 1.0 | None | None | None | None |
+| Limited edition number | 0/0/0 | 0/0/0 | pass | 0.00 % | 3.5 | pass | 0.1 | 0.93 | None | None | None | None |
+| Luxury lower third | 0/0/0 | 0/0/0 | pass | 0.11 % | 12.5 | pass | 0.1 | 0.32 | None | None | None | 168 |
+| Material swatches | 0/0/0 | 0/0/0 | pass | 0.00 % | 14.7 | pass | 0.1 | 0.88 | None | None | None | None |
+| Monogram end card | 0/0/0 | 0/0/0 | pass | 0.00 % | 3.6 | pass | 0.1 | 0.83 | None | None | None | None |
+| Price card | 0/0/0 | 0/0/0 | pass | 0.09 % | 6.4 | pass | 0.1 | 0.87 | None | None | None | None |
+| Product frame | 0/0/0 | 0/0/0 | pass | 0.00 % | 4.1 | pass | 0.1 | 0.99 | None | None | None | None |
+| Property feature | 0/0/0 | 0/0/0 | pass | 0.01 % | 14.9 | pass | 0.0 | 0.91 | None | None | None | None |
+| Save the date | 0/0/0 | 0/0/0 | pass | 0.01 % | 3.5 | pass | 0.1 | 0.88 | None | None | None | None |
+| Slow dip | 0/0/0 | 0/0/0 | pass | 0.00 % | 8.0 | pass | 0.0 |  | [24, 36] | 24 | 59 | 55 |
+| Slow quote | 0/0/0 | 0/0/0 | pass | 1.10 % | 28.1 | pass | 0.1 | 0.52 | None | None | None | None |
+| Tracked title | 0/0/0 | 0/0/0 | pass | 0.00 % | 3.6 | pass | 0.1 | 0.98 | None | None | None | None |
+
+- Colours are the exact hex of the style notes (the old kit linearised them): the colour shift to v1 is reported, not judged, and is intended.
+- What changed: "Ease out" is the old curve; text boxes are centred on y; Light sweep keeps its 1000 x 320 fill still and keys the shape gradient endpoints (f30-110) behind the text mask (an earlier port slid the rectangle, which the object check flagged: Wordmark empty, fill moved 690 px); Material swatches keys the sheen endpoints again (an earlier port left the band static, which the pixel and object checks did not catch, a montage did). Slow dip: covered f24-36, settled f59, gone f55; Luxury lower third: gone f168 (harness definition).
+
+## Pitfalls
 
 1. **Tracking is keyframeable and centred text stays centred** while it changes, so a closing-in title needs no position keys. Keep a breathe under 10%.
 2. **A feathered wipe is a mask with a soft edge.** The mask rectangle's `softEdge` (160 px here) becomes the feather. Start the mask a full width plus the feather to the left of its rest position, so frame 0 is clean.

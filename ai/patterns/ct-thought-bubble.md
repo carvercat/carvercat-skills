@@ -1,6 +1,6 @@
 # Thought bubble
 
-**Template** `ct_thought_bubble` (Library name "Thought bubble") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Thought bubble` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_thought_bubble` (Library name "Thought bubble") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Thought bubble` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "the character wonders", "imagine...", "what's on their mind". A face jellies in, three trail dots pop from small to big, a cloud jellies in and the thought pops inside it. 120 f.
 

@@ -1,6 +1,6 @@
 # Character hop
 
-**Template** `ct_character_hop` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Character hop` in `categories/cartoon-bounce/ct-lab-2`.
+**Template** `ct_character_hop` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Character hop` in `categories/cartoon-bounce/ct-lab-2`.
 
 A green blob character (200 × 260 px, two eyes) hops 880 px to the right with anticipation, stretch, arc, squash and recovery, then blinks. 90 f.
 

@@ -1,12 +1,12 @@
 # Slash wipe
 
-**Template** `sp_slash_wipe` · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Slash wipe` in `categories/sports/sp-lab-2`.
+**Template** `sp_slash_wipe` · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Slash wipe` in `categories/sports/sp-lab-2`.
 
-A transition: blue, red and navy slashes (1000 px drawn, scale 2.2 × 2.4, turned −25° (stored value)) whip across the frame 2 f apart; the last, navy one covers the frame. 30 f.
+A transition: blue, red and navy slashes (1000 px drawn, scale 2.2 × 2.4, turned 25° clockwise) whip across the frame 2 f apart; the last, navy one covers the frame. 30 f.
 
 | Part | Clip | Motion | Measured |
 |---|---|---|---|
-| Slash 1–3 | f0/2/4, 26 f each | from −2880 px, 10 f, Custom whip cubic-bezier(0.7, 0, 0.1, 1); drift 57.6 px for 4 f; out to +2880 px (accelerating) | frame covered about **f12–18** (look) |
+| Slash 1–3 | f0/2/4, 26 f each | from −2880 px, 10 f, Custom whip cubic-bezier(0.7, 0, 0.1, 1); drift 57.6 px for 4 f; out to +2880 px (accelerating) | covered **f8–19**, settled **f29** (verify_pack definition: same picture over magenta and green; settled = unchanged to the last frame) |
 
 Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0.
 

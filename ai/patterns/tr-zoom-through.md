@@ -1,6 +1,6 @@
 # Zoom-through transition
 
-**Recipe** · **verified 0.0.72** (`RECIPES`, frames 48–94) · 12 f out + 20 f in
+**Recipe** · **Verified 0.1.8.1 (rev 1127)** (`RECIPES`, frames 48–94) · 12 f out + 20 f in (keys); in the `RECIPES` render the picture starts to change at f58 and is steady from f71
 
 1. On the last clip of Scene A (or its comp instance): `preset.apply "Exit zoom through"`, which scales 1 → 2.4 and fades out over the last 12 f.
 2. On the first clip of Scene B: `preset.apply "Zoom settle"`, which scales 1.22 → 1 with expo-out and fades in.

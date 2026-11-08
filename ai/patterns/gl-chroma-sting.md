@@ -1,6 +1,6 @@
 # Chromatic logo sting
 
-**Template** `gl_chroma_sting` (Library name "Chromatic logo sting") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Chroma sting` in `categories/glitch/gl-lab-3`.
+**Template** `gl_chroma_sting` (Library name "Chromatic logo sting") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Chroma sting` in `categories/glitch/gl-lab-3`.
 
 For briefs like "glitch logo ident", "RGB logo reveal", "channel sting". Three copies of a mark (a stand-in bolt) in pure red, green and blue, each blended with **Screen**, step together from 70 px apart; where they line up they add to white. Then the wordmark lands with a red/cyan split and a tagline; one short re-split at f50. 90 f.
 

@@ -1,6 +1,9 @@
 # Link in bio (9:16)
 
-**Template** `ss_link_in_bio` (Library name "Link in bio (9:16)") · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Link in bio` in `categories/social-media-reels/ss-lab-3`.
+**Template** `ss_link_in_bio` (Library name "Link in bio (9:16)") · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Link in bio` in `categories/social-media-reels/ss-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 0.2 px); colours are now the exact hex the page states (mean shift 3.1 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "send them to the link in bio", "swipe up for the guide", "where to get it". A yellow kicker, LINK / IN BIO (ExtraBold 150 px, IN BIO on a pink plate), a white link chip with an open-link icon and the URL, one pulse off the chip, and a small instruction line. 120 f, holds (a CTA needs at least 2 s).
 

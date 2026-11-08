@@ -1,6 +1,6 @@
 # Product frame
 
-**Template** `ml_product_frame` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Product frame`.
+**Template** `ml_product_frame` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Product frame`.
 
 A 520 × 680 px frame (2 px gold stroke, no fill). Inside it a 300 px product stand-in: a radial gradient from ivory to a deep shadow tone. Under the frame, the caption "No. 7 · EAU DE PARFUM" (30 px, tracking 1.4).
 

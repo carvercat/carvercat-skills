@@ -1,6 +1,6 @@
 # Column chart
 
-**Template** `dv_column_chart` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Column chart` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_column_chart` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Column chart` in `categories/data-viz/dv-lab-2`.
 
 Six monthly columns (96 px wide, plot 1000×480 px, baseline y 800) with gridlines at 0/50/100, axis labels, month labels, and the last column highlighted in cyan with its value above. 90 f, holds.
 

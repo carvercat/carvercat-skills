@@ -1,6 +1,6 @@
 # Modal over app
 
-**Template** `su_modal` (Library name "Modal over app") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Modal` in `categories/saas-launch/saas-ui-lab-2`.
+**Template** `su_modal` (Library name "Modal over app") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Modal` in `categories/saas-launch/saas-ui-lab-2`.
 
 A full app frame: a light app canvas with three cards, a scrim, and a 640×360 px confirmation modal ("Delete project?") with Cancel and Delete buttons. 90 f; opens, holds and closes.
 

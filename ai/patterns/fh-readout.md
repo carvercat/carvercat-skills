@@ -1,6 +1,6 @@
 # Data readout
 
-**Template** `fh_readout` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Readout`.
+**Template** `fh_readout` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Readout`.
 
 A 300 px glowing accent bar and four rows (y 435–645): labels in dim cyan at x 600, values in cyan right-aligned at x 1320, all SemiBold 34 px tracked caps. The rows are SYS STATUS / NOMINAL, CORE TEMP / 41.8 C, LINK / ENCRYPTED and SIGNAL / 98%.
 

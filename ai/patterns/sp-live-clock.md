@@ -1,6 +1,6 @@
 # Live score clock
 
-**Template** `sp_live_clock` (Library name "Live score clock") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Live clock` in `categories/sports/sp-lab-3`.
+**Template** `sp_live_clock` (Library name "Live score clock") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Live clock` in `categories/sports/sp-lab-3`.
 
 For briefs like "live score bug with a timer", "match clock", "added time". A 64 px score bug (x 96–742, y 64–128) grows out of its left edge; the match clock steps one second every 30 f and a yellow +3 added-time tab drops out of the clock box at 45:00. 210 f.
 

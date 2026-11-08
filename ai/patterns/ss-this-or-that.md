@@ -1,6 +1,9 @@
 # This or that (9:16)
 
-**Template** `ss_this_or_that` (Library name "This or that (9:16)") · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS This or that` in `categories/social-media-reels/ss-lab-3`.
+**Template** `ss_this_or_that` (Library name "This or that (9:16)") · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS This or that` in `categories/social-media-reels/ss-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 0.0 px); colours are now the exact hex the page states (mean shift 14.1 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "this or that", "which one would you pick", "A or B quiz". A question, two choice cards side by side (420 × 520 px stand-ins) with labels, a VS badge, then the pick: a yellow outline and tick on one card while the other dims. 150 f, holds. Unlike the Poll sticker (result bars), this shows a choice being made.
 

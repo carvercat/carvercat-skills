@@ -1,6 +1,6 @@
 # Kinetic lower third
 
-**Template** `kt_lower_third` (Library name "Kinetic lower third") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Lower third` in `categories/kinetic-typography/kt-lab-2`.
+**Template** `kt_lower_third` (Library name "Kinetic lower third") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.06 % of pixels over 7 frames; object-level check pass)**, comp `KT Lower third` in `categories/kinetic-typography/kt-lab-2`.
 
 A 14 px accent bar at x 120 with an ExtraBold name and a Medium role to its right, bottom left. 150 f (5 s) with its own exit.
 
@@ -10,7 +10,7 @@ A 14 px accent bar at x 120 with an ExtraBold name and a Medium role to its righ
 | Name ("MAYA ORTIZ", ExtraBold 76 px, y 840) | 4 | Letters zoom in; Exit down - accelerate (last 12 f) | opaque by **f10**, size settles **f15** |
 | Role ("Creative director, Northwind", Medium 36 px, y 936) | 12 | Lines slide in - left; Exit fade - fast (last 8 f) | position settles **f28** |
 
-Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0, enters f0, exits f149.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 1 warnings, 8 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). Placed into a fresh comp: lint 0/0/0, enters f0, exits f149.
 
 ## Steps
 1. Place and apply over the speaker's shot. Edit the name and role inside the comp.

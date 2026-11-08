@@ -1,6 +1,9 @@
 # Synthwave sun
 
-**Template** `rt_synthwave` · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT Synthwave`.
+**Template** `rt_synthwave` · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT Synthwave`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 0.0 px); colours are now the exact hex the page states (mean shift 12.2 of 255, intended); windows over a magenta/green underlay: covered f0-119 (cut f0). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 A night sky, a 520 px sun (linear gradient yellow → pink, top to bottom) cut by five night-coloured bands, a glowing pink horizon at y 640, a perspective floor grid, and "NEON NIGHTS" (ExtraBold 120 px cyan, text fill glow 4).
 

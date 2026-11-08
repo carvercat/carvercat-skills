@@ -1,6 +1,6 @@
 # Limited edition number
 
-**Template** `ml_limited_edition` (Library name "Limited edition number") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Limited edition` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_limited_edition` (Library name "Limited edition number") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Limited edition` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "limited edition", "one of 150", "numbered pieces". The edition number rises out of an invisible window's lower edge (a mask), so it appears from a line rather than from nowhere; a rule opens and OF 150 follows. 150 f, holds.
 

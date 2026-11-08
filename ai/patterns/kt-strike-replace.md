@@ -1,6 +1,6 @@
 # Strike and replace
 
-**Template** `kt_strike_replace` (Library name "Strike and replace") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Strike and replace` in `categories/kinetic-typography/kt-lab-3`.
+**Template** `kt_strike_replace` (Library name "Strike and replace") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.04 % of pixels over 7 frames; object-level check pass)**, comp `KT Strike and replace` in `categories/kinetic-typography/kt-lab-3`.
 
 For briefs like "myth vs fact", "we changed", "it's not X, it's Y", "rebrand". A claim ("It isn't luck.", ExtraBold 110 px) rises in. A red line strikes through the wrong word and the whole claim steps back to a dim grey. Then the answer lands below it: "It's" slams in, and "practice." rises beside it in accent. 120 f, holds.
 
@@ -14,7 +14,7 @@ Frames are comp frames.
 | "It's" | 54 | scale 1.3 → 1, 8 f (expo), no fade | settles **f59** |
 | "practice." (accent) | 59 | rise 40 px, 12 f (expo), fade 5 f | settles **f67** |
 
-Lint 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (40.2 px).
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (40.2 px).
 
 ## Steps
 1. Edit `STRIKE` (claim, struck word, size) in `ai/scripts/motion/kinetic_type_lab3.py` and rebuild. The strike is measured from the ink: the right edge of the claim up to the struck word's first letter, minus that letter's width, and the x-height centre of "uc".

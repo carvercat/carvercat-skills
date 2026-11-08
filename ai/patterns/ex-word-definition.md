@@ -1,6 +1,6 @@
 # Word definition
 
-**Template** `ex_word_definition` (Library name "Word definition") · Explainer pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `EX Word definition` in `categories/explainer/ex-lab-3`.
+**Template** `ex_word_definition` (Library name "Word definition") · Explainer pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `EX Word definition` in `categories/explainer/ex-lab-3`.
 
 For briefs like "word of the day", glossary entries, language and vocabulary lessons. A word, how to say it (a speaker icon and a respelling whose two syllables light up in turn), the part of speech, a definition and an example. Key term card gives a term and a definition; this adds the pronunciation. Light background included. 150 f.
 
@@ -16,7 +16,7 @@ For briefs like "word of the day", glossary entries, language and vocabulary les
 | Definition (50 px Medium, two lines) | 50 | Step in | settles **f59** |
 | Example (38 px muted) | 74 | Step in | settles **f83** |
 
-Lint (with `contrast:true`) 0 errors, 0 warnings, 4 notes (`repeated_key_value`). `inspect qc` (240 px): no flashes, a freeze after f83. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 39 pairs, closest 20.0 px (shun / the dash). Full-frame looks of the placed comp at f52 (waves on, MOH pulsing) and f149: nothing cut.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 2 warnings, 6 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). `inspect qc` (240 px): no flashes, a freeze after f83. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 39 pairs, closest 20.0 px (shun / the dash). Full-frame looks of the placed comp at f52 (waves on, MOH pulsing) and f149: nothing cut.
 
 ## Steps
 1. Edit the word, the respelling and the texts in `definition()`; the syllable positions are measured with `textw()`, so a longer word moves the dash, the second syllable and the pill with it.

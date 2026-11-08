@@ -1,6 +1,6 @@
 # Fixture list
 
-**Template** `sp_fixtures` (Library name "Fixture list") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Fixtures` in `categories/sports/sp-lab-3`.
+**Template** `sp_fixtures` (Library name "Fixture list") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Fixtures` in `categories/sports/sp-lab-3`.
 
 For briefs like "fixtures", "this weekend's matches", "kick-off times". Five fixture panels slash in 5 f apart, each with the day and time, both teams, a VS chip and team-colour ticks; LIVE tags slam onto the televised games. 150 f.
 

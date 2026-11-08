@@ -1,6 +1,6 @@
 # Glitch lower third
 
-**Template** `gl_lower_third` (Library name "Glitch lower third") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Lower third` in `categories/glitch/gl-lab-2`.
+**Template** `gl_lower_third` (Library name "Glitch lower third") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Lower third` in `categories/glitch/gl-lab-2`.
 
 A 12 × 150 px red bar, a white name (ExtraBold 72 px) with red and cyan split shadows, and a green role (SemiBold 32 px, tracked). 150 f (5 s) with its own exit.
 

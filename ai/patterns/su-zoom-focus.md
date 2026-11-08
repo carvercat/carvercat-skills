@@ -1,6 +1,8 @@
 # Zoom to card
 
-**Template** `su_zoom_focus` (Library name "Zoom to card") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Zoom focus` in `categories/saas-launch/saas-ui-lab-3`.
+**Template** `su_zoom_focus` (Library name "Zoom to card") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Zoom focus` in `categories/saas-launch/saas-ui-lab-3`.
+
+Object check: during the camera zoom measure.boxes reads text up to 213 px off while the pixels match (edge maps of v1 and v2 at 960 × 540 agree within 2 px on 99.3–100 % of edge pixels at all 7 compared frames, shape 0.00 %). `verify_pack.py --ink-templates` cannot measure the text at f50–99 (no ink inside the reported boxes), so this template has no automatic object-check pass; the pixel comparison above is the evidence.
 
 For briefs like "zoom into the feature", "show the one number that matters", "UI demo with camera moves". A full analytics app frame (dark sidebar, header, three KPI tiles, a bar chart and a "Conversion rate" card with 4.8% and a progress bar). The camera pushes in on the Conversion card, holds while a ring appears and the bar fills, then pulls back. 150 f.
 

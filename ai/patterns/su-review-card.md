@@ -1,6 +1,6 @@
 # Review card
 
-**Template** `su_review_card` (Library name "Review card") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Review card` in `categories/saas-launch/saas-ui-lab-3`.
+**Template** `su_review_card` (Library name "Review card") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Review card` in `categories/saas-launch/saas-ui-lab-3`.
 
 For briefs like "customers love it", "social proof", "a testimonial". A 1000×460 px white card (radius 28): five amber stars, a two-line quote (Bold 52), an avatar with initials, a name (Bold 32) and a role (Medium 26). The names are fictional stand-ins. 150 f, holds.
 

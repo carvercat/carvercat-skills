@@ -8,11 +8,13 @@ The pack lives in `library/templates/glitch/`. Install it as in [Installing a pa
 - The templates come from `categories/glitch/gl-lab`, written by `ai/scripts/motion/glitch_lab.py`; round 2 from `categories/glitch/gl-lab-2` (`glitch_lab2.py`); round 3 from `categories/glitch/gl-lab-3` (`glitch_lab3.py`).
 - The sample sting is `categories/glitch/gl-showcase`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).** Round 3 too (2026-10-28).
-- Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
-- Lint was 0 errors and 0 warnings on every lab comp and the preset bench, and 0/0/0 on the showcase.
-- **`inspect qc` at 240 px found no flashes** on the bench, any lab comp, or the master.
-- Each template was placed into a fresh comp: lint 0/0/0 for all four.
+**Status: all 20 templates verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library), measured by `ai/scripts/motion/verify_pack.py glitch` (the harness with the object-level checks).**
+- The labs (`glitch_lab.py`, `_lab2.py`, `_lab3.py`) and the sample sting (`glitch_showcase.py`) speak design units (`json_author/cc2.py`) and are sent with `scene.apply`. The RGB split is one text with two drop shadows (`filter`; the first is keyed in the scene, the second with `key.set` on its own effect, which a scene cannot key); the pack's presets are baked as keys. `regen_pack.py` rebuilds the templates and the lab and showcase projects (carvercat/2).
+- Each template was placed into a fresh 16:9 and a fresh 9:16 comp: lint 0 errors / 0 warnings / 0 notes; qc found no flashes.
+- Against the v1 originals (7 frames each; 960 x 540 for the text templates): silhouettes match (at most 2 % of pixels differ), the object-level check finds no missing, empty or moved object and no changed text, and colours are now the exact hex values (the old kit's linear curve made them about 10/255 darker, which is gone).
+- Keyed frames in the tables below are the generators' (unchanged). Percentages that came from `inspect curves` ("overshoot", the first jump read as 66.7 %) are 0.1.6 findings that were not re-measured.
+- The lab comp `GL End card` is now `GL Signal end`, so its name matches the template file.
+- The three presets (`.carverpreset`) are unchanged: they stay in the stored preset format and were verified by loading and applying them in 0.1.8.1.
 
 **Fonts:** Rethink Sans must be installed ([KI-136](../references/known-issues.md#ki-136)).
 

@@ -1,6 +1,6 @@
 # Feather wipe reveal
 
-**Template** `ml_feather_wipe` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Feather wipe`.
+**Template** `ml_feather_wipe` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Feather wipe`.
 
 "Quiet confidence" (Regular 96 px, ivory, centred) is revealed left to right through a mask whose edge is feathered.
 

@@ -1,28 +1,23 @@
-"""Data Viz round 3: seven lab comps for briefs the pack could not serve before (conversion funnel,
-bubble chart, bar chart race, stacked area chart, tile-grid map, icon array, calendar heatmap),
-written straight into a .carverproj.
+"""Data Viz round 3 in design units: seven lab comps for briefs the pack could not serve before (conversion funnel, bubble chart,
+bar chart race, stacked area chart, tile-grid map, icon array, calendar heatmap), written with cc2.py (through dvsu_kit.py).
 
-    import data_viz_lab3 as L; presets, masks = L.build(PROJECT.carverproj)
+    import data_viz_lab3 as L; doc = L.build(); doc.send(client, PROJECT.carverproj)
 
-Same palette, font and geometry rules as data_viz_lab.py. Every move is baked as keys (no presets
-to apply). The stacked area chart is revealed by three mask windows: after edit.open {path,
-force:true} run mask.make {ids:[window, layer]} (the window FIRST) + parent.clear for each MASKS
-entry, then edit.save. Check with carvercat_inspect and carvercat_look; extract templates with
-comp_to_template.py (--drop "Lab bg"). All numbers are sample data and every comp says so on screen.
+Same palette, font and geometry rules as data_viz_lab.py. Every move is baked as keys (no presets to apply). The stacked area
+chart is revealed by three mask windows (scene masks, Comp.mask). All numbers are sample data and every comp says so on screen.
 Fonts: Rethink Sans must be installed (KI-136). Docs: ai/patterns/data-viz.md (round 3).
-Pixel space 1920x1080, y down; comp frames, 30 fps.
+Design units: px from the top-left, y down; comp frames, 30 fps.
 """
 import math, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from data_viz_lab import Doc, lin, COL, EXPO, SMOOTH, lab_bg
+from dvsu_kit import KDoc, css
+from data_viz_lab import COL, EXPO, SMOOTH, lab_bg
 from data_viz_lab2 import fade, rise
-from json_author.cc import P
 
 ACCEL = (0.3, 0.0, 0.8, 0.15)
-PRESETS, MASKS = [], []
-SLATE = lin('56607A')                      # a second context grey, lighter than COL['bar']
+SLATE = css('56607A')                      # a second context grey, lighter than COL['bar']
 # sequential scale for the map and the heatmap: dark slate-blue to the pack's cyan
-SEQ = [lin('243247'), lin('1F4D6E'), lin('236E98'), lin('2F92C4'), lin('3FB8F0')]
+SEQ = [css('243247'), css('1F4D6E'), css('236E98'), css('2F92C4'), css('3FB8F0')]
 
 
 def header(k, n, title, sub, x0=360, x1=1560, f=0):
@@ -33,11 +28,11 @@ def header(k, n, title, sub, x0=360, x1=1560, f=0):
 
 
 def fillkey(o, spec):
-    return o.key(o.src('shape_fill', 'color'), spec)
+    return o.tint(spec, 'fill')
 
 
 def textkey(o, spec):
-    return o.key(o.src('text_fill', 'color'), spec)
+    return o.tint(spec, 'fill')
 
 
 # ---------------------------------------------------------------- 1. conversion funnel
@@ -58,8 +53,8 @@ def funnel(d):
     for i, r in enumerate(rates):
         f = starts[i + 1] + 10
         y0, y1 = ys[i] + bh / 2, ys[i + 1] - bh / 2
-        c = k.path(f"Connector {i + 1}", [(cx - ws[i] / 2, y0), (cx + ws[i] / 2, y0), (cx + ws[i + 1] / 2, y1), (cx - ws[i + 1] / 2, y1)],
-                   f0=f, dur=n - f, closed=True)
+        c = k.poly(f"Connector {i + 1}", [(cx - ws[i] / 2, y0), (cx + ws[i] / 2, y0), (cx + ws[i + 1] / 2, y1), (cx - ws[i + 1] / 2, y1)],
+                   f0=f, dur=n - f)
         c.fill(COL['orange'] if i == worst else COL['grid'])
         c.op([(f, 0.0, 'Linear'), (f + 8, 0.55 if i == worst else 1.0, 'Ease out')])
         rise(k.text(f"Rate {i + 1}", f"{round(r * 100)}% continue", 1600, (ys[i] + ys[i + 1]) / 2, 28,
@@ -149,12 +144,12 @@ def race(d):
         pk = []
         for y, (a, e) in enumerate(T, start=1):
             sk += [(a, [ws[y - 1] / wm, 1.0], 'Linear'), (e, [ws[y] / wm, 1.0], SMOOTH)]
-            pk += [(a, P(xc, ys[y - 1]), 'Linear'), (e, P(xc, ys[y]), SMOOTH)]
+            pk += [(a, (xc, ys[y - 1]), 'Linear'), (e, (xc, ys[y]), SMOOTH)]
         b.scale(sk); b.pos(pk); fade(b, f, 4)
         lab = k.text(f"Name {name}", name, x0 - 24, ys[0], 32, COL['ink'] if i == hero else COL['muted'], f0=0, dur=n,
                      style='SemiBold' if i == hero else 'Medium', align='right')
         lab.pos([kk for y, (a, e) in enumerate(T, start=1)
-                 for kk in ((a, P(x0 - 24, ys[y - 1]), 'Linear'), (e, P(x0 - 24, ys[y]), SMOOTH))])
+                 for kk in ((a, (x0 - 24, ys[y - 1]), 'Linear'), (e, (x0 - 24, ys[y]), SMOOTH))])
         ok = [(max(0, f - 2), 0.0, 'Linear'), (f + 6, 1.0, 'Ease out')]
         for y, (a, e) in enumerate(T, start=1):
             if i in crossing[y - 1]:
@@ -209,12 +204,12 @@ def stacked_area(d):
         win.anchor(-1, 0)
         win.scale([(a, [0.0, 1.0], 'Linear'), (b, [1.0, 1.0], SMOOTH)])        # one window per layer, all on one timing
         pts = [(X(i), Y(top[i])) for i in range(len(MONTHS))] + [(X(i), Y(base[i])) for i in reversed(range(len(MONTHS)))]
-        ar = k.path(f"Layer {name}", pts, f0=0, dur=n, closed=True)
+        ar = k.poly(f"Layer {name}", pts, f0=0, dur=n)
         ar.fill(col)
-        MASKS.append(("DV Stacked area", f"Layer {name}", f"Window {j + 1}"))
+        k.mask(ar, win)
         tops.append(top); base = top
     # the highlight layer's top edge draws with the reveal
-    ln = k.line("Web edge", [(X(i), Y(tops[2][i])) for i in range(len(MONTHS))], lin('9ADCF8'), px=4, f0=0, dur=n)
+    ln = k.line("Web edge", [(X(i), Y(tops[2][i])) for i in range(len(MONTHS))], css('9ADCF8'), px=4, f0=0, dur=n)
     ln.trim([(a, 0.0, 'Linear'), (b, 1.0, SMOOTH)])
     prev = [0.0] * len(MONTHS)
     for j, (name, vals, col) in enumerate(LAYERS):
@@ -264,7 +259,7 @@ def tile_map(d):
             t.scale([(f, 0.6, 'Linear'), (f + 10, 1.0, EXPO)]); fade(t, f, 4)
             g = 34 + c * 2 + r                                  # then the values fill in, west to east
             fillkey(t, [(g, COL['track'], 'Linear'), (g + 8, SEQ[b], 'Ease out')])
-            lab = k.text(f"State {st}", st, x, y, 28, COL['ink'], f0=f, dur=n - f, style='SemiBold', align='center')
+            lab = k.text(f"State {st}", st, x, y, 28, COL['ink'], f0=f, dur=n - f, style='SemiBold', align='center', width=64)
             fade(lab, f + 2, 4)
             if b >= 3:                                          # dark ink on the two brightest bins
                 textkey(lab, [(g, COL['ink'], 'Linear'), (g + 8, COL['bg'], 'Ease out')])
@@ -356,12 +351,10 @@ def heatmap(d):
                 style='SemiBold', align='right'), f + 14)
 
 
-def build(path, m=None):
-    d = Doc(path); d.d.setdefault("bins", []); d.d.setdefault("media", [])
-    PRESETS.clear(); MASKS.clear()
+def build(path=None, m=None):
+    d = KDoc()
     funnel(d); bubble(d); race(d); stacked_area(d); tile_map(d); icon_array(d); heatmap(d)
-    d.save()
-    return PRESETS, MASKS
+    return d
 
 
 if __name__ == "__main__":

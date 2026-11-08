@@ -1,6 +1,9 @@
 # Mixtape tracklist
 
-**Template** `rt_mixtape` (Library name "Mixtape tracklist") · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT Mixtape` in `categories/retro/rt-lab-3`.
+**Template** `rt_mixtape` (Library name "Mixtape tracklist") · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT Mixtape` in `categories/retro/rt-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.48 % (limit 2 %) and every object is present with the same text (box offset at most 1.9 px); colours are now the exact hex the page states (mean shift 12.6 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "mixtape", "playlist reveal", "tracklist for the episode", "side A". A brown cassette (cream label with three stripes, SUMMER MIX '86, a tape window with two reels, four screws) slides in from the left on twos, and its reels keep turning; SIDE A, a rule and five numbered tracks with their times rise on twos. 150 f, overlay. Song names and times are invented stand-ins.
 

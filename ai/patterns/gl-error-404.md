@@ -1,6 +1,6 @@
 # Error 404 page
 
-**Template** `gl_error_404` (Library name "Error 404 page") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Error 404` in `categories/glitch/gl-lab-3`.
+**Template** `gl_error_404` (Library name "Error 404 page") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Error 404` in `categories/glitch/gl-lab-3`.
 
 For briefs like "404 page animation", "broken link", "page not found for a site demo". A white 404 at 380 px that jolts in with a red/cyan split and background-coloured tears through the digits, PAGE NOT FOUND (cyan, tracked), a line of copy, a GO HOME pill button, and a cursor that glides to it and clicks. 120 f.
 

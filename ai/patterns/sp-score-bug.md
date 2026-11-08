@@ -1,6 +1,6 @@
 # Score bug
 
-**Template** `sp_score_bug` · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Score bug` in `categories/sports/sp-lab`.
+**Template** `sp_score_bug` · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Score bug` in `categories/sports/sp-lab`.
 
 A 64 px tall bug at the top left (x 96, y 64): LIV (red box), the score (dark box), MCI (blue box), and the clock "67:12" (grey box). The labels are ExtraBold 30–34 px.
 

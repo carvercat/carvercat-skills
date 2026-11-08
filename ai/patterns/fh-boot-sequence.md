@@ -1,6 +1,6 @@
 # Boot sequence
 
-**Template** `fh_boot_sequence` (Library name "Boot sequence") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Boot sequence` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_boot_sequence` (Library name "Boot sequence") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Boot sequence` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "the product powers on", "game intro", "initialising", "app launch" in a tech style. Six log lines type on, each answered by a green [ OK ] at the end of a dotted leader, a progress bar steps with every OK, then the core mark draws on and SYSTEM ONLINE flickers in. 150 f.
 

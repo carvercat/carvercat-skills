@@ -1,6 +1,6 @@
 # Partner logo wall
 
-**Template** `cb_partner_wall` (Library name "Partner logo wall") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Partner wall` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_partner_wall` (Library name "Partner logo wall") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Partner wall` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "trusted by", "our clients", "partners and sponsors". Twelve white tiles in a 4 × 3 grid sweep in from the top left, each with a stand-in wordmark, under a heading and over an "and 400 more" line. The light background is part of the template. 120 f, holds.
 

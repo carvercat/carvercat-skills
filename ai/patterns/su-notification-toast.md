@@ -1,6 +1,6 @@
 # Notification toast
 
-**Template** `su_notification_toast` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Notification toast`.
+**Template** `su_notification_toast` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Notification toast`.
 
 A 580×124 px white card with a 22 px radius and a soft shadow drops in at the top centre (y 136), with an accent icon disc, a title and a body line. It holds, then everything leaves upward together.
 

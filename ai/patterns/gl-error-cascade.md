@@ -1,6 +1,6 @@
 # Error cascade
 
-**Template** `gl_error_cascade` · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Error cascade` in `categories/glitch/gl-lab-2`.
+**Template** `gl_error_cascade` · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Error cascade` in `categories/glitch/gl-lab-2`.
 
 Four 720 × 300 px grey error windows with blue title bars, each 50 px down-right of the last, popping in 8 f apart. The top window has "FATAL ERROR", the message and an OK button. 120 f, holds.
 

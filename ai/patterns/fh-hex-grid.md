@@ -1,6 +1,6 @@
 # Hex grid
 
-**Template** `fh_hex_grid` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Hex grid` in `categories/futuristic-hud/fh-lab-2`.
+**Template** `fh_hex_grid` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Hex grid` in `categories/futuristic-hud/fh-lab-2`.
 
 A background of 84 outlined hexagons (140 px, 2 px dim-cyan stroke) that switch on in a ring spreading from the centre, with a glowing cyan core hex. 120 f.
 

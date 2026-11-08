@@ -1,6 +1,6 @@
 # Radar sweep
 
-**Template** `fh_radar` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Radar`.
+**Template** `fh_radar` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Radar`.
 
 A 600 px radar: three grid rings and two axes in `#0F2A36`, a cyan pie-slice sweep at 28% opacity, a glowing beam line, and three amber blips.
 

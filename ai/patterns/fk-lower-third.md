@@ -1,6 +1,6 @@
 # Funky lower third
 
-**Template** `fk_lower_third` (Library name "Funky lower third") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Lower third` in `categories/funky/fk-lab-2`.
+**Template** `fk_lower_third` (Library name "Funky lower third") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Lower third` in `categories/funky/fk-lab-2`.
 
 A purple 660 × 120 px block tilted −4° with the name in yellow (ExtraBold 72 px), and a teal tag tilted +3° ("LIVE TONIGHT", 32 px). 150 f (5 s) with its own exit.
 

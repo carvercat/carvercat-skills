@@ -1,6 +1,6 @@
 # CTA end card
 
-**Template** `su_cta_end_card` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU CTA end card` in `categories/saas-launch/saas-ui-lab-2`.
+**Template** `su_cta_end_card` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU CTA end card` in `categories/saas-launch/saas-ui-lab-2`.
 
 The closing card: logo mark, wordmark, tagline, a call-to-action button and a URL, stacked at the centre. 120 f (4 s), holds to the end.
 

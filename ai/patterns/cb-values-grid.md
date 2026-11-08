@@ -1,6 +1,6 @@
 # Values grid
 
-**Template** `cb_values_grid` (Library name "Values grid") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Values grid` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_values_grid` (Library name "Values grid") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Values grid` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "our company values", "what we stand for", "four principles". Four white cards on the light background in a 2 × 2 grid, each with a short teal rule, a number, the value and one line. The light background is part of the template. 150 f, holds.
 

@@ -1,6 +1,6 @@
 # FAQ card
 
-**Template** `ex_faq_card` (Library name "FAQ card") · Explainer pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `EX FAQ card` in `categories/explainer/ex-lab-3`.
+**Template** `ex_faq_card` (Library name "FAQ card") · Explainer pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `EX FAQ card` in `categories/explainer/ex-lab-3`.
 
 For briefs like "common questions", support and help videos, product Q and A. Three question rows; one opens like an accordion and shows its answer while the rows below make room. The quiz asks and reveals one answer; this lists several questions. Light background included. 165 f.
 
@@ -13,7 +13,7 @@ For briefs like "common questions", support and help videos, product Q and A. Th
 | Rows 2–3 with their badge, question, chevron | 44 | slide down 210 px (expo, 14 f) | settle **f53** |
 | Answer text (36 px, two lines) | 52 | Step in | settles **f61** |
 
-Lint (with `contrast:true`) 0 errors, 0 warnings, 20 notes (10 `repeated_key_value`, 10 `speed_jump`; the rows' holds and slides). `inspect qc` (240 px): no flashes, a freeze after f61 (the answer is read). Placed into a fresh comp: lint 0/0/0. Text-gap audit: 52 pairs, closest 60.1 px (Q letter / question). Text bounds: questions end at x 912 of the 1200 px row (right edge 1560), the answer sits inside its panel. Full-frame looks of the placed comp at f50 (panel half open) and f164: nothing cut.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 20 notes. `inspect qc` (240 px): no flashes, a freeze after f61 (the answer is read). Placed into a fresh comp: lint 0/0/0. Text-gap audit: 52 pairs, closest 60.1 px (Q letter / question). Text bounds: questions end at x 912 of the 1200 px row (right edge 1560), the answer sits inside its panel. Full-frame looks of the placed comp at f50 (panel half open) and f164: nothing cut.
 
 ## Steps
 1. Edit the questions and the answer in `faq()`; the answer panel is 210 px tall (two lines of 36 px).

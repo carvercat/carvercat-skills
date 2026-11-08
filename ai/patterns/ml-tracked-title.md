@@ -1,6 +1,6 @@
 # Tracked title
 
-**Template** `ml_tracked_title` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Tracked title` in `categories/minimal-luxury/ml-lab`.
+**Template** `ml_tracked_title` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Tracked title` in `categories/minimal-luxury/ml-lab`.
 
 "MAISON ELAN" in Rethink Sans Regular 72 px caps, ivory, centred. Under it, a 240 px gold rule and the tagline "PARIS · SINCE 1924" (28 px, muted, tracking 1.5).
 

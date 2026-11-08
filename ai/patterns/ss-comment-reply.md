@@ -1,6 +1,9 @@
 # Comment reply (9:16)
 
-**Template** `ss_comment_reply` (Library name "Comment reply (9:16)") · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Comment reply` in `categories/social-media-reels/ss-lab-3`.
+**Template** `ss_comment_reply` (Library name "Comment reply (9:16)") · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Comment reply` in `categories/social-media-reels/ss-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.10 % (limit 2 %) and every object is present with the same text (box offset at most 1.9 px); colours are now the exact hex the page states (mean shift 7.5 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "answer a viewer's question", "reply to a comment with a video", "FAQ from the comments". A white reply sticker (780 × 220 px) with an avatar, "Reply to @name's comment" and the comment, a small tail, and a low caption that starts the answer. 120 f, holds.
 

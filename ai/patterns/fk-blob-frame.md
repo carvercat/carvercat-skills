@@ -1,6 +1,6 @@
 # Blob photo frame
 
-**Template** `fk_blob_frame` (Library name "Blob photo frame") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Blob frame` in `categories/funky/fk-lab-3`.
+**Template** `fk_blob_frame` (Library name "Blob photo frame") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Blob frame` in `categories/funky/fk-lab-3`.
 
 For briefs like "meet the team", "guest intro", "profile photo in a fun shape". A photo inside a blob-shaped mask window (7 smooth nodes, about 600 px), a purple blob offset 30 px behind it, an ink outline blob turning the other way, a MEET MIRA sticker and the role. 120 f, holds. The photo is a gradient stand-in; the name is invented.
 

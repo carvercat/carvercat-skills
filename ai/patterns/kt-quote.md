@@ -1,6 +1,6 @@
 # Kinetic quote
 
-**Template** `kt_quote` (Library name "Kinetic quote"; the bundled essentials already have a "Quote card") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Quote` in `categories/kinetic-typography/kt-lab-2`.
+**Template** `kt_quote` (Library name "Kinetic quote"; the bundled essentials already have a "Quote card") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.01 % of pixels over 7 frames; object-level check pass)**, comp `KT Quote` in `categories/kinetic-typography/kt-lab-2`.
 
 A large accent quotation mark, a two-line quote (ExtraBold 84 px, line spacing 1.1) and an attribution, left-aligned at x 400. 150 f (5 s), holds.
 
@@ -10,7 +10,7 @@ A large accent quotation mark, a two-line quote (ExtraBold 84 px, line spacing 1
 | Quote (9 words) | 8 | Words rise - expo (3 f per word) | first word settles **f19**; the last lands about f48 |
 | Attribution ("Head of video, Northwind", Medium 38 px, muted) | 46 | Lines slide in - left | settles **f62** |
 
-Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0. The quote is fully readable from about f48, which leaves 100 f (3.3 s) of hold; at the usual 3–4 words a second that suits quotes of up to about 12 words.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 1 warnings, 0 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). Placed into a fresh comp: lint 0/0/0. The quote is fully readable from about f48, which leaves 100 f (3.3 s) of hold; at the usual 3–4 words a second that suits quotes of up to about 12 words.
 
 ## Steps
 1. Place and apply. Edit the quote (a line break is a newline in the text) and the attribution.

@@ -1,6 +1,6 @@
 # Mission briefing
 
-**Template** `fh_mission_briefing` (Library name "Mission briefing") · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Mission briefing` in `categories/futuristic-hud/fh-lab-3`.
+**Template** `fh_mission_briefing` (Library name "Mission briefing") · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Mission briefing` in `categories/futuristic-hud/fh-lab-3`.
 
 For briefs like "game mission intro", "campaign briefing", "heist or agenda card" in a sci-fi style. A panel scans open inside corner brackets; the mission number and operation name come on, a grid map draws, a dashed route runs to a target that pings, three objectives type on with check boxes, and the deploy time flickers in. 180 f.
 

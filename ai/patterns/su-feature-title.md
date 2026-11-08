@@ -1,6 +1,6 @@
 # Feature title
 
-**Template** `su_feature_title` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Feature title` in `categories/saas-launch/saas-ui-lab-2`.
+**Template** `su_feature_title` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Feature title` in `categories/saas-launch/saas-ui-lab-2`.
 
 A centred feature announcement: an accent "NEW" eyebrow tag, a headline, a subline and a gradient underline. 90 f, holds (add an exit on the instance).
 

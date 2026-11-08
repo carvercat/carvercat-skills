@@ -1,6 +1,6 @@
 # Terminal type-on
 
-**Template** `gl_terminal` (Library name "Terminal type-on") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Terminal` in `categories/glitch/gl-lab-2`.
+**Template** `gl_terminal` (Library name "Terminal type-on") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Terminal` in `categories/glitch/gl-lab-2`.
 
 Four console lines (green SemiBold 44 px, the last in white) that type on at one character a frame, then a blinking block cursor after the last line. 150 f.
 

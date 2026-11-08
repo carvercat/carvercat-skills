@@ -1,6 +1,6 @@
 # Property feature
 
-**Template** `ml_property_feature` (Library name "Property feature") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Property feature` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_property_feature` (Library name "Property feature") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Property feature` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "hotel suite", "villa for sale", "the residence". A photo window opens from the left on a slowly pushing photo (a gradient stand-in here), and the name of the place, a gold rule and three details settle on the right. 180 f, holds.
 

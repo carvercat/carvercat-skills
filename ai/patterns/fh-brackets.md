@@ -1,6 +1,6 @@
 # Corner brackets scan
 
-**Template** `fh_brackets` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Brackets`.
+**Template** `fh_brackets` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Brackets`.
 
 Four 60 px L-shaped corner brackets (5 px cyan, glow) frame a 640 × 380 area centred in the frame. A glowing scan line sweeps through it, and a "SCAN 01" tag sits above the top-left corner.
 

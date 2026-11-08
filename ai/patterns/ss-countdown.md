@@ -1,6 +1,9 @@
 # Countdown (9:16)
 
-**Template** `ss_countdown` · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Countdown` in `categories/social-media-reels/ss-lab-2`.
+**Template** `ss_countdown` · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Countdown` in `categories/social-media-reels/ss-lab-2`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 0.0 px); colours are now the exact hex the page states (mean shift 6.5 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 "3", "2", "1" (white, ExtraBold 300 px) and "GO" (yellow, 220 px), one 25 f beat each, each inside a 420 px ring that draws round over its beat. 100 f.
 

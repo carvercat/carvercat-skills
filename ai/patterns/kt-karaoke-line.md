@@ -1,6 +1,6 @@
 # Karaoke line
 
-**Template** `kt_karaoke_line` (Library name "Karaoke line") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Karaoke line` in `categories/kinetic-typography/kt-lab-3`.
+**Template** `kt_karaoke_line` (Library name "Karaoke line") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.11 % of pixels over 7 frames; object-level check pass)**, comp `KT Karaoke line` in `categories/kinetic-typography/kt-lab-3`.
 
 For briefs like "lyric video", "sing-along", "read-along captions for a song". Two lyric lines ("We were running out of time, / but the night was ours.", ExtraBold 88 px, centred, rows 128 px apart) rise in dim and readable ahead of the vocal. Each word then fills yellow on the frame it is sung, with a small 1.08 pop. One text object per word (a text has one fill colour). 150 f, holds.
 
@@ -12,7 +12,7 @@ Frames are comp frames.
 | Word fill | its sung frame (`SUNG`: f14–50, f70–100) | Colour dim → `#FFD23F` in 3 f | settles **3 f** after the sung frame (first f17, last f103) |
 | Word pop | its sung frame | scale 1 → 1.08 (3 f, the decelerating arrival curve cubic-bezier(0.333, 0.667, 0.667, 1)) → 1 (9 f, expo) | 0% overshoot; still **12 f** after the sung frame (first f26, last f112) |
 
-Lint 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (closest 17.0 px, "the" / "night").
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 9 warnings, 0 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (closest 17.0 px, "the" / "night").
 
 ## Steps
 1. Mark each word's sung frame from the vocal (`ai/scripts/motion/vo_align.py`, then check against the waveform; [lyric videos](../../wiki/genres/lyric-videos.md) puts the word 0–4 f before the syllable).

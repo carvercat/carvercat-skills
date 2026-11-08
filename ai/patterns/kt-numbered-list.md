@@ -1,6 +1,6 @@
 # Numbered list
 
-**Template** `kt_numbered_list` · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Numbered list` in `categories/kinetic-typography/kt-lab-2`.
+**Template** `kt_numbered_list` · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `KT Numbered list` in `categories/kinetic-typography/kt-lab-2`.
 
 A title with an accent rule, then three numbered rows (accent numbers, off-white items, ExtraBold 64 px, 130 px apart), left-aligned at x 360. 120 f, holds.
 
@@ -11,7 +11,7 @@ A title with an accent rule, then three numbered rows (accent numbers, off-white
 | Number 1–3 ("01"–"03") | 16, 28, 40 | Letters zoom in | Number 3 settles **f51** |
 | Item 1–3 | 19, 31, 43 | Words rise - expo | Item 3 settles **f54** |
 
-Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 3 warnings, 0 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). Placed into a fresh comp: lint 0/0/0.
 
 ## Steps
 1. Place and apply. Edit the title and items; keep each item to one line.

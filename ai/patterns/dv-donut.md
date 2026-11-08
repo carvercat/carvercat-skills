@@ -1,6 +1,6 @@
 # Donut - fill
 
-**Template** `dv_donut` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Donut`.
+**Template** `dv_donut` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Donut`.
 
 A 420 px ring with a 56 px stroke. Three segments sweep clockwise from 12 o'clock: 46% cyan, 28% amber, 18% green (92% in total; the last 8% stays track grey). The centre reads "92%" over "of goal".
 

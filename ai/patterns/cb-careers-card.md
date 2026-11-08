@@ -1,6 +1,6 @@
 # Careers card
 
-**Template** `cb_careers_card` (Library name "Careers card") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Careers card` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_careers_card` (Library name "Careers card") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Careers card` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "we're hiring", "join our team", "job opening". A teal bar draws down beside a kicker, the role title, three detail pills (place, contract, team), a two-line pitch and a teal button with the careers URL. 150 f, holds.
 

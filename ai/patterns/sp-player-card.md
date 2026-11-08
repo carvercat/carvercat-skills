@@ -1,6 +1,6 @@
 # Player card
 
-**Template** `sp_player_card` · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Player card`.
+**Template** `sp_player_card` · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Player card`.
 
 A slanted 1320 × 560 px panel (a closed 4-point path, 120 px slant), a 40 px red stripe, the shirt number "10" (360 px, outline only, yellow), "ALEX MORGAN" (ExtraBold 88 px) and "FORWARD · #10" (38 px, tracked, yellow).
 

@@ -1,6 +1,6 @@
 # Save the date
 
-**Template** `ml_invitation` (Library name "Save the date") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Invitation` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_invitation` (Library name "Save the date") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Invitation` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "wedding save-the-date", "gala invitation", "you are invited". A double gold frame draws itself, then SAVE THE DATE, the names, a short rule, the date, the venue and a line about the invitation fade in. 180 f, holds.
 

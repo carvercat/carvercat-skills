@@ -1,6 +1,6 @@
 # Star cover
 
-**Template** `fk_star_cover` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Star cover` in `categories/funky/fk-lab-2`.
+**Template** `fk_star_cover` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Star cover` in `categories/funky/fk-lab-2`.
 
 A transition: an orange 8-point star spins and grows until it covers the frame, then shrinks away. 36 f.
 

@@ -1,6 +1,6 @@
 # Problem and solution
 
-**Template** `ex_problem_solution` (Library name "Problem and solution") · Explainer pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `EX Problem solution` in `categories/explainer/ex-lab-3`.
+**Template** `ex_problem_solution` (Library name "Problem and solution") · Explainer pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `EX Problem solution` in `categories/explainer/ex-lab-3`.
 
 For briefs like "the old way hurts, here is the fix", pitch and pain-point films, before/after stories. A pink PROBLEM half with three crossed items is answered by a green SOLUTION half that wipes in from the centre with three ticked items. Compare columns is a quiet side by side; this is a pitch with a turning point. Light background included (the halves are full-height tints over it). 150 f.
 
@@ -14,7 +14,7 @@ For briefs like "the old way hurts, here is the fix", pitch and pain-point films
 | SOLUTION pill (green) and headline "One click, ready in seconds" | 72 / 78 | Step in | headline settles **f87** |
 | Ticked items 1–3 | 94 / 104 / 114 | tick draws (10 f), text steps in | last settles **f129** |
 
-Lint (with `contrast:true`) 0 errors, 0 warnings, 0 notes. `inspect qc` (240 px): no flashes, a freeze after f129. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 155 pairs, closest 30.0 px (item 3 / its tick). Text bounds: pill tags are 39 and 41 px inside their pills, headlines end at x 589 and x 1709, items at x 650 and x 1533. Full-frame looks of the placed comp at f66 (wipe under way) and f149: nothing cut.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 1 notes. `inspect qc` (240 px): no flashes, a freeze after f129. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 155 pairs, closest 30.0 px (item 3 / its tick). Text bounds: pill tags are 39 and 41 px inside their pills, headlines end at x 589 and x 1709, items at x 650 and x 1533. Full-frame looks of the placed comp at f66 (wipe under way) and f149: nothing cut.
 
 ## Steps
 1. Edit the two headlines and six items in `problem_solution()`; keep headlines under 740 px at 84 px (the script raises if not).

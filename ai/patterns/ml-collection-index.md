@@ -1,6 +1,6 @@
 # Collection index
 
-**Template** `ml_collection_index` (Library name "Collection index") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Collection index` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_collection_index` (Library name "Collection index") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Collection index` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "the looks in this collection", "lookbook contents", "chapters of the film". An INDEX heading with a short rule, five numbered looks (roman numerals) that settle one by one, then the others step back and one look turns gold: the one the next scene is about. 210 f.
 

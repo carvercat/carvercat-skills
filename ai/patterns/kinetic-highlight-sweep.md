@@ -1,12 +1,12 @@
 # Highlight sweep (marker reveal)
 
-**Recipe** · **verified 0.0.72** (`RECIPES`, frames 150–200)
+**Recipe** · **Verified 0.1.8.1 (rev 1127)** (`RECIPES`, frames 150–200)
 
 An accent bar draws across from its left edge, revealing text that is the same colour as the background. You only see the text where the marker is.
 
 1. Text: bold, coloured exactly like the background, on the track ABOVE the bar. Give it `Words rise - expo` from 6 f before the bar.
 2. Bar: rectangle 0.3 W × 0.06 W (stored value), accent colour. **`transformOrigin "0% 50%"` first** (stored anchor `[-1,0]`), then seat it over the text with `layout.*` / `property.set` on `x`, `y`, `width`, `height` (playhead inside the clip). Then `Grow across (X)` (18 f, expo).
-3. The reveal reads complete at about +12 f; hold at least 1 s.
+3. The reveal reads complete at about +5 f (measured: the `RECIPES` picture is steady from f161, the bar's first key being f156; its keys run 18 f); hold at least 1 s.
 
 Variants:
 - **Marker behind one word**: white text, with the bar sized to that word's bounds (`measure.boxes` gives the bounds) and on the track BELOW the text.

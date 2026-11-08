@@ -1,6 +1,6 @@
 # Conversion funnel
 
-**Template** `dv_funnel` (Library name "Conversion funnel") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Funnel` in `categories/data-viz/dv-lab-3`.
+**Template** `dv_funnel` (Library name "Conversion funnel") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Funnel` in `categories/data-viz/dv-lab-3`.
 
 For briefs like "checkout funnel", "sales pipeline", "where do we lose people". Five centred bars whose widths are their values on one scale (48,200 → 2,890 shoppers, sample data), joined by trapezoid connectors, with the count of each step and the share that continues. The step with the biggest drop is amber, and a takeaway line names it. 150 f, holds.
 

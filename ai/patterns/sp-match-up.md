@@ -1,6 +1,6 @@
 # Match up
 
-**Template** `sp_match_up` · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Match up` in `categories/sports/sp-lab-2`.
+**Template** `sp_match_up` · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Match up` in `categories/sports/sp-lab-2`.
 
 Two slanted team panels (red left, blue right, 320 px tall) whip in from the sides with the team names, a yellow VS disc slams between them, and the fixture line sits below. 90 f, holds.
 

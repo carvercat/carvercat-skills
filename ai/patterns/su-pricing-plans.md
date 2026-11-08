@@ -1,6 +1,8 @@
 # Pricing plans
 
-**Template** `su_pricing_plans` (Library name "Pricing plans") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Pricing plans` in `categories/saas-launch/saas-ui-lab-3`.
+**Template** `su_pricing_plans` (Library name "Pricing plans") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Pricing plans` in `categories/saas-launch/saas-ui-lab-3`.
+
+Object check: text under the scaling parent cards reads up to 105 px off in measure.boxes with identical pixels; with the rendered ink boxes (`verify_pack.py --ink-templates`) v1 and v2 differ by at most 2 px. The cards are built 1, 3, 2 so the badge (a child of card 2) is the top layer.
 
 For briefs like "announce new pricing", "launch the Pro plan" or "show the tiers". Three 400×500 px plan cards (radius 28): Starter and Business white, the featured Pro card in the accent colour. Each card holds a plan name (Bold 32), a price (Bold 80) with "/mo", a rule, three ticked features (Medium 24) and a button (label Bold 28). 150 f, holds.
 

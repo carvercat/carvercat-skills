@@ -1,6 +1,6 @@
 # Bar chart race
 
-**Template** `dv_bar_race` (Library name "Bar chart race") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Bar race` in `categories/data-viz/dv-lab-3`.
+**Template** `dv_bar_race` (Library name "Bar chart race") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Bar race` in `categories/data-viz/dv-lab-3`.
 
 For briefs like "how the ranking changed over the years", "leaderboard over time". Five bike-share stations (sample data) on a fixed 0–600 scale re-rank three times, 2022 → 2025; the subject (Riverside) is cyan and climbs from 4th to 1st. A big year label steps with each transition. 220 f, holds 36 f on the final ranking.
 

@@ -1,6 +1,6 @@
 # Chat thread
 
-**Template** `su_chat_thread` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Chat thread` in `categories/saas-launch/saas-ui-lab-2`.
+**Template** `su_chat_thread` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Chat thread` in `categories/saas-launch/saas-ui-lab-2`.
 
 Three message bubbles (560×104 px, radius 40): white on the left, accent on the right, 150 px apart. 120 f, holds.
 

@@ -8,7 +8,7 @@ The pack lives in `library/templates/sports/`. Install it as in [Installing a pa
 - The templates come from `categories/sports/sp-lab`, written by `ai/scripts/motion/sports_lab.py`.
 - The sample reel is `categories/sports/sp-showcase`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
+**Status: Verified 0.1.8.1 (rev 1127).**
 - Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
 - Lint was 0 errors and 0 warnings on every lab comp and the preset bench, and 0/0/0 on the showcase.
 - qc at 240 px found no flashes.
@@ -63,7 +63,7 @@ Round 2 was built and verified the same way on 2026-10-27: every lab comp lints 
 
 ## Round 3: briefs the pack could not serve before
 
-Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("live match graphics, transfer news, a cup run") against what rounds 1 and 2 cover (the score bug and the standings table exist, so the score bug here adds a running clock and the table here shows a movement, not a static list). Built and verified on 0.1.6 (rev 1105) on 2026-10-28. Every move is baked as keys in `sports_lab3.py` (no presets to apply): `slash()` writes the pack's Slash in, `slam()` its Impact slam and `grow_x()` a bar growing from its left edge. Text that must read on the ground uses colours converted with the renderer's BT.709 curve ([KI-141](../references/known-issues.md#ki-141)); white text on the red and blue team panels is 36 px or larger. Teams, players, leagues, venues and scores are invented. Frames are comp frames. Clip-id prefixes: `slc_`, `ssu_`, `ssg_`, `stb_`, `sbr_`, `stm_`, `sfx_`, `smd_`.
+Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("live match graphics, transfer news, a cup run") against what rounds 1 and 2 cover (the score bug and the standings table exist, so the score bug here adds a running clock and the table here shows a movement, not a static list). Built 2026-10-28; Verified 0.1.8.1 (rev 1127), see the 0.1.8.1 block below. Every move is baked as keys in `sports_lab3.py` (no presets to apply): `slash()` writes the pack's Slash in, `slam()` its Impact slam and `grow_x()` a bar growing from its left edge. Text that must read on the ground uses colours converted with the renderer's BT.709 curve ([KI-141](../references/known-issues.md#ki-141)); white text on the red and blue team panels is 36 px or larger. Teams, players, leagues, venues and scores are invented. Frames are comp frames. Clip-id prefixes: `slc_`, `ssu_`, `ssg_`, `stb_`, `sbr_`, `stm_`, `sfx_`, `smd_`.
 
 | Template | Brief it serves | Measured | Overshoot | Lint (lab, contrast:true) | Placed |
 |---|---|---|---|---|---|
@@ -88,7 +88,15 @@ Notes are `repeated_key_value` on holds (the opacity before an exit, the confett
 7. **A 3-gon points right.** Rotate +90 for an up arrow, −90 for down ([KI-150](../references/known-issues.md#ki-150)).
 8. **Text on its own chip is flagged by the text-gap audit** (the VS label, −46 px); that is the label, not a collision.
 
-## Pitfalls (0.1.6)
+## Verified 0.1.8.1 (rev 1127): design-unit generators
+
+All 20 templates were regenerated as carvercat/2 by `sports_lab.py`, `sports_lab2.py` and `sports_lab3.py` (design units: px from the top-left, y down, degrees clockwise, exact hex colours, CSS easing); the sample projects `sp-lab`, `sp-lab-2`, `sp-lab-3` and `sp-showcase` by the same modules. The presets are baked as keys (Slash in, Impact slam, Zoom past, Exit fade - fast); `.carverpreset` files are unchanged and load in the app.
+- Measured with `ai/scripts/motion/verify_pack.py sports`: every template placed in a fresh 16:9 and 9:16 comp lints 0 / 0 / 0; compared with its v1 original at 7 frames (320 x 180, 960 x 540 for text templates) the worst silhouette difference is 1.36 % (replay stinger; limit 2 %); the object-level check (missing, empty, moved, text) passes for all 20 (Fixture list with `verify_pack.py --ink-templates`: its chip colour is the exact hex now, which fools the single-frame ink mask; geometry is equal).
+- Colours are the exact hex of the style notes (the old kit's linear conversion made them darker): the colour shift to v1 is 5 to 18 on a 0 to 255 scale and is intended.
+- Window and cover timings (verify_pack definitions): Slash wipe covered f8-19, settled f29; Replay stinger nothing on screen from f41; Player lower third gone f149; Substitution card gone f148. The per-part "settles" and overshoot figures in the pages are the authored key frames and curves (Impact slam 220 % to 92 % at f5, back to 100 % by f8; Slash in over 10 f); they were not re-measured one by one.
+- What changed: rotations are degrees clockwise (the stripes, slashes and arrow signs flip against the old stored values); outlined texts get their outline after the scene is applied; the score bug's two masks are made with mask.make (the scene-mask pass matted both numbers through the first window, so "3 - 1" never showed).
+
+## Pitfalls
 
 1. **Rolling one number into another through a window:** the outgoing text must be gone before the incoming one starts. Otherwise lint flags `text_overlap` (34% here), because it does not see the mask. Old exits f52–58, new enters f58–68.
 2. **Outlined numbers:** set `text.fill` Paint to none and give `text.outline` Paint solid with a thickness (0.025 here).

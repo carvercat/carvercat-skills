@@ -1,6 +1,6 @@
 # Team row
 
-**Template** `cb_team_row` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Team row` in `categories/corporate-brand/cb-lab-2`.
+**Template** `cb_team_row` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Team row` in `categories/corporate-brand/cb-lab-2`.
 
 Three 220 px portrait circles (grey stand-ins) with names and roles below, on a light background (kept). 120 f, holds.
 

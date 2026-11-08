@@ -1,6 +1,6 @@
 # Brand panel wipe
 
-**Template** `cb_panel_wipe` (Library name "Brand panel wipe") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Panel wipe` in `categories/corporate-brand/cb-lab-2`.
+**Template** `cb_panel_wipe` (Library name "Brand panel wipe") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Panel wipe` in `categories/corporate-brand/cb-lab-2`.
 
 A two-colour transition: a navy panel and a teal panel cross the frame left to right. Navy is the back panel; it enters first and leaves last, so it shows as a band at both edges of the move. 40 f.
 
@@ -9,7 +9,7 @@ A two-colour transition: a navy panel and a teal panel cross the frame left to r
 | Panel navy (1000 px drawn, scale X 1.94) | f0–39 | −1 W → 0, f0–16; hold; 0 → +1 W, f23–39 (stored values); S curve cubic-bezier(0.333, 0, 0.667, 1) | settles **f37** (end of the exit) |
 | Panel teal (on top) | f3–36 | −1 W → 0, f3–19; hold; 0 → +1 W, f20–36 | settles **f34** |
 
-Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0. No overshoot anywhere (the pack's style rule). The frame is fully covered from f16 to f23; cut between the two scenes at f20.
+Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0. No overshoot anywhere (the pack's style rule). Measured with verify_pack (covered = the frame reads the same over a magenta and a green underlay): covered f15-24, settled f38. Cut between the two scenes at f20, the middle of the hold.
 
 ## Steps
 1. Place the instance 20 f before your cut, on a track above both scenes.

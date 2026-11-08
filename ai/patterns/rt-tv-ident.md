@@ -1,6 +1,9 @@
 # 70s TV ident
 
-**Template** `rt_tv_ident` (Library name "70s TV ident") · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT TV ident` in `categories/retro/rt-lab-3`.
+**Template** `rt_tv_ident` (Library name "70s TV ident") · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT TV ident` in `categories/retro/rt-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 0.1 px); colours are now the exact hex the page states (mean shift 13.3 of 255, intended); windows over a magenta/green underlay: covered f0-149 (cut f0). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "70s channel ident", "station logo bumper", "now in colour". Four concentric rings in red, orange, mustard and teal draw on twos from 12 o'clock, a cream 7 pops in the middle, CHANNEL SEVEN and NOW IN COLOUR rise, and a small dot keeps circling the rings. 150 f, holds. Full-frame brown ground included. The channel is invented.
 

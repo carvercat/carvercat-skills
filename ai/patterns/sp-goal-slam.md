@@ -1,6 +1,6 @@
 # GOAL slam
 
-**Template** `sp_goal_slam` · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Goal slam`.
+**Template** `sp_goal_slam` · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Goal slam`.
 
 Ten white and yellow speed lines radiating from the centre (8 px, kept inside the frame), a red slanted band (closed path), and "GOAL!" (ExtraBold 260 px, yellow, dark outline outside the glyphs).
 

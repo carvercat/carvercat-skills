@@ -1,6 +1,6 @@
 # KPI tile
 
-**Template** `su_kpi_tile` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU KPI tile`.
+**Template** `su_kpi_tile` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU KPI tile`.
 
 A 440×240 px dashboard card: label, big value, a green delta and a progress bar that draws to 72%.
 

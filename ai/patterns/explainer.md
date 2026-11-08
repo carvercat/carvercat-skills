@@ -9,9 +9,9 @@ The pack lives in `library/templates/explainer/`. Install it as in [Installing a
 - The sample film is `categories/explainer/ex-showcase`.
 - Layout rules: [../references/craft/composition-and-layout.md](../references/craft/composition-and-layout.md).
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
+**Status: verified 0.1.8.1 (rev 1127; headless, isolated folders, `ai/scripts/motion/verify_pack.py`).** Every template was placed in a fresh 16:9 and a fresh 9:16 comp (lint 0/0/0, qc no flash), compared with its v1 original at 7 frames (silhouette at most 2 %, object-level check: every object present with its text, ink and box), and the lab projects were rebuilt as carvercat/2 by `explainer_lab*.py`. The lab comps themselves lint 0 errors on 0.1.8.1; the warnings that remain (`text_overlap` between neighbouring text boxes at single frames while parts move) are listed on each template page.
 - Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
-- Lint was 0 errors and 0 warnings on every lab comp, and 0/0/0 on the showcase.
+- Lab comp lint on 0.1.8.1: 0 errors on every comp, 0 warnings except Word definition (2); the showcase master lints 0/0/0.
 - Each template was placed into a fresh comp: lint 0/0/0 for all four.
 - I checked every template name across all packs against the essentials pack. "Callout" collided, so this pack's version is **Pointer callout**.
 
@@ -56,7 +56,7 @@ Round 2 was built and verified the same way on 2026-10-27: every lab comp lints 
 
 ## Round 3: briefs the pack could not serve before
 
-Chosen from [reading a brief](../references/craft/reading-a-brief.md) and the wiki's [explainers](../../wiki/genres/explainers.md), [infographics](../../wiki/genres/infographics.md) and [UI and UX demos](../../wiki/genres/ui-ux-demos.md) pages, against what rounds 1 and 2 already cover (a straight three-box flow, old-vs-new columns, a single key term, a quiz, a timeline) and the cookbook's [animated arrow](../../wiki/cookbook/animated-arrow.md), [bullet list](../../wiki/cookbook/bullet-list.md) and [before and after slider](../../wiki/cookbook/before-after-slider.md). Built and verified on 0.1.6 (rev 1105) on 2026-10-28. Every move is baked as keys in `explainer_lab3.py` (no presets to apply): `step_in()` writes the pack's Step in, `pulse()` its Emphasis pulse. Every text passes lint `contrast:true` at 4.5:1: round 3 uses deeper accents (blue #2B58D6, coral #B93222, green #17794A, muted #565C70, all at 5.1:1 or better on the ground), converted with the renderer's BT.709 curve. Names, numbers and claims are sample copy; the phone is a shape stand-in. Frames are comp frames. Clip-id prefixes: `ece_`, `epc_`, `eld_`, `eis_`, `efq_`, `ewd_`, `etp_`, `epb_`. Every template carries its own "Light background".
+Chosen from [reading a brief](../references/craft/reading-a-brief.md) and the wiki's [explainers](../../wiki/genres/explainers.md), [infographics](../../wiki/genres/infographics.md) and [UI and UX demos](../../wiki/genres/ui-ux-demos.md) pages, against what rounds 1 and 2 already cover (a straight three-box flow, old-vs-new columns, a single key term, a quiz, a timeline) and the cookbook's [animated arrow](../../wiki/cookbook/animated-arrow.md), [bullet list](../../wiki/cookbook/bullet-list.md) and [before and after slider](../../wiki/cookbook/before-after-slider.md). Built on 0.1.6 (rev 1105) on 2026-10-28; re-verified on 0.1.8.1 (rev 1127) on 2026-11-07. Every move is baked as keys in `explainer_lab3.py` (no presets to apply): `step_in()` writes the pack's Step in, `pulse()` its Emphasis pulse. Every text passes lint `contrast:true` at 4.5:1: round 3 uses deeper accents (blue #2B58D6, coral #B93222, green #17794A, muted #565C70, all at 5.1:1 or better on the ground), converted with the renderer's BT.709 curve. Names, numbers and claims are sample copy; the phone is a shape stand-in. Frames are comp frames. Clip-id prefixes: `ece_`, `epc_`, `eld_`, `eis_`, `efq_`, `ewd_`, `etp_`, `epb_`. Every template carries its own "Light background".
 
 | Template | Brief it serves | Measured | Overshoot | Lint (lab, contrast:true) | Placed |
 |---|---|---|---|---|---|
@@ -88,9 +88,9 @@ Notes are `repeated_key_value` on holds and `speed_jump` where a card slides or 
 
 ## Round-2 sample film
 
-`categories/explainer/ex-showcase-2` is a 1200 f (40 s) master at 1920 × 1080 that plays the round-2 templates back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py explainer`). Verified 0.1.6 (rev 1105), 2026-10-28: master lint 0 / 0 / 0. Qc (240 px) notes the reading holds after each build as freezes.
+`categories/explainer/ex-showcase-2` is a 1200 f (40 s) master at 1920 × 1080 that plays the round-2 templates back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/regen_showcase2.py explainer`, which runs `recipes/showcase2.py`). Verified 0.1.8.1 (rev 1127), 2026-11-07: master lint 0 / 0 / 0, written as carvercat/2. Qc (240 px) notes the reading holds after each build as freezes.
 
-## Pitfalls and facts (0.1.6)
+## Pitfalls and facts (found on 0.1.6, still true on 0.1.8.1)
 
 1. **A 3-gon at rotation 0 points right** (measured). An arrow head for a line at math angle θ (counter-clockwise, y up) takes the stored rotation θ; in design units (clockwise, y down) that is `rotate` −θ.
 2. **Leave the last item time to be read.** The timeline's last milestone landed at f110 of 120 and lint flagged `reading_time` (7 f readable). The comp now runs to 150 f.

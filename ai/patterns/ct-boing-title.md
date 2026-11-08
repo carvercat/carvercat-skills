@@ -1,6 +1,6 @@
 # Boing title
 
-**Template** `ct_boing_title` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Boing title`.
+**Template** `ct_boing_title` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Boing title`.
 
 A 760 px, 12-point red starburst (inner radius 0.72) behind "BOING!" (ExtraBold 220 px, yellow, dark outline at thickness 0.08, outside only, round corners).
 

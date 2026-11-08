@@ -1,6 +1,6 @@
 # Bouncy list
 
-**Template** `ct_bouncy_list` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Bouncy list` in `categories/cartoon-bounce/ct-lab-2`.
+**Template** `ct_bouncy_list` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Bouncy list` in `categories/cartoon-bounce/ct-lab-2`.
 
 Three 760 × 150 px rounded cards (red, blue, green, ink outlines) 200 px apart, each with an outlined white label (ExtraBold 72 px). 120 f, holds.
 

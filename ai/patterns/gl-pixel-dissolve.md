@@ -1,6 +1,6 @@
 # Pixel dissolve
 
-**Template** `gl_pixel_dissolve` · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Pixel dissolve` in `categories/glitch/gl-lab-2`.
+**Template** `gl_pixel_dissolve` · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Pixel dissolve` in `categories/glitch/gl-lab-2`.
 
 A transition: 84 blocks (12 × 7, 160 × 154 px, a dark checker) switch on in a random order, cover the frame, then switch off in the same order. 40 f.
 

@@ -1,6 +1,6 @@
 # Cartoon end card
 
-**Template** `ct_end_card` (Library name "Cartoon end card") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT End card` in `categories/cartoon-bounce/ct-lab-2`.
+**Template** `ct_end_card` (Library name "Cartoon end card") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT End card` in `categories/cartoon-bounce/ct-lab-2`.
 
 A blue logo blob, "SEE YOU SOON!" (yellow ExtraBold 120 px, ink outline) bouncing in letter by letter, and a red "WATCH NEXT" button. 120 f, holds.
 

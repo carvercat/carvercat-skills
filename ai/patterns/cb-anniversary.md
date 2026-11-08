@@ -1,6 +1,6 @@
 # Anniversary card
 
-**Template** `cb_anniversary` (Library name "Anniversary card") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Anniversary` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_anniversary` (Library name "Anniversary card") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Anniversary` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "25 years of the company", "milestone anniversary", "celebrating our founding". A teal ring draws round a large number, then the line "years of Northwind", a from–to span with a drawn rule, and a thank-you line. 120 f, holds.
 

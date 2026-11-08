@@ -1,6 +1,9 @@
 # Under construction page
 
-**Template** `rt_under_construction` (Library name "Under construction page") · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT Under construction` in `categories/retro/rt-lab-3`.
+**Template** `rt_under_construction` (Library name "Under construction page") · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT Under construction` in `categories/retro/rt-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 4.2 px); colours are now the exact hex the page states (mean shift 10.1 of 255, intended); windows over a magenta/green underlay: covered f0-149 (cut f0). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "90s website", "under construction", "coming soon, the old-web way", "throwback homepage". A grey page with a navy-to-blue title bar, two yellow-and-black hazard bands scrolling opposite ways, UNDER CONSTRUCTION with a white offset shadow, a subline, a hit counter that ticks up, a "best viewed at 800 x 600" footer and a red NEW! burst that pops, turns and blinks. 150 f. Full-frame page included.
 

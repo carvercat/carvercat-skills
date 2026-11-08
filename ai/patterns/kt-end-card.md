@@ -1,6 +1,6 @@
 # Follow end card
 
-**Template** `kt_end_card` (Library name "Follow end card") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT End card` in `categories/kinetic-typography/kt-lab-2`.
+**Template** `kt_end_card` (Library name "Follow end card") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.03 % of pixels over 7 frames; object-level check pass)**, comp `KT End card` in `categories/kinetic-typography/kt-lab-2`.
 
 A call to action ("FOLLOW FOR MORE", ExtraBold 150 px) and a handle on an accent bar. 120 f (4 s), holds.
 
@@ -10,7 +10,7 @@ A call to action ("FOLLOW FOR MORE", ExtraBold 150 px) and a handle on an accent
 | Handle bar (640×92 px, `#FF4D2E`) | 18 | scale X 0 → 1 from its centre, f18–30, Custom expo | settles **f26** |
 | Handle ("@northwind.studio", ExtraBold 52 px) | 24 | Letters shimmer in | opaque by **f34** |
 
-Lint 0 errors, 0 warnings. Placed into a fresh comp: lint 0/0/0.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0.
 
 ## Steps
 1. Place and apply on the last 4 s. Edit the call and the handle; widen the bar for long handles.

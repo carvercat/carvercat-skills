@@ -1,6 +1,6 @@
 # Manifesto scroll
 
-**Template** `kt_manifesto_scroll` (Library name "Manifesto scroll") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Manifesto scroll` in `categories/kinetic-typography/kt-lab-3`.
+**Template** `kt_manifesto_scroll` (Library name "Manifesto scroll") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.01 % of pixels over 7 frames; object-level check pass)**, comp `KT Manifesto scroll` in `categories/kinetic-typography/kt-lab-3`.
 
 For briefs like "brand manifesto", "mission statement", "our values": more copy than a quote, one line at a time. Four left-aligned lines (ExtraBold 84 px, x 260; the last in accent) arrive one after another at the same row (y 700). Each new line pushes the stack up one row (128 px) and the previous line steps back to 30% opacity. At f170 every line comes back to full for the final read. 240 f (8 s), holds.
 
@@ -13,7 +13,7 @@ Frames are comp frames.
 | Previous line dims | 40 f after its start | opacity 1 → 0.3, 8 f | |
 | Final read | f170 | opacity 0.3 → 1, 10 f | all full by **f179**; 60 f hold |
 
-Lint 0 errors, 0 warnings (15 notes: held key values and the instant start of each expo push, both intended). Placed into a fresh comp: lint 0/0/0, and full-frame looks of the instance at f96 and f239 show nothing cut. Text-gap audit: no tight pairs (48.2 px between rows).
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 3 warnings, 15 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). Placed into a fresh comp: lint 0/0/0, and full-frame looks of the instance at f96 and f239 show nothing cut. Text-gap audit: no tight pairs (48.2 px between rows).
 
 ## Steps
 1. Edit `MANIFESTO` in `ai/scripts/motion/kinetic_type_lab3.py` and rebuild; the pushes and dims are generated per line.

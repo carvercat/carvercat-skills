@@ -1,6 +1,6 @@
 # Ribbon lower third
 
-**Template** `ct_ribbon_lower_third` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Ribbon lower third` in `categories/cartoon-bounce/ct-lab-2`.
+**Template** `ct_ribbon_lower_third` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Ribbon lower third` in `categories/cartoon-bounce/ct-lab-2`.
 
 A 640 × 130 px yellow ribbon with an ink outline at bottom left, a name (ExtraBold 60 px) on it and a role (Bold 36 px) under it. 150 f (5 s) with its own exit.
 

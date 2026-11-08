@@ -1,6 +1,6 @@
 # Memphis shapes
 
-**Template** `fk_memphis_shapes` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Memphis shapes` in `categories/funky/fk-lab`.
+**Template** `fk_memphis_shapes` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Memphis shapes` in `categories/funky/fk-lab`.
 
 Six flat shapes scattered around the frame: a purple triangle, an orange disc, a teal zigzag (18 px stroke), a pink dot, an ink ring (14 px stroke) and a yellow star.
 

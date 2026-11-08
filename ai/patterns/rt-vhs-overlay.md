@@ -1,6 +1,9 @@
 # VHS overlay
 
-**Template** `rt_vhs_overlay` · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT VHS overlay` in `categories/retro/rt-lab-2`.
+**Template** `rt_vhs_overlay` · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT VHS overlay` in `categories/retro/rt-lab-2`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.21 % (limit 2 %) and every object is present with the same text (box offset at most 2.6 px); colours are now the exact hex the page states (mean shift 11.9 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 A camcorder playback overlay for footage: "PLAY" with a right-pointing triangle (top left), a red REC dot and label (top right), tape time "SP 0:04:27" and a date (bottom). White Bold 52–64 px. 120 f; stretch the clips for longer shots.
 

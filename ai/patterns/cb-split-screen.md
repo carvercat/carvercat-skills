@@ -1,6 +1,6 @@
 # Split screen
 
-**Template** `cb_split_screen` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Split screen` in `categories/corporate-brand/cb-lab-2`.
+**Template** `cb_split_screen` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Split screen` in `categories/corporate-brand/cb-lab-2`.
 
 The left half is a picture area (a navy stand-in, 960×1080 px, with Photo push - 5 s); the right half is light (kept) with a teal edge strip, a kicker, a two-line heading and a body line. 150 f, holds.
 

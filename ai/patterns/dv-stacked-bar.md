@@ -1,6 +1,6 @@
 # Stacked bar
 
-**Template** `dv_stacked_bar` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Stacked bar` in `categories/data-viz/dv-lab-2`.
+**Template** `dv_stacked_bar` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Stacked bar` in `categories/data-viz/dv-lab-2`.
 
 One 1200×72 px bar split into four shares (cyan 40%, amber 25%, green 20%, pink 15%), a title and a legend. 90 f, holds.
 

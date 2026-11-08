@@ -3,7 +3,8 @@
     CARVERCAT_RESOURCE_ROOT=<the app resource folder> python3 wiki/tools/verify_keyed_pages.py \
         --exe /path/to/carvercat-host [--scripts ai/scripts] [--only donut-clockwise]
 
-Needs the design-units Python toolkit (`ai/scripts/cc_client.py` with `Client.stdio(..., resource_root=)`, `cc_scene.py`). Each case starts a fresh headless host with fresh
+Needs the design-units Python toolkit (`ai/scripts/cc_client.py` with `Client.stdio(..., resource_root=)`, `cc_scene.py`),
+which is on skills-e61-ai and on main once that branch is merged. Each case starts a fresh headless host with fresh
 preferences, data and cache folders (never an open app), builds the example a page describes and reads the result back
 (values at frames, or rendered pixels). Exit status 0 = every case held. The cases are named for the pages they check.
 """

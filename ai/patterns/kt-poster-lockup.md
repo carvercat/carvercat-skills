@@ -1,6 +1,6 @@
 # Poster lockup
 
-**Template** `kt_poster_lockup` (Library name "Poster lockup") · Kinetic Typography pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `KT Poster lockup` in `categories/kinetic-typography/kt-lab-3`.
+**Template** `kt_poster_lockup` (Library name "Poster lockup") · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `KT Poster lockup` in `categories/kinetic-typography/kt-lab-3`.
 
 For briefs like "event announcement", "festival poster", "a title card with a date and a place, no images". Four lines ("NEW TYPE / FESTIVAL / LISBON / MAY 12–14", ExtraBold) are each sized so their ink is exactly 1000 px wide: a justified block, with 34 px between cap boxes. They slide in from alternate sides. 120 f, holds.
 
@@ -10,7 +10,7 @@ Frames are comp frames.
 |---|---|---|---|
 | Line 1–4 (off-white, off-white, accent, `#FFD23F`) | 0, 5, 10, 15 | from 240 px left / right / left / right, 18 f (expo), fade 5 f | settle **f12, f17, f22, f27**; 0% overshoot |
 
-Sizes from measured ink (100 px measure texts, scaled): 217, 242, 301 and 200 px. Lint 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (34.0 px, the designed gap).
+Sizes from measured ink (100 px measure texts, scaled): 217, 242, 301 and 200 px. Lab comp lint on 0.1.8.1 (native size): 0 errors, 3 warnings, 0 notes (`text_overlap` between neighbouring text boxes at single frames while the parts move; the v1 lab linted 0 warnings on the same build, not yet traced). Placed into a fresh comp: lint 0/0/0. Text-gap audit: no tight pairs (34.0 px, the designed gap).
 
 ## Steps
 1. Edit `LOCKUP` in `ai/scripts/motion/kinetic_type_lab3.py` and rebuild. Pass 1 measures each line at 100 px with `carvercat_authoring mode:geometry`; pass 2 sizes it to `LOCKUP_W` and stacks the cap boxes `LOCKUP_GAP` apart around the frame centre.

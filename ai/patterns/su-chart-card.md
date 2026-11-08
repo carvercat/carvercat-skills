@@ -1,6 +1,6 @@
 # Chart card
 
-**Template** `su_chart_card` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Chart card` in `categories/saas-launch/saas-ui-lab-2`.
+**Template** `su_chart_card` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Chart card` in `categories/saas-launch/saas-ui-lab-2`.
 
 A 640×400 px dashboard card with a title, seven bars (the last one in the accent colour) and a green delta. 90 f, holds.
 

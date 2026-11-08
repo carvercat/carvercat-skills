@@ -1,6 +1,6 @@
 # New drop reveal
 
-**Template** `fk_new_drop` (Library name "New drop reveal") · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK New drop` in `categories/funky/fk-lab-3`.
+**Template** `fk_new_drop` (Library name "New drop reveal") · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK New drop` in `categories/funky/fk-lab-3`.
 
 For briefs like "new drop", "merch release", "collection 03 drops Friday". NEW and DROP slam in with hard ink shadows, a product panel stand-in slides in with a wiggle and then a purple slab steps out behind it, a black tape with the drop time grows across, and three sparks spin in. 120 f, holds.
 

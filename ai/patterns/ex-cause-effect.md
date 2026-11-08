@@ -1,6 +1,6 @@
 # Cause and effect
 
-**Template** `ex_cause_effect` (Library name "Cause and effect") · Explainer pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `EX Cause effect` in `categories/explainer/ex-lab-3`.
+**Template** `ex_cause_effect` (Library name "Cause and effect") · Explainer pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `EX Cause effect` in `categories/explainer/ex-lab-3`.
 
 For briefs like "why prices rise", "how one event leads to another", "what happens next". Unlike the flow diagram (a straight line of three boxes) this chain **branches**: one cause card, two effect cards and one result, joined by drawn elbow arrows. Light background included. 150 f.
 
@@ -14,7 +14,7 @@ For briefs like "why prices rise", "how one event leads to another", "what happe
 | Result card, "Sales fall" (60 px), note (32 px) | 68 / 72 / 80 | Step in | card settles **f77**, text **f81** |
 | Emphasis on the outcome | 96 | scale 1 → 1.05 → 1 on card, text and note, once | back to 100% at **f112** |
 
-Heads pop 9.8% (a keyed back ease); every move is baked as keys, there are no presets to apply. Lint (with `contrast:true`) 0 errors, 0 warnings, 0 notes. Nominal text contrast: ink 14.6:1, muted 6.2:1, accents on the ground 5.1–5.7:1. Placed into a fresh comp: lint 0/0/0 (also with `contrast:true`). Text-gap audit: 52 pairs, closest 41.8 px (Result text / note). Text bounds against each card (`carvercat_authoring geometry`): at least 97 px of side margin. Full-frame looks of the placed comp at f62 (links drawing), f100 (pulse) and f149: nothing cut.
+Heads pop 9.8% (a keyed back ease); every move is baked as keys, there are no presets to apply. Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 0 notes. Nominal text contrast: ink 14.6:1, muted 6.2:1, accents on the ground 5.1–5.7:1. Placed into a fresh comp: lint 0/0/0 (also with `contrast:true`). Text-gap audit: 52 pairs, closest 41.8 px (Result text / note). Text bounds against each card (`carvercat_authoring geometry`): at least 97 px of side margin. Full-frame looks of the placed comp at f62 (links drawing), f100 (pulse) and f149: nothing cut.
 
 ## Steps
 1. Edit the card texts in `cause_effect()`; keep each line under 360 px at its size (the script raises if it does not fit).

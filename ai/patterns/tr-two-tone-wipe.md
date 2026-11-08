@@ -1,10 +1,14 @@
 # Two-tone wipe (transition)
 
-**Template:** `Two-tone wipe` (mp_tr_two_tone_wipe) · **verified 0.0.72** · 48 f at 30 fps
+**Template:** `Two-tone wipe` (mp_tr_two_tone_wipe) · **Verified 0.1.8.1 (rev 1127)** · 48 f at 30 fps
 
 Two full-frame bars sweep left to right: an accent bar leads and a brand-colour bar follows on top. The cut from Scene A to Scene B happens while the frame is fully covered.
 
+
+**Measured** on `MP TR Two-Tone Wipe` (one definition for every number below: the lab comp rendered at 320x180, `starts` = first frame that differs from frame 0 by at least 0.5 (mean channel value, 0-255), `steady` = the frames whose picture matches the settled one within 0.5; harness `ai/scripts/motion/verify_pack.py`): first change f14, the wipe bars cover the whole frame (no scene colour left) from f22 to f28, so the cut at f24 is under cover; the picture is steady from f40; the template's last visible frame is f45 (harness `gone` = 46). Lint 0/0/0; shape difference against v1 0.00 %.
+
 ## Timing chart (comp frames)
+
 
 ```
 Scene A          |=======================|                      0-23

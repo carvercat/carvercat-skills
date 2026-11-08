@@ -8,10 +8,11 @@ The pack lives in `library/templates/corporate-brand/`. Install it as in [Instal
 - The templates come from `categories/corporate-brand/cb-lab` (written by `ai/scripts/motion/corporate_brand_lab.py`) and, for round 2, `categories/corporate-brand/cb-lab-2` (written by `ai/scripts/motion/corporate_brand_lab2.py`), and for round 3, `categories/corporate-brand/cb-lab-3` (written by `ai/scripts/motion/corporate_brand_lab3.py`).
 - The sample film is `categories/corporate-brand/cb-showcase`, written by `ai/scripts/motion/corporate_brand_showcase.py`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
-- Public release binary, headless, isolated preferences, data and cache folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
-- Curves, look and lint were checked for every item: 0 errors and 0 warnings on every lab comp, the preset bench and the showcase master.
-- Each template was placed into a fresh comp: lint 0/0/0 for all four.
+**Status: Verified 0.1.8.1 (rev 1127).**
+- Headless `carvercat-host` built from Carvercat 0.1.8.1 (rev 1127), fresh preferences, data and cache folders; the pack was installed into a scratch user Library. Measured with `ai/scripts/motion/verify_pack.py corporate-brand` (full table below).
+- Every template placed into a fresh 16:9 and a fresh 9:16 comp: lint 0 errors / 0 warnings / 0 notes, no flashes (qc), for all 20 templates.
+- Shape against the v1 original (7 frames; limit 2 %): all 20 pass, worst 0.03 % (Safety notice). The object-level check (missing, empty, moved, text objects) passes for all 20. No `--ink-templates` was needed.
+- The showcase-2 master lints 0 / 0 / 0 (rebuilt by `ai/scripts/motion/recipes/showcase2.py corporate-brand`). The per-part "settles" figures in the pages are the authored key frames and curves; they were not re-measured one by one.
 
 **Fonts:** the templates use Rethink Sans, which must be installed on the machine. It is a free Google Font (SIL OFL), and the file is in `ai/scripts/motion/json_author/RethinkSans.ttf`. Without it, text falls back to Arial ([KI-136](../references/known-issues.md#ki-136)). Check with `carvercat_authoring mode:validate` `font_exact`.
 
@@ -63,7 +64,7 @@ Round 2 (8 templates) was built and verified the same way on 2026-10-27: every l
 
 ## Round 3: briefs the pack could not serve before
 
-Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("company film, annual report, event opener") and the wiki's [broadcast packages](../../wiki/genres/broadcast-packages.md), [event openers](../../wiki/genres/event-openers.md), [infographics](../../wiki/genres/infographics.md) and [logo animation](../../wiki/genres/logo-animation.md) pages: the cards an internal-comms or employer-brand film needs that rounds 1 and 2 did not have. Built and verified on 0.1.6 (rev 1105) on 2026-10-28. Every move is baked as keys in `corporate_brand_lab3.py`: `soft_rise()` and `card_settle()` write the keys of the Soft rise and Card settle presets, so there is nothing to apply. Every easing lands with **0% overshoot** (the pack's rule). Names, places, logos and the company are invented stand-ins. Frames below are comp frames. Clip-id prefixes: `cog_`, `cvg_`, `can_`, `cof_`, `caw_`, `cpl_`, `chr_`, `csn_`.
+Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("company film, annual report, event opener") and the wiki's [broadcast packages](../../wiki/genres/broadcast-packages.md), [event openers](../../wiki/genres/event-openers.md), [infographics](../../wiki/genres/infographics.md) and [logo animation](../../wiki/genres/logo-animation.md) pages: the cards an internal-comms or employer-brand film needs that rounds 1 and 2 did not have. Built 2026-10-28; Verified 0.1.8.1 (rev 1127), see the 0.1.8.1 block below. Every move is baked as keys in `corporate_brand_lab3.py`: `soft_rise()` and `card_settle()` write the keys of the Soft rise and Card settle presets, so there is nothing to apply. Every easing lands with **0% overshoot** (the pack's rule). Names, places, logos and the company are invented stand-ins. Frames below are comp frames. Clip-id prefixes: `cog_`, `cvg_`, `can_`, `cof_`, `caw_`, `cpl_`, `chr_`, `csn_`.
 
 | Template | Brief it serves | Measured | Lint (lab) | Placed |
 |---|---|---|---|---|
@@ -98,9 +99,40 @@ Lint: 0/0/0. QC still notes "freeze" over the title-card and stats holds, becaus
 
 ## Round-2 sample film
 
-`categories/corporate-brand/cb-showcase-2` is a 900 f (30 s) master at 1920 × 1080 that plays every round-2 template back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py corporate-brand`). Verified 0.1.6 (rev 1105), 2026-10-28, after the text-gap audit: master lint 0 / 0 / 0. `qc` (240 px) notes the long holds as freezes (fine for a hold).
+`categories/corporate-brand/cb-showcase-2` is a 900 f (30 s) master at 1920 × 1080 that plays every round-2 template back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py corporate-brand`). Verified 0.1.8.1 (rev 1127): master lint 0 / 0 / 0. `qc` (240 px) notes the long holds as freezes (fine for a hold).
 
-## Pitfalls (0.1.6)
+## Verified 0.1.8.1 (rev 1127): design-unit generators
+
+All 20 templates were regenerated as carvercat/2 by the pack's lab modules (design units: px from the top-left, y down, degrees clockwise, exact hex colours, CSS easing); the lab, showcase, showcase-2 and recipe sample projects by the same modules. The `.carverpreset` files are unchanged and load in the app.
+- Harness (`verify_pack.py`, 7 frames per template; 320 x 180, 960 x 540 for templates with text; shape limit 2 %). `covered` / `cut` / `settled` / `gone` use the harness definition (covered = the frame reads the same over a magenta and a green underlay; settled = first frame from which the picture no longer changes; gone = last visible frame + 1); None means the template never covers the frame or never goes blank.
+
+| Template | lint 16:9 e/w/n | lint 9:16 e/w/n | v1 vs v2 | worst shape | colour shift | object check | box offset max px | worst ink IoU | covered | cut | settled | gone |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Agenda | 0/0/0 | 0/0/0 | pass | 0.01 % | 4.6 | pass | 0.1 | 0.94 | None | None | None | None |
+| Anniversary card | 0/0/0 | 0/0/0 | pass | 0.01 % | 2.5 | pass | 0.4 | 0.96 | None | None | None | None |
+| Award badge | 0/0/0 | 0/0/0 | pass | 0.01 % | 13.2 | pass | 0.4 | 0.73 | None | None | None | None |
+| Brand end card | 0/0/0 | 0/0/0 | pass | 0.00 % | 1.4 | pass | 0.1 | 0.92 | [0, 119] | 0 | None | None |
+| Brand panel wipe | 0/0/0 | 0/0/0 | pass | 0.00 % | 11.3 | pass | 0.0 |  | [15, 24] | 15 | 38 | None |
+| Brand quote | 0/0/0 | 0/0/0 | pass | 0.02 % | 1.4 | pass | 0.1 | 0.97 | None | None | None | 149 |
+| Careers card | 0/0/0 | 0/0/0 | pass | 0.01 % | 10.8 | pass | 0.4 | 0.9 | None | None | None | None |
+| Chapter title | 0/0/0 | 0/0/0 | pass | 0.01 % | 3.6 | pass | 0.1 | 0.96 | None | None | None | None |
+| Leader callout | 0/0/0 | 0/0/0 | pass | 0.01 % | 2.0 | pass | 0.1 | 0.95 | None | None | None | 119 |
+| Logo resolve - frame | 0/0/0 | 0/0/0 | pass | 0.00 % | 3.5 | pass | 0.1 | 0.97 | None | None | None | None |
+| Lower third - two boxes | 0/0/0 | 0/0/0 | pass | 0.00 % | 2.4 | pass | 0.0 | 0.98 | None | None | None | 149 |
+| Office location card | 0/0/0 | 0/0/0 | pass | 0.00 % | 2.4 | pass | 0.4 | 0.91 | [0, 149] | 0 | None | None |
+| Org chart | 0/0/0 | 0/0/0 | pass | 0.02 % | 13.2 | pass | 0.4 | 0.9 | None | None | None | None |
+| Partner logo wall | 0/0/0 | 0/0/0 | pass | 0.00 % | 1.3 | pass | 0.4 | 0.94 | [0, 119] | 0 | None | None |
+| Safety notice | 0/0/0 | 0/0/0 | pass | 0.03 % | 3.4 | pass | 0.4 | 0.96 | None | None | None | None |
+| Split screen | 0/0/0 | 0/0/0 | pass | 0.00 % | 8.1 | pass | 0.1 | 0.87 | [0, 149] | 0 | None | None |
+| Team row | 0/0/0 | 0/0/0 | pass | 0.00 % | 1.6 | pass | 0.1 | 0.79 | [0, 119] | 0 | None | None |
+| Three stats | 0/0/0 | 0/0/0 | pass | 0.00 % | 1.4 | pass | 0.1 | 0.88 | [0, 89] | 0 | None | None |
+| Title card - split rule | 0/0/0 | 0/0/0 | pass | 0.00 % | 2.9 | pass | 0.0 | 0.97 | None | None | None | None |
+| Values grid | 0/0/0 | 0/0/0 | pass | 0.00 % | 1.3 | pass | 0.4 | 0.75 | [0, 149] | 0 | None | None |
+
+- Colours are the exact hex of the style notes (the old kit linearised them): the colour shift to v1 is reported, not judged, and is intended.
+- What changed: corner radii keep the old cap of a quarter of the short side; "Ease out" is the old curve (1/3, 2/3, 2/3, 1); text boxes are centred on y with the tracking and line height written explicitly; a path's position keys are its bounding box; the scene mask windows are un-parented (parent.clear). Brand panel wipe: covered f15-24, settled f38 (harness definition). Lower third, Brand quote: gone f149; Leader callout: gone f119.
+
+## Pitfalls
 
 1. **Reveal from behind a rule:** the title must start fully hidden. Its travel must be at least its own width (480 px for "Annual Report" at 64 px), or it is visible on frame 0.
 2. **Text inside a growing box:** give the text's mask window the same scale keys as the box (anchor [−1, 0]). A static, full-size window shows the text before the box has grown under it.

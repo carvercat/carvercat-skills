@@ -1,6 +1,6 @@
 # Squash logo reveal
 
-**Template** `ct_logo_reveal` (Library name "Squash logo reveal") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Logo reveal` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_logo_reveal` (Library name "Squash logo reveal") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Logo reveal` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "a playful logo sting", "toy brand", "kids' channel ident". A ball bounces in from the right on real parabolas, squashing on every contact, lands as the logo mark, and the word springs up out of the baseline on the last impact. 120 f.
 

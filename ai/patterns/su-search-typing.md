@@ -1,6 +1,6 @@
 # Search typing
 
-**Recipe** · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Search typing`; generator `typing()` in `ai/scripts/motion/saas_ui_lab.py`.
+**Recipe** · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Search typing`; generator `typing()` in `ai/scripts/motion/saas_ui_lab.py`.
 
 A 680×84 px search bar. The placeholder "Search customers" shows for 1 s, then "acme corp" types itself one character every 2 f, with a caret that follows and then blinks.
 

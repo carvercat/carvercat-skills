@@ -1,6 +1,6 @@
 # Calendar heatmap
 
-**Template** `dv_heatmap` (Library name "Calendar heatmap") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Heatmap` in `categories/data-viz/dv-lab-3`.
+**Template** `dv_heatmap` (Library name "Calendar heatmap") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Heatmap` in `categories/data-viz/dv-lab-3`.
 
 For briefs like "a year of activity", "habit / streak", "daily usage". 140 day squares (20 weeks × 7 days, 44 px, Monday on top) in five levels of active minutes (sample data, made by a seeded generator with a week off and a training block), a Less → More legend, and the best week outlined with its total. 150 f, holds.
 

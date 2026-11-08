@@ -1,6 +1,6 @@
 # Stacked area chart
 
-**Template** `dv_stacked_area` (Library name "Stacked area chart") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Stacked area` in `categories/data-viz/dv-lab-3`.
+**Template** `dv_stacked_area` (Library name "Stacked area chart") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Stacked area` in `categories/data-viz/dv-lab-3`.
 
 For briefs like "how the mix changed", "users by platform over the year", "share and total together". Three stacked layers over 12 months (Android, iOS and Web, millions, sample data); Web is the subject (cyan, top), the others are slate. Labelled inline at the right end instead of a legend, with a callout where Web passes iOS. 150 f, holds.
 

@@ -1,6 +1,6 @@
 # Ranked bars
 
-**Template** `dv_ranked_bars` · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Ranked bars`.
+**Template** `dv_ranked_bars` · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Ranked bars`.
 
 Five rows, 120 px apart: Design 92, Engineering 78, Marketing 64, Sales 51, Support 37. Labels are right-aligned at x 520, bars start at x 560 (56 px tall, 8 px radius, 1000 px = 100), and values sit 20 px past the bar ends. The top row is cyan with an ink label; the others are slate with muted labels.
 

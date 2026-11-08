@@ -1,6 +1,6 @@
 # Cursor click
 
-**Template** `su_cursor_click` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Cursor click` in `categories/saas-launch/saas-ui-lab`.
+**Template** `su_cursor_click` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Cursor click` in `categories/saas-launch/saas-ui-lab`.
 
 A white pointer glides in from the lower right, presses, and a ring opens under its tip. Use it for "click here" moments in product demos.
 

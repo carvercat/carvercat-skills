@@ -1,6 +1,9 @@
 # Highlight caption (9:16)
 
-**Template** `ss_highlight_caption` · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Highlight caption` in `categories/social-media-reels/ss-lab-2`.
+**Template** `ss_highlight_caption` · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Highlight caption` in `categories/social-media-reels/ss-lab-2`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.10 % (limit 2 %) and every object is present with the same text (box offset at most 3.3 px); colours are now the exact hex the page states (mean shift 58.6 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 A one-line caption (ExtraBold 72 px, white with the pack's black outline) centred at x 490, y 1250, with a pink box behind the key word. Three text objects, positioned with `cc.textw`. 90 f, holds.
 

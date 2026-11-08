@@ -1,6 +1,6 @@
 # Attribute row
 
-**Template** `ml_attribute_row` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Attribute row` in `categories/minimal-luxury/ml-lab-2`.
+**Template** `ml_attribute_row` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Attribute row` in `categories/minimal-luxury/ml-lab-2`.
 
 Three tracked attributes ("HANDMADE", "FLORENCE", "18K GOLD", Regular 28 px, tracking 1.6) 520 px apart on one line (centres at x 440, 960, 1480), with 8 px gold dots midway between them. 150 f, holds.
 

@@ -1,6 +1,9 @@
 # Polaroid memory
 
-**Template** `rt_polaroid` (Library name "Polaroid memory") · Retro pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `RT Polaroid` in `categories/retro/rt-lab-3`.
+**Template** `rt_polaroid` (Library name "Polaroid memory") · Retro pack · **verified 0.1.8.1 (rev 1127)**, comp `RT Polaroid` in `categories/retro/rt-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.44 % (limit 2 %) and every object is present with the same text (box offset at most 3.5 px); colours are now the exact hex the page states (mean shift 6.9 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "throwback photo", "family memory", "on this day", "our story began in 1979". An instant photo (white frame with a soft shadow, a square picture, "Summer '79" written on the strip, a strip of tape) drops in from above, tilting, as one piece on twos; the picture develops from dark; a heading, a line and a rule come in on the right. 150 f, overlay. The picture is a gradient stand-in (sky at the top, warm at the bottom); replace it with a photo.
 

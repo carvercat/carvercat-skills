@@ -1,6 +1,6 @@
 # Icon steps
 
-**Template** `ex_icon_steps` (Library name "Icon steps") · Explainer pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `EX Icon steps` in `categories/explainer/ex-lab-3`.
+**Template** `ex_icon_steps` (Library name "Icon steps") · Explainer pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `EX Icon steps` in `categories/explainer/ex-lab-3`.
 
 For briefs like "how it works in three steps", onboarding, "upload, customise, share". Three cards, each with an icon that draws itself. Process steps uses numbered circles and no icons; icon grid shows six items at once with no order. Light background included. 150 f.
 
@@ -12,7 +12,7 @@ For briefs like "how it works in three steps", onboarding, "upload, customise, s
 | STEP tag, title (52 px ExtraBold), two-line text (32 px) | card + 14 / 18 / 22 | Step in | title 3 settles **f95** |
 | Arrows between cards | 24 / 58 | Trim end (10 f) and a head | |
 
-Lint (with `contrast:true`) 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 162 pairs, closest 35.0 px (STEP tag / title). Text bounds against the cards: at least 95 px side margin. Full-frame looks of the placed comp at f56 and f149: nothing cut.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 0 notes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 162 pairs, closest 35.0 px (STEP tag / title). Text bounds against the cards: at least 95 px side margin. Full-frame looks of the placed comp at f56 and f149: nothing cut.
 
 ## Steps
 1. Edit titles and texts in `icon_steps()`; swap an icon by replacing its few `mark()` lines (each icon is 3–5 lines and dots in a 176 px tile).

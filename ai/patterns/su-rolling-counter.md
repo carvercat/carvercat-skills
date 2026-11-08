@@ -1,6 +1,6 @@
 # Rolling counter
 
-**Recipe** · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Counter` in `categories/saas-launch/saas-ui-lab`; generator `counter()` in `ai/scripts/motion/saas_ui_lab.py`.
+**Recipe** · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Counter` in `categories/saas-launch/saas-ui-lab`; generator `counter()` in `ai/scripts/motion/saas_ui_lab.py`.
 
 An odometer counter: "$48,200" rolls up from "$00,000", with each digit column spinning into place. `text.content` cannot be keyed ([KI-051](../references/known-issues.md#ki-051)), so each digit is a column text "0⏎1⏎…" that moves behind its own mask window.
 

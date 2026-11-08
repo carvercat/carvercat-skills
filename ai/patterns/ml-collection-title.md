@@ -1,6 +1,6 @@
 # Collection title
 
-**Template** `ml_collection_title` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Collection title` in `categories/minimal-luxury/ml-lab-2`.
+**Template** `ml_collection_title` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Collection title` in `categories/minimal-luxury/ml-lab-2`.
 
 A two-line tracked title ("AUTUMN  WINTER" / "2026", Regular 72 px, tracking 1.6, line spacing 1.35) and a small gold note. 150 f, holds.
 

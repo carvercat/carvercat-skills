@@ -1,6 +1,6 @@
 # Framed word
 
-**Template** `ml_framed_word` · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Framed word` in `categories/minimal-luxury/ml-lab-2`.
+**Template** `ml_framed_word` · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Framed word` in `categories/minimal-luxury/ml-lab-2`.
 
 One tracked word ("ATELIER", 80 px) between two 240 px vertical gold lines that open from their centres and then drift apart slowly. 150 f, holds.
 

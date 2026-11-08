@@ -1,6 +1,6 @@
 # Leader callout
 
-**Template** `cb_leader_callout` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Leader callout` in `categories/corporate-brand/cb-lab-2`.
+**Template** `cb_leader_callout` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Leader callout` in `categories/corporate-brand/cb-lab-2`.
 
 A point marker (teal dot in a white ring) at (760, 640), a leader line that draws up and right, and a title and note. For labelling something in footage. 120 f with its own exit.
 

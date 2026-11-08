@@ -8,10 +8,10 @@ The pack lives in `library/templates/kinetic-typography/`. Install it as in [Ins
 - The templates are extracted with `comp_to_template.py` from `categories/kinetic-typography/kt-lab/project.carverproj` (written by `ai/scripts/motion/kinetic_type_lab.py`) and, for round 2, `categories/kinetic-typography/kt-lab-2/project.carverproj` (written by `ai/scripts/motion/kinetic_type_lab2.py`), and for round 3, `categories/kinetic-typography/kt-lab-3/project.carverproj` (written by `ai/scripts/motion/kinetic_type_lab3.py`).
 - The sample film is `categories/kinetic-typography/kt-showcase`, written by `ai/scripts/motion/kinetic_type_showcase.py`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
+**Status: verified 0.1.8.1 (rev 1127; headless, isolated folders, `ai/scripts/motion/verify_pack.py`).** Every template was placed in a fresh 16:9 and a fresh 9:16 comp (lint 0/0/0, qc no flash), compared with its v1 original at 7 frames (silhouette at most 2 %, object-level check: every object present with its text, ink and box), and the lab projects were rebuilt as carvercat/2 by `kinetic_type_lab*.py`. The lab comps themselves lint 0 errors on 0.1.8.1; the warnings that remain (`text_overlap` between neighbouring text boxes at single frames while parts move) are listed on each template page.
 - The build was the public release binary, run headless (`--mcp`) with isolated preferences, data and cache folders, on 2026-10-27. The program binary is byte-identical to the published release.
 - A packaged build loads Library packs only from its own bundle ([FR-036](../references/known-issues.md#fr-036)). So for the preset and placement tests this pack, and saas-ui, were copied into the `Contents/Resources/library/templates` folder of a scratch copy of the app.
-- Each item was checked with `carvercat_inspect mode:curves` (overshoot, settle), `carvercat_look`, and `carvercat_inspect mode:lint` (0 errors, 0 warnings on every comp and on the showcase master). Each template was also placed into a fresh comp with `library.place` + `template.apply`, and lint was 0/0/0 for all five.
+- Each item was checked with `carvercat_inspect mode:curves` (overshoot, settle), `carvercat_look`, and `carvercat_inspect mode:lint` (0.1.6: 0 errors, 0 warnings on every comp and on the showcase master; on 0.1.8.1 the lab comps lint 0 errors, and some report `text_overlap` warnings, see the template pages; the showcase master lints 0/0/0). Each template was also placed into a fresh comp with `library.place` + `template.apply`, and lint was 0/0/0 for all five.
 - The same numbers were measured earlier on the verification build. They are identical.
 
 **Fonts:** the templates use Rethink Sans, which must be installed on the machine. It is a free Google Font (SIL OFL), and the file is in `ai/scripts/motion/json_author/RethinkSans.ttf`. Without it, text falls back to Arial ([KI-136](../references/known-issues.md#ki-136)). Check with `carvercat_authoring mode:validate` `font_exact`.
@@ -61,7 +61,7 @@ Round 2 (7 templates) was built and verified the same way on 2026-10-27: every l
 
 ## Round 3: briefs the pack could not serve before
 
-Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("manifesto, quote, lyrics, type-only") and the wiki's [lyric videos](../../wiki/genres/lyric-videos.md), [title sequences](../../wiki/genres/title-sequences.md) and [kinetic type](../../wiki/techniques/kinetic-type.md) pages (repetition, masking-style reveals, variation in size). Built and verified on 0.1.6 (rev 1105) on 2026-10-28. Every move is baked as keys in `kinetic_type_lab3.py` (no presets to apply). The pack's expo landings give **0% overshoot** on every part. Frames below are comp frames.
+Chosen from [reading a brief](../references/craft/reading-a-brief.md) ("manifesto, quote, lyrics, type-only") and the wiki's [lyric videos](../../wiki/genres/lyric-videos.md), [title sequences](../../wiki/genres/title-sequences.md) and [kinetic type](../../wiki/techniques/kinetic-type.md) pages (repetition, masking-style reveals, variation in size). Built on 0.1.6 (rev 1105) on 2026-10-28; re-verified on 0.1.8.1 (rev 1127) on 2026-11-07. Every move is baked as keys in `kinetic_type_lab3.py` (no presets to apply). The pack's expo landings give **0% overshoot** on every part. Frames below are comp frames.
 
 | Template | Brief it serves | Measured | Lint (lab) | Placed |
 |---|---|---|---|---|
@@ -81,9 +81,9 @@ Each template was also checked with the text-gap audit (`audit_text_gaps.py`: no
 
 ## Round-2 sample film
 
-`categories/kinetic-typography/kt-showcase-2` is a 810 f (27 s) master at 1920 × 1080 that plays every round-2 template back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py kinetic-typography`). Verified 0.1.6 (rev 1105), 2026-10-28, after the text-gap audit: master lint 0 / 0 / 0. `qc` (240 px) notes the long holds as freezes (fine for a hold).
+`categories/kinetic-typography/kt-showcase-2` is a 810 f (27 s) master at 1920 × 1080 that plays every round-2 template back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/regen_showcase2.py kinetic-typography`, which runs `recipes/showcase2.py`). Verified 0.1.8.1 (rev 1127), 2026-11-07: master lint 0 / 0 / 0, written as carvercat/2. `qc` (240 px) notes the long holds as freezes (fine for a hold).
 
-## Pitfalls found while building this pack (0.1.6)
+## Pitfalls found while building this pack (0.1.6, still true on 0.1.8.1)
 
 1. **scaleY (and scaleX) cannot be staggered.** `preset.apply` refuses a staggered preset with "scaleY could not be staggered". Per-letter flips are therefore not possible. Use size, position, rotation or opacity ([KI-134](../references/known-issues.md#ki-134)).
 2. **Set the window as the mask of the text:** `property.set {id: <text>, key: "mask", value: {"ref": "<window id>"}}`, then `parent.clear {ids:[window, text]}` so that the window stays still while the text moves (the mask must be on another track). The old `mask.make` took the FIRST id as the mask; the other order turned the text into the matte, and the result was drawn in the window's colour.

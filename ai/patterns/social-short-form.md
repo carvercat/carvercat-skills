@@ -9,7 +9,7 @@ The pack lives in `library/templates/social-short-form/`. Install it as in [Inst
 - The sample short is `categories/social-media-reels/ss-showcase`, written by `ai/scripts/motion/social_short_form_showcase.py`.
 - For 16:9 → 9:16 conversion and the safe-area numbers, see [../references/craft/vertical-and-safe-areas.md](../references/craft/vertical-and-safe-areas.md).
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
+**Status: verified 0.1.8.1 (rev 1127).**
 - Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
 - Lint was 0 errors and 0 warnings on every lab comp, and 0/0/0 on the showcase master.
 - `bounds_inside` (a `carvercat_authoring mode:validate` check in the build that measured it) passed for every visible object against the safe box [61, 268, 955, 1270].
@@ -88,9 +88,9 @@ Every object passed `bounds_inside` the safe box [61, 268, 955, 1270] at the end
 
 `categories/social-media-reels/ss-showcase` is a 285 f (9.5 s) vertical master: hook (0–75), caption pages (75–195), follow end card (195–285), with the progress bar nested over the whole length (its comp made 285 f long). Lint 0/0/0. QC: no freezes or flashes.
 
-## Vertical authoring (measured on 0.1.6)
+## Vertical authoring (design units)
 
-- **Direct JSON:** set `cc.W, cc.H = 1080, 1920` and `cc.EM = 1146.24 × 1080 / 1920`, and write scenes with `width`/`height` 1080/1920 (`VComp` in the lab script). Text size scales with comp width: 100 px Bold caps measure 71 px tall, as at 1920 wide. A 200 × 100 box and a 40 px dot landed exactly.
+- **Direct authoring:** the lab modules write 1080 x 1920 comps with `json_author/cc2.py` (`Doc.comp(name, n, code, width=1080, height=1920)`): px from the top-left, y down, degrees clockwise, hex colours, font size in px (it is the true em, so 100 px Bold caps measure 71 px tall, as at 1920 wide). The caption outline has no design key and is set on the model (`text_outline`: black, thickness 0.12, outside) after the scene is applied; a path's x / y keys are its tight box's absolute top-left.
 - **Placing a 9:16 template:** `comp.new`, then `comp.format {width:1080, height:1920}`, then `library.place` + `template.apply`, then `carve.preflight` before a send. It applies "at 1080 x 1920".
 - **Safe area check:** `measure.overlaps {within: "safe"}` or `layout.safe {safe: "title"}` (measured here as `bounds_inside` with box [61,268,955,1270] per object). Captions are centred at x 490 so they end left of x 851 (the button column below y 1151).
 

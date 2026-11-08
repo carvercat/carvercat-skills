@@ -1,6 +1,6 @@
 # Zigzag ribbon
 
-**Template** `fk_zigzag_ribbon` · Funky pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FK Zigzag ribbon`.
+**Template** `fk_zigzag_ribbon` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Zigzag ribbon`.
 
 A 44 px pink zigzag (9 segments, ±120 px) across the full width at y 540.
 

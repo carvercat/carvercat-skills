@@ -5,10 +5,10 @@
 The pack lives in `library/templates/retro/`. Install it as in [Installing a pack](README.md#installing-a-pack).
 
 - The presets are built by `ai/scripts/motion/build_retro_pack.py`. Its `twos()` helper samples a curve on even frames and holds between them.
-- The templates come from `categories/retro/rt-lab`, written by `ai/scripts/motion/retro_lab.py` (with its own `twos()` for keys in JSON); round 2 from `categories/retro/rt-lab-2` (`retro_lab2.py`); round 3 from `categories/retro/rt-lab-3` (`retro_lab3.py`).
+- The templates come from `categories/retro/rt-lab`, written by `ai/scripts/motion/retro_lab.py` (design units through `json_author/cc2.py`: px, y down, degrees clockwise, hex colours; its `twos()` keys a move on every other frame); round 2 from `categories/retro/rt-lab-2` (`retro_lab2.py`); round 3 from `categories/retro/rt-lab-3` (`retro_lab3.py`).
 - The sample reel is `categories/retro/rt-showcase`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).** Round 3 too (2026-10-28).
+**Status: verified 0.1.8.1 (rev 1127).** Round 3 too (2026-10-28).
 - Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
 - Lint was 0 errors and 0 warnings on every lab comp and the preset bench, and 0/0/0 on the showcase.
 - `inspect qc` at 240 px found no flashes in any lab comp.
@@ -91,13 +91,13 @@ The lab notes are `speed_jump` on the stepped moves (the point of on twos, as in
 
 `categories/retro/rt-showcase-2` is a 744 f (25 s) master at 1920 × 1080 that plays the round-2 templates back to back with Venetian blinds on one cut, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py retro`). Verified 0.1.6 (rev 1105), 2026-10-28: master lint 0 / 0 / 0. Qc (240 px) notes five holds as freezes and no flashes.
 
-## Pitfalls (0.1.6)
+## Pitfalls
 
 1. **Overlay comps nested in a master must not carry their lab background.** The first showcase build nested the checker comp with its full-frame cream "Lab bg" and hid the synthwave scene under it. Strip the background, or use the template, which drops it.
 2. **A nested clip longer than its comp:** lint did not flag a 86 f instance of a 75 f comp. Keep each instance no longer than its comp.
 3. **Perspective grid lines that leave the frame** count as `cropped_at_rest`. End them at the frame edge (the lab computes the intersection).
 4. **Horizontal lines "running toward the viewer"** are separate clips that each make one accelerating run (accelerating arrival `cubic-bezier(0.333, 0, 0.667, 0.333)`), started every 20 f. Each run must finish inside the comp (lint: `key_outside_clip`).
-5. **A static gradient on text renders** (measured 0.1.6): `text_fill.paint = gradient` with a gradient object makes chrome or sunset type; only its endpoints cannot be animated (KI-009 c). The endpoints are object-local with y down, `[0.5, 0]` at the top: the first release of the sun and the chrome had them y up and rendered upside down (fixed 2026-10-28, [KI-155](../references/known-issues.md#ki-155)).
+5. **A static gradient on text renders** (measured 0.1.6, still true on 0.1.8.1: the generator sets it on the model after the scene is applied, since a text gradient has no design key): `text_fill.paint = gradient` with a gradient object makes chrome or sunset type; only its endpoints cannot be animated (KI-009 c). The endpoints are object-local with y down, `[0.5, 0]` at the top: the first release of the sun and the chrome had them y up and rendered upside down (fixed 2026-10-28, [KI-155](../references/known-issues.md#ki-155)).
 6. **Every key must sit inside its clip.** A staggered exit that ran past the comp end was a lint error (`key_outside_clip`); lengthen the comp or start the exits earlier.
 
 Inspiration: 70s graphic design and 80s synthwave conventions, and limited-animation "on twos" timing. No external text or code was used.

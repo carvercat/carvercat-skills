@@ -1,6 +1,6 @@
 # Lesson title card
 
-**Template** `ct_lesson_title` (Library name "Lesson title card") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Lesson title` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_lesson_title` (Library name "Lesson title card") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Lesson title` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "kids' lesson 3", "episode title", "today we learn...". A blue card drops and lands on its bottom edge, a LESSON badge jellies in, the title's letters drop and bounce, a star pops and the subtitle rises. 150 f.
 

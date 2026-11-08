@@ -1,6 +1,6 @@
 # Stutter words
 
-**Template** `gl_stutter_words` · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Stutter words` in `categories/glitch/gl-lab-2`.
+**Template** `gl_stutter_words` · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Stutter words` in `categories/glitch/gl-lab-2`.
 
 "NO" / "SIGNAL" (red) / "FOUND", one word every 30 f, centred, ExtraBold 260 px. 100 f.
 

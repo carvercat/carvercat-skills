@@ -1,6 +1,6 @@
 # Corrupted video title
 
-**Template** `gl_video_title` (Library name "Corrupted video title") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Video title` in `categories/glitch/gl-lab-3`.
+**Template** `gl_video_title` (Library name "Corrupted video title") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Video title` in `categories/glitch/gl-lab-3`.
 
 For briefs like "title card for my new video", "episode opener", "creator title with a glitch". An EP. 07 kicker, a two-line ExtraBold 150 px title that jolts in with a red/cyan split under block artefacts, a red underline that steps across and a channel line. 120 f, left-aligned at x 160.
 

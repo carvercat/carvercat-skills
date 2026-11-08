@@ -1,6 +1,6 @@
 # Swinging price tag
 
-**Template** `ct_price_tag` (Library name "Swinging price tag") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Price tag` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_price_tag` (Library name "Swinging price tag") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Price tag` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "price drop", "sale on toys", "bake sale prices". A sale tag drops in from above its nail and swings to rest, the old price is struck through and the new price stamps on with a small kick. 150 f.
 

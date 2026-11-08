@@ -1,6 +1,6 @@
 # Bouncy map pin
 
-**Template** `ct_map_pin` (Library name "Bouncy map pin") · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Map pin` in `categories/cartoon-bounce/ct-lab-3`.
+**Template** `ct_map_pin` (Library name "Bouncy map pin") · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Map pin` in `categories/cartoon-bounce/ct-lab-3`.
 
 For briefs like "find us here", "new store", "where the party is" in a playful film. A map stand-in fades in, a pin drops, squashes on its point, sends a ring and a label card pops out beside it. 120 f.
 

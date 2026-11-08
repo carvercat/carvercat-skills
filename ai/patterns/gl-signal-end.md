@@ -1,6 +1,6 @@
 # Signal lost end card
 
-**Template** `gl_signal_end` (Library name "Signal lost end card") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL End card` in `categories/glitch/gl-lab-3`.
+**Template** `gl_signal_end` (Library name "Signal lost end card") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Signal end` (was `GL End card`; the name now matches the template file) in `categories/glitch/gl-lab-3`.
 
 For briefs like "end screen with subscribe", "outro for a tech channel", "stay tuned card". A green "// SIGNAL LOST — STAY TUNED" kicker, two 760 × 428 video slots (where the platform's end-screen videos go) with labels, the channel handle with a red/cyan split and a red SUBSCRIBE plate; a faint tracking band rolls down once. 150 f, holds (end screens need 5–20 s; extend the clips).
 

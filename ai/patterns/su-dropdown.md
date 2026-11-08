@@ -1,6 +1,6 @@
 # Dropdown menu
 
-**Template** `su_dropdown` (Library name "Dropdown menu") · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Dropdown` in `categories/saas-launch/saas-ui-lab-2`.
+**Template** `su_dropdown` (Library name "Dropdown menu") · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Dropdown` in `categories/saas-launch/saas-ui-lab-2`.
 
 A 360×72 px "Sort by: Newest" button, a menu panel that unfolds below it with four items, and a hover row on item 3. 90 f, holds.
 

@@ -1,6 +1,6 @@
 # Bubble chart
 
-**Template** `dv_bubble_chart` (Library name "Bubble chart") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Bubble chart` in `categories/data-viz/dv-lab-3`.
+**Template** `dv_bubble_chart` (Library name "Bubble chart") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Bubble chart` in `categories/data-viz/dv-lab-3`.
 
 For briefs like "price vs quality", "where do we sit against competitors", "two measures and a size". Ten fictional team-chat apps (sample data): x = price per seat ($0–40), y = satisfaction (60–100), bubble area = paying teams. One bubble ("Cove") is the subject: cyan, ringed and labelled; the rest are slate and step back. 150 f, holds.
 

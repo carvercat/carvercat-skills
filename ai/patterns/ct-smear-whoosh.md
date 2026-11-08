@@ -1,6 +1,6 @@
 # Smear whoosh
 
-**Template** `ct_smear_whoosh` · Cartoon Bounce pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CT Smear whoosh`.
+**Template** `ct_smear_whoosh` · Cartoon Bounce pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `CT Smear whoosh`.
 
 A blue rounded blob (260 × 140, radius 60) shoots in from 1200 px to the left and stops at the centre. Three 440 px speed lines draw behind it and wipe away.
 

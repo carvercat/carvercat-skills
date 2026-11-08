@@ -1,6 +1,6 @@
 # Editorial spread
 
-**Template** `ml_editorial_spread` (Library name "Editorial spread") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Editorial spread` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_editorial_spread` (Library name "Editorial spread") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Editorial spread` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "magazine feature", "lookbook page", "the story behind the collection". A two-page layout: a photo on the left page, revealed by a feathered window that comes down from above while the photo pushes 3%, a gutter line, and on the right page a kicker, a two-line headline, a rule, a standfirst and the page number. 180 f, holds.
 

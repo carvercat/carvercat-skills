@@ -1,6 +1,6 @@
 # RGB split mark
 
-**Template** `gl_rgb_mark` (Library name "RGB split mark") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL RGB mark` in `categories/glitch/gl-lab-2`.
+**Template** `gl_rgb_mark` (Library name "RGB split mark") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL RGB mark` in `categories/glitch/gl-lab-2`.
 
 A white play-shaped mark (420 px triangle) over red and cyan copies (80% opacity) that jump sideways, and a tracked word below. 90 f, holds.
 

@@ -1,6 +1,6 @@
 # Map ping
 
-**Template** `fh_map_ping` · Futuristic HUD pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `FH Map ping` in `categories/futuristic-hud/fh-lab-2`.
+**Template** `fh_map_ping` · Futuristic HUD pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `FH Map ping` in `categories/futuristic-hud/fh-lab-2`.
 
 An amber point at (820, 560) with three cyan rings rippling out, a leader line, coordinates and a place name. 120 f.
 

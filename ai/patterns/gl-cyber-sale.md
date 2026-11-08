@@ -1,6 +1,6 @@
 # Cyber sale
 
-**Template** `gl_cyber_sale` (Library name "Cyber sale") · Glitch pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `GL Cyber sale` in `categories/glitch/gl-lab-3`.
+**Template** `gl_cyber_sale` (Library name "Cyber sale") · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL Cyber sale` in `categories/glitch/gl-lab-3`.
 
 For briefs like "Cyber Monday", "Black Friday glitch ad", "flash sale with a promo code". CYBER MONDAY (cyan, tracked), a white −50% at 330 px that lands with the pack's stretch hit and a red/cyan split, an offer line, a green promo-code plate and a footer. 150 f.
 

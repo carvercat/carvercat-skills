@@ -1,6 +1,6 @@
 # Safety notice
 
-**Template** `cb_safety_notice` (Library name "Safety notice") · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Safety notice` in `categories/corporate-brand/cb-lab-3`.
+**Template** `cb_safety_notice` (Library name "Safety notice") · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Safety notice` in `categories/corporate-brand/cb-lab-3`.
 
 For briefs like "site safety rule", "compliance notice", "new policy from 1 March", for screens in offices, plants and training films. A warning triangle with "!", a kicker, a two-line rule, its scope and the policy reference, over a signal-amber band. Amber is the warning-sign convention; it is the only place the pack leaves its single teal accent. 150 f, holds.
 

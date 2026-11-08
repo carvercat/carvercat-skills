@@ -1,6 +1,6 @@
 # Material swatches
 
-**Template** `ml_swatch_card` (Library name "Material swatches") · Minimal Luxury pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `ML Swatch card` in `categories/minimal-luxury/ml-lab-3`.
+**Template** `ml_swatch_card` (Library name "Material swatches") · Minimal Luxury pack · **Verified 0.1.8.1 (rev 1127)**, comp `ML Swatch card` in `categories/minimal-luxury/ml-lab-3`.
 
 For briefs like "show the materials", "three colourways", "the finishes on offer". Three swatches (320 × 400 px, cognac leather, brushed gold, ivory silk) under a tracked heading, each with a name and a code. Over the hold a soft lighter band crosses each swatch once, like light on a material, and the row keeps drifting up. 180 f, holds.
 

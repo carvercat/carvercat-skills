@@ -849,10 +849,12 @@ def gradient_fill_and_sheen(c):
         raise AssertionError
     except Refused as e:
         assert e.code == "bad-colour"
-    # measured: the highlight is not on the plate at frame 0, crosses it by frame 9, and has left by frame 18
-    at0, at9, at18 = (_pixels(c, f, [(0.5, 0.49)]) for f in (0, 9, 18))
+    # measured: the highlight (the middle of the moving gradient line) is not on the plate centre at frame 0, is on it at frame 15 (the
+    # ease-in-out is symmetric: half-way through the 30 frames) and has left by frame 18. (The check used to sample frame 9, where the
+    # highlight is still off to the left; that was a wrong expectation, not a sheen fault.)
+    at0, at15, at18 = (_pixels(c, f, [(0.5, 0.49)]) for f in (0, 15, 18))
     if at0:
-        assert sum(at0[0]) < 400 and sum(at18[0]) < 400 and sum(at9[0]) > 550, (at0, at9, at18)
+        assert sum(at0[0]) < 400 and sum(at18[0]) < 400 and sum(at15[0]) > 550, (at0, at15, at18)
     look(c, "gradient-sheen", [0, 6, 9, 12, 15, 18, 30])
 
 

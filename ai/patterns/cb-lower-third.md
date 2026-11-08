@@ -1,6 +1,6 @@
 # Lower third - two boxes
 
-**Template** `cb_lower_third` · Corporate Brand pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `CB Lower third`.
+**Template** `cb_lower_third` · Corporate Brand pack · **Verified 0.1.8.1 (rev 1127)**, comp `CB Lower third`.
 
 A white 560 × 76 px name box with a teal 420 × 52 px role box under it, at x 120, y 836. Name: SemiBold 40 px navy. Role: Medium 26 px white.
 

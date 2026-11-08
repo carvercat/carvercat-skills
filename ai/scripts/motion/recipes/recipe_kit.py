@@ -17,7 +17,7 @@ Run headless only, with isolated folders (never --connect):
 The packs the recipes use are in `library/templates/` of the skills repo; `install_packs` copies them into the
 user Library folder (`library.folder`) and runs `library.reload`. Docs: ai/recipes/README.md.
 """
-import os, sys, json, shutil
+import os, sys, json, re, shutil
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", ".."))
 from cc_client import Client
@@ -48,6 +48,19 @@ def install_packs(c, packs=None):
             shutil.copytree(src, os.path.join(dest, name), dirs_exist_ok=True)
     r = c.run("library.reload")
     return r["readings"][0].get("user", {}).get("issues", [])
+
+
+_TEMPLATE_PATH = re.compile(r'"/[^"]*?/(library/templates/[^"]*)"')
+
+
+def scrub_template_paths(path):
+    """A placed template records where the host found it: a scratch folder (the headless host's state, or an app bundle) that exists on one
+    machine on one day. Keep the library-relative part (`library/templates/<pack>/<file>`), so a saved project never embeds a temp path.
+    Returns how many paths were rewritten. Also usable on an old project: `python3 recipe_kit.py scrub FILE ...`."""
+    txt = open(path, encoding='utf-8').read()
+    new, n = _TEMPLATE_PATH.subn(r'"\1"', txt)
+    if n: open(path, 'w', encoding='utf-8').write(new)
+    return n
 
 
 def open_project(c, path):
@@ -131,3 +144,9 @@ def place_all(c, path, name, shots, tag, look_every=None, n=None):
     if n:
         c.look(S + f"/work/{tag}_sheet.png", **{"from": 0, "to": n - 1, "count": 24, "cols": 6, "max_edge": 1800})
     c.run("edit.save", path=path)
+    scrub_template_paths(path)
+
+
+if __name__ == "__main__" and sys.argv[1:2] == ["scrub"]:
+    for f in sys.argv[2:]:
+        print(f, scrub_template_paths(f), "paths rewritten")

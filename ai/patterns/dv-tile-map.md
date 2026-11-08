@@ -1,6 +1,6 @@
 # Tile-grid map
 
-**Template** `dv_tile_map` (Library name "Tile-grid map") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Tile map` in `categories/data-viz/dv-lab-3`.
+**Template** `dv_tile_map` (Library name "Tile-grid map") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Tile map` in `categories/data-viz/dv-lab-3`.
 
 For briefs like "by state", "a map of the results", "which regions lead". 51 equal 76 px tiles (50 US states and DC) in an approximate geographic grid, each filled to one of five value bins (share of homes with rooftop solar, sample data), with a legend and the top value ringed. Equal tiles give every state the same weight, which a geographic map does not. 150 f, holds.
 

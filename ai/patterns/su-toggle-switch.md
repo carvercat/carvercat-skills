@@ -1,6 +1,6 @@
 # Toggle switch
 
-**Template** `su_toggle_switch` · SaaS UI pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SU Toggle switch`.
+**Template** `su_toggle_switch` · SaaS UI pack · **Verified 0.1.8.4 (rev 1130)**, comp `SU Toggle switch`.
 
 An off-to-on switch drawn at 2× desktop size so it reads in a full video frame: a 240×128 px track and a 104 px knob, centred.
 

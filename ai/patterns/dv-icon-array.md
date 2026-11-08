@@ -1,6 +1,6 @@
 # Icon array
 
-**Template** `dv_icon_array` (Library name "Icon array") · Data Viz pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `DV Icon array` in `categories/data-viz/dv-lab-3`.
+**Template** `dv_icon_array` (Library name "Icon array") · Data Viz pack · **Verified 0.1.8.4 (rev 1130)**, comp `DV Icon array` in `categories/data-viz/dv-lab-3`.
 
 For briefs like "1 in 4 people", "how many out of 10", survey results about people. 40 person icons (a 30 px head and a 50 × 62 px rounded body) in four rows of ten; the top row turns cyan, so each column of four has one highlighted person; then "1 in 4" and its label. Sample data. 120 f, holds. Different from the waffle chart: people, not percent squares.
 

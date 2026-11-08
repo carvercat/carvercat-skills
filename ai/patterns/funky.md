@@ -8,10 +8,39 @@ The pack lives in `library/templates/funky/`. Install it as in [Installing a pac
 - The templates come from `categories/funky/fk-lab`, written by `ai/scripts/motion/funky_lab.py`; round 2 from `categories/funky/fk-lab-2` (`funky_lab2.py`); round 3 from `categories/funky/fk-lab-3` (`funky_lab3.py`).
 - The sample reel is `categories/funky/fk-showcase`.
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).** Round 3 too (2026-10-28).
-- Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
-- Lint was 0 errors and 0 warnings on every lab comp and the preset bench, and 0/0/0 on the showcase.
-- Each template was placed into a fresh comp: lint 0/0/0 for all four.
+**Status: verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library), measured by `ai/scripts/motion/verify_pack.py funky` (the harness with the object-level checks).**
+- The labs (`funky_lab.py`, `_lab2.py`, `_lab3.py`) and the showcase (`funky_showcase.py`) speak design units (`json_author/cc2.py`: px from the top-left, y down, degrees clockwise, CSS colours and easing) and are sent with `scene.apply`; library presets are applied with `preset.apply`; the blob frame's mask is a scene mask (its window is unparented again). `regen_pack.py` rebuilds the 20 templates and the lab and showcase projects (carvercat/2); a second run leaves `git status` unchanged (confirmed on the final commit). The preset files stay in the stored preset format; all four (Tilt pop, Slide in - wiggle, Spin in, Spin out) load and apply in 0.1.8.1.
+- Each template was placed into a fresh 16:9 comp and a fresh 9:16 comp: lint 0 errors / 0 warnings / 0 notes for all 20; qc found no flashes.
+- Against the v1 originals (7 frames each, text templates at 960 x 540): silhouettes match for 20 of 20 (worst 1.54 %, new-drop reveal; limit 2 %). Colours are exactly the stated hex values (colour shift 2-36, the menu special highest). Orbit end card: its lab comp is now named `FK Orbit end` so that the template regenerates from it.
+- A real fault found by those numbers and fixed: the old kit stored a shadow's offset x against the frame width and y against the frame height, so every "12, 12" hard shadow was drawn 12 px right and 6.75 px down (measured on the old renders: shadow edges 6 px higher than the new ones at 1920). The lab drew a square 12 x 12 shadow. `hard_shadow` now draws dy = dx x 9/16 (the keyed shadows of the offset title 14 -> 14 / 7.875 and the new drop's panel 22 -> 22 / 12.375, the soft sticker and photo shadow 11.5 -> 6.48 down), and the new-drop reveal fell from 2.02 % to 1.54 %, the party invite headline overlap from 0.16 to 0.96, the offset title from 0.10 to 1.00.
+- Object-level check: 20 of 20 pass (no object missing, empty or moved), run with `ai/scripts/motion/verify_pack.py`, which makes the two ink masks of one object use one background colour. The blob frame's name sits on a yellow plate: yellow and dark letters cover about the same area (3137 and 3125 pixels), the harness takes each crop's own dominant colour, it flipped between the old and new render and the overlap read 0.08 although no pixel differs by more than 48/255 (with one background the overlap is 0.995; the final run reads 0.95). With one mask colour per crop (the old harness behaviour) it lists the blob frame as FAIL.
+- Final harness table (funky, 0.1.8.1 rev 1127; columns as on the Cartoon Bounce page):
+
+| Template | lint 16:9 | lint 9:16 | flashes | worst shape % | colour shift | objects | box offset px | worst ink IoU |
+|---|---|---|---|---|---|---|---|---|
+| Blob photo frame | 0/0/0 | 0/0/0 | 0 | 0.01 | 19 | pass | 0.2 | 0.95 |
+| Funky countdown | 0/0/0 | 0/0/0 | 0 | 0.00 | 13 | pass | 0.0 | 1.00 |
+| Gig poster | 0/0/0 | 0/0/0 | 0 | 0.68 | 14 | pass | 4.0 | 0.68 |
+| Funky lower third | 0/0/0 | 0/0/0 | 0 | 0.00 | 10 | pass | 0.0 | 0.98 |
+| Marquee bands | 0/0/0 | 0/0/0 | 0 | 0.01 | 6 | pass | 1.4 | 0.92 |
+| Memphis shapes | 0/0/0 | 0/0/0 | 0 | 0.02 | 7 | pass | 0.0 | - |
+| Menu special | 0/0/0 | 0/0/0 | 0 | 0.58 | 36 | pass | 3.0 | 0.79 |
+| New drop reveal | 0/0/0 | 0/0/0 | 0 | 1.54 | 13 | pass | 10.3 | 0.66 |
+| Offset shadow title | 0/0/0 | 0/0/0 | 0 | 0.01 | 5 | pass | 0.0 | 1.00 |
+| Orbit end card | 0/0/0 | 0/0/0 | 0 | 0.00 | 9 | pass | 0.0 | 1.00 |
+| Party invite | 0/0/0 | 0/0/0 | 0 | 0.01 | 8 | pass | 0.3 | 0.96 |
+| Pattern drift | 0/0/0 | 0/0/0 | 0 | 0.00 | 2 | pass | 0.0 | - |
+| Photo stack | 0/0/0 | 0/0/0 | 0 | 0.01 | 4 | pass | 0.0 | - |
+| Sale badge | 0/0/0 | 0/0/0 | 0 | 0.00 | 8 | pass | 0.0 | 1.00 |
+| Squiggle underline | 0/0/0 | 0/0/0 | 0 | 0.05 | 11 | pass | 0.0 | 1.00 |
+| Star cover | 0/0/0 | 0/0/0 | 0 | 0.01 | 4 | pass | 0.0 | - |
+| Sticker stack | 0/0/0 | 0/0/0 | 0 | 0.01 | 6 | pass | 0.0 | 0.99 |
+| Swing headline | 0/0/0 | 0/0/0 | 0 | 0.01 | 8 | pass | 0.0 | 1.00 |
+| Zigzag ribbon | 0/0/0 | 0/0/0 | 0 | 0.13 | 8 | pass | 0.0 | - |
+| Zine quote | 0/0/0 | 0/0/0 | 0 | 0.03 | 8 | pass | 1.0 | 0.98 |
+
+- Things the conversion changed on purpose: the named eases are the app's model curves (Ease in (1/3, 0, 2/3, 1/3), Ease out (1/3, 2/3, 2/3, 1), S-curve (1/3, 0, 2/3, 1)); a corner radius is capped at a quarter of the short side, as the old kit drew it; a rotate key stops at 360 deg, so the party invite's confetti turn at most 360 (the old 420 was capped).
+- Numbers on these pages that come from the keys (overshoot percentages, "settles" frames of the presets and stamps) are unchanged: the keys are the same.
 
 **Fonts:** Rethink Sans must be installed ([KI-136](../references/known-issues.md#ki-136)).
 
@@ -87,7 +116,7 @@ Each template placed into a fresh comp applied "at 1920 x 1080" and linted 0/0/0
 
 ## Round-2 sample film
 
-`categories/funky/fk-showcase-2` is a 690 f (23 s) master at 1920 × 1080 that plays the round-2 templates back to back with Star cover on one cut, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py funky`). Verified 0.1.6 (rev 1105), 2026-10-28: master lint 0 / 0 / 0. Qc (240 px) notes three holds as freezes.
+`categories/funky/fk-showcase-2` is a 690 f (23 s) master at 1920 × 1080 that plays the round-2 templates back to back with Star cover on one cut, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py funky`). Rebuilt and verified 0.1.8.1 (rev 1127), 2026-11-07, as a `carvercat/2` file from the corrected templates: master lint 0 / 0 / 0. Qc (240 px) notes three holds as freezes (f19-89, f292-405, f455-539).
 
 ## Pitfalls (0.1.6)
 

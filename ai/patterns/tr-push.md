@@ -1,6 +1,6 @@
 # Push (slide) transition
 
-**Recipe** · **verified 0.0.72** (comp `RECIPES` in `categories/motion-patterns/pattern-lab/project.carverproj`, frames 0–48) · 15 f
+**Recipe** · **Verified 0.1.8.1 (rev 1127)** (comp `RECIPES` in `categories/motion-patterns/pattern-lab/project.carverproj`, frames 0–48) · keys over 15 f (f16-f31), visible movement f18-f30 (13 f; the in-out curve starts slowly)
 
 Scene A slides out while Scene B slides in behind it, both on the SAME curve, so they stay locked edge to edge.
 

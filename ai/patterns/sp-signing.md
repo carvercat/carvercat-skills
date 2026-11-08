@@ -1,6 +1,6 @@
 # Signing announcement
 
-**Template** `sp_signing` (Library name "Signing announcement") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Signing` in `categories/sports/sp-lab-3`.
+**Template** `sp_signing` (Library name "Signing announcement") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Signing` in `categories/sports/sp-lab-3`.
 
 For briefs like "new signing", "transfer announcement", "welcome to the club". A red slanted photo panel with a player stand-in slashes in; the name, position, FROM club, a drawing arrow and TO club follow, a yellow contract bar grows and a SIGNED stamp slams onto the chest. 150 f, holds.
 
@@ -12,7 +12,7 @@ For briefs like "new signing", "transfer announcement", "welcome to the club". A
 | Divider (4 px) | 20 | trimEnd 0% → 100%, 14 f | |
 | FROM / club, arrow (draws, f34–44) and head, TO / club | 26 / 28 / 34 / 40 / 42 | labels fade; clubs slash in | |
 | Contract bar (yellow, 642 px) + text (34 px dark) | 48 / 54 | bar grows from its left edge, 10 f; text fades | bar settles **f55** |
-| Stamp plate (dark, 540 × 140, yellow 9 px stroke) + SIGNED (92 px yellow), both turned 8° (stored value) | 64 | slam from 150% to 92% (impact f69), back to 100% | opacity **f66**, scale settles **f72**; 16% past 100% |
+| Stamp plate (dark, 540 × 140, yellow 9 px stroke) + SIGNED (92 px yellow), both turned 8° counter-clockwise | 64 | slam from 150% to 92% (impact f69), back to 100% | opacity **f66**, scale settles **f72**; 16% past 100% |
 
 Lint (with `contrast:true`) 0 errors, 0 warnings, 0 notes. `inspect qc` (240 px): no flashes. Placed into a fresh comp: lint 0/0/0. Text-gap audit: 45 pairs, closest 24.6 px (TO label / TO club). Full-frame looks of the placed comp at f66 (stamp mid-slam) and f149: nothing cut; the stamp stays inside its plate.
 

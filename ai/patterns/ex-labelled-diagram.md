@@ -1,6 +1,6 @@
 # Labelled diagram
 
-**Template** `ex_labelled_diagram` (Library name "Labelled diagram") · Explainer pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `EX Labelled diagram` in `categories/explainer/ex-lab-3`.
+**Template** `ex_labelled_diagram` (Library name "Labelled diagram") · Explainer pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, qc no flash; against the v1 original the silhouette differs by at most 0.00 % of pixels over 7 frames; object-level check pass)**, comp `EX Labelled diagram` in `categories/explainer/ex-lab-3`.
 
 For briefs like "anatomy of", "what's inside", "the parts of a product". An object in the centre with four labels, one after another: a dot pops on the part, a leader line draws out to the side, the label and a note step in. The pointer callout points at one thing; this one annotates a whole object. Light background included. 165 f.
 
@@ -12,7 +12,7 @@ For briefs like "anatomy of", "what's inside", "the parts of a product". An obje
 | Battery outline (dashed blue) | 14 | Trim end 0 → 1, 14 f | done **f28** |
 | Label 1 Camera (left), 2 Power button (right), 3 Screen (left), 4 Battery (right) | 34 / 56 / 78 / 100 | dot pops (8 f, 9.3%), leader draws (f+2, 12 f), label (f+10) and note (f+14, 30 px muted) step in | label 4 settles **f119** |
 
-Lint (with `contrast:true`) 0 errors, 0 warnings, 0 notes. `inspect qc` (240 px): no flashes, a freeze after the last label (the hold). Placed into a fresh comp: lint 0/0/0. Text-gap audit: 126 pairs, closest 20.0 px (a label to its own leader line; the label and its note were 10.1 px apart in the first build and moved to 56 px spacing). Both gradients were checked in a full-frame look (dark at the top of the body, light at the top of the screen, as written). Full-frame looks of the placed comp at f62 and f164: nothing cut.
+Lab comp lint on 0.1.8.1 (native size): 0 errors, 0 warnings, 1 notes. `inspect qc` (240 px): no flashes, a freeze after the last label (the hold). Placed into a fresh comp: lint 0/0/0. Text-gap audit: 126 pairs, closest 20.0 px (a label to its own leader line; the label and its note were 10.1 px apart in the first build and moved to 56 px spacing). Both gradients were checked in a full-frame look (dark at the top of the body, light at the top of the screen, as written). Full-frame looks of the placed comp at f62 and f164: nothing cut.
 
 ## Steps
 1. Put the product's own image (a PNG on a track below) in place of the phone shapes, move the four `parts` points onto its features and edit the texts; labels on the left end at x 715, on the right start at x 1225.

@@ -1,4 +1,6 @@
 {
+ "format": "carvercat/2",
+ "minApp": "0.1.8",
  "templateVersion": 2,
  "id": "cc.su.toggle_switch",
  "name": "Toggle switch",
@@ -17,765 +19,6 @@
   "height": 1080,
   "fps": 30.0
  },
- "scene": {
-  "ppf": 4,
-  "sceneFps": 30.0,
-  "duration": 48.0,
-  "timelineWidth": 1920,
-  "timelineHeight": 1080,
-  "width": 1920,
-  "height": 1080,
-  "tracks": [
-   {
-    "id": "track_v2",
-    "enabled": true,
-    "clips": [
-     {
-      "id": "tgl_2",
-      "type": "shape",
-      "objectType": "shape",
-      "text": "Path",
-      "left": 0.0,
-      "duration": 48.0,
-      "sourceIn": 0.0,
-      "midEffects": [],
-      "textProps": {
-       "font": "Open Sans",
-       "style": "Regular",
-       "size": 0.08,
-       "tracking": 1.0,
-       "lineSpacing": 1.0,
-       "textMode": "titles",
-       "boxWidth": 0.5,
-       "boxHeight": 0.5,
-       "clipToBox": true
-      },
-      "properties": {
-       "center": {
-        "keyframes": [],
-        "static": [
-         0.5,
-         0.5
-        ]
-       },
-       "size": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "angle": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "blend": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_2.position": {
-        "keyframes": [],
-        "static": [
-         0.5,
-         0.5
-        ]
-       },
-       "tr.e_tr_placement_tgl_2.scale": {
-        "keyframes": [],
-        "static": [
-         1.0,
-         1.0
-        ]
-       },
-       "tr.e_tr_placement_tgl_2.scaleUniform": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_2.scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_2.scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_2.rotation": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "tr.e_tr_placement_tgl_2.anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "tr.e_tr_placement_tgl_2.opacity": {
-        "keyframes": [
-         {
-          "frame": 14.0,
-          "value": 1,
-          "easing": "Linear"
-         },
-         {
-          "frame": 24.0,
-          "value": 0,
-          "easing": "Ease out"
-         }
-        ],
-        "static": 1.0
-       },
-       "tr.e_tr_compositing_tgl_2.blend": {
-        "keyframes": [],
-        "static": "Normal"
-       },
-       "tr.e_tr_compositing_tgl_2.combine": {
-        "keyframes": [],
-        "static": "Over"
-       },
-       "src.e_src_shape_stroke_tgl_2.width": {
-        "keyframes": [],
-        "static": 0.066667
-       },
-       "src.e_src_shape_stroke_tgl_2.paint": {
-        "keyframes": [],
-        "static": "solid"
-       },
-       "src.e_src_shape_stroke_tgl_2.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_tgl_2.color": {
-        "keyframes": [],
-        "static": [
-         0.66539,
-         0.68669,
-         0.7454,
-         1.0
-        ]
-       },
-       "src.e_src_shape_fill_tgl_2.paint": {
-        "keyframes": [],
-        "static": "none"
-       },
-       "src.e_src_shape_fill_tgl_2.color": {
-        "keyframes": [],
-        "static": [
-         0.734703004360199,
-         0.0,
-         0.0,
-         1.0
-        ]
-       },
-       "src.e_src_shape_fill_tgl_2.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_tgl_2.cap": {
-        "keyframes": [],
-        "static": "round"
-       }
-      },
-      "containers": {
-       "source": {
-        "entries": [
-         {
-          "id": "e_src_shape_geometry_rectangle_tgl_2",
-          "cap": "shape.geometry.rectangle",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_fill_tgl_2",
-          "cap": "shape.fill",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_stroke_tgl_2",
-          "cap": "shape.stroke",
-          "on": true
-         }
-        ],
-        "promoted": []
-       },
-       "effects": {
-        "entries": [],
-        "promoted": []
-       },
-       "transform": {
-        "entries": [
-         {
-          "id": "e_tr_placement_tgl_2",
-          "cap": "transform.placement",
-          "on": true
-         },
-         {
-          "id": "e_tr_compositing_tgl_2",
-          "cap": "transform.compositing",
-          "on": true
-         }
-        ],
-        "promoted": []
-       }
-      },
-      "shape": {
-       "kind": "path",
-       "params": {
-        "closed": false,
-        "points": [
-         {
-          "x": 0.4708333333333333,
-          "y": 0.5,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.5291666666666667,
-          "y": 0.5,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         }
-        ]
-       }
-      },
-      "label": "Track off"
-     }
-    ]
-   },
-   {
-    "id": "track_v3",
-    "enabled": true,
-    "clips": [
-     {
-      "id": "tgl_3",
-      "type": "shape",
-      "objectType": "shape",
-      "text": "Path",
-      "left": 0.0,
-      "duration": 48.0,
-      "sourceIn": 0.0,
-      "midEffects": [],
-      "textProps": {
-       "font": "Open Sans",
-       "style": "Regular",
-       "size": 0.08,
-       "tracking": 1.0,
-       "lineSpacing": 1.0,
-       "textMode": "titles",
-       "boxWidth": 0.5,
-       "boxHeight": 0.5,
-       "clipToBox": true
-      },
-      "properties": {
-       "center": {
-        "keyframes": [],
-        "static": [
-         0.5,
-         0.5
-        ]
-       },
-       "size": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "angle": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "blend": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_3.position": {
-        "keyframes": [],
-        "static": [
-         0.5,
-         0.5
-        ]
-       },
-       "tr.e_tr_placement_tgl_3.scale": {
-        "keyframes": [],
-        "static": [
-         1.0,
-         1.0
-        ]
-       },
-       "tr.e_tr_placement_tgl_3.scaleUniform": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_3.scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_3.scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_3.rotation": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "tr.e_tr_placement_tgl_3.anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "tr.e_tr_placement_tgl_3.opacity": {
-        "keyframes": [
-         {
-          "frame": 14.0,
-          "value": 0,
-          "easing": "Linear"
-         },
-         {
-          "frame": 24.0,
-          "value": 1,
-          "easing": "Ease out"
-         }
-        ],
-        "static": 1.0
-       },
-       "tr.e_tr_compositing_tgl_3.blend": {
-        "keyframes": [],
-        "static": "Normal"
-       },
-       "tr.e_tr_compositing_tgl_3.combine": {
-        "keyframes": [],
-        "static": "Over"
-       },
-       "src.e_src_shape_stroke_tgl_3.width": {
-        "keyframes": [],
-        "static": 0.066667
-       },
-       "src.e_src_shape_stroke_tgl_3.paint": {
-        "keyframes": [],
-        "static": "solid"
-       },
-       "src.e_src_shape_stroke_tgl_3.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_tgl_3.color": {
-        "keyframes": [],
-        "static": [
-         0.10462,
-         0.10462,
-         0.92158,
-         1.0
-        ]
-       },
-       "src.e_src_shape_fill_tgl_3.paint": {
-        "keyframes": [],
-        "static": "none"
-       },
-       "src.e_src_shape_fill_tgl_3.color": {
-        "keyframes": [],
-        "static": [
-         0.734703004360199,
-         0.0,
-         0.0,
-         1.0
-        ]
-       },
-       "src.e_src_shape_fill_tgl_3.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_tgl_3.cap": {
-        "keyframes": [],
-        "static": "round"
-       }
-      },
-      "containers": {
-       "source": {
-        "entries": [
-         {
-          "id": "e_src_shape_geometry_rectangle_tgl_3",
-          "cap": "shape.geometry.rectangle",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_fill_tgl_3",
-          "cap": "shape.fill",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_stroke_tgl_3",
-          "cap": "shape.stroke",
-          "on": true
-         }
-        ],
-        "promoted": []
-       },
-       "effects": {
-        "entries": [],
-        "promoted": []
-       },
-       "transform": {
-        "entries": [
-         {
-          "id": "e_tr_placement_tgl_3",
-          "cap": "transform.placement",
-          "on": true
-         },
-         {
-          "id": "e_tr_compositing_tgl_3",
-          "cap": "transform.compositing",
-          "on": true
-         }
-        ],
-        "promoted": []
-       }
-      },
-      "shape": {
-       "kind": "path",
-       "params": {
-        "closed": false,
-        "points": [
-         {
-          "x": 0.4708333333333333,
-          "y": 0.5,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         },
-         {
-          "x": 0.5291666666666667,
-          "y": 0.5,
-          "inX": 0.0,
-          "inY": 0.0,
-          "outX": 0.0,
-          "outY": 0.0,
-          "corner": true
-         }
-        ]
-       }
-      },
-      "label": "Track on"
-     }
-    ]
-   },
-   {
-    "id": "track_v4",
-    "enabled": true,
-    "clips": [
-     {
-      "id": "tgl_4",
-      "type": "shape",
-      "objectType": "shape",
-      "text": "Ellipse",
-      "left": 0.0,
-      "duration": 48.0,
-      "sourceIn": 0.0,
-      "midEffects": [],
-      "textProps": {
-       "font": "Open Sans",
-       "style": "Regular",
-       "size": 0.08,
-       "tracking": 1.0,
-       "lineSpacing": 1.0,
-       "textMode": "titles",
-       "boxWidth": 0.5,
-       "boxHeight": 0.5,
-       "clipToBox": true
-      },
-      "properties": {
-       "center": {
-        "keyframes": [],
-        "static": [
-         0.5,
-         0.5
-        ]
-       },
-       "size": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "angle": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "blend": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_4.position": {
-        "keyframes": [
-         {
-          "frame": 14.0,
-          "value": [
-           0.47083,
-           0.5
-          ],
-          "easing": "Linear"
-         },
-         {
-          "frame": 24.0,
-          "value": [
-           0.52917,
-           0.5
-          ],
-          "easing": "Custom",
-          "customEase": [
-           0.34,
-           1.2,
-           0.64,
-           1.0
-          ]
-         }
-        ],
-        "static": [
-         0.47083,
-         0.5
-        ]
-       },
-       "tr.e_tr_placement_tgl_4.scale": {
-        "keyframes": [
-         {
-          "frame": 14.0,
-          "value": [
-           1.0,
-           1.0
-          ],
-          "easing": "Linear"
-         },
-         {
-          "frame": 18.0,
-          "value": [
-           1.12,
-           1.0
-          ],
-          "easing": "Ease out"
-         },
-         {
-          "frame": 26.0,
-          "value": [
-           1.0,
-           1.0
-          ],
-          "easing": "S-curve"
-         }
-        ],
-        "static": [
-         1.0,
-         1.0
-        ]
-       },
-       "tr.e_tr_placement_tgl_4.scaleUniform": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_4.scaleX": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_4.scaleY": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_placement_tgl_4.rotation": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "tr.e_tr_placement_tgl_4.anchor": {
-        "keyframes": [],
-        "static": [
-         0,
-         0
-        ]
-       },
-       "tr.e_tr_placement_tgl_4.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "tr.e_tr_compositing_tgl_4.blend": {
-        "keyframes": [],
-        "static": "Normal"
-       },
-       "tr.e_tr_compositing_tgl_4.combine": {
-        "keyframes": [],
-        "static": "Over"
-       },
-       "src.e_src_shape_geometry_ellipse_tgl_4.width": {
-        "keyframes": [],
-        "static": 0.054167
-       },
-       "src.e_src_shape_geometry_ellipse_tgl_4.height": {
-        "keyframes": [],
-        "static": 0.054167
-       },
-       "src.e_src_shape_geometry_ellipse_tgl_4.angle": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "src.e_src_shape_fill_tgl_4.paint": {
-        "keyframes": [],
-        "static": "solid"
-       },
-       "src.e_src_shape_fill_tgl_4.color": {
-        "keyframes": [],
-        "static": [
-         1.0,
-         1.0,
-         1.0,
-         1.0
-        ]
-       },
-       "src.e_src_shape_fill_tgl_4.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_tgl_4.color": {
-        "keyframes": [],
-        "static": [
-         0.038160715252161026,
-         0.17944560945034027,
-         0.4212897717952728,
-         1.0
-        ]
-       },
-       "src.e_src_shape_stroke_tgl_4.opacity": {
-        "keyframes": [],
-        "static": 1.0
-       },
-       "src.e_src_shape_stroke_tgl_4.paint": {
-        "keyframes": [],
-        "static": "none"
-       },
-       "src.e_src_shape_stroke_tgl_4.width": {
-        "keyframes": [],
-        "static": 0.02
-       },
-       "fx.e_fx_shadow_tgl_4.x": {
-        "keyframes": [],
-        "static": 0.0
-       },
-       "fx.e_fx_shadow_tgl_4.y": {
-        "keyframes": [],
-        "static": -0.004
-       },
-       "fx.e_fx_shadow_tgl_4.softness": {
-        "keyframes": [],
-        "static": 0.012
-       },
-       "fx.e_fx_shadow_tgl_4.opacity": {
-        "keyframes": [],
-        "static": 0.3
-       }
-      },
-      "containers": {
-       "source": {
-        "entries": [
-         {
-          "id": "e_src_shape_geometry_ellipse_tgl_4",
-          "cap": "shape.geometry.ellipse",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_fill_tgl_4",
-          "cap": "shape.fill",
-          "on": true
-         },
-         {
-          "id": "e_src_shape_stroke_tgl_4",
-          "cap": "shape.stroke",
-          "on": true
-         }
-        ],
-        "promoted": []
-       },
-       "effects": {
-        "entries": [
-         {
-          "id": "e_fx_shadow_tgl_4",
-          "cap": "shadow",
-          "on": true
-         }
-        ],
-        "promoted": []
-       },
-       "transform": {
-        "entries": [
-         {
-          "id": "e_tr_placement_tgl_4",
-          "cap": "transform.placement",
-          "on": true
-         },
-         {
-          "id": "e_tr_compositing_tgl_4",
-          "cap": "transform.compositing",
-          "on": true
-         }
-        ],
-        "promoted": []
-       }
-      },
-      "label": "Knob"
-     }
-    ]
-   }
-  ],
-  "audioTracks": [
-   {
-    "id": "atrack_1",
-    "enabled": true,
-    "clips": []
-   }
-  ],
-  "clipCounter": 4
- },
  "authoredAspect": [
   16,
   9
@@ -791,5 +34,980 @@
   1920,
   1080
  ],
- "requiredFonts": []
+ "requiredFonts": [],
+ "scene": {
+  "fps": 30.0,
+  "width": 1920,
+  "height": 1080,
+  "layers": [
+   {
+    "id": "track_v2",
+    "enabled": true,
+    "objects": [
+     {
+      "id": "tgl_2",
+      "type": "rect",
+      "name": "Track off",
+      "caption": "Path",
+      "start": 0.0,
+      "duration": 48.0,
+      "sourceIn": 0.0,
+      "stack": {
+       "source": [
+        {
+         "id": "e_src_shape_geometry_rectangle_clip_2",
+         "cap": "shape.geometry.rectangle",
+         "on": true
+        },
+        {
+         "id": "e_src_shape_fill_clip_2",
+         "cap": "shape.fill",
+         "on": true,
+         "params": {
+          "paint": {
+           "value": "none"
+          },
+          "fill": {
+           "value": "color(srgb 1 1 1)"
+          },
+          "opacity": {
+           "value": 1.0
+          }
+         }
+        },
+        {
+         "id": "e_src_shape_stroke_clip_2",
+         "cap": "shape.stroke",
+         "on": true,
+         "params": {
+          "strokeWidth": {
+           "value": 128.0
+          },
+          "paint": {
+           "value": "solid"
+          },
+          "opacity": {
+           "value": 1.0
+          },
+          "stroke": {
+           "value": "color(srgb 0.8352941176470589 0.8470588235294118 0.8784313725490196)"
+          },
+          "lineCap": {
+           "value": "round"
+          }
+         }
+        }
+       ],
+       "effects": [],
+       "transform": [
+        {
+         "id": "e_tr_placement_clip_2",
+         "cap": "transform.placement",
+         "on": true,
+         "params": {
+          "center": {
+           "value": [
+            960.0,
+            540.0
+           ]
+          },
+          "scale": {
+           "value": [
+            1.0,
+            1.0
+           ]
+          },
+          "scaleUniform": {
+           "value": 1.0
+          },
+          "scaleX": {
+           "value": 1.0
+          },
+          "scaleY": {
+           "value": 1.0
+          },
+          "rotate": {
+           "value": 0.0
+          },
+          "transformOrigin": {
+           "value": [
+            50.0,
+            50.0
+           ],
+           "x-int": [
+            0,
+            1
+           ]
+          },
+          "opacity": {
+           "value": 1.0,
+           "keys": [
+            {
+             "at": 14.0,
+             "value": 1.0,
+             "x-leave": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)"
+            },
+            {
+             "at": 24.0,
+             "value": 0.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          }
+         }
+        },
+        {
+         "id": "e_tr_compositing_clip_2",
+         "cap": "transform.compositing",
+         "on": true,
+         "params": {
+          "mixBlendMode": {
+           "value": "Normal"
+          },
+          "combine": {
+           "value": "Over"
+          }
+         }
+        }
+       ]
+      },
+      "controls": {
+       "promoted": {
+        "source": [],
+        "effects": [],
+        "transform": []
+       }
+      },
+      "path": {
+       "kind": "path",
+       "params": {
+        "closed": false,
+        "points": [
+         {
+          "x": 904.0,
+          "y": 540.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 1016.0,
+          "y": 540.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         }
+        ]
+       }
+      },
+      "x-legacy": {
+       "fields": {
+        "x-scene": {
+         "id": "tgl_2"
+        }
+       },
+       "derived": {
+        "flat": {
+         "order": [
+          "center",
+          "size",
+          "scaleX",
+          "scaleY",
+          "angle",
+          "anchor",
+          "blend"
+         ],
+         "same": [
+          "center",
+          "size",
+          "scaleX",
+          "scaleY",
+          "angle",
+          "anchor"
+         ]
+        },
+        "midEffects": true,
+        "textProps": {
+         "set": {
+          "font": "Open Sans",
+          "style": "Regular",
+          "size": 0.08,
+          "tracking": 1.0,
+          "lineSpacing": 1.0,
+          "textMode": "titles",
+          "boxWidth": 0.5,
+          "boxHeight": 0.5,
+          "clipToBox": true
+         },
+         "absent": []
+        }
+       },
+       "flat": {
+        "blend": {
+         "keyframes": [],
+         "static": 1.0
+        }
+       },
+       "order": {
+        "clip": [
+         "id",
+         "type",
+         "objectType",
+         "text",
+         "left",
+         "duration",
+         "sourceIn",
+         "midEffects",
+         "textProps",
+         "properties",
+         "containers",
+         "shape",
+         "x-scene",
+         "label"
+        ],
+        "properties": [
+         "center",
+         "size",
+         "scaleX",
+         "scaleY",
+         "angle",
+         "anchor",
+         "blend",
+         "tr.e_tr_placement_clip_2.position",
+         "tr.e_tr_placement_clip_2.scale",
+         "tr.e_tr_placement_clip_2.scaleUniform",
+         "tr.e_tr_placement_clip_2.scaleX",
+         "tr.e_tr_placement_clip_2.scaleY",
+         "tr.e_tr_placement_clip_2.rotation",
+         "tr.e_tr_placement_clip_2.anchor",
+         "tr.e_tr_placement_clip_2.opacity",
+         "tr.e_tr_compositing_clip_2.blend",
+         "tr.e_tr_compositing_clip_2.combine",
+         "src.e_src_shape_stroke_clip_2.width",
+         "src.e_src_shape_stroke_clip_2.paint",
+         "src.e_src_shape_stroke_clip_2.opacity",
+         "src.e_src_shape_stroke_clip_2.color",
+         "src.e_src_shape_fill_clip_2.paint",
+         "src.e_src_shape_fill_clip_2.color",
+         "src.e_src_shape_fill_clip_2.opacity",
+         "src.e_src_shape_stroke_clip_2.cap"
+        ],
+        "containers": [
+         "source",
+         "effects",
+         "transform"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   {
+    "id": "track_v3",
+    "enabled": true,
+    "objects": [
+     {
+      "id": "tgl_3",
+      "type": "rect",
+      "name": "Track on",
+      "caption": "Path",
+      "start": 0.0,
+      "duration": 48.0,
+      "sourceIn": 0.0,
+      "stack": {
+       "source": [
+        {
+         "id": "e_src_shape_geometry_rectangle_clip_3",
+         "cap": "shape.geometry.rectangle",
+         "on": true
+        },
+        {
+         "id": "e_src_shape_fill_clip_3",
+         "cap": "shape.fill",
+         "on": true,
+         "params": {
+          "paint": {
+           "value": "none"
+          },
+          "fill": {
+           "value": "color(srgb 1 1 1)"
+          },
+          "opacity": {
+           "value": 1.0
+          }
+         }
+        },
+        {
+         "id": "e_src_shape_stroke_clip_3",
+         "cap": "shape.stroke",
+         "on": true,
+         "params": {
+          "strokeWidth": {
+           "value": 128.0
+          },
+          "paint": {
+           "value": "solid"
+          },
+          "opacity": {
+           "value": 1.0
+          },
+          "stroke": {
+           "value": "color(srgb 0.3568627450980392 0.3568627450980392 0.9647058823529413)"
+          },
+          "lineCap": {
+           "value": "round"
+          }
+         }
+        }
+       ],
+       "effects": [],
+       "transform": [
+        {
+         "id": "e_tr_placement_clip_3",
+         "cap": "transform.placement",
+         "on": true,
+         "params": {
+          "center": {
+           "value": [
+            960.0,
+            540.0
+           ]
+          },
+          "scale": {
+           "value": [
+            1.0,
+            1.0
+           ]
+          },
+          "scaleUniform": {
+           "value": 1.0
+          },
+          "scaleX": {
+           "value": 1.0
+          },
+          "scaleY": {
+           "value": 1.0
+          },
+          "rotate": {
+           "value": 0.0
+          },
+          "transformOrigin": {
+           "value": [
+            50.0,
+            50.0
+           ],
+           "x-int": [
+            0,
+            1
+           ]
+          },
+          "opacity": {
+           "value": 1.0,
+           "keys": [
+            {
+             "at": 14.0,
+             "value": 0.0,
+             "x-leave": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)"
+            },
+            {
+             "at": 24.0,
+             "value": 1.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          }
+         }
+        },
+        {
+         "id": "e_tr_compositing_clip_3",
+         "cap": "transform.compositing",
+         "on": true,
+         "params": {
+          "mixBlendMode": {
+           "value": "Normal"
+          },
+          "combine": {
+           "value": "Over"
+          }
+         }
+        }
+       ]
+      },
+      "controls": {
+       "promoted": {
+        "source": [],
+        "effects": [],
+        "transform": []
+       }
+      },
+      "path": {
+       "kind": "path",
+       "params": {
+        "closed": false,
+        "points": [
+         {
+          "x": 904.0,
+          "y": 540.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         },
+         {
+          "x": 1016.0,
+          "y": 540.0,
+          "in": [
+           0.0,
+           0.0
+          ],
+          "out": [
+           0.0,
+           0.0
+          ],
+          "corner": true
+         }
+        ]
+       }
+      },
+      "x-legacy": {
+       "fields": {
+        "x-scene": {
+         "id": "tgl_3"
+        }
+       },
+       "derived": {
+        "flat": {
+         "order": [
+          "center",
+          "size",
+          "scaleX",
+          "scaleY",
+          "angle",
+          "anchor",
+          "blend"
+         ],
+         "same": [
+          "center",
+          "size",
+          "scaleX",
+          "scaleY",
+          "angle",
+          "anchor"
+         ]
+        },
+        "midEffects": true,
+        "textProps": {
+         "set": {
+          "font": "Open Sans",
+          "style": "Regular",
+          "size": 0.08,
+          "tracking": 1.0,
+          "lineSpacing": 1.0,
+          "textMode": "titles",
+          "boxWidth": 0.5,
+          "boxHeight": 0.5,
+          "clipToBox": true
+         },
+         "absent": []
+        }
+       },
+       "flat": {
+        "blend": {
+         "keyframes": [],
+         "static": 1.0
+        }
+       },
+       "order": {
+        "clip": [
+         "id",
+         "type",
+         "objectType",
+         "text",
+         "left",
+         "duration",
+         "sourceIn",
+         "midEffects",
+         "textProps",
+         "properties",
+         "containers",
+         "shape",
+         "x-scene",
+         "label"
+        ],
+        "properties": [
+         "center",
+         "size",
+         "scaleX",
+         "scaleY",
+         "angle",
+         "anchor",
+         "blend",
+         "tr.e_tr_placement_clip_3.position",
+         "tr.e_tr_placement_clip_3.scale",
+         "tr.e_tr_placement_clip_3.scaleUniform",
+         "tr.e_tr_placement_clip_3.scaleX",
+         "tr.e_tr_placement_clip_3.scaleY",
+         "tr.e_tr_placement_clip_3.rotation",
+         "tr.e_tr_placement_clip_3.anchor",
+         "tr.e_tr_placement_clip_3.opacity",
+         "tr.e_tr_compositing_clip_3.blend",
+         "tr.e_tr_compositing_clip_3.combine",
+         "src.e_src_shape_stroke_clip_3.width",
+         "src.e_src_shape_stroke_clip_3.paint",
+         "src.e_src_shape_stroke_clip_3.opacity",
+         "src.e_src_shape_stroke_clip_3.color",
+         "src.e_src_shape_fill_clip_3.paint",
+         "src.e_src_shape_fill_clip_3.color",
+         "src.e_src_shape_fill_clip_3.opacity",
+         "src.e_src_shape_stroke_clip_3.cap"
+        ],
+        "containers": [
+         "source",
+         "effects",
+         "transform"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   {
+    "id": "track_v4",
+    "enabled": true,
+    "objects": [
+     {
+      "id": "tgl_4",
+      "type": "ellipse",
+      "name": "Knob",
+      "caption": "Ellipse",
+      "start": 0.0,
+      "duration": 48.0,
+      "sourceIn": 0.0,
+      "stack": {
+       "source": [
+        {
+         "id": "e_src_shape_geometry_ellipse_clip_4",
+         "cap": "shape.geometry.ellipse",
+         "on": true,
+         "params": {
+          "width": {
+           "value": 104.0
+          },
+          "height": {
+           "value": 104.0
+          },
+          "rotate": {
+           "value": 0.0
+          }
+         }
+        },
+        {
+         "id": "e_src_shape_fill_clip_4",
+         "cap": "shape.fill",
+         "on": true,
+         "params": {
+          "paint": {
+           "value": "solid"
+          },
+          "fill": {
+           "value": "color(srgb 1 1 1)"
+          },
+          "opacity": {
+           "value": 1.0
+          }
+         }
+        },
+        {
+         "id": "e_src_shape_stroke_clip_4",
+         "cap": "shape.stroke",
+         "on": true,
+         "params": {
+          "stroke": {
+           "value": "color(srgb 0.5862172891360413 0.7872861297217424 0.9749234231582014)",
+           "x-raw": {
+            "keyframes": [],
+            "static": [
+             0.35,
+             0.62,
+             0.95
+            ]
+           }
+          },
+          "opacity": {
+           "value": 1.0
+          },
+          "paint": {
+           "value": "none"
+          },
+          "strokeWidth": {
+           "value": 38.4
+          }
+         }
+        }
+       ],
+       "effects": [
+        {
+         "id": "e_fx_shadow_clip_4",
+         "cap": "shadow",
+         "on": true,
+         "params": {
+          "offsetX": {
+           "value": 0.0
+          },
+          "offsetY": {
+           "value": 4.32
+          },
+          "blur": {
+           "value": 9.98
+          },
+          "opacity": {
+           "value": 0.2980392156862745
+          },
+          "red": {
+           "value": 0.0
+          },
+          "green": {
+           "value": 0.0
+          },
+          "blue": {
+           "value": 0.0
+          }
+         }
+        }
+       ],
+       "transform": [
+        {
+         "id": "e_tr_placement_clip_4",
+         "cap": "transform.placement",
+         "on": true,
+         "params": {
+          "center": {
+           "value": [
+            904.0,
+            540.0
+           ],
+           "keys": [
+            {
+             "at": 14.0,
+             "value": [
+              904.0,
+              540.0
+             ],
+             "x-leave": "cubic-bezier(0.34, 1.2, 0.64, 1)",
+             "ease": "cubic-bezier(0.34, 1.2, 0.64, 1)"
+            },
+            {
+             "at": 24.0,
+             "value": [
+              1016.0,
+              540.0
+             ]
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "scale": {
+           "value": [
+            1.0,
+            1.0
+           ]
+          },
+          "scaleUniform": {
+           "value": 1.0,
+           "keys": [
+            {
+             "at": 14.0,
+             "value": 1.0,
+             "x-leave": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)"
+            },
+            {
+             "at": 18.0,
+             "value": 1.0,
+             "x-leave": "cubic-bezier(0.33333, 0, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0, 0.66667, 1)"
+            },
+            {
+             "at": 26.0,
+             "value": 1.0,
+             "x-leave": "linear"
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "scaleX": {
+           "value": 1.0,
+           "keys": [
+            {
+             "at": 14.0,
+             "value": 1.0,
+             "x-leave": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)"
+            },
+            {
+             "at": 18.0,
+             "value": 1.12,
+             "x-leave": "cubic-bezier(0.33333, 0, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0, 0.66667, 1)"
+            },
+            {
+             "at": 26.0,
+             "value": 1.0,
+             "x-leave": "linear"
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "scaleY": {
+           "value": 1.0,
+           "keys": [
+            {
+             "at": 14.0,
+             "value": 1.0,
+             "x-leave": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0.66667, 0.66667, 1)"
+            },
+            {
+             "at": 18.0,
+             "value": 1.0,
+             "x-leave": "cubic-bezier(0.33333, 0, 0.66667, 1)",
+             "ease": "cubic-bezier(0.33333, 0, 0.66667, 1)"
+            },
+            {
+             "at": 26.0,
+             "value": 1.0,
+             "x-leave": "linear"
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "rotate": {
+           "value": 0.0
+          },
+          "transformOrigin": {
+           "value": [
+            50.0,
+            50.0
+           ],
+           "x-int": [
+            0,
+            1
+           ]
+          },
+          "opacity": {
+           "value": 1.0
+          }
+         }
+        },
+        {
+         "id": "e_tr_compositing_clip_4",
+         "cap": "transform.compositing",
+         "on": true,
+         "params": {
+          "mixBlendMode": {
+           "value": "Normal"
+          },
+          "combine": {
+           "value": "Over"
+          }
+         }
+        }
+       ]
+      },
+      "controls": {
+       "promoted": {
+        "source": [],
+        "effects": [],
+        "transform": []
+       }
+      },
+      "x-legacy": {
+       "fields": {
+        "x-scene": {
+         "id": "tgl_4"
+        }
+       },
+       "derived": {
+        "flat": {
+         "order": [
+          "center",
+          "size",
+          "scaleX",
+          "scaleY",
+          "angle",
+          "anchor",
+          "blend"
+         ],
+         "same": [
+          "angle",
+          "anchor",
+          "blend"
+         ]
+        },
+        "midEffects": true,
+        "textProps": {
+         "set": {
+          "font": "Open Sans",
+          "style": "Regular",
+          "size": 0.08,
+          "tracking": 1.0,
+          "lineSpacing": 1.0,
+          "textMode": "titles",
+          "boxWidth": 0.5,
+          "boxHeight": 0.5,
+          "clipToBox": true
+         },
+         "absent": []
+        }
+       },
+       "flat": {
+        "center": {
+         "keyframes": [],
+         "static": [
+          0.5,
+          0.5
+         ]
+        },
+        "size": {
+         "keyframes": [],
+         "static": 1.0
+        },
+        "scaleX": {
+         "keyframes": [],
+         "static": 1.0
+        },
+        "scaleY": {
+         "keyframes": [],
+         "static": 1.0
+        }
+       },
+       "order": {
+        "clip": [
+         "id",
+         "type",
+         "objectType",
+         "text",
+         "left",
+         "duration",
+         "sourceIn",
+         "midEffects",
+         "textProps",
+         "properties",
+         "containers",
+         "x-scene",
+         "label"
+        ],
+        "properties": [
+         "center",
+         "size",
+         "scaleX",
+         "scaleY",
+         "angle",
+         "anchor",
+         "blend",
+         "tr.e_tr_placement_clip_4.position",
+         "tr.e_tr_placement_clip_4.scale",
+         "tr.e_tr_placement_clip_4.scaleUniform",
+         "tr.e_tr_placement_clip_4.scaleX",
+         "tr.e_tr_placement_clip_4.scaleY",
+         "tr.e_tr_placement_clip_4.rotation",
+         "tr.e_tr_placement_clip_4.anchor",
+         "tr.e_tr_placement_clip_4.opacity",
+         "tr.e_tr_compositing_clip_4.blend",
+         "tr.e_tr_compositing_clip_4.combine",
+         "src.e_src_shape_geometry_ellipse_clip_4.width",
+         "src.e_src_shape_geometry_ellipse_clip_4.height",
+         "src.e_src_shape_geometry_ellipse_clip_4.angle",
+         "src.e_src_shape_fill_clip_4.paint",
+         "src.e_src_shape_fill_clip_4.color",
+         "src.e_src_shape_fill_clip_4.opacity",
+         "src.e_src_shape_stroke_clip_4.color",
+         "src.e_src_shape_stroke_clip_4.opacity",
+         "src.e_src_shape_stroke_clip_4.paint",
+         "src.e_src_shape_stroke_clip_4.width",
+         "fx.e_fx_shadow_clip_4.x",
+         "fx.e_fx_shadow_clip_4.y",
+         "fx.e_fx_shadow_clip_4.softness",
+         "fx.e_fx_shadow_clip_4.opacity",
+         "fx.e_fx_shadow_clip_4.red",
+         "fx.e_fx_shadow_clip_4.green",
+         "fx.e_fx_shadow_clip_4.blue"
+        ],
+        "containers": [
+         "source",
+         "effects",
+         "transform"
+        ]
+       }
+      }
+     }
+    ]
+   }
+  ],
+  "audioLayers": [
+   {
+    "id": "atrack_1",
+    "enabled": true,
+    "objects": []
+   }
+  ],
+  "x-legacy": {
+   "fields": {
+    "ppf": 4,
+    "duration": 48.0,
+    "width": 1920,
+    "height": 1080,
+    "clipCounter": 4
+   },
+   "order": [
+    "ppf",
+    "sceneFps",
+    "duration",
+    "timelineWidth",
+    "timelineHeight",
+    "width",
+    "height",
+    "tracks",
+    "audioTracks",
+    "clipCounter"
+   ]
+  }
+ }
 }

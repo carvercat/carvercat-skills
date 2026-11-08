@@ -1,6 +1,6 @@
 # Standings table
 
-**Template** `sp_standings` (Library name "Standings table") · Sports pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SP Standings` in `categories/sports/sp-lab-2`.
+**Template** `sp_standings` (Library name "Standings table") · Sports pack · **Verified 0.1.8.1 (rev 1127)**, comp `SP Standings` in `categories/sports/sp-lab-2`.
 
 "LEAGUE TABLE" and five slanted rows (rank, team, points in yellow; ExtraBold 40 px), with row 3 on a red highlight. 150 f, holds.
 

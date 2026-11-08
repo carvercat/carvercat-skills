@@ -1,6 +1,9 @@
 # Price drop (9:16)
 
-**Template** `ss_price_drop` (Library name "Price drop (9:16)") · Social Short-form pack · **verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test)**, comp `SS Price drop` in `categories/social-media-reels/ss-lab-3`.
+**Template** `ss_price_drop` (Library name "Price drop (9:16)") · Social Short-form pack · **verified 0.1.8.1 (rev 1127)**, comp `SS Price drop` in `categories/social-media-reels/ss-lab-3`.
+
+**Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.07 % (limit 2 %) and every object is present with the same text (box offset at most 0.0 px); colours are now the exact hex the page states (mean shift 15.0 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
+
 
 For briefs like "price drop", "now only $49", "flash deal ends Sunday". A tracked PRICE DROP kicker, a 600 × 560 px product stand-in, the old price struck through in pink, the new price popping in yellow, a tilted -45% badge, and the deadline. 120 f, holds.
 

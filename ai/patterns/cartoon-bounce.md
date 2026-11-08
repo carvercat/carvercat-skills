@@ -9,10 +9,39 @@ The pack lives in `library/templates/cartoon-bounce/`. Install it as in [Install
 - The sample reel is `categories/cartoon-bounce/ct-showcase`.
 - The principles themselves are in [../references/craft/motion-principles.md](../references/craft/motion-principles.md).
 
-**Status: verified 0.1.6 (rev 1105,; pack added to the bundled Library for the test).**
-- Public release binary, headless, isolated folders; the pack was added to a scratch copy's bundled Library ([FR-036](../references/known-issues.md#fr-036)).
-- Lint was 0 errors and 0 warnings on every lab comp and the preset bench, and 0/0/0 on the showcase.
-- Each template was placed into a fresh comp: lint 0/0/0 for all four.
+**Status: verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library), measured by `ai/scripts/motion/verify_pack.py cartoon-bounce` (the harness with the object-level checks).**
+- The labs (`cartoon_bounce_lab.py`, `_lab2.py`, `_lab3.py`) and the showcase (`cartoon_bounce_showcase.py`) speak design units (`json_author/cc2.py`: px from the top-left, y down, degrees clockwise, CSS colours and easing) and are sent with `scene.apply`; library presets are applied with `preset.apply` after each comp's scene. `regen_pack.py` rebuilds the 20 templates and the lab and showcase projects (carvercat/2); a second run leaves `git status` unchanged (confirmed on the final commit). The preset files (`.carverpreset`) stay in the stored preset format; all four load and apply in 0.1.8.1 (Squash land, Anticipate jump out, Jelly in, Pop - wobbly are applied by the labs).
+- Each template was placed into a fresh 16:9 comp and a fresh 9:16 comp: lint 0 errors / 0 warnings / 0 notes for all 20; qc found no flashes.
+- Against the v1 originals (7 frames each, over a magenta underlay; text templates at 960 x 540): silhouettes match (worst 0.57 %, squash logo reveal; the rest 0.2 % or less). Colours are exactly the stated hex values; the old kit linearised them, so the colour shift (2-19 on the 0-255 scale) is the intended difference.
+- Object-level check (every object matched, text compared by ink): 20 of 20 pass, run with `ai/scripts/motion/verify_pack.py`, whose harness corrections handle three measure artefacts and nothing else (the third needs `--ink-templates` for the hanging sign and the swinging price tag): (1) an object is not measured at frames before its clip starts (`measure.boxes` returns unresolved local coordinates there: the thought bubble's cloud and its parts read about 990 px apart between the old file, where the cloud was the parent, and the new one, where the ink core outline is); (2) for the hanging sign and the swinging price tag a text's box is the rendered ink bounding box (pixels differing from the dominant colour in the union of the old and new boxes), because `measure.boxes` reports a different ink extent for text under a rotating parent (hanging sign 40 px, price tag 18 to 52 px) while the pixels are identical: rendered ink boxes differ by 0.0 px at 960 x 540 (two px at 1920) at every compared frame, and white-text pixel counts match exactly (3344 / 3362 / 3343 at f20 / f35 / f50); (3) the two ink masks of one object use one background colour. Without those corrections (and `--ink-templates`) the harness lists those three templates as FAIL.
+- A real fault found while looking at side-by-side frames and fixed: the thought bubble's eyes were drawn squashed flat from f6 to f80, because their scale keys mixed single values with the blink's pair (the host splits them into a uniform channel and x/y channels, and the x/y channels held the blink's first value back to the start). Every key of the eyes is now a pair; the eyes are open until the blink at f80-84 as in the old file.
+- Final harness table (cartoon-bounce, 0.1.8.1 rev 1127; columns: lint on a placed 16:9 and 9:16 comp as errors/warnings/notes, flashes found by qc, worst silhouette difference to v1 over 7 frames, mean colour shift, object-level verdict, largest box offset, worst ink overlap):
+
+| Template | lint 16:9 | lint 9:16 | flashes | worst shape % | colour shift | objects | box offset px | worst ink IoU |
+|---|---|---|---|---|---|---|---|---|
+| Blinking face | 0/0/0 | 0/0/0 | 0 | 0.00 | 8 | pass | 0.0 | - |
+| Boing arrow | 0/0/0 | 0/0/0 | 0 | 0.02 | 11 | pass | 0.0 | 1.00 |
+| Boing title | 0/0/0 | 0/0/0 | 0 | 0.02 | 10 | pass | 0.0 | 1.00 |
+| Bouncing ball | 0/0/0 | 0/0/0 | 0 | 0.00 | 10 | pass | 0.0 | - |
+| Bouncy list | 0/0/0 | 0/0/0 | 0 | 0.01 | 10 | pass | 0.0 | 0.99 |
+| Button press | 0/0/0 | 0/0/0 | 0 | 0.00 | 10 | pass | 0.0 | 1.00 |
+| Character hop | 0/0/0 | 0/0/0 | 0 | 0.00 | 9 | pass | 0.0 | - |
+| Comic POW | 0/0/0 | 0/0/0 | 0 | 0.00 | 10 | pass | 0.0 | 1.00 |
+| Cartoon end card | 0/0/0 | 0/0/0 | 0 | 0.01 | 10 | pass | 0.0 | 0.99 |
+| Hanging sign | 0/0/0 | 0/0/0 | 0 | 0.04 | 9 | pass | 0.0 | 1.00 |
+| Lesson title card | 0/0/0 | 0/0/0 | 0 | 0.00 | 9 | pass | 0.0 | 0.98 |
+| Squash logo reveal | 0/0/0 | 0/0/0 | 0 | 0.57 | 19 | pass | 5.9 | 0.74 |
+| Bouncy map pin | 0/0/0 | 0/0/0 | 0 | 0.00 | 5 | pass | 0.0 | 0.99 |
+| Swinging price tag | 0/0/0 | 0/0/0 | 0 | 0.00 | 11 | pass | 12.8 | 0.96 |
+| Ribbon lower third | 0/0/0 | 0/0/0 | 0 | 0.01 | 9 | pass | 0.0 | 0.99 |
+| Smear whoosh | 0/0/0 | 0/0/0 | 0 | 0.00 | 9 | pass | 0.0 | - |
+| Speech bubble | 0/0/0 | 0/0/0 | 0 | 0.01 | 2 | pass | 0.0 | 1.00 |
+| Sticker burst | 0/0/0 | 0/0/0 | 0 | 0.00 | 8 | pass | 0.0 | - |
+| Thought bubble | 0/0/0 | 0/0/0 | 0 | 0.02 | 8 | pass | 8.0 | 1.00 |
+| Walk cycle (rigged) | 0/0/0 | 0/0/0 | 0 | 0.00 | 16 | pass | 0.0 | - |
+
+- Things the conversion changed on purpose: the named eases are the app's model curves (Ease in is the quadratic (1/3, 0, 2/3, 1/3), Ease out (1/3, 2/3, 2/3, 1), S-curve (1/3, 0, 2/3, 1)), not CSS ease-in/out; a corner radius is capped at a quarter of the short side, as the old kit drew it; text outlines are the centred 0.08 / 0.06 / 0.07 outline.
+- Numbers on these pages that come from the keys (overshoot percentages, squash volumes, "settles" frames of the presets) are unchanged: the keys are the same. The measure the harness defines for a template (visible window) is first frame 0-7 and last frame = last frame for all of them; no page number changed.
 
 **Fonts:** Rethink Sans must be installed ([KI-136](../references/known-issues.md#ki-136)).
 
@@ -88,7 +117,7 @@ Notes are `speed_jump` on impacts and on the walk's start (intended: contacts ar
 
 ## Round-2 sample film
 
-`categories/cartoon-bounce/ct-showcase-2` is a 795 f (26 s) master at 1920 × 1080 that plays the round-2 templates back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py cartoon-bounce`). Verified 0.1.6 (rev 1105), 2026-10-28: master lint 0 / 0 / 0. Qc (240 px) notes three holds as freezes.
+`categories/cartoon-bounce/ct-showcase-2` is a 795 f (26 s) master at 1920 × 1080 that plays the round-2 templates back to back, placed from the Library with `library.place` + `template.apply` (rebuild: `ai/scripts/motion/recipes/showcase2.py cartoon-bounce`). Rebuilt and verified 0.1.8.1 (rev 1127), 2026-11-07, as a `carvercat/2` file: master lint 0 / 0 / 0. Qc (240 px) notes four holds as freezes (f24-89, f374-449, f471-579, f733-794).
 
 ## Pitfalls (0.1.6)
 
