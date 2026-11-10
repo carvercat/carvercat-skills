@@ -13,7 +13,8 @@
 | 5.7 s | from 171 | Pixel dissolve (overlay / transition) | pixel dissolve into the mark (cut at f190) |
 
 ## Measured on the master
-- Lint 0 / 0 / 0; every template applied at 1920 × 1080.
+- Lint 0 errors, 1 warning, 0 notes: the warning is `never_visible` on the finishing layer (an adjustment layer draws nothing itself, [KI-158](../references/known-issues.md#ki-158)). Every template applied at 1920 × 1080.
+- **Finishing grain (0.1.10):** an adjustment layer "Film grain" over the whole 430 f carries `grain "0.1 2.5px softness=0.2 colour=0.6"`: coloured digital noise under the glitches ([grain](../references/effects/grain.md)). Approximate in Resolve and After Effects.
 - `qc` (240 px) notes f280–383 (the terminal typing, too small for it to see) as a freeze and finds no flashes.
 
 ## Adapt it

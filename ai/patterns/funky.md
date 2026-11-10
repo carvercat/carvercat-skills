@@ -8,7 +8,7 @@ The pack lives in `library/templates/funky/`. Install it as in [Installing a pac
 - The templates come from `categories/funky/fk-lab`, written by `ai/scripts/motion/funky_lab.py`; round 2 from `categories/funky/fk-lab-2` (`funky_lab2.py`); round 3 from `categories/funky/fk-lab-3` (`funky_lab3.py`).
 - The sample reel is `categories/funky/fk-showcase`.
 
-**Status: verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library), measured by `ai/scripts/motion/verify_pack.py funky` (the harness with the object-level checks).**
+**Status: verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library), measured by `ai/scripts/motion/verify_pack.py funky` (fixed harness with the object-level checks).**
 - The labs (`funky_lab.py`, `_lab2.py`, `_lab3.py`) and the showcase (`funky_showcase.py`) speak design units (`json_author/cc2.py`: px from the top-left, y down, degrees clockwise, CSS colours and easing) and are sent with `scene.apply`; library presets are applied with `preset.apply`; the blob frame's mask is a scene mask (its window is unparented again). `regen_pack.py` rebuilds the 20 templates and the lab and showcase projects (carvercat/2); a second run leaves `git status` unchanged (confirmed on the final commit). The preset files stay in the stored preset format; all four (Tilt pop, Slide in - wiggle, Spin in, Spin out) load and apply in 0.1.8.1.
 - Each template was placed into a fresh 16:9 comp and a fresh 9:16 comp: lint 0 errors / 0 warnings / 0 notes for all 20; qc found no flashes.
 - Against the v1 originals (7 frames each, text templates at 960 x 540): silhouettes match for 20 of 20 (worst 1.54 %, new-drop reveal; limit 2 %). Colours are exactly the stated hex values (colour shift 2-36, the menu special highest). Orbit end card: its lab comp is now named `FK Orbit end` so that the template regenerates from it.
@@ -120,7 +120,7 @@ Each template placed into a fresh comp applied "at 1920 x 1080" and linted 0/0/0
 
 ## Pitfalls (0.1.6)
 
-1. **Two overlapping texts for a shadow fail lint** (`text_overlap` 100%). Use the native **Drop shadow** on the same text: Softness 0, Opacity 1, colour via Red/Green/Blue, and key Offset X/Y to make it step out.
+1. **Two overlapping texts for a shadow fail lint** (`text_overlap` 100%). Use the native **Drop shadow** on the same text: `dropShadow` with blur 0 and alpha 1 in the colour you want, and key its offset x/y to make it step out.
 2. **A preset and your own keys can share a property.** Tilt pop's angle keys (0–18 f) and a later linear drift on the same rotation track coexist (15 keys, measured).
 3. **No looping bobs or wiggles after landing.** Use one-way drifts.
 4. **Tilt pop and Spin in start text small.** Measured: Tilt pop failed lint `text_too_small` on 48 px and 110 px text and passed on 150 px and 240 px. Use Stamp and add a small rotation key for the style's turn.

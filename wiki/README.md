@@ -24,7 +24,7 @@ Calls use the design keys of `carvercat://schema/design`:
 | Text | `fontSize` px (a true em), `letterSpacing` px / pt / em, `lineHeight` a multiple or a length | `text.font.size` (a fraction), `tracking`, `lineSpacing` |
 | Shape | `borderRadius` px or % (to half the short side), `sides`, `points`, `innerRadius` %, `strokeWidth` px, `strokeDasharray`, `trimStart` / `trimEnd` / `trimOffset` in % | `cornerRadius`, widths as fractions of the frame width, `shape.stroke.*`, `trim.*` as 0 to 1 |
 | Soft edge | `softEdge` (one per shape; `strokeSoftEdge` is its old name), mask `feather` in px: the visible 10-90% ramp ([page](techniques/soft-edge-and-feather.md)) | `shape.fill.softEdge` as a fraction of the width |
-| Effects | `blur` px (a sigma), `dropShadow` `"x y blur color"` (y down), `glow` `"radius color strength mix"`, `brightness`, `contrast`, `mixBlendMode`, `filter` | `blur.size`, `shadow` (`Offset`, `Softness`), `glow` (`Size`, `Amount`) |
+| Effects | `blur` px (a sigma), `dropShadow` `"x y blur color"` (y down), `glow` `"radius color strength mix"`, `grain` `"amount size"`, `directionalBlur` `"length angle"`, `brightness`, `contrast`, `mixBlendMode`, `filter` | `blur.size`, `shadow` (`Offset`, `Softness`), `glow` (`Size`, `Amount`) |
 | Mask | `mask` on the object to cut, `clipPath`, `feather` | `mask.make {ids}`, `mask.invert` |
 | Easing | CSS on the key the segment **leaves**: `linear`, `ease-out`, `cubic-bezier(...)`, `steps(...)`, `spring(...)`, `hold` | `easing` on the arriving key: `Linear`, `Ease in`, `Ease out`, `S-curve`, `Hold`, `Custom` + `customEase` |
 | Time | frames, `"1.5s"` or `"500ms"` | frames |

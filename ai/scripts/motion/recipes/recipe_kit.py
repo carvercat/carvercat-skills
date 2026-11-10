@@ -34,7 +34,9 @@ os.makedirs(os.path.join(S, "work"), exist_ok=True)
 
 def client():
     os.chdir(LAB)
-    return Client.stdio(EXE, STATE, resource_root=os.environ.get("CARVERCAT_RESOURCE_ROOT"))
+    c = Client.stdio(EXE, STATE, resource_root=os.environ.get("CARVERCAT_RESOURCE_ROOT"))
+    c.timeout = max(getattr(c, "timeout", 120), float(os.environ.get("RECIPE_TIMEOUT", 0)))     # a big master takes minutes on a busy machine
+    return c
 
 
 def install_packs(c, packs=None):
@@ -99,9 +101,17 @@ def author_apply(c, name, n, bg, w=1920, h=1080):
     c.run("comp.rename", name=name, check=False)
 
 
-def place_all(c, path, name, shots, tag, look_every=None, n=None):
+def add_grain(c, value, n, name="Film grain", w=1920, h=1080, fps=30):
+    """A finishing grain: one adjustment layer over the whole master (design unit `grain`), so every placed template shares one grain.
+    It goes in last, on the top track, for the whole comp (`n` frames)."""
+    doc = {"schema": "carvercat/2.0", "comp": {"width": w, "height": h, "fps": fps, "duration": "%df" % n},
+           "children": [{"id": "finish-grain", "type": "adjustment", "name": name, "start": "0f", "duration": "%df" % n, "style": {"grain": value}}]}
+    return c.apply_scene(doc)
+
+
+def place_all(c, path, name, shots, tag, look_every=None, n=None, finish=None):
     """Open (or build) the master, place every shot, report lint, timing and qc, write a contact sheet, save.
-    A shot is (template, frame, track[, (from, to, amount)][, zoom])."""
+    A shot is (template, frame, track[, (from, to, amount)][, zoom]). `finish(c)` runs after the last shot (add_grain)."""
     if ROUTE == "apply":
         author_apply(c, name, n, MASTER["bg"], MASTER["w"], MASTER["h"])
     else:
@@ -135,6 +145,8 @@ def place_all(c, path, name, shots, tag, look_every=None, n=None):
             r4 = c.run("key.set", id=tid, key="scale", value=z0 * (1.0 + amt), atComp=b, ease="linear")
             r3 = c.run("key.set", id=tid, key="scale", value=z0, atComp=a, ease="linear")
             print("   push", r3.get("why"), "|", r4.get("why"))
+    if finish:
+        finish(c)                                  # e.g. add_grain: a finishing layer, after every shot is placed
     lint = c.tool("carvercat_inspect", mode="lint")
     print("LINT", lint_summary(lint))
     tm = c.tool("carvercat_inspect", mode="timing")

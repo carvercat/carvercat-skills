@@ -2,7 +2,7 @@
 
 **Template** `fk_swing_headline` · Funky pack · **verified 0.1.8.1 (rev 1127; headless, isolated folders, pack added to a scratch user Library)**, comp `FK Swing headline` in `categories/funky/fk-lab-2`.
 
-"Get your groove on" (purple ExtraBold 130 px) with a hard orange offset shadow (native Drop shadow, softness 0, 10 px), and a teal zigzag wave below. 90 f, holds.
+"Get your groove on" (purple ExtraBold 130 px) with a hard orange offset shadow (`dropShadow` with blur 0, 10 px), and a teal zigzag wave below. 90 f, holds.
 
 | Part | Clip start | Motion | Measured |
 |---|---|---|---|

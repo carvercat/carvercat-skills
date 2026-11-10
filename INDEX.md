@@ -6,7 +6,7 @@
 - [Cartoon Bounce lab 2 (source of the round-2 templates)](categories/cartoon-bounce/ct-lab-2/card.json) - The 8 comps the round-2 Cartoon Bounce templates were built and verified in: speech bubble, button press, rigged character hop, sticker burst, end card, ribbon lower third, rigged hanging sign and bouncy list.
 - [Cartoon Bounce lab 3 (source of the round-3 templates)](categories/cartoon-bounce/ct-lab-3/card.json) - The 8 comps the round-3 Cartoon Bounce templates were built and verified in: rigged walk cycle, rigged map pin drop, thought bubble (rigged cloud), squash-and-stretch logo reveal on real parabolas, rigged swinging price tag, rigged boing arrow, comic POW and kids' lesson title card.
 - [Cartoon bounce showcase (10.8 s reel)](categories/cartoon-bounce/ct-showcase/card.json) - A 10.8 s cartoon reel: bouncing ball, smear whoosh, blinking face and boing title.
-- [Cartoon Bounce showcase 2 (round-2 templates, 26 s)](categories/cartoon-bounce/ct-showcase-2/card.json) - A 26 s master that plays the round-2 Cartoon Bounce templates back to back, placed from the Library: Speech bubble, Button press, Character hop, Hanging sign, Bouncy list, Ribbon lower third, Sticker burst, Cartoon end card.
+- [Cartoon Bounce showcase 2 (round-2 templates, 26 s)](categories/cartoon-bounce/ct-showcase-2/card.json) - A 28 s master that plays the round-2 Cartoon Bounce templates back to back, placed from the Library: Speech bubble, Smear whoosh, Button press, Character hop, Hanging sign, Bouncy list, Ribbon lower third, Sticker burst, Cartoon end card. It carries the Smear whoosh's keyed directional blur.
 
 ## corporate-brand
 
@@ -54,7 +54,7 @@
 - [Glitch lab 2 (source of the round-2 templates)](categories/glitch/gl-lab-2/card.json) - The 8 comps the round-2 Glitch templates were built and verified in: glitch lower third, block artifact title, error cascade, terminal type-on, stutter words, RGB split mark, tracking band and pixel dissolve.
 - [Glitch lab 3 (source of the round-3 templates)](categories/glitch/gl-lab-3/card.json) - The 8 comps the round-3 Glitch templates were built and verified in: corrupted video title, scan-line news ticker, hacker alert, cyber sale, signal-lost end card, error 404 page, game over screen and chromatic logo sting (Screen-blended RGB copies).
 - [Glitch showcase (5.5 s sting)](categories/glitch/gl-showcase/card.json) - A 5.5 s glitch sting: RGB split title, a glitch cut, and a slice-shift logo under a noise overlay.
-- [Glitch showcase 2 (round-2 templates, 23 s)](categories/glitch/gl-showcase-2/card.json) - A 23 s master that plays the round-2 Glitch templates back to back, placed from the Library: Block artifact title, Stutter words, Glitch lower third, Terminal type-on, Error cascade, RGB split mark, with Pixel dissolve on one cut.
+- [Glitch showcase 2 (round-2 templates, 23 s)](categories/glitch/gl-showcase-2/card.json) - A 27 s master that plays the round-2 Glitch templates back to back, placed from the Library: Corrupted video title, Block artifact title, Stutter words, Glitch lower third, Terminal type-on, Error cascade, RGB split mark, with Pixel dissolve on one cut. It carries a finishing noise-grain layer (grain 0.1, coloured).
 
 ## kinetic-typography
 
@@ -62,7 +62,7 @@
 - [Kinetic Typography lab 2 (source of the round-2 templates)](categories/kinetic-typography/kt-lab-2/card.json) - The 7 comps the round-2 Kinetic Typography templates were built and verified in: lower third, split title, highlight sweep, quote, stat punch, numbered list and follow end card.
 - [Kinetic Typography lab 3 (source of the round-3 templates)](categories/kinetic-typography/kt-lab-3/card.json) - The 7 comps the round-3 Kinetic Typography templates were built and verified in: karaoke line, manifesto scroll, echo stack, opening credits, strike and replace, zoom through a letter and poster lockup.
 - [Kinetic type showcase (14 s title reel)](categories/kinetic-typography/kt-showcase/card.json) - A 14.3 s reel of the kinetic type patterns: focus pull, word swap, impact stack, line reveal and beat-cut words.
-- [Kinetic Typography showcase 2 (round-2 templates, 27 s)](categories/kinetic-typography/kt-showcase-2/card.json) - A 27 s master that plays every round-2 Kinetic Typography template back to back, placed from the Library: Split title, Highlight sweep, Kinetic lower third, Stat punch, Numbered list, Kinetic quote, Follow end card.
+- [Kinetic Typography showcase 2 (round-2 templates, 27 s)](categories/kinetic-typography/kt-showcase-2/card.json) - A 29 s master that plays every round-2 Kinetic Typography template back to back, placed from the Library: Split title, Line reveal, Highlight sweep, Kinetic lower third, Stat punch, Numbered list, Kinetic quote, Follow end card. It carries the Line reveal's keyed directional blur.
 
 ## minimal-luxury
 
@@ -70,7 +70,7 @@
 - [Minimal Luxury lab 2 (source of the round-2 templates)](categories/minimal-luxury/ml-lab-2/card.json) - The 8 comps the round-2 Minimal Luxury templates were built and verified in: lower third, monogram end card, price card, collection title, light sweep (gleam through a text mask), attribute row, framed word and slow dip.
 - [Minimal Luxury lab 3 (source of the round-3 templates)](categories/minimal-luxury/ml-lab-3/card.json) - The 8 comps the round-3 Minimal Luxury templates were built and verified in: material swatches, property feature (masked photo window), collection index, fragrance notes, save the date, boutique address, limited edition number (masked rise) and editorial spread (feathered photo window).
 - [Minimal luxury showcase (15.5 s premium film)](categories/minimal-luxury/ml-showcase/card.json) - A 15.5 s premium film from the Minimal Luxury patterns: tracked title, feathered wipe, drawn product frame and slow quote.
-- [Minimal Luxury showcase 2 (round-2 templates, 35 s)](categories/minimal-luxury/ml-showcase-2/card.json) - A 35 s master that plays the round-2 Minimal Luxury templates back to back, placed from the Library: Light sweep, Collection title, Luxury lower third, Price card, Attribute row, Framed word, Monogram end card, with Slow dip on one cut.
+- [Minimal Luxury showcase 2 (round-2 templates, 35 s)](categories/minimal-luxury/ml-showcase-2/card.json) - A 40 s master that plays the round-2 Minimal Luxury templates back to back, placed from the Library: Light sweep, Collection title, Luxury lower third, Price card, Attribute row, Framed word, Slow quote, Monogram end card, with Slow dip on one cut. It carries a finishing film-grain layer (grain 0.06).
 
 ## motion-patterns
 
@@ -81,19 +81,19 @@
 - [Annual report opener, 22 s (recipe)](categories/recipes/annual-report-opener/card.json) - A 22 s corporate opener: split-rule title card, three stats, chapter title, quote, team row and brand end card, with two brand panel wipes.
 - [Explainer: how it works, 25 s (recipe)](categories/recipes/explainer-how-it-works/card.json) - A 25 s educational piece from Explainer templates: key term, flow diagram, process steps, checklist and a quiz, with one dip.
 - [Funky sale promo, 18 s (recipe)](categories/recipes/funky-sale-promo/card.json) - A loud 18 s sale promo: swing headline, sale badge, photo stack, squiggle underline and an orbit end card, with a star cover into the products.
-- [Glitch music teaser, 14 s (recipe)](categories/recipes/glitch-music-teaser/card.json) - A 14 s music or release teaser: stutter words, a corrupted title, an RGB split mark and a terminal reveal, under a VHS tracking band, with a pixel dissolve.
+- [Glitch music teaser, 14 s (recipe)](categories/recipes/glitch-music-teaser/card.json) - A 14 s music or release teaser: stutter words, a corrupted title, an RGB split mark and a terminal reveal, under a VHS tracking band, with a pixel dissolve. It carries a finishing noise-grain layer (grain 0.1, coloured).
 - [HUD tech trailer, 23 s (recipe)](categories/recipes/hud-tech-trailer/card.json) - A 23 s sci-fi tech trailer: hex grid boot, target lock, signal analysis, a map ping, an alert and an upload that completes, with a scan wipe.
 - [Kids explainer, 24.5 s (recipe)](categories/recipes/kids-explainer/card.json) - A playful kids' explainer: a boing title, a greeting, a character that hops, a bouncy list of three ideas, a button press, a sign, a celebration and an end card.
 - [Kinetic quote reel, 18 s (recipe)](categories/recipes/kinetic-quote-reel/card.json) - An 18 s typographic piece from Kinetic Typography templates: focus pull, word swap, kinetic quote, beat words and a follow end card, with split doors.
-- [Kinetic quote reel 9:16, 17.3 s (recipe)](categories/recipes/kinetic-quote-reel-9x16/card.json) - A vertical re-cut of the kinetic quote reel: focus pull, word swap, quote and beat words fitted and zoomed to fill the width, then a 9:16 follow card.
-- [Luxury product teaser, 28 s (recipe)](categories/recipes/luxury-product-teaser/card.json) - A slow 28 s teaser from Minimal Luxury templates: light sweep wordmark, collection title, product frame, attribute row, price card and monogram end card, with two slow dips.
+- [Kinetic quote reel 9:16, 17.3 s (recipe)](categories/recipes/kinetic-quote-reel-9x16/card.json) - A vertical re-cut of the kinetic quote reel: focus pull, word swap, quote and beat words fitted and zoomed to fill the width, then a 9:16 follow card. Its transitions carry a keyed directional blur.
+- [Luxury product teaser, 28 s (recipe)](categories/recipes/luxury-product-teaser/card.json) - A slow 28 s teaser from Minimal Luxury templates: light sweep wordmark, collection title, product frame, attribute row, price card and monogram end card, with two slow dips. It carries a finishing film-grain layer (grain 0.06).
 - [Quarterly results, 21.5 s (recipe)](categories/recipes/quarterly-results/card.json) - A 21.5 s results video from Data Viz templates: revenue line, before/after bars, donut, ranked bars, progress rings, data table and a gauge, with one dip.
-- [Quarterly results 9:16, 17.5 s (recipe)](categories/recipes/quarterly-results-9x16/card.json) - A vertical re-cut of the quarterly results: comparison bars, donut, progress rings, waffle and gauge fitted into 9:16 and zoomed, then a 9:16 follow card.
-- [Retro night promo, 13 s (recipe)](categories/recipes/retro-night-promo/card.json) - A 13 s 80s-night promo: chrome title, neon sign, arcade start screen and a TV switch-off ending, with venetian blinds into the arcade.
-- [SaaS feature launch, 30 s (recipe)](categories/recipes/saas-feature-launch-30s/card.json) - A 30 s, 900 f product launch built only from Library templates: feature title, chat, dropdown, modal, chart, KPI, toast, stat punch and CTA end card, with two slide wipes.
-- [SaaS launch 9:16, 18.5 s (recipe)](categories/recipes/saas-launch-9x16/card.json) - A vertical re-cut of the SaaS launch: 9:16 hook and highlight caption, the 16:9 chart, KPI, stat and CTA templates fitted into 9:16 and zoomed on their content with a slow push, two swipe-ups.
-- [Sports score update, 14 s (recipe)](categories/recipes/sports-score-update/card.json) - A 14 s match-update overlay over a pitch stand-in: score bug with a score change, GOAL! on the change, replay stinger, player lower third, slash wipe and full-time score.
-- [Tip reel 9:16, 15.5 s (recipe)](categories/recipes/tip-reel-9x16/card.json) - A vertical 1080 x 1920 tip reel: hook title, listicle, poll sticker and follow end card, joined by two swipe-up transitions.
+- [Quarterly results 9:16, 17.5 s (recipe)](categories/recipes/quarterly-results-9x16/card.json) - A vertical re-cut of the quarterly results: comparison bars, donut, progress rings, waffle and gauge fitted into 9:16 and zoomed, then a 9:16 follow card. Its transitions carry a keyed directional blur.
+- [Retro night promo, 13 s (recipe)](categories/recipes/retro-night-promo/card.json) - A 13 s 80s-night promo: chrome title, neon sign, arcade start screen and a TV switch-off ending, with venetian blinds into the arcade. It carries a finishing tape-grain layer (grain 0.14, coloured).
+- [SaaS feature launch, 30 s (recipe)](categories/recipes/saas-feature-launch-30s/card.json) - A 30 s, 900 f product launch built only from Library templates: feature title, chat, dropdown, modal, chart, KPI, toast, stat punch and CTA end card, with two slide wipes. Its transitions carry a keyed directional blur.
+- [SaaS launch 9:16, 18.5 s (recipe)](categories/recipes/saas-launch-9x16/card.json) - A vertical re-cut of the SaaS launch: 9:16 hook and highlight caption, the 16:9 chart, KPI, stat and CTA templates fitted into 9:16 and zoomed on their content with a slow push, two swipe-ups. Its transitions carry a keyed directional blur.
+- [Sports score update, 14 s (recipe)](categories/recipes/sports-score-update/card.json) - A 14 s match-update overlay over a pitch stand-in: score bug with a score change, GOAL! on the change, replay stinger, player lower third, slash wipe and full-time score. It carries the GOAL slam's keyed directional blur.
+- [Tip reel 9:16, 15.5 s (recipe)](categories/recipes/tip-reel-9x16/card.json) - A vertical 1080 x 1920 tip reel: hook title, listicle, poll sticker and follow end card, joined by two swipe-up transitions. Its transitions carry a keyed directional blur.
 
 ## retro
 
@@ -101,7 +101,7 @@
 - [Retro lab 2 (source of the round-2 templates)](categories/retro/rt-lab-2/card.json) - The 8 comps the round-2 Retro templates were built and verified in: 70s stripe lower third, VHS overlay, groovy badge, neon sign, chrome title, TV switch-off, arcade start screen and venetian blinds.
 - [Retro lab 3 (source of the round-3 templates)](categories/retro/rt-lab-3/card.json) - The 8 comps the round-3 Retro templates were built and verified in: 80s action title, mixtape tracklist, under construction page, film countdown leader, pixel level up, 70s TV ident, polaroid memory and retro weather map.
 - [Retro showcase (9.5 s reel)](categories/retro/rt-showcase/card.json) - A 9.5 s retro reel: sunburst title, rainbow stripes, a checkerboard wipe and a synthwave sun with a running grid.
-- [Retro showcase 2 (round-2 templates, 25 s)](categories/retro/rt-showcase-2/card.json) - A 25 s master that plays the round-2 Retro templates back to back, placed from the Library: Chrome title, Neon sign, Arcade start screen, VHS overlay, Groovy badge, 70s stripe lower third, TV switch-off, with Venetian blinds on one cut.
+- [Retro showcase 2 (round-2 templates, 25 s)](categories/retro/rt-showcase-2/card.json) - A 29 s master that plays the round-2 Retro templates back to back, placed from the Library: Film countdown leader, Chrome title, Neon sign, Arcade start screen, VHS overlay, Groovy badge, 70s stripe lower third, TV switch-off, with Venetian blinds on one cut. It carries a finishing tape-grain layer (grain 0.14, coloured).
 
 ## saas-launch
 
@@ -125,7 +125,7 @@
 - [Sports lab 2 (source of the round-2 templates)](categories/sports/sp-lab-2/card.json) - The 8 comps the round-2 Sports templates were built and verified in: player lower third, match up, standings table, full-time score, starting lineup, player spotlight, replay stinger and slash wipe.
 - [Sports lab 3 (source of the round-3 templates)](categories/sports/sp-lab-3/card.json) - The 8 comps the round-3 Sports templates were built and verified in: live score clock, substitution card, signing announcement, touchdown burst, tournament bracket, league table movement, fixture list and match-day poster.
 - [Sports showcase (10 s match graphics)](categories/sports/sp-showcase/card.json) - A 10 s match-graphics reel: score bug and GOAL slam over a pitch stand-in (the score rolls as GOAL lands), then a player card and head-to-head stats.
-- [Sports showcase 2 (round-2 templates, 26 s)](categories/sports/sp-showcase-2/card.json) - A 26 s master that plays the round-2 Sports templates back to back, placed from the Library: Match up, Starting lineup, Player spotlight, Player lower third, Standings table, Full-time score, with Slash wipe on one cut.
+- [Sports showcase 2 (round-2 templates, 26 s)](categories/sports/sp-showcase-2/card.json) - A 28 s master that plays the round-2 Sports templates back to back, placed from the Library: Match up, GOAL slam, Starting lineup, Player spotlight, Player lower third, Standings table, Full-time score, with Slash wipe on one cut. It carries the GOAL slam's keyed directional blur.
 
 ## transitions
 

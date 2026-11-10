@@ -180,6 +180,6 @@ Each principle has its own page with Carvercat techniques and numbers measured o
 - Pure opacity fades as the only motion - combine with a small move or scale.
 - Animating width/height when scale would do (scale reads smoother and keeps strokes).
 - No motion blur on fast moves (strobing); motion blur on slow text (mush).
-- **Carvercat-specific**: glow `blend` > 0 leaves a soft haze even at `amount` 0;
-  a new blur starts at size 10 (soft text); full-frame glow flashes and heavy blur on
+- **Carvercat-specific**: glow `mix` > 0 leaves a soft haze even at strength 0;
+  a blur added by `effect.add` starts at 11.5 px (soft text); full-frame glow flashes and heavy blur on
   collapses read as muddy; logos "flying in from random places" - pop pieces in place.

@@ -2,7 +2,7 @@
 
 `glow "radius [colour] [strength 0-1] [mix 0-1]"`: radius in px (the glow's blur, a Gaussian sigma, 0 to 115 x W/1920 px), strength 0 to 1 (default 0.8), mix 0 to 1 (default 0.2). `property.set {key: "glow", value: "18px #1a99ff 0.7 0.2"}`; `"none"` removes it. Verified: glow-presets-and-pulse.
 
-Glow ADDS light onto the element, so it brightens the core as well as making a halo. Past a limit the core clips to white and "burns". The numbers below were **measured on the stored parameters** on 0.0.72 (comp `FX Glow calibration`: a 115 x 12 px bar, linear colour [0.1, 0.6, 1], rendered and measured per pixel; and `FX Glow grid` for mix). They carry over unchanged in the new units: **strength is the stored amount (same number), mix is the stored blend (same number), radius px is the stored size x 1.15 at 1920 wide** (a stored size of 6, 12, 24 and 48 is a radius of 6.9, 13.8, 27.6 and 55.2 px). The conversion is checked in glow-presets-and-pulse (18 px reads back as stored size 15.65).
+Glow ADDS light onto the element, so it brightens the core as well as making a halo. Past a limit the core clips to white and "burns". The numbers below were measured in comp `FX Glow calibration` (a 115 x 12 px bar of #1A99FF, rendered and measured per pixel) and `FX Glow grid` (for mix). In the `glow` design key, **strength** is the second number (0 to 1), **mix** the third (0 to 1) and the **radius is in px**; a radius of 7, 14, 28 and 55 px is what the rows below name.
 
 ## Measured
 | strength | core (8-bit RGB, original about 66,178,231) | verdict |
@@ -14,10 +14,10 @@ Glow ADDS light onto the element, so it brightens the core as well as making a h
 
 | radius | halo reach above the edge (strength 0.6, luminance above 20) |
 |---|---|
-| 7 px (stored size 6) | about 18 px |
-| 14 px (size 12) | about 30 px |
-| 28 px (size 24) | about 50 px |
-| 55 px (size 48) | 100 px and more (a wide wash) |
+| 7 px | about 18 px |
+| 14 px | about 30 px |
+| 28 px | about 50 px |
+| 55 px | 100 px and more (a wide wash) |
 
 **Reach comes from the radius; intensity from the strength.** Want a bigger glow: raise the radius, not the strength.
 
@@ -39,7 +39,7 @@ Glow ADDS light onto the element, so it brightens the core as well as making a h
 The colour of a glow multiplies the element's own channels: a white element glows in that colour (verified: glow-tints-a-white-element: a white bar with `"24px #1a99ff 0.6 0.2"` has a blue halo, about (13,57,101) just above the bar, and a core still near white), while a blue element with a `#ffcc00` glow gets a green halo (seen in the glow-presets look). Pick a colour close to the element's hue for a clean glow, or white-ish elements for any colour.
 
 ## Animation
-Strength, radius, colour and mix key together through the `glow` design key (verified: keyed-glow-shadow-brightness), or one at a time on the stored parameters.
+Strength, radius, colour and mix key together through the `glow` design key (verified: keyed-glow-shadow-brightness).
 
 - **Pulse:** strength 0.5 to 0.8 and back, `ease-in-out`, 20 to 40 f period. Never pulse into 0.9 or more. By design name (verified: keyed-glow-shadow-brightness):
 
@@ -48,22 +48,13 @@ Strength, radius, colour and mix key together through the `glow` design key (ver
     {"at": 0, "glow": "18px #1a99ff 0.5 0.2", "ease": "ease-in-out"}, {"at": 15, "glow": "18px #1a99ff 0.75 0.2", "ease": "ease-in-out"}, {"at": 30, "glow": "18px #1a99ff 0.5 0.2"}]}}
   ```
 
-  The stored route (verified: glow-presets-and-pulse), keyed on the entry's `amount`, which is the strength:
-
-  ```json
-  {"command": "property.set", "args": {"id": "#neon", "key": "glow", "value": "18px #1a99ff 0.7 0.2"}}
-  {"command": "key.set", "args": {"id": "#neon", "key": "fx.e_fx_glow_clip_3.amount", "value": 0.5, "at": 0, "ease": "ease-in-out"}}
-  {"command": "key.set", "args": {"id": "#neon", "key": "fx.e_fx_glow_clip_3.amount", "value": 0.75, "at": 15, "ease": "ease-in-out"}}
-  {"command": "key.set", "args": {"id": "#neon", "key": "fx.e_fx_glow_clip_3.amount", "value": 0.5, "at": 30}}
-  ```
-
-  `key.list {id, key}` returns the frames and values back. Find the entry path with `param.list {id, match: "glow"}`.
+  `key.list {id, key: "glow"}` returns the frames and values back (verified: glow-presets-and-pulse).
 - **Power-on:** strength 0 to 0.75 over 10 f `ease-out`, then settle 0.65.
-- Animate the radius for "breathing" auras (14 to 23 px, stored `size` 12 to 20): it keeps the core colour stable.
+- Animate the radius for "breathing" auras (a radius of 14 to 23 px): it keeps the core colour stable.
 
 ## Rules
-1. **White elements:** measured on the stored parameters, the core stays at 240 to 247 for strength 0.2 to 0.7 (it is already at the top), so it does not burn further. With no colour (or a white one) the halo is colourless and the element loses its edge: give the glow a colour and it tints the halo (see above); tinting the element slightly (0.8 to 0.9 grey or a pale hue) still helps the edge.
+1. **White elements:** measured, the core stays at 240 to 247 for strength 0.2 to 0.7 (it is already at the top), so it does not burn further. With no colour (or a white one) the halo is colourless and the element loses its edge: give the glow a colour and it tints the halo (see above); tinting the element slightly (0.8 to 0.9 grey or a pale hue) still helps the edge.
 2. Glow only the hero (one element per frame). Two glowing things compete.
 3. On light backgrounds glow barely reads; use [shadow.md](shadow.md) or a coloured soft-edge shape behind instead ([soft-edge.md](soft-edge.md)).
-4. **Secondary glow** (a second chained glow with its own amount/size/colour) lives in the basement: `param.promote {id, path: "fx.<entry>.secondary", on: true}` then `property.set {key: "fx.<entry>.secondary", value: true}` (both batchable); `secondaryAmount` (strength) and `secondarySize` (stored size units) are then stored paths. **Verified** (glow-secondary-in-the-basement): promote and set both accepted and the stored values read back `on`. Measured on 0.0.72 at amount 0.5, size 12 (a 14 px radius): adding the secondary (defaults amount 0.5, size 40, a 46 px radius) extended the halo from about 30 px to about 58 px with the core colour unchanged: the right way to get a wide halo without burning. See [basement-promote-ropes.md](basement-promote-ropes.md).
+4. **Secondary glow** (a second chained glow with its own amount/size/colour) lives in the basement: `param.promote {id, path: "fx.<entry>.secondary", on: true}` then `property.set {key: "fx.<entry>.secondary", value: true}` (both batchable); `secondaryAmount` (strength) and `secondarySize` are then stored paths (the size is a radius of about 1.15 px per unit at 1920). **Verified** (glow-secondary-in-the-basement): promote and set both accepted and the stored values read back `on`. Measured on 0.0.72 at strength 0.5 and a 14 px radius: adding the secondary (defaults strength 0.5, a 46 px radius) extended the halo from about 30 px to about 58 px with the core colour unchanged: the right way to get a wide halo without burning. See [basement-promote-ropes.md](basement-promote-ropes.md).
 5. Measure, don't guess: `carvercat_render` a frame and check the core pixel stays below 250 in every channel (the cases above read pixels with Pillow).

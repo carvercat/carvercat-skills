@@ -24,6 +24,7 @@
 
 ## Measured on the master
 - Lint 0 / 0 / 0. All 11 placed templates applied at 1920 × 1080.
+- **Speed streaks (0.1.10):** both Slide wipes carry a keyed `directionalBlur` on the sliding panel (160 px at 0deg while it travels, 0 while it covers; [directional blur](../references/effects/directional-blur.md)); exact in Resolve, approximate in After Effects.
 - The pushes on the Feature title and KPI tile instances measure 0.0004 a frame (`curves`, scaleUniform). `qc` at 240 px still notes those holds as freezes (f26–89, f493–569) because a 3% push is below its threshold; the toast hold (f581–681) and the end card (f811–899) are noted too.
 - A push on the Notification toast instance moved the toast past the top edge (lint `cropped_at_rest`, 94% on screen), so that instance has none.
 

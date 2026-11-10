@@ -31,7 +31,7 @@ from the scale below. (Old stored size: a fraction of comp width, `px = size x c
 ## Entrances (pick per role, keep consistent per film)
 | Style | How in Carvercat | Use |
 |---|---|---|
-| Per-letter blur rise | Stagger Text by character, gap 1.5-2; keys: relative position [0,-0.045]->[0,0] (stored values), relative opacity 0->1, blur 22->0 (stored size, about 25 px) over ~12 f, ease-out (the manual card in [../effects/stagger.md](../effects/stagger.md); a stagger tween takes no blur) | short important words (< ~12 chars) |
+| Per-letter blur rise | Stagger Text by character, gap 1.5-2; keys: relative position [0,-0.045]->[0,0] (a stagger row, no design key), relative opacity 0->1, blur 25 px -> 0 over ~12 f, ease-out (the manual card in [../effects/stagger.md](../effects/stagger.md); a stagger tween takes no blur) | short important words (< ~12 chars) |
 | Per-word rise | Stagger Text by word, gap 3-7 | sentences, VO-synced lines |
 | Waterfall | by word, 4-6 f per word, 1-2 f overlap, hard opacity (Hold) | energetic hooks |
 | Beat slam | whole line, scale 1.5->1 + blur 16->0, 11-18 f, on the beat | music-driven reels |
@@ -47,12 +47,12 @@ mid-film scenes the transition is the exit.
 - Scale pop 105-115 % and back over 6-10 f.
 - Highlighter band grows left -> right behind the word (scaleX from the left edge, `transformOrigin` "0% 50%" (stored anchor [−1, 0]),
   ~18-24 f, after the text has landed; band ~64-105 % of line height, rounded).
-- Colour shift to the accent; glow pulse - **key glow `blend` up only during the pulse
+- Colour shift to the accent; glow pulse - **key glow `mix` up only during the pulse
   and back to 0**, or the text stays hazy.
 - Trim-stroke underline or box drawn on 8-15 f after the word lands (key `trimEnd` 0% to 100% by name).
 
 ## Carvercat pitfalls
-- A new blur effect starts at size 10 (stored size) -> soft text unless keyed to 0 (`anim.set` with `blur` keys it by name).
+- A blur added by `effect.add` starts at 11.5 px -> soft text unless keyed to 0 (`anim.set` with `blur` keys it by name).
 - The stagger replays the whole key timeline per part, exit keys included; the last part
   finishes `gap x (parts-1)` frames late and can overrun the comp end. Gate the clip
   with its own placement opacity.

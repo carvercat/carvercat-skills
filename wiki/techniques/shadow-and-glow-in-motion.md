@@ -33,19 +33,17 @@ show lift (a card rising towards the viewer), power (a button switching on) and 
 ## Measured in Carvercat
 
 The 0.1.6 measurements, in the units you set today. The shadow is `dropShadow` (`"x y blur color"`, x right and y **down**, in px; the
-blur is a Gaussian sigma, as in CSS). The glow is `glow` (`"radius color strength mix"`). The stored values the lab projects hold
-(offsets as fractions of the frame, softness, glow size) convert with `x = offset × 1920`, `y = −offset × 1080` (the stored y is up),
-`blur = softness × 0.433 × 1920`, `radius = size × 1.15 × 1920 / 1920`. `scene.get` on the lab comps reads them back as below.
+blur is a Gaussian sigma, as in CSS). The glow is `glow` (`"radius color strength mix"`). `scene.get` on the lab comps reads them back in these units.
 
 **Shadow** (opacity 1, on a 200 px white square over mid grey), measured on a rendered frame:
 
-| `dropShadow` (the 0.1.6 offsets and softness) | Shadow reaches past the right edge | past the bottom edge |
+| `dropShadow` | Shadow reaches past the right edge | past the bottom edge |
 |---|---|---|
-| `"19.2px 10.8px 0px #000"` (0.01, −0.01, softness 0) | 20 px | 12 px |
-| `"19.2px 10.8px 8.3px #000"` (0.01, −0.01, softness 0.01) | 34 px | 26 px |
-| `"38.4px 21.6px 16.6px #000"` (0.02, −0.02, softness 0.02) | 68 px | 51 px |
+| `"19.2px 10.8px 0px #000"` | 20 px | 12 px |
+| `"19.2px 10.8px 8.3px #000"` | 34 px | 26 px |
+| `"38.4px 21.6px 16.6px #000"` | 68 px | 51 px |
 
-- An x offset is in px along the width and a y offset in px down the height: 0.01 of the width is 19.2 px, 0.01 of the height is 10.8 px.
+- An x offset is in px along the width and a y offset in px down the height (19.2 px across and 10.8 px down here).
 - The blur adds roughly 14 px of spread per 8.3 px of blur on each side.
 
 **Blur to ramp.** A 160 px white square on linear 0.5 grey with a black shadow (opacity 1) pushed 288 px to the side so its right edge stood
@@ -54,13 +52,12 @@ alone. The edge profile, converted back to linear light, rendered at 1920 × 108
 | `dropShadow` blur | 90% → 10% edge ramp | Equivalent Gaussian σ (ramp ÷ 2.563) | σ ÷ blur |
 |---|---|---|---|
 | `0px` | 2 px (anti-aliasing only) | 0.8 px | none |
-| `4.2px` (softness 0.005) | 10 px | 3.9 px | 0.94 |
-| `8.3px` (0.01) | 22 px | 8.6 px | 1.03 |
-| `16.6px` (0.02) | 42 px | 16.4 px | 0.99 |
-| `33.3px` (0.04) | 88 px | 34.3 px | 1.03 |
+| `4.2px` | 10 px | 3.9 px | 0.94 |
+| `8.3px` | 22 px | 8.6 px | 1.03 |
+| `16.6px` | 42 px | 16.4 px | 0.99 |
+| `33.3px` | 88 px | 34.3 px | 1.03 |
 
-- The blur is a sigma: the visible soft edge (10–90%) is about **2.563 × the blur** in px (8.3 px of blur: 21 px of edge). The old
-  rule of thumb, σ ≈ 0.44 × softness × comp width, is the same thing (0.433).
+- The blur is a sigma: the visible soft edge (10–90%) is about **2.563 × the blur** in px (8.3 px of blur: 21 px of edge).
 - The edge stays centred on the shadow's geometric edge (the 50% point did not move), so the blur spreads the
   shadow equally inwards and outwards; at 33 px of blur a 160 px shadow no longer reached full density in its centre (97%).
 - The σ column assumes a Gaussian-shaped edge; only the 10–90% widths were measured.

@@ -53,19 +53,25 @@ def check(script, root):
     src = open(script).read()
     n = int(re.search(r"^N = (\d+)", src, re.M).group(1))
     vertical = "w=1080" in src
+    finishing = "add_grain(" in src
     reads = {}
     for route in ("file", "apply"):
         work = os.path.join(root, base, route)
         os.makedirs(work)
         stdout = build(script, route, work)
-        assert "LINT ('0 error(s), 0 warning(s), 0 note(s)', [])" in stdout, "lint not clean:\n" + stdout[-800:]
+        if finishing:        # a finishing grain layer draws nothing itself: lint's one `never_visible` warning on it is expected (KI-158)
+            assert "LINT ('0 error(s), 1 warning(s), 0 note(s)', [('warn', 'never_visible', 'Film grain'," in stdout, "lint not as expected:\n" + stdout[-800:]
+        else:
+            assert "LINT ('0 error(s), 0 warning(s), 0 note(s)', [])" in stdout, "lint not clean:\n" + stdout[-800:]
         placed = re.findall(r"^placed (.+) at (\d+) track (\d+)", stdout, re.M)
         scene = read_back(os.path.join(work, base + ".carverproj"), work)
         comp = scene["comp"]
         assert (comp["width"], comp["height"], comp["fps"]) == ((1080, 1920, 30) if vertical else (1920, 1080, 30)), comp
         assert comp["duration"] == "%df" % n, comp
         names = [k["name"] for k in scene["children"]]
-        assert names.count("Background") == 1 and len(names) == len(placed) + 1, names
+        assert names.count("Background") == 1 and len(names) == len(placed) + 1 + int(finishing), names
+        if finishing:
+            assert names.count("Film grain") == 1, names
         bg = next(k for k in scene["children"] if k["name"] == "Background")
         assert bg["start"] == "0f" and bg["duration"] == "%df" % n and (bg["style"]["width"], bg["style"]["height"]) == (comp["width"], comp["height"]), bg
         for t, f, _ in placed:

@@ -124,6 +124,75 @@
        ],
        "effects": [
         {
+         "id": "e_fx_dirblur_clip_1",
+         "cap": "dirblur",
+         "on": true,
+         "params": {
+          "length": {
+           "value": 40.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 426.6666666666667,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 10.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 14.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 24.0,
+             "value": 426.6666666666667
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "angle": {
+           "value": 0.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 90.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 10.0,
+             "value": 90.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 14.0,
+             "value": 90.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 24.0,
+             "value": 90.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          }
+         }
+        },
+        {
          "id": "e_fx_motionblur_clip_1",
          "cap": "motionblur",
          "on": true,
@@ -181,7 +250,8 @@
              "value": [
               540.0,
               -960.0
-             ]
+             ],
+             "x-leave": "linear"
             }
            ],
            "x-arrive": {
@@ -346,6 +416,8 @@
          "src.e_src_shape_stroke_clip_1.opacity",
          "src.e_src_shape_stroke_clip_1.paint",
          "src.e_src_shape_stroke_clip_1.width",
+         "fx.e_fx_dirblur_clip_1.length",
+         "fx.e_fx_dirblur_clip_1.angle",
          "fx.e_fx_motionblur_clip_1.shutter",
          "fx.e_fx_motionblur_clip_1.samples"
         ],

@@ -19,7 +19,8 @@
 - Dips only at the two changes of register; no other transitions.
 
 ## Measured on the master
-- Lint 0 / 0 / 0.
+- Lint 0 errors, 1 warning, 0 notes: the warning is `never_visible` on the finishing layer (an adjustment layer draws nothing itself, [KI-158](../references/known-issues.md#ki-158)).
+- **Finishing grain (0.1.10):** an adjustment layer "Film grain" over the whole 840 f carries `grain "0.06 1.5px softness=0.4 colour=0.1"`: a fine film finish, the quiet cinematic look ([grain](../references/effects/grain.md)). Approximate in Resolve and After Effects.
 - `qc` (240 px) reports almost the whole film as "black" and "freeze": the warm-black ground is under its 4% luminance line, and the drifts, tracking breathes and thin gold lines are below its change threshold. The looks show the motion. For this style judge with `carvercat_look`, not `qc`.
 - The Attribute row in this sample is the fixed one (2026-10-28; [../patterns/ml-attribute-row.md](../patterns/ml-attribute-row.md)): the first release ran its words together.
 - The Product frame in this sample is the fixed one (2026-10-28, [KI-155](../references/known-issues.md#ki-155); [../patterns/ml-product-frame.md](../patterns/ml-product-frame.md)): the first release lit the stand-in from below. Fixed in the saved sample with `property.set`; master lint 0/0/0 before and after.

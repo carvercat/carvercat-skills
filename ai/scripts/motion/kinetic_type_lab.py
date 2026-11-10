@@ -236,6 +236,7 @@ def line_reveal(d):
     head = KT(k, "Headline", "Launch day", 960, 520, 140, COL['ink'], 0, n, align='center')
     bx, by = head.base
     head.pos([(8, (bx, by + 180), 'Linear'), (26, (bx, by), EXPO)])
+    head.dirblur_keys([(8, 60, 90, 'Linear'), (26, 0, 90, 'Linear')])           # a vertical streak while it rises, sharp at rest
     k.rect("Above the rule", 0, 300, 1920, ly - 3 - 300, COL['ink'], f0=0, dur=n)
     mask(d, k, head, k.objs[-1], 40)
     sub = KT(k, "Subline", "October 27  ·  10:00", 960, 680, 40, COL['muted'], 18, n - 18, 'Medium', 'center')

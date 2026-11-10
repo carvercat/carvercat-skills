@@ -89,8 +89,8 @@ Notes are all `repeated_key_value` (held values between keys, intended). Each te
 ## Measured geometry facts (0.1.6)
 
 - **An ellipse's stroke path starts at 3 o'clock and runs counter-clockwise.**
-  - Trim Stroke 0 → 0.25 (stored fractions) draws 3 → 12 o'clock, and 0 → 0.5 draws 3 → 12 → 9.
-  - For a clockwise share [a, b] starting at 12 o'clock, rotate the ellipse **90°** (`rotate` −90, stored +90°) and trim from 1 − b to 1 − a (stored fractions).
+  - `trimEnd` 0% → 25% draws 3 → 12 o'clock, and 0% → 50% draws 3 → 12 → 9.
+  - For a clockwise share [a, b] starting at 12 o'clock, rotate the ellipse **90°** (`rotate` −90, stored +90°) and trim from `(1 − b) × 100%` to `(1 − a) × 100%`.
 - **Rotation is positive counter-clockwise.** A needle drawn pointing right (0°) at 180° points left; animating 180° → 50.4° sweeps it over the top.
 - Trim Stroke on a polyline is proportional to path length. The line chart times each point with the inverse of its ease (`t_for_progress` in `data_viz_lab.py`).
 

@@ -6,7 +6,9 @@ Read [design-units.md](design-units.md) first. All effects, paint and transforms
 s.blur("card", 8)                                  # blur: "8px", a Gaussian sigma (edge ramp 2.563 x 8 px)
 s.glow("path", radius=14, color="#ffcc00", strength=0.6, mix=0.2)
 s.shadow("card", x=0, y=12, blur=16, color="#00000061")   # y is DOWN; blur is a sigma
-s.set("card", "filter", "blur(4px) brightness(1.2)")
+s.grain("film", 0.08, 1.5, softness=0.4, colour=0.1)       # grain: "0.08 1.5px softness=0.4 colour=0.1 seed=1" (put it on an adjustment layer)
+s.directional_blur("panel", 160, 0)                         # a streak: "160px 0deg", angle counter-clockwise from the right
+s.set("card", "filter", "blur(4px) grain(0.2 2px) brightness(1.2)")
 s.apply(preflight="aftereffects")
 ```
 

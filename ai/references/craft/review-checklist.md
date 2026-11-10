@@ -30,11 +30,11 @@ once straight through. Agent-neutral.
 
 ## Transitions
 - [ ] Each one is motivated; <= 2-3 types; hit on the beat; screen direction kept.
-- [ ] Fast shapes have motion blur; no full-frame glow flashes; <= 3 flashes/s.
+- [ ] Fast shapes have motion blur or a keyed `directionalBlur`; no full-frame glow flashes; <= 3 flashes/s.
 - [ ] Hand-off points line up across cuts.
 
 ## Look and finish
-- [ ] No haze: glow `blend` is 0 outside pulses; no blur left at 10 by default.
+- [ ] No haze: glow `mix` is 0 outside pulses; no blur left at 11.5 px (the default of a blur added by `effect.add`).
 - [ ] Logos are crisp (built at size, not upscaled) and pop in place.
 - [ ] 9:16 versions respect [vertical-and-safe-areas.md](vertical-and-safe-areas.md).
 

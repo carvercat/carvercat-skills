@@ -31,7 +31,7 @@ Everything is in design units: px from the frame's top-left with y down, degrees
   `library.place {name, frame, track}`, `template.apply`, `preset.apply {name}`.
 - Edit: `property.set {id, key, value}` (design keys; `id` may be a selector), `anim.set {id, keyframes|to|from|fromTo|stagger|motionPath}`, `key.set {id, key, value, at, ease}`, `key.remove`, `clip.move {id, frame, track}`, `clip.rename`, `edit.delete
   {ids}`, `edit.group {ids}`, `object.enter/exit` (not batchable), `track.add`.
-- Effects: `property.set` of `blur`, `dropShadow`, `glow`, `filter` ... (see [../effects/README.md](../effects/README.md)); `effect.add {cap: motionblur}` for motion blur.
+- Effects: `property.set` of `blur`, `dropShadow`, `glow`, `grain`, `directionalBlur`, `filter` ... (see [../effects/README.md](../effects/README.md)); `effect.add {cap: motionblur}` for motion blur.
 - Text stagger: `stagger.new`, `stagger.connect {param}`, `stagger.set {by: character|word, gap}`.
 - Masks/parenting: `property.set {id: target, key: "mask", value: {"ref": <mask id>}}` (the mask becomes a child of the target), `clipPath`, `parent.assign`, `parent.clear`.
 - Layout: `layout.align | distribute | stack | grid | fit | safe` (px, layout boxes), `text.fit`, `text.balance`, `measure.boxes | overlaps | distance | contrast`; `guide.add {axis, position}`.

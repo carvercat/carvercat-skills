@@ -44,7 +44,7 @@ Tools: `curves` = `carvercat_inspect mode:curves` (overshoot, settle), `lint` = 
 - [ ] Hook visible by f10; scene changes every 1.5–2.5 s.
 - [ ] Captions inside the 9:16 safe area ([vertical-and-safe-areas.md](vertical-and-safe-areas.md)), clear of the right-hand buttons.
 - [ ] No ping-pong bobs (lint reads them as jitter); motion is one-way.
-- [ ] Whips have the Motion blur effect.
+- [ ] Whips have the Motion blur effect or a keyed `directionalBlur` (0 on landing).
 
 ## Cartoon Bounce
 - [ ] Squashes pivot on the contact edge (`transformOrigin` "50% 100%" for landings; stored anchor [0, −1]).

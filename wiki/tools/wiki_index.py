@@ -16,7 +16,7 @@ TITLES = {"principles": "Principles of motion", "design": "Design fundamentals",
           "accessibility": "Accessibility", "history": "History and movements", "styles": "Styles",
           "cookbook": "Cookbook (how-to)"}
 REQ = ["id", "title", "section", "tags", "styles", "topics", "related", "verified", "source_inspiration"]
-VERIFIED = re.compile(r"^(0\.1\.6 \(rev 1105\)|design/1 \(Carvercat 0.1.8\)|no \(theory only\))$")
+VERIFIED = re.compile(r"^(0\.1\.6 \(rev 1105\)|design/1 \(Carvercat 0\.1\.\d+\)|no \(theory only\))$")
 LISTS = {"tags", "styles", "topics", "related", "source_inspiration"}
 
 def parse(path):

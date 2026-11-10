@@ -12,7 +12,7 @@
     "product",
     "1920x1080"
   ],
-  "summary": "A slow 28 s teaser from Minimal Luxury templates: light sweep wordmark, collection title, product frame, attribute row, price card and monogram end card, with two slow dips.",
+  "summary": "A slow 28 s teaser from Minimal Luxury templates: light sweep wordmark, collection title, product frame, attribute row, price card and monogram end card, with two slow dips. It carries a finishing film-grain layer (grain 0.06).",
   "use_when": "You need a premium product or collection teaser.",
   "canvas": {
     "width": 1920,
@@ -24,7 +24,7 @@
   "contains": {
     "timelines": 1,
     "comps": [
-      "Product teaser 28s (master, 6 scenes + 2 transitions)"
+      "Product teaser 28s (master, 6 scenes + 2 transitions + 1 grain layer)"
     ]
   },
   "parameters": [
@@ -48,7 +48,7 @@
     "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
     "The packs listed in dependencies must be installed for library.place when you rebuild; the saved project already contains the placed comps.",
     "Rebuild: ai/scripts/motion/recipes/rc_*.py (headless, isolated folders). Docs: ai/recipes/luxury-product-teaser.md.",
-    "Master lint 0 errors / 0 warnings / 0 notes; qc notes some long holds as freezes (see the doc)."
+    "Master lint 0 errors / 1 warning / 0 notes (the warning is `never_visible` on the finishing grain layer: an adjustment layer draws nothing itself, KI-158); qc notes some long holds as freezes (see the doc)."
   ],
   "source": "Carvercat team, built with an AI agent, 2026-10-28"
 }

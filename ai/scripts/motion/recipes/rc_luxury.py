@@ -6,4 +6,4 @@ N = 840
 author(p, "Product teaser 28s", N, '#0E0D0B')
 SHOTS = [("Light sweep", 0, 2), ("Collection title", 120, 2), ("Product frame", 270, 2), ("Attribute row", 390, 2), ("Price card", 540, 2), ("Monogram end card", 690, 2), ("Slow dip", 240, 3), ("Slow dip", 660, 3)]
 with client() as c:
-    place_all(c, p, "Product teaser 28s", SHOTS, "rc_luxury", n=N)
+    place_all(c, p, "Product teaser 28s", SHOTS, "rc_luxury", n=N, finish=lambda c: add_grain(c, "0.06 1.5px softness=0.4 colour=0.1", N))

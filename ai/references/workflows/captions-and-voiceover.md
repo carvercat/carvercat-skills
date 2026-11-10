@@ -76,11 +76,11 @@ Tested on build (2026-09-29): a four-section job at timeline frames 0..233..408.
 | Item | Verified value |
 |---|---|
 | English fonts that resolved | Poppins Bold, Anton Regular, Impact **Normal** (not "Regular") |
-| Readable white caption shadow | opacity 0.88, softness 0.006, downward offset 0.0035 |
-| Tight shadow | `fx.e_fx_shadow_<id>` x .005, y -.005, softness .008, opacity .38 (defaults x .012, y -.012, opacity .5 read too far away) |
+| Readable white caption shadow | `dropShadow "0 4px 5px #000000e0"` (alpha 0.88, blur 5 px, 4 px down) |
+| Tight shadow | `dropShadow "10px 5px 7px #00000061"` (a default shadow, 23 px right, 13 px down at alpha 0.5, reads too far away) |
 | Thin white outline | `text.outline.paint='solid'`, `text.outline.color=[1,1,1,1]`, `text.outline.thickness=0.018`. Thickness alone does nothing while paint is off. |
 | Caption position (9:16) | centred x 540 (centre; design `x`, `y` are the top-left), y ~1110–1120 (about 58% down), clear of faces and map pins |
-| Role sizes (one job, stored sizes) | headline 0.091, body 0.056; footer 0.049; amounts 0.158 |
+| Role sizes (one job, `fontSize` px of Rethink Sans) | headline 104 px, body 64 px; footer 56 px; amounts 181 px |
 
 - Shadow alone makes captions readable; do not box normal captions unless the brief asks.
 - Fix type roles (one size per role) across cards; inconsistent sizes were the main user complaint in one revision.

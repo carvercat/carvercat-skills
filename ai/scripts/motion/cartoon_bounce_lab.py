@@ -254,6 +254,7 @@ def smear_whoosh(d):
     bx, by = car.base
     car.pos([(0, (bx - 1200, by), 'Linear'), (8, (bx, by), EXPO)])
     car.scale([(0, [2.4, 0.8], 'Linear'), (8, [0.8, 1.15], 'Ease out'), (12, [1.08, 0.94], 'S-curve'), (16, [1.0, 1.0], 'S-curve')])
+    car.dirblur_keys([(0, 160, 0, 'Linear'), (8, 40, 0, 'Linear'), (12, 0, 0, 'Linear')])     # a streak along the run, clear on the stop
 
 
 def build():

@@ -117,7 +117,77 @@
          }
         }
        ],
-       "effects": [],
+       "effects": [
+        {
+         "id": "e_fx_dirblur_clip_3",
+         "cap": "dirblur",
+         "on": true,
+         "params": {
+          "length": {
+           "value": 40.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 160.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 16.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 20.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 36.0,
+             "value": 160.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "angle": {
+           "value": 0.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 16.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 20.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 36.0,
+             "value": 0.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          }
+         }
+        }
+       ],
        "transform": [
         {
          "id": "e_tr_placement_clip_3",
@@ -162,7 +232,8 @@
              "value": [
               2880.0,
               540.0
-             ]
+             ],
+             "x-leave": "linear"
             }
            ],
            "x-arrive": {
@@ -320,7 +391,9 @@
          "src.e_src_shape_stroke_clip_3.color",
          "src.e_src_shape_stroke_clip_3.opacity",
          "src.e_src_shape_stroke_clip_3.paint",
-         "src.e_src_shape_stroke_clip_3.width"
+         "src.e_src_shape_stroke_clip_3.width",
+         "fx.e_fx_dirblur_clip_3.length",
+         "fx.e_fx_dirblur_clip_3.angle"
         ],
         "containers": [
          "source",

@@ -11,7 +11,7 @@
     "promo",
     "1920x1080"
   ],
-  "summary": "A 13 s 80s-night promo: chrome title, neon sign, arcade start screen and a TV switch-off ending, with venetian blinds into the arcade.",
+  "summary": "A 13 s 80s-night promo: chrome title, neon sign, arcade start screen and a TV switch-off ending, with venetian blinds into the arcade. It carries a finishing tape-grain layer (grain 0.14, coloured).",
   "use_when": "You need a short retro-themed event or product promo.",
   "canvas": {
     "width": 1920,
@@ -23,7 +23,7 @@
   "contains": {
     "timelines": 1,
     "comps": [
-      "Retro night promo (master, 5 placed templates)"
+      "Retro night promo (master, 5 placed templates + 1 grain layer)"
     ]
   },
   "parameters": [
@@ -46,7 +46,7 @@
   "copy_notes": [
     "No media; nothing to relink. Every scene is a Library template placed with library.place + template.apply; each placed template is a nested comp you can open and edit.",
     "Rebuild: ai/scripts/motion/recipes/rc_retro.py (headless, isolated folders). Docs: ai/recipes/retro-night-promo.md.",
-    "Master lint 0 errors / 0 warnings / 0 notes; qc (240 px) notes the title hold (f24\u201389) as a freeze and finds no flashes."
+    "Master lint 0 errors / 1 warning / 0 notes (the warning is `never_visible` on the finishing grain layer: an adjustment layer draws nothing itself, KI-158); qc (240 px) notes the title hold (f24–89) as a freeze and finds no flashes."
   ],
   "source": "Carvercat team, built with an AI agent, 2026-10-28"
 }

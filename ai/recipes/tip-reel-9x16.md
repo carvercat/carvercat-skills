@@ -20,6 +20,8 @@
 - The master comp is authored at 1080 × 1920; every template applied at 1080 × 1920. Lint 0 / 0 / 0.
 - `qc` notes the poll hold (f271–363) and the follow card hold (f398–464) as freezes.
 
+- **Speed streak (0.1.10):** the Swipe up transition carries a vertical `directionalBlur` (240 px at 90deg while the panel travels, 0 while it covers; [directional blur](../references/effects/directional-blur.md)); exact in Resolve, approximate in After Effects.
+
 ## Adapt it
 1. Add the Story progress bar (9:16) over the whole length if the platform does not show one.
 2. Swap the Poll for the Countdown (9:16) or the Post card (9:16) for a different middle beat.

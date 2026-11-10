@@ -116,6 +116,7 @@ def swipe_up(d):
     bx, by = p.base
     p.pos([(0, (bx, by + H), 'Linear'), (10, (bx, by), BEZ['whip']), (14, (bx, by), 'Linear'), (n, (bx, by - H), ACCEL)])
     p.mblur(360)
+    p.dirblur_keys([(0, 240, 90, 'Linear'), (10, 0, 90, 'Linear'), (14, 0, 90, 'Linear'), (n, 240, 90, 'Linear')])   # a vertical streak on the swipe
 
 
 def comps(d):

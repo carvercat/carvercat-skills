@@ -1,12 +1,12 @@
 # Focus pull, and the tracking breathe recipe
 
-**Template** `kt_focus_pull` · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, not yet traced), qc no flash; against the v1 original the silhouette differs by at most 0.06 % of pixels over 7 frames; object-level check pass)**, comp `KT Focus pull`.
+**Template** `kt_focus_pull` · Kinetic Typography pack · **verified 0.1.8.1 (rev 1127 build; `ai/scripts/motion/verify_pack.py`: placed in a fresh 16:9 and a fresh 9:16 comp, lint 0/0/0, not yet traced), qc no flash; against the v1 original the silhouette differs by at most 0.06 % of pixels over 7 frames; object-level check pass)**, comp `KT Focus pull`.
 
 "Into focus" (150 px ExtraBold, centred). Each letter arrives out of focus and sharpens, 2 f after the previous one, while the letter spacing closes. Once landed, the spacing keeps opening very slowly, so the hold never freezes.
 
 | Part | Frames | Motion | Measured |
 |---|---|---|---|
-| Per-letter focus | 0–18 per letter, gap 2 | Stagger Text (by character, gap 2) with three slots: a blur 24 → 0 on the card's `fill.blur` slot (stored value, about 28 px; Custom expo; a stagger tween does not take blur, so this is the manual build in [../references/effects/stagger.md](../references/effects/stagger.md)), relative opacity 0 → 1 (f0–9, the decelerating arrival curve cubic-bezier(0.333, 0.667, 0.667, 1)), relative position (no travel) | blur settles **f12**, opacity **f9** per letter |
+| Per-letter focus | 0–18 per letter, gap 2 | Stagger Text (by character, gap 2) with three slots: a blur 28 px → 0 on the card's `fill.blur` slot ( Custom expo; a stagger tween does not take blur, so this is the manual build in [../references/effects/stagger.md](../references/effects/stagger.md)), relative opacity 0 → 1 (f0–9, the decelerating arrival curve cubic-bezier(0.333, 0.667, 0.667, 1)), relative position (no travel) | blur settles **f12**, opacity **f9** per letter |
 | Tracking | 0–30, then 30–60 | 1.6 → 1.0, Custom expo; then 1.0 → 1.06, Linear (the breathe) | reaches 1.0 at f30; inspect reports the breathe as 11.1% "overshoot" because it measures past the f30 target |
 
 Lab comp lint on 0.1.8.1 (native size): 0 errors, 1 warnings, 0 notes.

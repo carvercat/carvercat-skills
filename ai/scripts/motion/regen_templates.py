@@ -7,7 +7,7 @@ For every template in PACK_DIR the lab comp whose slugged name equals the templa
 -> `tx_slide_wipe`). Its scene replaces the template's scene; everything else (id, name, category, tags, note, fonts,
 frame) is kept. If no comp has that name, the one named like the template's display name is used. The objects kept are the ones the old
 template had (matched by name; a lab object the app saved without a name matches its type's default name, "Star", "Rectangle" ...), so stand-in
-backgrounds are dropped as before; null objects are always kept (they are parents, not content). A lab comp that was renamed so that it
+backgrounds are dropped as before; null objects and adjustment layers are always kept (parents and effects, not content). A lab comp that was renamed so that it
 no longer matches its template is NOT regenerated: it is reported on stderr as a WARNING (and with --strict the run exits 3), never silently. Clip ids are rewritten with the old template's own prefix (`clip_3` -> `tsw_3`) so two templates
 applied to one comp never share ids. Files are written to OUT_DIR as carvercat/2 (`format`, `minApp`).
 """
@@ -42,8 +42,13 @@ def keep(o, names):
     """does the old template have this lab object? By name; a null is always kept (below); an object the app saved WITHOUT a name (a star
     made by scene.apply, app bug of 0.1.8) is known by its type's default name, so it matches an old template that names it so ("Star")"""
     n = o.get('name')
-    if n in names or is_null(o): return True
+    if n in names or is_null(o) or is_adjustment(o): return True
     return not n and DEFAULT_NAME.get(o.get('type') or o.get('kind')) in names
+
+
+def is_adjustment(o):
+    """an adjustment layer holds only effects (grain on a whole template): kept whether or not the old template had one"""
+    return (o.get('type') or o.get('kind')) == 'adjustment'
 
 
 def is_null(o):

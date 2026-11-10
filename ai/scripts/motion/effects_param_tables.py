@@ -15,7 +15,7 @@ SRC = os.path.join(REF, "app", "native-controls.json")
 OUT = os.path.join(REF, "effects", "PARAMETERS.md")
 
 GROUPS = [
-    ("Effects (added with `effect.add {cap}`)", ["blur", "glow", "shadow", "motionblur", "fill", "stroke", "colour", "transform", "crop", "outline", "expand", "stylelayer", "trim"]),
+    ("Effects (added with `effect.add {cap}`)", ["blur", "glow", "shadow", "motionblur", "grain", "dirblur", "fill", "stroke", "colour", "transform", "crop", "outline", "expand", "stylelayer", "trim"]),
     ("Shape paint and geometry", ["shape.fill", "shape.stroke", "shape.geometry.rectangle", "shape.geometry.line", "shape.geometry.ellipse", "shape.geometry.ngon", "shape.geometry.star"]),
     ("Text", ["text.content", "text.font", "text.fill", "text.outline", "text.relative", "text.layout", "text.decoration", "text.typography"]),
     ("Transform, compositing, masks, parenting, media", ["transform.placement", "transform.compositing", "mask", "parent", "media.trim"]),
@@ -38,6 +38,8 @@ DESIGN_NAMES = [
     "| `blur.size` (size units) | `blur` px, a Gaussian sigma | px = size x 1.15 x W/1920; the visible edge ramp is 2.563 x px |",
     "| `glow.size`, `glow.amount`, `glow.blend`, colour scales | `glow \"radius colour strength mix\"` | radius px = size x 1.15 x W/1920; strength = amount; mix = blend; the colour sets the colour scales (a tint) |",
     "| `shadow.x`, `shadow.y`, `shadow.softness`, `shadow.opacity`, red/green/blue | `dropShadow \"x y blur colour\"`, **y down** | x px = x x W; y px = -y x H (stored y is up); blur px = softness x 0.433 x W (a sigma); colour alpha = opacity |",
+    "| `grain.amount`, `size`, `softness`, `colour`, `animated`, `seed` | `grain \"amount size softness colour held seed\"` (an object works too) | the stored size is px of a 1920 frame (px = size x W/1920); amount, softness and colour are 0 to 1; `animated` off is the word `held`; the seed is a whole number 0 to 9999 and is never keyed |",
+    "| `dirblur.length`, `dirblur.angle` | `directionalBlur \"length angle\"` | length px of a 1920 frame (px = length x W/1920, 0 to 500); angle in degrees **counter-clockwise** from the right (the opposite sense of `rotate`), -360 to 360 |",
     "| `src.e_src_shape_fill.softEdge` (fraction of W; the shape's one soft edge, fill and stroke together) | `softEdge` px (the visible 10 to 90 % ramp; `strokeSoftEdge` is its old name) | px = fraction x W |",
     "| `trim.start`, `trim.end`, `trim.offset` (0..1 turns) | `trimStart`, `trimEnd`, `trimOffset` in % | % = value x 100 |",
     "| `shape.stroke.width` (fraction of W) | `strokeWidth` px | px = width x W |",

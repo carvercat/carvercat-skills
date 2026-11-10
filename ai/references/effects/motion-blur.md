@@ -23,4 +23,5 @@ Find the entry path with `param.list {id, match: "motionblur"}`. It follows the 
 ## Pitfalls
 - It only sees the object's own keys: a child moved by its parent, or content inside a moving nested comp, may not blur. Add motion blur on the moving object itself (the parent or instance).
 - With a preset that uses many baked keys (linear joins; `motion.apply` and springs bake) the blur follows each segment: fine at 16 samples.
+- To aim the streak yourself (a whip at a chosen angle and length) use [directional-blur.md](directional-blur.md): `directionalBlur "160px 0deg"`, keyed to 0 on landing. Motion blur is the realistic default; directional blur is the art-directed one.
 - It is a stored effect, not a design key: it is not in `filter`; `carve.preflight` says how it carves.

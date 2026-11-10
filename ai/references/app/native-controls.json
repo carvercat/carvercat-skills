@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "registrySha256": "ee9bfe22520626da7eb1e6924825d8dbfeba24679dbfdd7869d8c0da747d318a",
+  "registrySha256": "c85780c8cde5108d4e7a8142e17ff884f681efbcf90f97aaab3a15be4d951a03",
   "authority": "Declarations only. Discover actual native bindings, values, units and availability with carvercat_authoring mode=controls; param.list describes panel/promotion state; unavailable native controls must not be treated as rendered. Repeated effects use exact entry aliases.",
   "caps": {
     "text.content": [
@@ -3025,6 +3025,114 @@
         "min": 2,
         "max": 64,
         "default": 16,
+        "options": null,
+        "keyframeable": true,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      }
+    ],
+    "grain": [
+      {
+        "param": "amount",
+        "label": "Amount",
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "default": 0.25,
+        "options": null,
+        "keyframeable": true,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      },
+      {
+        "param": "size",
+        "label": "Size",
+        "type": "number",
+        "min": 0.5,
+        "max": 8,
+        "default": 1.5,
+        "options": null,
+        "keyframeable": true,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      },
+      {
+        "param": "softness",
+        "label": "Softness",
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "default": 0.3,
+        "options": null,
+        "keyframeable": true,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      },
+      {
+        "param": "colour",
+        "label": "Colour",
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "default": 0.25,
+        "options": null,
+        "keyframeable": true,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      },
+      {
+        "param": "animated",
+        "label": "Animate",
+        "type": "bool",
+        "min": null,
+        "max": null,
+        "default": true,
+        "options": null,
+        "keyframeable": false,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      },
+      {
+        "param": "seed",
+        "label": "Seed",
+        "type": "number",
+        "min": 0,
+        "max": 9999,
+        "default": 1,
+        "options": null,
+        "keyframeable": false,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      }
+    ],
+    "dirblur": [
+      {
+        "param": "length",
+        "label": "Length",
+        "type": "number",
+        "min": 0,
+        "max": 500,
+        "default": 40,
+        "options": null,
+        "keyframeable": true,
+        "container": "effects",
+        "factoryPromote": true,
+        "absorbedBy": null
+      },
+      {
+        "param": "angle",
+        "label": "Angle",
+        "type": "number",
+        "min": -360,
+        "max": 360,
+        "default": 0,
         "options": null,
         "keyframeable": true,
         "container": "effects",

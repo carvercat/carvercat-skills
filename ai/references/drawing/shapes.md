@@ -25,7 +25,7 @@ Fill (stored `shape.fill.*`: color, paint none/solid/gradient, softEdge; design 
 
 ## Recipes by shape
 - **Badge / sticker:** star sides 16, innerRadius 0.82, accent fill + text on top; entrance `Swing in` or `Pop - spring`; slow continuous rotation (linear, 0.5°/f) during the hold.
-- **Hexagon icon tile:** polygon sides 6, angle 30 (pointy-top; stored value), stroke 0.003 (stored fraction of width) + soft glow ≤ 0.6.
+- **Hexagon icon tile:** polygon sides 6, angle 30 (pointy-top; stored value), `strokeWidth` 6 px + soft glow strength ≤ 0.6.
 - **Progress ring:** ellipse fill none, stroke round cap, `trimEnd` 0 → value (key `trimEnd` by name).
 - **Pill button / CTA:** rectangle, `borderRadius "50%"`, label text centred via `layout.align {mode: center}` or `layout.fit`; `Pop - gentle` + shadow lift.
 - **Morphing icon:** rope rotation → star innerRadius or polygon sides (../effects/basement-promote-ropes.md).

@@ -1069,7 +1069,65 @@
          }
         }
        ],
-       "effects": [],
+       "effects": [
+        {
+         "id": "e_fx_dirblur_clip_5",
+         "cap": "dirblur",
+         "on": true,
+         "params": {
+          "length": {
+           "value": 40.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 160.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 8.0,
+             "value": 40.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 12.0,
+             "value": 0.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "angle": {
+           "value": 0.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 8.0,
+             "value": 0.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 12.0,
+             "value": 0.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          }
+         }
+        }
+       ],
        "transform": [
         {
          "id": "e_tr_placement_clip_5",
@@ -1096,7 +1154,8 @@
              "value": [
               960.0,
               540.0
-             ]
+             ],
+             "x-leave": "linear"
             }
            ],
            "x-arrive": {
@@ -1352,7 +1411,9 @@
          "src.e_src_shape_stroke_clip_5.color",
          "src.e_src_shape_stroke_clip_5.opacity",
          "src.e_src_shape_stroke_clip_5.paint",
-         "src.e_src_shape_stroke_clip_5.width"
+         "src.e_src_shape_stroke_clip_5.width",
+         "fx.e_fx_dirblur_clip_5.length",
+         "fx.e_fx_dirblur_clip_5.angle"
         ],
         "containers": [
          "source",

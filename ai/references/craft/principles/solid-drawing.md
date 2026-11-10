@@ -4,7 +4,7 @@
 
 ## How in Carvercat
 - **Keep volume** when squashing: x·y within about 10% of 1 ([squash-and-stretch.md](squash-and-stretch.md)).
-- **One light:** one shadow direction, softness and opacity for the whole film (native Drop shadow; e.g. SaaS cards `y −0.004, softness 0.02, opacity 0.22–0.3`).
+- **One light:** one shadow direction, softness and opacity for the whole film (native Drop shadow; e.g. SaaS cards `"0 4px 16px #00000047"` (y 4 px down, blur 16 px, alpha 0.22–0.3)).
 - **Contact:** a flat ellipse shadow under anything that touches the ground; it shrinks and fades with height.
 - **Depth:** nearer moves faster (parallax 1.5–2×), and at most three speeds in a frame.
 - **Clean geometry:** build shapes at the size they are seen (drawn ≤ 1000 px and scaled up is cropped before scale, [KI-137](../../known-issues.md#ki-137)); pills from round-capped strokes, not corner radius.

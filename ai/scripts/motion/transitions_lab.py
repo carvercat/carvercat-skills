@@ -42,6 +42,7 @@ def slide_wipe(d):
     p = k.rect("Panel", W / 2, H / 2, W, H, COL['accent'], f0=0, dur=n, center=True)
     bx, by = p.base
     p.pos([(0, (bx - W, by), 'Linear'), (CUT - 2, (bx, by), IN_EASE), (CUT + 2, (bx, by), 'Linear'), (n, (bx + W, by), OUT_EASE)])
+    p.dirblur_keys([(0, 160, 0, 'Linear'), (CUT - 2, 0, 0, 'Linear'), (CUT + 2, 0, 0, 'Linear'), (n, 160, 0, 'Linear')])   # the panel's edge streaks while it travels
 
 
 def diagonal_wipe(d):

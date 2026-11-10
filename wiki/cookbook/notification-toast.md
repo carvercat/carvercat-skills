@@ -17,7 +17,7 @@ leaves upwards.
 
 ## Steps
 
-1. The toast: rectangle 720 × 120 px, `borderRadius` 20, white, `dropShadow` `"0 6.5px 16.6px #00000040"` (the lab stores softness 0.02, which is a 16.6 px blur: [shadow and glow](../techniques/shadow-and-glow-in-motion.md)); icon and text on top, at y 110.
+1. The toast: rectangle 720 × 120 px, `borderRadius` 20, white, `dropShadow` `"0 6.5px 16.6px #00000040"`, a 16.6 px blur ([shadow and glow](../techniques/shadow-and-glow-in-motion.md)); icon and text on top, at y 110.
 2. Make **two clips** of each part, butted: the stay (here f10–f70) and the exit (f70–f90).
 3. Apply **`Toast drop - spring`** to the stay clips and **`Toast exit up`** to the exit clips.
 4. Give it at least its reading time between landing and leaving.

@@ -73,6 +73,8 @@ want on screen. The lab projects are in [labs/](../labs/README.md) (`cookbook-la
 | How do I scribble a hand-drawn underline? | [hand-drawn underline](hand-drawn-underline.md) | two wobbly trimmed strokes: 10 px before and 14 px past the measured word; stroke 1 drawn f13–f19 |
 | How do I pan across parallax layers? | [parallax layers](parallax-layers.md) | 1 : 2 : 4 speeds measured exactly; a 2400 px path is cropped to the comp box, so build layers from pieces |
 | How do I make a story progress bar? | [story progress bar](story-progress-bar.md) | left-origin fills, `scale` `[0, 1]` → `[1, 1]` `linear` per card: 333.3 px segments, left edges pinned |
+| How do I give a title a film look? | [film look with a grain overlay](film-look-grain-overlay.md) | one `grain` on an adjustment layer: std 0.050 at the default, 0.198 at amount 1; mean unchanged |
+| How do I whip a title in with a speed streak? | [whip-in-title](whip-in-title.md) | `directionalBlur` keyed `240px 0deg` to `0px`: an edge softens over 0.8 x length |
 | How do I light up lyrics in sync? | [lyric line sync](lyric-line-sync.md) | one text per word, `hold` colour key on each onset: every word lit on its own frame |
 | How do I loop a bounce cycle? | [bounce cycle](bounce-cycle.md) | `transformOrigin` on the bottom: squash sits on the ground (800.0); eyes keyed with the body stay inside |
 | How do I drift a gradient background? | [gradient background drift](gradient-background-drift.md) | key `gradientStart`/`gradientEnd` round the corners: colours step a corner per 30 f; qc seam 0.0 |

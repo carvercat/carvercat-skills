@@ -12,3 +12,5 @@ The vertical version of [kinetic-quote-reel](kinetic-quote-reel.md). **Verified 
 | 0:14.3 | 430–519 | Follow end card (9:16) | — | follow (the 16:9 "FOLLOW FOR MORE" is too wide) |
 
 Measured: lint 0 / 0 / 0; `qc` notes the quote hold (f234–329). Looks checked: the widest beat word, REPEAT, fills the width without touching the edges.
+
+Speed streak (0.1.10): the Swipe up transition carries a vertical `directionalBlur` (240 px at 90deg while the panel travels, 0 while it covers; [directional blur](../references/effects/directional-blur.md)); exact in Resolve, approximate in After Effects.

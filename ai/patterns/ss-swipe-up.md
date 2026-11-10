@@ -5,7 +5,9 @@
 **Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 3.01 % (limit 2 %) and every object is present with the same text (box offset at most 0.0 px); colours are now the exact hex the page states (mean shift 9.9 of 255, intended). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
 
 
-A transition: a pink full-frame panel whips up from below, covers the frame and leaves through the top, with motion blur (shutter 360). 24 f.
+**Re-checked with the new effects on Carvercat 0.1.10, 2026-11-10 (`verify_pack.py`):** lint 0/0/0 in 16:9 and 9:16, objects pass. The v1 comparison reads DIFF with a worst silhouette difference of 2.31 % (limit 2 %; 3.01 % before the streak): the soft streak edge is the intended difference, not a missing shape.
+
+A transition: a pink full-frame panel whips up from below, covers the frame and leaves through the top, with motion blur (shutter 360) and a vertical `directionalBlur` (240 px at 90deg falling to 0 while the panel covers, rising again as it leaves; [directional blur](../references/effects/directional-blur.md)). 24 f.
 
 | Part | Clip | Motion | Measured |
 |---|---|---|---|

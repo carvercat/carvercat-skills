@@ -681,10 +681,9 @@ def blur_focus_pull(c):
             raise AssertionError("must be refused")
         except Refused as e:
             assert word is None or word in str(e.receipt.get("why")), e.receipt
-    # keyed today through the stored size: stored size = px x 1920 / (1.15 x W), i.e. px / 1.15 at 1920 wide
-    e = _entry(c, t, "blur")
-    c.run("key.set", id=t, key=e + ".size", value=round(28 / 1.15, 4), at=0, ease="ease-out")
-    c.run("key.set", id=t, key=e + ".size", value=0, at=18)
+    # keyed by its design name, in px
+    c.run("key.set", id=t, key="blur", value="28px", at=0, ease="ease-out")
+    c.run("key.set", id=t, key="blur", value="0px", at=18)
     c.run("anim.set", id=t, keyframes=[{"at": 0, "opacity": 0, "scale": 1.08, "ease": "ease-out"}, {"at": 9, "opacity": 1}, ])
     c.run("anim.set", id=t, keyframes=[{"at": 0, "scale": 1.08, "ease": "ease-out"}, {"at": 18, "scale": 1}])
     _at(c, 0)
@@ -707,12 +706,10 @@ def blur_directional_and_depth(c):
     s.apply()
     c.run("property.set", id="#far", key="blur", value="10px")
     c.run("property.set", id="#mid", key="blur", value="3px")
-    # directional (a horizontal whip): unlock X/Y and set the vertical size to 0 on the stored entry (size and sizeY are size units)
-    e = _entry(c, "#mid", "blur")
-    c.run("property.set", id="#mid", key=e + ".lock", value=False)
-    c.run("property.set", id="#mid", key=e + ".size", value=17.4)
-    c.run("property.set", id="#mid", key=e + ".sizeY", value=0)
-    assert float(_stored(c, "#mid", e + ".sizeY")) == 0
+    # a horizontal streak is the directionalBlur design key; a Gaussian stays round
+    c.run("property.set", id="#mid", key="blur", value="none")
+    c.run("property.set", id="#mid", key="directionalBlur", value="20px 0deg")
+    assert c.get("#mid", "directionalBlur")["value"] == "20px 0deg"
     # blend mixes the blurred copy with the sharp original (0.5 = a halo over a sharp core)
     c.run("property.set", id="#far", key=_entry(c, "#far", "blur") + ".blend", value=0.5)
     look(c, "blur-directional-depth", [0])
@@ -730,20 +727,15 @@ def glow_presets_and_pulse(c):
     for sel, v in presets.items():
         c.run("property.set", id=sel, key="glow", value=v)
         assert c.get(sel, "glow")["value"] == v
-    # radius -> stored size is radius / 1.15 at 1920 wide, strength -> amount, mix -> blend (the same numbers)
-    e = _entry(c, "#neon", "glow")
-    assert abs(float(_stored(c, "#neon", e + ".size")) - 18 / 1.15) < 0.01
-    assert abs(float(_stored(c, "#neon", e + ".amount")) - 0.7) < 0.001 and abs(float(_stored(c, "#neon", e + ".blend")) - 0.2) < 0.001
     # defaults: strength 0.8, mix 0.2
     c.run("property.set", id="#subtle", key="glow", value="12px #ffcc00")
-    e2 = _entry(c, "#subtle", "glow")
-    assert abs(float(_stored(c, "#subtle", e2 + ".amount")) - 0.8) < 0.001 and abs(float(_stored(c, "#subtle", e2 + ".blend")) - 0.2) < 0.001
-    # a pulse between two safe strengths, keyed on the stored amount (the same number as strength)
-    c.run("key.set", id="#neon", key=e + ".amount", value=0.5, at=0, ease="ease-in-out")
-    c.run("key.set", id="#neon", key=e + ".amount", value=0.75, at=15, ease="ease-in-out")
-    c.run("key.set", id="#neon", key=e + ".amount", value=0.5, at=30)
-    keys = c.run("key.list", id="#neon", key=e + ".amount")["readings"][0]
-    assert keys["frames"] == [0.0, 15.0, 30.0] and keys["values"] == [0.5, 0.75, 0.5], keys
+    assert c.get("#subtle", "glow")["value"].split()[:3] == ["12px", "#ffcc00", "0.8"], c.get("#subtle", "glow")
+    # a pulse between two safe strengths, keyed by the design name
+    c.run("key.set", id="#neon", key="glow", value="18px #1a99ff 0.5 0.2", at=0, ease="ease-in-out")
+    c.run("key.set", id="#neon", key="glow", value="18px #1a99ff 0.75 0.2", at=15, ease="ease-in-out")
+    c.run("key.set", id="#neon", key="glow", value="18px #1a99ff 0.5 0.2", at=30)
+    keys = c.run("key.list", id="#neon", key="glow")["readings"][0]
+    assert [k["at"] for k in keys["keys"]["glow"]] == [0.0, 15.0, 30.0], keys
     # over the range: refused with the limit
     try:
         c.run("property.set", id="#neon", key="glow", value="116px #1a99ff")
@@ -779,19 +771,9 @@ def shadow_card_lift(c):
     # resting card: y DOWN, blur is a Gaussian sigma
     c.run("property.set", id="#card", key="dropShadow", value="0 6px 12px #00000059")
     assert c.get("#card", "dropShadow")["value"] == "0px 6px 12px #00000059"
-    e = _entry(c, "#card", "shadow")
-    # stored: x = dx / W, y = -dy / H (up), softness = blur / (0.433 W), opacity = the colour's alpha
-    assert abs(float(_stored(c, "#card", e + ".y")) - (-6 / 1080)) < 0.001
-    assert abs(float(_stored(c, "#card", e + ".softness")) - 12 / (0.433 * 1920)) < 0.001
-    # lift: key the stored shadow (0 28px 30px, alpha 0.2) and the card itself
-    y1, soft1 = round(-28 / 1080, 5), round(30 / (0.433 * 1920), 5)
-    c.run("key.set", id="#card", key=e + ".y", value=round(-6 / 1080, 5), at=0, ease="ease-out")
-    c.run("key.set", id="#card", key=e + ".y", value=y1, at=18)
-    c.run("key.set", id="#card", key=e + ".softness", value=round(12 / (0.433 * 1920), 5), at=0, ease="ease-out")
-    c.run("key.set", id="#card", key=e + ".softness", value=soft1, at=18)
-    c.run("key.set", id="#card", key=e + ".opacity", value=0.35, at=0, ease="ease-out")
-    c.run("key.set", id="#card", key=e + ".opacity", value=0.2, at=18)
-    c.run("anim.set", id="#card", keyframes=[{"at": 0, "scale": 1, "y": 340, "ease": "ease-out"}, {"at": 18, "scale": 1.04, "y": 325}])
+    # lift: one design key holds offset, blur and colour; the card scales and rises with it
+    c.run("anim.set", id="#card", keyframes=[{"at": 0, "dropShadow": "0 6px 12px #00000059", "scale": 1, "y": 340, "ease": "ease-out"},
+                                            {"at": 18, "dropShadow": "0 28px 30px #00000033", "scale": 1.04, "y": 325}])
     _at(c, 18)
     got = c.get("#card", "dropShadow")["value"]
     assert got.startswith("0px 28") and "30" in got.split()[2], got
@@ -1208,6 +1190,68 @@ def keyed_blur_focus_pull(c):
     c.run("property.set", id="#t", key="blur", value="4px")
     after = c.run("anim.get", id="#t")["readings"][0]["keys"]
     assert sorted(k["at"] for k in after["blur"]) == [0.0, 9.0, 18.0] and len(after["opacity"]) == 2, after
+
+
+@case
+def grain_design_units(c):
+    s = Scene(c, width=1920, height=1080, fps=30, duration="3s")
+    s.rectangle("bg", Box(0, 0, 1920, 1080), fill="#202028")
+    s.text("t", "Focus", box=Box(360, 440, 1200, 200), size=160, weight=700, align="center")
+    s.apply()
+    film = c.run("object.new", kind="adjustment")["touched"][0]
+    # the forms: a string (amount, size, then softness= colour= held seed=), an object, a filter function, none
+    c.run("property.set", id=film, key="grain", value="0.25 1.5px")
+    assert c.get(film, "grain")["value"] == "0.25 1.5px softness=0.3 colour=0.25 seed=1"
+    c.run("property.set", id=film, key="grain", value="0.4 3px softness=0.5 colour=0 held seed=7")
+    assert c.get(film, "grain")["value"] == "0.4 3px softness=0.5 colour=0 held seed=7"
+    c.run("property.set", id=film, key="grain", value={"amount": 0.3, "size": "2px", "animated": False})
+    assert c.get(film, "grain")["value"] == "0.3 2px softness=0.3 colour=0.25 held seed=1"
+    c.run("property.set", id="#t", key="filter", value="blur(4px) grain(0.3 2px)")
+    assert c.get("#t", "grain")["value"].startswith("0.3 2px") and c.get("#t", "blur")["value"] == "4px"
+    # refusals carry the code, the valid range and a corrected example
+    for bad, code in [("1.2", "out-of-range"), ("0.3 0.1px", "out-of-range"), ("0.3 20px", "out-of-range"), ("0.3 1.5", "bad-value"),
+                      ("0.3 1.5px bogus=1", "bad-value"), ("0.3 1.5px softness=2", "out-of-range"), ("0.3 1.5px seed=10000", "out-of-range")]:
+        try:
+            c.run("property.set", id=film, key="grain", value=bad)
+            raise AssertionError("must be refused: " + bad)
+        except Refused as e:
+            assert e.receipt.get("code") == code and e.receipt.get("example") is not None, (bad, e.receipt)
+    # keyed by name: amount and size move between keys; the value at 5 f is the middle
+    c.run("anim.set", id=film, keyframes=[{"at": 0, "grain": "0 2px", "ease": "linear"}, {"at": 10, "grain": "0.4 4px"}])
+    _at(c, 5)
+    assert c.get(film, "grain")["value"].startswith("0.2 3px"), c.get(film, "grain")
+    # the effect is on the panel as Grain, and bypass / remove work on its entry
+    assert any(e["cap"] == "grain" and e["available"] for e in c.run("effect.addable", id="#t")["readings"][0]["effects"] if "cap" in e)
+    c.run("property.set", id=film, key="grain", value="none")
+    assert c.get(film, "grain")["value"] in (None, "none")
+    look(c, "grain-design-units", [0])
+
+
+@case
+def directional_blur_design_units(c):
+    s = Scene(c, width=1920, height=1080, fps=30, duration="3s")
+    s.rectangle("bg", Box(0, 0, 1920, 1080), fill="#101018")
+    s.text("t", "Focus", box=Box(360, 440, 1200, 200), size=160, weight=700, align="center")
+    s.apply()
+    for v, want in [("40px 30deg", "40px 30deg"), ("60px", "60px 0deg"), ("90deg", "40px 90deg"), ({"length": "80px", "angle": "45deg"}, "80px 45deg")]:
+        c.run("property.set", id="#t", key="directionalBlur", value=v)
+        assert c.get("#t", "directionalBlur")["value"] == want, (v, c.get("#t", "directionalBlur"))
+    c.run("property.set", id="#t", key="filter", value="blur(4px) directional-blur(40px 30deg)")
+    assert c.get("#t", "directionalBlur")["value"] == "40px 30deg" and c.get("#t", "blur")["value"] == "4px"
+    for bad, code in [("501px", "out-of-range"), ("-5px", "out-of-range"), ("40%", "bad-unit"), ("40px 30deg 10deg", "bad-value"), ("40px 400deg", "out-of-range")]:
+        try:
+            c.run("property.set", id="#t", key="directionalBlur", value=bad)
+            raise AssertionError("must be refused: " + bad)
+        except Refused as e:
+            assert e.receipt.get("code") == code and e.receipt.get("example") is not None, (bad, e.receipt)
+    # a whip: the length rises to the fastest frame and is 0 when the object lands; one key carries length and angle
+    c.run("anim.set", id="#t", keyframes=[{"at": 0, "x": -1500, "directionalBlur": "0px 0deg", "ease": "linear"}, {"at": 10, "x": 360, "directionalBlur": "120px 0deg"}])
+    _at(c, 5)
+    assert c.get("#t", "directionalBlur")["value"] == "60px 0deg", c.get("#t", "directionalBlur")
+    c.run("key.set", id="#t", key="directionalBlur", value="0px 0deg", at=14)
+    _at(c, 14)
+    assert c.get("#t", "directionalBlur")["value"] == "0px 0deg"
+    look(c, "directional-blur-design-units", [4])
 
 
 @case

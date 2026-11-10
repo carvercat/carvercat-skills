@@ -16,3 +16,5 @@ The vertical version of [saas-feature-launch-30s](saas-feature-launch-30s.md). *
 Dropped from the 16:9 cut: the chat thread (its bubbles sit at the far left and right), dropdown, modal over app and notification toast: wide app layouts that need a vertical rebuild.
 
 Measured: lint 0 / 0 / 0; `qc` notes the caption hold (f91–153) and the end card (f468–554). Looks checked.
+
+Speed streak (0.1.10): the Swipe up transition carries a vertical `directionalBlur` (240 px at 90deg while the panel travels, 0 while it covers; [directional blur](../references/effects/directional-blur.md)); exact in Resolve, approximate in After Effects.

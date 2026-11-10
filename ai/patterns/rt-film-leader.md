@@ -5,7 +5,9 @@
 **Measured on 0.1.8.1 (rev 1127, harness `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0, no flashes; against the v1 original the worst silhouette difference is 0.00 % (limit 2 %) and every object is present with the same text (box offset at most 0.0 px); colours are now the exact hex the page states (mean shift 9.7 of 255, intended); windows over a magenta/green underlay: covered f0-119 (cut f0). The frame numbers in the table above are the keys of the generator (`design units`), unchanged.
 
 
-For briefs like "old film countdown", "projector leader 5-4-3-2", "vintage intro". A warm grey frame with a crosshair, a white outer ring and a thin dark inner ring; on every 30 f beat a dark slice sweeps clockwise from 12 o'clock behind a big number (5, 4, 3, 2). Hard cuts on the beat. 120 f. Full-frame ground included.
+**Re-checked with the new effects on Carvercat 0.1.10, 2026-11-10 (headless, isolated folders, `verify_pack.py`):** placed in a fresh 16:9 and 9:16 comp, lint 0/0/0 and 0/0/0; against the v1 original the silhouette difference is 0.00 % (grain changes colour, not shape), objects pass, ink IoU 0.99, covered f0-119 (cut f0).
+
+For briefs like "old film countdown", "projector leader 5-4-3-2", "vintage intro". A warm grey frame with a crosshair, a white outer ring and a thin dark inner ring; on every 30 f beat a dark slice sweeps clockwise from 12 o'clock behind a big number (5, 4, 3, 2). Hard cuts on the beat. 120 f. Full-frame ground included. The ground carries `grain "0.2 2.2px softness=0.4 colour=0.1"` ([grain](../references/effects/grain.md)): old print grain on the grey ground, new grain every frame. (Grain is on the ground rectangle, not an adjustment layer: lint reports an adjustment layer as a warning, [KI-158](../references/known-issues.md#ki-158), and inside a template it would reach only the template's own objects.)
 
 | Part (per 30 f beat) | Motion | Measured |
 |---|---|---|
@@ -21,6 +23,6 @@ Lint 0 errors, 0 warnings, 0 notes in the lab; placed 0/0/0. `inspect qc`: no fl
 
 ## Pitfalls
 - An ellipse's stroke starts at 3 o'clock and runs counter-clockwise. Keying Trim `end` 0 → 1 with the shape turned +90° swept counter-clockwise (first build, checked with looks); keying `start` 1 → 0 grows the slice backwards from the end: clockwise from 12 o'clock.
-- No grain or flicker: the old leaders flickered, but full-frame flicker is a flash risk.
+- Grain yes, flicker no: the film grain is the ground's `grain` (the leader reads as an old print; the numbers and rings stay clean on top); the old leaders also flickered, but full-frame flicker is a flash risk. Grain is `approximate` in Resolve and After Effects; amount 0.2 is the ceiling for the white numbers to stay clean.
 
 Inspiration: academy and SMPTE-style countdown leaders on film prints. No external text or code was used.

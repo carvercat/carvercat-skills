@@ -6,4 +6,4 @@ N = 384
 author(p, "Retro night promo 13s", N, '#1A0B2E')
 SHOTS = [("Chrome title", 0, 2), ("Neon sign", 90, 2), ("Arcade start screen", 210, 2), ("TV switch-off", 360, 2), ("Venetian blinds", 184, 3)]
 with client() as c:
-    place_all(c, p, "Retro night promo 13s", SHOTS, "rc_retro", n=N)
+    place_all(c, p, "Retro night promo 13s", SHOTS, "rc_retro", n=N, finish=lambda c: add_grain(c, "0.14 2.5px softness=0.4 colour=0.5", N))

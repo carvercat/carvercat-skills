@@ -72,7 +72,7 @@ Verified live, build seen 2026-10-01. Each line = symptom -> cause -> fix. Read 
 - Reselect before property.set too, after any inspect probe (probe changes selection): 'no such property on this clip' means wrong selection.
 - Ellipse tr.scale keys work once the ellipse is selected (earlier refusal was selection). Bar growth: key rectangle height and centre y together (centre = base + h/2/aspect).
 - Verify layout numerically: export, then check alpha in a head box per frame (PIL/numpy) and composite over stills; do not trust a checker-ground look alone. Check overlay against the face box, safe area (top ~13%, y_up <= 0.87), and text width (one text about 0.1 size ~ 31 px/char).
-- Settle curve (fast start, long soft landing) = key.handle out (0.16,0.95), in (0.30,1); verify with key.list (handles column). Shadow defaults (x .012, y -.012, opacity .5) read far away: tight look = x .005, y -.005, softness .008, opacity .38 via property.set fx.e_fx_shadow_<id>.<x|y|softness|opacity>. key.list needs key= (not path=) and the object selected.
+- Settle curve (fast start, long soft landing) = key.handle out (0.16,0.95), in (0.30,1); verify with key.list (handles column). A default shadow (23 px right, 13 px down, alpha 0.5) reads far away: the tight look is `dropShadow "10px 5px 7px #00000061"` (alpha 0.38). key.list needs key= (not path=) and the object selected.
 - Group layout: measure text width (probe), then centre icon+gap+text as one unit instead of fixed x.
 
 ## Masks / rounded image cards

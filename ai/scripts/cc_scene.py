@@ -256,6 +256,14 @@ class Scene:
     def shadow(self, name, *, x=0, y=8, blur=12, color="#00000066"):
         return self.set(name, "dropShadow", "%spx %spx %spx %s" % (x, y, blur, color))
 
+    def grain(self, name, amount=0.25, size=1.5, *, softness=0.3, colour=0.25, held=False, seed=1):
+        """Film grain (0.1.10): amount 0..1, size 0.5..8 px of a 1920 frame. On an adjustment layer it grains everything below."""
+        return self.set(name, "grain", "%s %spx softness=%s colour=%s%s seed=%d" % (amount, size, softness, colour, " held" if held else "", seed))
+
+    def directional_blur(self, name, length=40, angle=0):
+        """A streak `length` px (0..500 of a 1920 frame) along `angle` degrees, counter-clockwise from the right (0.1.10)."""
+        return self.set(name, "directionalBlur", "%spx %sdeg" % (length, angle))
+
     def soft_edge(self, name, px):
         """The visible 10-90 % ramp of a shape's edge, in px."""
         return self.set(name, "softEdge", px)

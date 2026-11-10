@@ -1092,6 +1092,193 @@
                 }
               }
             ]
+          },
+          {
+            "id": "track_v4",
+            "enabled": true,
+            "objects": [
+              {
+                "id": "clip_10",
+                "type": "adjustment",
+                "name": "Film grain",
+                "caption": "Adjustment Layer",
+                "start": 0.0,
+                "duration": 840.0,
+                "sourceIn": 0.0,
+                "stack": {
+                  "source": [],
+                  "effects": [
+                    {
+                      "id": "e_fx_grain_clip_10",
+                      "cap": "grain",
+                      "on": true,
+                      "params": {
+                        "amount": {
+                          "value": 0.06
+                        },
+                        "size": {
+                          "value": 1.5
+                        },
+                        "softness": {
+                          "value": 0.4
+                        },
+                        "colour": {
+                          "value": 0.1
+                        },
+                        "animated": {
+                          "value": true
+                        },
+                        "seed": {
+                          "value": 1.0
+                        }
+                      }
+                    }
+                  ],
+                  "transform": [
+                    {
+                      "id": "e_tr_placement_clip_10",
+                      "cap": "transform.placement",
+                      "on": true,
+                      "params": {
+                        "center": {
+                          "value": [
+                            960.0,
+                            540.0
+                          ]
+                        },
+                        "scale": {
+                          "value": [
+                            1.0,
+                            1.0
+                          ]
+                        },
+                        "scaleUniform": {
+                          "value": 1.0
+                        },
+                        "scaleX": {
+                          "value": 1.0
+                        },
+                        "scaleY": {
+                          "value": 1.0
+                        },
+                        "rotate": {
+                          "value": 0.0
+                        },
+                        "transformOrigin": {
+                          "value": [
+                            50.0,
+                            50.0
+                          ],
+                          "x-int": [
+                            0,
+                            1
+                          ]
+                        },
+                        "opacity": {
+                          "value": 1.0
+                        }
+                      }
+                    },
+                    {
+                      "id": "e_tr_compositing_clip_10",
+                      "cap": "transform.compositing",
+                      "on": true,
+                      "params": {
+                        "mixBlendMode": {
+                          "value": "Normal"
+                        },
+                        "combine": {
+                          "value": "Over"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "controls": {
+                  "promoted": {
+                    "source": [],
+                    "effects": [],
+                    "transform": []
+                  }
+                },
+                "x-legacy": {
+                  "fields": {
+                    "x-scene": {
+                      "id": "finish-grain"
+                    }
+                  },
+                  "derived": {
+                    "flat": {
+                      "order": [
+                        "center",
+                        "size",
+                        "scaleX",
+                        "scaleY",
+                        "angle",
+                        "anchor",
+                        "blend"
+                      ],
+                      "same": [
+                        "center",
+                        "size",
+                        "scaleX",
+                        "scaleY",
+                        "angle",
+                        "anchor",
+                        "blend"
+                      ]
+                    },
+                    "midEffects": true
+                  },
+                  "order": {
+                    "clip": [
+                      "id",
+                      "type",
+                      "objectType",
+                      "text",
+                      "left",
+                      "duration",
+                      "sourceIn",
+                      "midEffects",
+                      "containers",
+                      "properties",
+                      "x-scene",
+                      "label"
+                    ],
+                    "properties": [
+                      "center",
+                      "size",
+                      "scaleX",
+                      "scaleY",
+                      "angle",
+                      "anchor",
+                      "blend",
+                      "tr.e_tr_placement_clip_10.position",
+                      "tr.e_tr_placement_clip_10.scale",
+                      "tr.e_tr_placement_clip_10.scaleUniform",
+                      "tr.e_tr_placement_clip_10.scaleX",
+                      "tr.e_tr_placement_clip_10.scaleY",
+                      "tr.e_tr_placement_clip_10.rotation",
+                      "tr.e_tr_placement_clip_10.anchor",
+                      "tr.e_tr_placement_clip_10.opacity",
+                      "tr.e_tr_compositing_clip_10.blend",
+                      "tr.e_tr_compositing_clip_10.combine",
+                      "fx.e_fx_grain_clip_10.amount",
+                      "fx.e_fx_grain_clip_10.size",
+                      "fx.e_fx_grain_clip_10.softness",
+                      "fx.e_fx_grain_clip_10.colour",
+                      "fx.e_fx_grain_clip_10.animated",
+                      "fx.e_fx_grain_clip_10.seed"
+                    ],
+                    "containers": [
+                      "source",
+                      "effects",
+                      "transform"
+                    ]
+                  }
+                }
+              }
+            ]
           }
         ],
         "audioLayers": [
@@ -1107,7 +1294,7 @@
             "duration": 840.0,
             "width": 1920.0,
             "height": 1080.0,
-            "clipCounter": 1
+            "clipCounter": 10
           }
         }
       }

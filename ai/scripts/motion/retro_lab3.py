@@ -200,7 +200,7 @@ def film_leader(d):
     per, nums = 30, ("5", "4", "3", "2")
     n = per * len(nums)
     k = d.comp("RT Film leader", n, "rfl")
-    k.rect("Leader ground", 0, 0, W, H, css('B4B0A8'), f0=0, dur=n)
+    k.rect("Leader ground", 0, 0, W, H, css('B4B0A8'), f0=0, dur=n).grain(0.2, 2.2, softness=0.4, colour=0.1)   # old print grain on the ground (an adjustment layer would add a lint warning, KI-158)
     cx, cy, R = 960, 540, 330
     for i, (f, num) in enumerate(zip(range(0, n, per), nums)):
         w = k.ell(f"Sweep {i + 1}", cx, cy, R, R, None, f0=f, dur=per)

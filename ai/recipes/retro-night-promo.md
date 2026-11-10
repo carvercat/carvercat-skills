@@ -12,7 +12,8 @@
 | 6.1 s | from 184 | Venetian blinds (overlay / transition) | blinds into the arcade (cut at f210) |
 
 ## Measured on the master
-- Lint 0 / 0 / 0; every template applied at 1920 × 1080.
+- Lint 0 errors, 1 warning, 0 notes: the warning is `never_visible` on the finishing layer (an adjustment layer draws nothing itself, [KI-158](../references/known-issues.md#ki-158)). Every template applied at 1920 × 1080.
+- **Finishing grain (0.1.10):** an adjustment layer "Film grain" on the top track over the whole 384 f carries `grain "0.14 2.5px softness=0.4 colour=0.5"` (tape-like: coloured, 2.5 px). It is the one grain for every scene, so the templates stay as they are ([grain](../references/effects/grain.md)). Remove it by deleting the layer; approximate in Resolve and After Effects.
 - `qc` (240 px) notes the title hold (f24–89) as a freeze and finds no flashes.
 
 ## Adapt it

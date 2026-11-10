@@ -32,7 +32,7 @@ with `contrast: true`:
 | Version | Role line result |
 |---|---|
 | A. White text, nothing behind | **error** `low_contrast` 1.29:1 (wanted 3) |
-| B. White text with a shadow (`dropShadow` `"0 2.2px 8.3px #000000cc"`; the 0.1.6 note: offset 0.002, softness 0.01, opacity 0.8) | **error** 1.01:1 |
+| B. White text with a shadow (`dropShadow` `"0 2.2px 8.3px #000000cc"`) | **error** 1.01:1 |
 | C. Plate #1B2028 at 85%, role #C9C6BF | **warning** 2.92:1 |
 | D. Plate #1B2028 at 95%, role #E6E3DC | no finding |
 

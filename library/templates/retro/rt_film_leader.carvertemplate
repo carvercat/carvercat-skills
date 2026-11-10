@@ -125,7 +125,33 @@
          }
         }
        ],
-       "effects": [],
+       "effects": [
+        {
+         "id": "e_fx_grain_clip_1",
+         "cap": "grain",
+         "on": true,
+         "params": {
+          "amount": {
+           "value": 0.2
+          },
+          "size": {
+           "value": 2.2
+          },
+          "softness": {
+           "value": 0.4
+          },
+          "colour": {
+           "value": 0.1
+          },
+          "animated": {
+           "value": true
+          },
+          "seed": {
+           "value": 1.0
+          }
+         }
+        }
+       ],
        "transform": [
         {
          "id": "e_tr_placement_clip_1",
@@ -280,7 +306,13 @@
          "src.e_src_shape_stroke_clip_1.color",
          "src.e_src_shape_stroke_clip_1.opacity",
          "src.e_src_shape_stroke_clip_1.paint",
-         "src.e_src_shape_stroke_clip_1.width"
+         "src.e_src_shape_stroke_clip_1.width",
+         "fx.e_fx_grain_clip_1.amount",
+         "fx.e_fx_grain_clip_1.size",
+         "fx.e_fx_grain_clip_1.softness",
+         "fx.e_fx_grain_clip_1.colour",
+         "fx.e_fx_grain_clip_1.animated",
+         "fx.e_fx_grain_clip_1.seed"
         ],
         "containers": [
          "source",

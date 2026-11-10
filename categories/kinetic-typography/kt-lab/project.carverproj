@@ -5494,6 +5494,51 @@
                   ],
                   "effects": [
                     {
+                      "id": "e_fx_dirblur_clip_3",
+                      "cap": "dirblur",
+                      "on": true,
+                      "params": {
+                        "length": {
+                          "value": 40.0,
+                          "keys": [
+                            {
+                              "at": 8.0,
+                              "value": 60.0,
+                              "x-leave": "linear",
+                              "ease": "linear"
+                            },
+                            {
+                              "at": 26.0,
+                              "value": 0.0
+                            }
+                          ],
+                          "x-arrive": {
+                            "ease": "linear",
+                            "x-ease": null
+                          }
+                        },
+                        "angle": {
+                          "value": 0.0,
+                          "keys": [
+                            {
+                              "at": 8.0,
+                              "value": 90.0,
+                              "x-leave": "linear",
+                              "ease": "linear"
+                            },
+                            {
+                              "at": 26.0,
+                              "value": 90.0
+                            }
+                          ],
+                          "x-arrive": {
+                            "ease": "linear",
+                            "x-ease": null
+                          }
+                        }
+                      }
+                    },
+                    {
                       "id": "e_fx_mask_clip_3",
                       "cap": "mask",
                       "on": true
@@ -5530,7 +5575,8 @@
                               "value": [
                                 960.0,
                                 519.9999999999999
-                              ]
+                              ],
+                              "x-leave": "linear"
                             }
                           ],
                           "x-arrive": {
@@ -5719,7 +5765,9 @@
                       "src.e_src_text_relative_clip_3.scale",
                       "src.e_src_text_relative_clip_3.anchor",
                       "src.e_src_text_relative_clip_3.opacity",
-                      "src.e_src_text_font_clip_3.lineSpacing"
+                      "src.e_src_text_font_clip_3.lineSpacing",
+                      "fx.e_fx_dirblur_clip_3.length",
+                      "fx.e_fx_dirblur_clip_3.angle"
                     ],
                     "containers": [
                       "source",

@@ -65,7 +65,7 @@ For scripted work use the maintained Python scripts: `ai/scripts/cc_client.py` +
 ## 3b. Effects, drawing, maps and whole jobs
 | Need | Read |
 |---|---|
-| Blur, glow (with burn limits), shadow, motion blur, gradients, stroke/trim draw-on, soft edges and mask feather, text outline, stagger, masks | [references/effects/README.md](references/effects/README.md) |
+| Blur, glow (with burn limits), shadow, motion blur, film grain, directional blur (speed streaks), gradients, stroke/trim draw-on, soft edges and mask feather, text outline, stagger, masks | [references/effects/README.md](references/effects/README.md) |
 | Hidden basement params, promoting them, ropes between params | [references/effects/basement-promote-ropes.md](references/effects/basement-promote-ropes.md) |
 | All shapes (rectangle, ellipse, star, polygon, path), arranging and grouping | [references/drawing/shapes.md](references/drawing/shapes.md) |
 | Characters/objects from parts: anchors as joints, parenting, the null object (`object.new {kind: "null"}`) as a pivot or handle | [references/drawing/rigging.md](references/drawing/rigging.md) |
@@ -73,7 +73,7 @@ For scripted work use the maintained Python scripts: `ai/scripts/cc_client.py` +
 | Captions + VO, RTL/Arabic, Resolve hand-off, export, the job loop | [references/workflows/](references/workflows/job-playbook.md) |
 | Something misbehaves | [references/known-issues.md](references/known-issues.md) |
 
-Effect rules that hold everywhere: `glow` strength ≤ 0.8 (0.9 clips, 1.0 burns to white), the radius sets the halo reach; blur and shadow for depth only on the hero; trim draw-on for lines; `softEdge` of 2 to 6 px for UI shapes, 160 to 320 px for ambient light ([references/effects/soft-edge.md](references/effects/soft-edge.md), with the feathered mask reveal).
+Effect rules that hold everywhere: `glow` strength ≤ 0.8 (0.9 clips, 1.0 burns to white), the radius sets the halo reach; blur and shadow for depth only on the hero; `grain` 0.05 to 0.12 on an adjustment layer for a film finish, never over small light text above 0.3 ([grain](references/effects/grain.md)); `directionalBlur` on a fast move, keyed to 0 on landing ([directional blur](references/effects/directional-blur.md)); trim draw-on for lines; `softEdge` of 2 to 6 px for UI shapes, 160 to 320 px for ambient light ([references/effects/soft-edge.md](references/effects/soft-edge.md), with the feathered mask reveal).
 
 ## 4. Check before you say it is done
 - **Look** at the entrance, hold and exit (`carvercat_look`). **Measure** with `carvercat_inspect` (`timing`, `curves` for overshoot and settle, `lint`, `expect`, `qc` for flashes) and the no-render helpers (`measure.boxes`, `measure.overlaps {within: "safe"}`, `measure.contrast`). **Preflight** with `carve.preflight {host}` before a send.

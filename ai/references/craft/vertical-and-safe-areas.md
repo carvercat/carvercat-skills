@@ -24,8 +24,8 @@ Measured from the top-left, in pixels:
 1. In the app: create **Horizontal** and **Vertical** bins (`bin.new`,
    `comp.move_to_bin`). `comp.duplicate {comp:index}` each comp (copies land in the
    source bin; move them). `edit.save`.
-2. **Don't just run `comp.format`.** It changes only the frame: positions are normalised
-   per axis (stored value), shape/text sizes are fractions of frame width (stored value), and path points are
+2. **Don't just run `comp.format`.** It changes only the frame: the stored positions are normalised
+   per axis, stored shape and text sizes are fractions of frame width, and stored path points are
    normalised per axis around 0.5 - so content shrinks to 56 % and paths stretch ~3.2x
    vertically.
 3. Write a layout spec (old-pixel anchor -> new-pixel anchor, scale per region) and run

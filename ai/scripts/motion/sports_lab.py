@@ -243,6 +243,7 @@ def goal_slam(d):
         ln.trim([(6, 0.0, 'linear'), (18, 1.0, EASE_IN)], which='start')
     band = poly(k, "Band", [(200, 430), (1800, 380), (1720, 700), (120, 650)], COL['red'], 0, n)
     slash(band)
+    band.dirblur_keys([(0, 200, 17.1, 'linear'), (10, 0, 17.1, 'linear')])   # a streak along the slash's own diagonal (atan 12 % H / 22 % W)
     g = T(k, "Goal", "GOAL!", cx, cy, 260, COL['yellow'], 4, n - 4, align='center')
     outline(g, COL['ink'], 0.05, True); slam(g)
 

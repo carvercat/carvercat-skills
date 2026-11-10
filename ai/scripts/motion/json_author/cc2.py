@@ -1,7 +1,7 @@
 """cc2.py - author Carvercat comps in DESIGN UNITS and send them with scene.apply.
 
 The design-unit successor of cc.py. Same builder shape (Doc > Comp > Obj), but every number is a design unit
-(see ai/references/app/design-units.md):
+(see `carvercat://schema/design`, the app's design-units reference):
 
     px from the frame's top-left, y down  |  degrees clockwise  |  frames  |  CSS colours ('#RRGGBB')
     CSS easing ('linear', 'ease-out', 'cubic-bezier(...)', 'steps(1, jump-end)' = hold)  |  fontSize in px
@@ -189,6 +189,20 @@ class Obj:
         dy = dx * HARD_SHADOW_DY if dy is None else dy
         return self.set('dropShadow', '%gpx %gpx 0px %s' % (dx, round(dy, 3), color))
     def mblur(self, shutter=180): self.motionblur = shutter; return self
+    def grain(self, amount=0.25, size=1.5, softness=0.3, colour=0.25, held=False, seed=1):
+        """Film grain (design unit `grain`): amount 0..1, size 0.5..8 px of a 1920 frame, softness 0..1, colour 0..1 (0 = mono),
+        new grain every frame unless `held`, `seed` 0..9999. On an adjustment layer it grains everything below it."""
+        return self.set('grain', '%g %gpx softness=%g colour=%g%s seed=%d' % (amount, size, softness, colour, ' held' if held else '', seed))
+    def dirblur(self, length=40, angle=0):
+        """Directional blur (design unit `directionalBlur`): a streak `length` px (0..500 of a 1920 frame) along `angle` degrees,
+        counter-clockwise from the right (90 is vertical); centred, so 0 and 180 draw the same."""
+        return self.set('directionalBlur', '%gpx %gdeg' % (length, angle))
+    def dirblur_keys(self, spec):
+        """Key the streak: spec [(frame, length_px, angle_deg, ease)]; the ease is the arriving one, like every cc2 key."""
+        return self.key('directionalBlur', [(f, '%gpx %gdeg' % (l, a), e) for f, l, a, e in spec])
+    def grain_keys(self, spec):
+        """Key the grain: spec [(frame, amount, size_px, ease)]; softness, colour and seed keep their values from `grain()` (not keyed)."""
+        return self.key('grain', [(f, '%g %gpx' % (a, z), e) for f, a, z, e in spec])
     def gradient_keys(self, spec):
         """Key a shape gradient's endpoints (object-local, 0..1, y down): spec [(frame, (sx, sy), (ex, ey), ease)], the ease leaves that
         key. A scene key cannot carry gradient endpoints, so `Doc.send` sets them with key.set (`shape.fill.gradientStart/End`)."""
@@ -208,7 +222,7 @@ class Obj:
         ox, oy = self.parent.origin() if self.parent is not None else (0, 0)
         nullish = self.kind == 'null'
         pathish = self.kind == 'path'
-        if pathish: style = {}
+        if pathish or self.kind == 'adjustment': style = {}
         elif nullish: style = {'x': round(cx - 50 - ox, 3), 'y': round(cy - 50 - oy, 3)}
         else: style = {'x': round(cx - w / 2 - ox, 3), 'y': round(cy - h / 2 - oy, 3)}
         if self.kind in ('rect', 'ellipse', 'polygon', 'star', 'text'): style.update(width=w, height=h)
@@ -299,6 +313,10 @@ class Comp:
     def null(self, name, x, y, f0=0, dur=None):
         """A null object centred at (x, y): a transform only. Children go under it with `nul.child(obj)`."""
         return self._new('null', name, (x, y, 100, 100), {}, f0, dur)
+
+    def adjust(self, name, f0=0, dur=None):
+        """An adjustment layer: no picture, its effects (grain, blur ...) apply to everything below it on the comp."""
+        return self._new('adjustment', name, (self.width / 2, self.height / 2, self.width, self.height), {}, f0, dur)
 
     def path(self, name, d, col='#FFFFFF', width=2, f0=0, dur=None, cap='round', fill=None, true_box=None):
         """A path object from SVG path data (px, y down, one subpath) or from `bezier(points)`. Open and stroked by

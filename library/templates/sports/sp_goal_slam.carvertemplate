@@ -3297,7 +3297,53 @@
          }
         }
        ],
-       "effects": [],
+       "effects": [
+        {
+         "id": "e_fx_dirblur_clip_12",
+         "cap": "dirblur",
+         "on": true,
+         "params": {
+          "length": {
+           "value": 40.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 200.0,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 10.0,
+             "value": 0.0
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          },
+          "angle": {
+           "value": 0.0,
+           "keys": [
+            {
+             "at": 0.0,
+             "value": 17.1,
+             "x-leave": "linear",
+             "ease": "linear"
+            },
+            {
+             "at": 10.0,
+             "value": 17.1
+            }
+           ],
+           "x-arrive": {
+            "ease": "linear",
+            "x-ease": null
+           }
+          }
+         }
+        }
+       ],
        "transform": [
         {
          "id": "e_tr_placement_clip_12",
@@ -3560,7 +3606,9 @@
          "src.e_src_shape_fill_clip_12.paint",
          "src.e_src_shape_fill_clip_12.color",
          "src.e_src_shape_fill_clip_12.opacity",
-         "src.e_src_shape_stroke_clip_12.cap"
+         "src.e_src_shape_stroke_clip_12.cap",
+         "fx.e_fx_dirblur_clip_12.length",
+         "fx.e_fx_dirblur_clip_12.angle"
         ],
         "containers": [
          "source",

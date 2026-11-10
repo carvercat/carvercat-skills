@@ -10,19 +10,19 @@
     "round-2",
     "1920x1080"
   ],
-  "summary": "A 23 s master that plays the round-2 Glitch templates back to back, placed from the Library: Block artifact title, Stutter words, Glitch lower third, Terminal type-on, Error cascade, RGB split mark, with Pixel dissolve on one cut.",
+  "summary": "A 27 s master that plays the round-2 Glitch templates back to back, placed from the Library: Corrupted video title, Block artifact title, Stutter words, Glitch lower third, Terminal type-on, Error cascade, RGB split mark, with Pixel dissolve on one cut. It carries a finishing noise-grain layer (grain 0.1, coloured).",
   "use_when": "You want to see the round-2 templates of this style in sequence, or start a film from a verified cut.",
   "canvas": {
     "width": 1920,
     "height": 1080,
     "fps": 30,
-    "frames": 700,
-    "seconds": 23.3
+    "frames": 820,
+    "seconds": 27.3
   },
   "contains": {
     "timelines": 1,
     "comps": [
-      "Glitch showcase 2 (master, 7 placed templates)"
+      "Glitch showcase 2 (master, 8 placed templates, 1 grain layer)"
     ]
   },
   "parameters": [
@@ -30,7 +30,7 @@
     "order and timing (move the placed clips)",
     "background colour"
   ],
-  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28",
+  "carvercat_version": "built and verified in Carvercat 0.1.6 (rev 1105,; public release binary, headless; packs added to the bundled Library for the test), 2026-10-28; rebuilt with the new effects (grain, directional blur) on Carvercat 0.1.10, 2026-11-10",
   "dependencies": {
     "fonts": [
       "Rethink Sans"
@@ -45,7 +45,7 @@
   "copy_notes": [
     "No media; nothing to relink. Each scene is a Library template placed with library.place + template.apply on a master with a background rectangle.",
     "Rebuild: ai/scripts/motion/recipes/showcase2.py glitch (headless, isolated folders).",
-    "Master lint 0 errors / 0 warnings / 0 notes; qc (240 px) notes four holds as freezes and no flashes."
+    "Master lint 0 errors / 1 warning / 0 notes (the warning is `never_visible` on the finishing grain layer: an adjustment layer draws nothing itself, KI-158); qc (240 px) notes four holds as freezes and no flashes."
   ],
   "source": "Carvercat team, built with an AI agent, 2026-10-28"
 }

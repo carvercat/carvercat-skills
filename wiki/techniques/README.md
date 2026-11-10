@@ -24,6 +24,8 @@ How the recognisable moves of motion graphics are built, and how to build them i
 | [Animating tracking, word and line spacing](text-spacing-animation.md) | Spacing as motion | tracking stays centred; word spacing is not rendered |
 | [Soft-edged and inverted masks](soft-and-inverted-masks.md) | Feathered wipes, knock-outs | 60 px `feather` = 61 px ramp; `mask: {ref, invert: true}` renders |
 | [Soft edge and mask feather](soft-edge-and-feather.md) | `softEdge` (one per shape) and `feather` in px: the visible 10-90% ramp | 8 / 24 / 60 px rendered 8.2 / 24.0 / 60.6 px; exact in Resolve, approximate in After Effects |
+| [Film grain and noise (measured)](film-grain.md) | Texture, film, tape and digital noise | `grain "0.25 1.5px"` reads std 0.050 on mid grey (0.2 x amount); colour 0 is mono; `held` repeats a frame |
+| [Directional blur and speed (measured)](directional-blur-and-speed.md) | Aimed streaks for whips, slams and pushes | an edge ramps over 0.8 x length along the angle (`40px` = 32 px); exact in Resolve, approximate in After Effects |
 | [Shadow and glow in motion](shadow-and-glow-in-motion.md) | Lift, power-on, pulse | `dropShadow` x y in px, blur is a sigma; a `glow` radius of 11.5 px reaches about 25 px |
 | [Nested comps and time offsets](nested-comps-and-time.md) | Reuse, offsets, scenes as comps | an instance shows nothing after its inner comp ends; ignores parents |
 | [Wiggle, shake and jitter](wiggle-and-jitter.md) | Deliberate noise vs accidental jitter | lint warns on ±1 px every-frame reversals; ±2 px and up passes |

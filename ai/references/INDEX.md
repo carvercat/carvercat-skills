@@ -149,6 +149,8 @@ One index for the whole skill. Find your question, open that file, read only tha
 | Glow without burning the element (limits, halo reach) | [effects/glow.md](effects/glow.md) |
 | Drop shadow / lift | [effects/shadow.md](effects/shadow.md) |
 | Motion blur | [effects/motion-blur.md](effects/motion-blur.md) |
+| Aimed speed streaks: whip, slam, push, slide (`directionalBlur`) | [effects/directional-blur.md](effects/directional-blur.md) |
+| Film grain, tape and digital noise (`grain`), film looks | [effects/grain.md](effects/grain.md) |
 | Fill, linear/radial gradients, shimmer | [effects/fill-and-gradients.md](effects/fill-and-gradients.md) |
 | Stroke, dashes, caps, draw-on (trim) | [effects/stroke-and-trim.md](effects/stroke-and-trim.md) |
 | Soft edge (`softEdge`, one per shape) and mask feather in px, glows, vignettes, the feathered mask reveal, carve status | [effects/soft-edge.md](effects/soft-edge.md) |

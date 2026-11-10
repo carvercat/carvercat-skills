@@ -46,6 +46,8 @@ Old stored names (`cap.param` such as `transform.placement.scale`) are named onl
 | Mask / matte | A shape that limits where another object is visible. | `mask: "<mask id>"` on the object to cut, or `clipPath` ([masking](techniques/masking.md)). |
 | Match cut | A cut joined by a shared shape, colour or movement. | [Match cuts](techniques/match-cuts.md). |
 | Morph | A shape changing into another. | Keyframeable geometry ([morphing](techniques/morphing.md)). |
+| Grain | Fine random texture added to a picture: film grain, tape or digital noise. | `grain "0.25 1.5px"` (amount, size, `softness=`, `colour=`, `held`, `seed=`), keyable; on an adjustment layer it grains everything below ([film grain](techniques/film-grain.md)). |
+| Directional blur | A streak along one angle, used for speed. | `directionalBlur "40px 30deg"` (length, angle counter-clockwise), keyable ([directional blur and speed](techniques/directional-blur-and-speed.md)). |
 | Motion blur | Smearing of fast-moving objects. | `effect.add {cap: "motionblur"}`: `motionblur.shutter` 0–360, `motionblur.samples` 2–64 (no design key yet). |
 | Negative space | Empty space that shapes and focuses a composition. | [Negative space](design/negative-space.md). |
 | Null | An object that is only a transform, used as a parent or pivot; it draws nothing. | `object.new {kind: "null"}`; no width, height or opacity ([null object](techniques/null-object.md)). |

@@ -29,7 +29,7 @@ reply, pre = s.apply(preflight="resolve")   # one undo step, then what carves ex
 
 - Boxes are px, top-left, y down. `size` is a true em in px. Leave `family` out for the app's bundled default.
 - Scene ids come from the names (letters, digits, `_` and `-`; other characters become `-`); `s.target("Big title")` is the selector `#Big-title`. Apply the same scene again and only differences change.
-- `entrance(names, frames, stagger, scale, rise)`, `envelope(name, start, hold_end, end, fade)`, `keys`, `stagger` write plain keyframes. Effects and paint are style keys: `blur`, `glow`, `shadow`, `soft_edge`, `trim_path`, `paint`, `transform`.
+- `entrance(names, frames, stagger, scale, rise)`, `envelope(name, start, hold_end, end, fade)`, `keys`, `stagger` write plain keyframes. Effects and paint are style keys: `blur`, `glow`, `shadow`, `grain`, `directional_blur`, `soft_edge`, `trim_path`, `paint`, `transform`.
 - Feedback with no render: `measure`, `fit` (`text.fit`), `flow` (`layout.stack`), `align`, `check_zones` (`measure.overlaps within`), `contrast`, `review(path, frames)` (lint plus a look). Read the image.
 - Components: `with s.component("Header") as h: h.rectangle(...)` gives scene ids `Header-Plate`, so repeating updates instead of duplicating.
 - `title_pair`, `number_highlight`, `caption`, `card_group`, `icon_label` are small layouts in design units.

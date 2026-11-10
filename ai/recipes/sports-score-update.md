@@ -18,6 +18,7 @@
 
 ## Measured on the master
 - Lint 0 / 0 / 0.
+- **Speed streaks (0.1.10):** the GOAL slam's red band carries a keyed `directionalBlur` along its own diagonal (200 px to 0 over its first 10 f), so the slash arrives with a streak and lands sharp ([directional blur](../references/effects/directional-blur.md)). Exact in Resolve, approximate in After Effects.
 - `qc` notes the lower-third hold (f173–288) and the full-time hold (f335–419) as freezes; over real footage the picture moves underneath.
 
 Inspiration: broadcast goal-update sequences. No external text or code was used.

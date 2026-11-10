@@ -2,7 +2,7 @@
 
 **Template** `gl_rgb_title` · Glitch pack · **verified 0.1.8.1 (rev 1127 build; headless, isolated folders, pack added to a scratch user Library; `ai/scripts/motion/verify_pack.py`)**, comp `GL RGB title` in `categories/glitch/gl-lab`.
 
-"SIGNAL LOST" (ExtraBold 170 px, white) with two hard Drop shadows on the same text: red and cyan, softness 0, opacity 0.85.
+"SIGNAL LOST" (ExtraBold 170 px, white) with two hard Drop shadows on the same text: red and cyan, blur 0, alpha 0.85.
 
 | Part | Frames | Motion | Measured |
 |---|---|---|---|

@@ -35,7 +35,7 @@ Agent-neutral. Frames at 30 fps. Tested recipes for each transition live in
 | Two-tone wipe | 12-16 | brand colour hand-off | two full-width rects 2-3 f apart, the top one leaves first; **template, verified** ([tr-two-tone-wipe](../../patterns/tr-two-tone-wipe.md)) |
 | Iris / circle mask | 12-20 | reveal from a point (pointer, product) | ellipse grows from the point to (diagonal / diameter) x 1.05, expo in-out; **template, verified** ([tr-iris](../../patterns/tr-iris.md)) |
 | Zoom-through | 12 out + 20 in | high energy into a detail | presets `Exit zoom through` + `Zoom settle`, overlapping 3-4 f; **verified** ([tr-zoom-through](../../patterns/tr-zoom-through.md)) |
-| Whip pan | 9 + 9 | energy, sideways story | X +/-400 px with blur 24 / `motionblur` |
+| Whip pan | 9 + 9 | energy, sideways story | X +/-400 px with `directionalBlur "200px 0deg"` falling to 0 on landing (or `motionblur`) |
 | Blur-through | 9 + 8 | soft scene change | blur 0->20 out, 20->0 in |
 | Collapse to dot -> burst | 14 + 10 | hand-off into a logo or CTA | group scale -> ~0.03 to a centred dot; next scene bursts from the same point (recipe not written yet) |
 | Match cut / shared element | 0-15 | product explainers | the same shape/colour/position on both sides of the cut |
